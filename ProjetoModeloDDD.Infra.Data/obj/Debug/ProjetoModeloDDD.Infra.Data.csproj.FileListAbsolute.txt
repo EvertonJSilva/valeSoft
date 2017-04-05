@@ -1,0 +1,12 @@
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.dll.config
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.pdb
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Domain.pdb
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.xml
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb

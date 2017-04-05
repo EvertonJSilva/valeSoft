@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>DASHGUM - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/SiteB/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/Content/SiteB/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/SiteB/css/style.css" rel="stylesheet">
+    <link href="~/Content/SiteB/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <section id="container">
+        
+        <section id="main-content" style="margin-left:0px;">
+            <section class="wrapper site-min-height">
+                <div class="container body-content">
+                    @RenderBody()                 
+                </div>
+
+            </section><! --/wrapper -->
+        </section><!-- /MAIN CONTENT -->
+        <!--main content end-->
+        <!--footer start-->
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+        <!--footer end-->
+    </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="~/Content/SiteB/js/jquery.js"></script>
+    <script src="~/Content/SiteB/js/bootstrap.min.js"></script>
+    <script src="~/Content/SiteB/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="~/Content/SiteB/js/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="~/Content/SiteB/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/Content/SiteB/js/jquery.scrollTo.min.js"></script>
+    <script src="~/Content/SiteB/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+    <!--common script for all pages-->
+    <script src="~/Content/SIteB/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+
+    <script>
+        //custom select box
+
+        $(function () {
+            $('select.styled').customSelect();
+        });
+
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

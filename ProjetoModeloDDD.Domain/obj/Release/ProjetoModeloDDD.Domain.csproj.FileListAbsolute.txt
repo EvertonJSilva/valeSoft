@@ -1,0 +1,5 @@
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.pdb
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb
