@@ -9,7 +9,7 @@
 }
 
 
-<h2>IndexNovo</h2>
+<h2>Login</h2>
 
 
 @using (Html.BeginForm())
@@ -30,16 +30,55 @@
         <div class="form-group">
             @Html.LabelFor(model => model.senha, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.senha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.senha, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
                 @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
+                <input type="submit" value="Entrar" class="btn btn-default" />
+
+                <label class="label" style="font-size:12px">
+                    <a data-toggle="modal" href="login.html#myModal">Esqueceu sua senha?</a>
+                </label>
             </div>
+
         </div>
+
+            <!-- Modal -->
+            <div aria-hidden="true" style="position:center; align-content:center" 
+                  aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" 
+                 class="modal fade">
+                <div class="modal-dialog">
+
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Esqueceu sua senha?</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>Entre com seu endereço de email.</p>
+                            <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+
+                        </div>
+                        <div class="modal-footer">
+                            <a @Html.ActionLink("Enviar", "reenvio", "Login") >
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal  @Html.ActionLink("Enviar", "reenvio", "Login") -->
+
+
+
+
+
+
+
+
 
     </div>
 @section Scripts {

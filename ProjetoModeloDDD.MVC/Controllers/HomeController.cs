@@ -9,10 +9,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
        
         public ActionResult Index()
         {
-            //if(Session["Usuario"] == null)
-            if(1== 2)
+            if(Session["Usuario"] == null)
             { 
-                return RedirectToAction("index","login");
+                return RedirectToAction("indexnovo","login");
             }
            return View(); 
         }

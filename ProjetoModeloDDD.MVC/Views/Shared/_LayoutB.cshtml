@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
     @Styles.Render("~/Content/css")
@@ -11,7 +12,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - Bootstrap Admin Template</title>
+    <title>VALESOFT - CoopMed</title>
 
     <!-- Bootstrap core CSS -->
     <link href="~/Content/SiteB/css/bootstrap.css" rel="stylesheet">
@@ -41,7 +42,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.html" class="logo"><b>VALESOFT</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -109,7 +110,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a @Html.ActionLink("Logout", "index", "Login", null, new { @class = "logout"})</a></li>
+                    <li><a @Html.ActionLink("Logout", "indexNovo", "Login", null, new { @class = "logout"})</a></li>
                 </ul>
             </div>
         </header>
@@ -126,20 +127,40 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <p class="centered"><a href="profile.html"><img src="~/Content/SiteB/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-                    <h5 class="centered">Marcel Newman</h5>
+                    <h5 class="centered">@HttpContext.Current.Session["usuario.usuario"].ToString();</h5>
 
                     <li>
                         <a href="/Clientes/Index/">
                             <i class="fa fa-group"></i>
-                            <span>Clientes</span>
+                            <span>Pacientes</span>
                             </a>
                     </li>
                     <li>
                         <a href="/Produtos/Index/">
                             <i class="fa fa-desktop"></i>
-                            <span>Produtos</span>
+                            <span>Consultas</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/Produtos/Index/">
+                            <i class="fa fa-desktop"></i>
+                            <span>Liberações</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Produtos/Index/">
+                            <i class="fa fa-desktop"></i>
+                            <span>Profissionais</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Produtos/Index/">
+                            <i class="fa fa-desktop"></i>
+                            <span>Usuários</span>
+                        </a>
+                    </li>
+
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
