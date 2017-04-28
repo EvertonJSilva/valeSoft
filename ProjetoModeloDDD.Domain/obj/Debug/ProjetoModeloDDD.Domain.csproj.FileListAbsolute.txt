@@ -2,3 +2,8 @@ D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\bin\Debug\
 D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\bin\Debug\ProjetoModeloDDD.Domain.pdb
 D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
 D:\visual Studio\ProjetoModeloDDD.Application\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\ProjetoModeloDDD.Domain.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
