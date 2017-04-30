@@ -17,6 +17,13 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Consulta> Consultas { get; set; }
+        public DbSet<Folha> Folhas { get; set; }
+        public DbSet<FolhaDetalhe> FolhaDetalhes { get; set; }
+        public DbSet<Liberacao> Liberacoes { get; set; }
+        public DbSet<Profissional> Profissionais { get; set; }
+        public DbSet<TaxaDoacao> TaxaDoacoes { get; set; }
+        public DbSet<ValorConsulta> ValorConsultas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

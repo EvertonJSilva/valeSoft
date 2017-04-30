@@ -31,10 +31,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Consulta.cs" />
+    <Compile Include="Entities\Folha.cs" />
+    <Compile Include="Entities\FolhaDetalhe.cs" />
     <Compile Include="Entities\Liberacao.cs" />
     <Compile Include="Entities\Paciente.cs" />
     <Compile Include="Entities\Produto.cs" />
+    <Compile Include="Entities\Profissional.cs" />
+    <Compile Include="Entities\TaxaDoacao.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\ValorConsulta.cs" />
     <Compile Include="Interfaces\Repositories\IClienteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IProdutoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
