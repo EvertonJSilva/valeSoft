@@ -12,3 +12,10 @@ D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\Projet
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.csprojResolveAssemblyReference.cache
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.pdb
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Application.dll
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Application.pdb
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Domain.dll
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Domain.pdb
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.csprojResolveAssemblyReference.cache
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.dll
+C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.pdb

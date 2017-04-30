@@ -12,7 +12,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public Decimal ValorTotal { get; set; }
         public int ProfissionalId { get; set; }
 
-        public virtual Profissional Profissional { get; set}
+        public virtual Profissional Profissional { get; set; }
 
 
 
