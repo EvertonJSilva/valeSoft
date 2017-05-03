@@ -43,6 +43,15 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
 
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
+            modelBuilder.Configurations.Add(new FolhaConfiguration());
+            modelBuilder.Configurations.Add(new FolhaDetalheConfiguration());
+            modelBuilder.Configurations.Add(new LiberacaoConfiguration());
+            modelBuilder.Configurations.Add(new PacienteConfiguration());
+            modelBuilder.Configurations.Add(new ProfissionalConfiguration());
+            modelBuilder.Configurations.Add(new TaxaDoacaoConfiguration());
+            modelBuilder.Configurations.Add(new ValorConsultaConfiguration());
+      
+
         }
 
         public override int SaveChanges()

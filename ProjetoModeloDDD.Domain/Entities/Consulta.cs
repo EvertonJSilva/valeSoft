@@ -18,6 +18,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public DateTime DataInsercao { get; set; }
         //referencia a liberacao
         public int LiberacaoId { get; set; }
+        public int ProfissionalId { get; set; }
         //referencia ao login que lançou a consulta
         public string Login { get; set; }
 

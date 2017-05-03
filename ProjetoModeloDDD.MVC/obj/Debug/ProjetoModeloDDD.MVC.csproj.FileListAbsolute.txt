@@ -161,3 +161,33 @@ C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\b
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csi.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csi.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.AppContext.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Collections.Immutable.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.IO.FileSystem.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\RdlCompile.cache
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\RdlCompile.compiled

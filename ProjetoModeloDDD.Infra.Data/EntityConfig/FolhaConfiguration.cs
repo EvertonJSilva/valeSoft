@@ -5,7 +5,13 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 {
     public class FolhaConfiguration : EntityTypeConfiguration<Folha>
     {
+        public FolhaConfiguration(){
+         HasKey(f => f.FolhaId);
 
+            HasRequired(f => f.Profissional)
+                .WithMany()
+                .HasForeignKey(f => f.ProfissionalId);
 
+        }
     }
 }
