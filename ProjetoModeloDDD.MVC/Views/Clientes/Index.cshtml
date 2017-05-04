@@ -12,7 +12,7 @@
 <p>
     @Html.ActionLink("Clientes Especiais", "Especiais")
 </p>
-<table class="table">
+<table class="table table-bordered table-striped table-condensed" >
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
@@ -43,12 +43,17 @@
         <td>
             @Html.DisplayFor(modelItem => item.Ativo)
         </td>
+
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClienteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClienteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClienteId })
+            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Clientes", new { id = item.ClienteId })'"><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Clientes", new { id = item.ClienteId })'"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Clientes", new { id = item.ClienteId })'"><i class="fa fa-trash-o "></i></button>       
         </td>
     </tr>
+    
 }
 
-</table>
+</
+    >
+
+

@@ -1406,7 +1406,7 @@ pre code {
 
 table {
   max-width: 100%;
-  background-color: transparent;
+  background-color: #ddd;
 }
 
 th {
@@ -1956,7 +1956,11 @@ textarea.input-lg {
   }
 }
 
-.form-horizontal .control-label,
+.
+
+
+
+zontal .control-label,
 .form-horizontal .radio,
 .form-horizontal .checkbox,
 .form-horizontal .radio-inline,
