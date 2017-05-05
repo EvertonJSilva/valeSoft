@@ -54,7 +54,7 @@
                             <span class="badge bg-theme">4</span>
                         </a>
                         <ul class="dropdown-menu extended tasks-bar">
-                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li class="notify-arrow notify-arrow-green"></li>
                             <li>
                                 <p class="green">You have 4 pending tasks</p>
                             </li>
@@ -82,7 +82,7 @@
                             <span class="badge bg-theme">5</span>
                         </a>
                         <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li class="notify-arrow notify-arrow-green"></li>
                             <li>
                                 <p class="green">You have 5 new messages</p>
                             </li>
@@ -110,7 +110,11 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a @Html.ActionLink("Logout", "indexNovo", "Login", null, new { @class = "logout"})</a></li>
+                    <li>   
+                           <a @Html.ActionLink("Logout", "indexNovo", "Logout", null, new { @class = "logout"})</a>
+                    
+                    
+                    </li>
                 </ul>
             </div>
         </header>
@@ -126,8 +130,8 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
 
-                    <p class="centered"><a href="profile.html"><img src="~/Content/SiteB/img/pp.jpg" class="img-circle" width="60"></a></p>
-                    <h5 class="centered">VALESOFT</h5> 
+                    <li class="centered"><a href="profile.html"><img src="~/Content/SiteB/img/pp.jpg" class="img-circle" width="60"></a></li>
+                    <li class="centered">VALESOFT</li> 
                     <li>
                         <a href="/Clientes/Index/">
                             <i class="fa fa-group"></i>

@@ -2,7 +2,7 @@
 
 namespace ProjetoModeloDDD.Application.Interface
 {
-    public interface IUsuarioAppService : IAppServiceBase<Usuario>
+    public interface ITaxaDoacaoAppService : IAppServiceBase<TaxaDoacao>
     {
     }
 }

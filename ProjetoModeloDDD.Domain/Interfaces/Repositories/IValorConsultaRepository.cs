@@ -2,7 +2,7 @@
 
 namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
 {
-    public interface IValorConslutaRepository : IRepositoryBase<ValorConsulta>
+    public interface IValorConsultaRepository : IRepositoryBase<ValorConsulta>
     {
     }
 }
