@@ -7,7 +7,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
     {
         public TaxaDoacaoConfiguration()
         {
-            HasKey(t => t.TaxaDoacaoID);
+            HasKey(t => t.TaxaDoacaoId);
         }
     }
 }

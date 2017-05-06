@@ -24,6 +24,7 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
         public DbSet<Profissional> Profissionais { get; set; }
         public DbSet<TaxaDoacao> TaxaDoacoes { get; set; }
         public DbSet<ValorConsulta> ValorConsultas { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -54,21 +55,21 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
 
         }
 
-        public override int SaveChanges()
+       public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
-            {
+           {
                 if (entry.State == EntityState.Added)
-                {
-                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
-                }
+               {
+                  entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+              }
 
-                if (entry.State == EntityState.Modified)
-                {
-                    entry.Property("DataCadastro").IsModified = false;
+              if (entry.State == EntityState.Modified)
+             {
+                   entry.Property("DataCadastro").IsModified = false;
                 }
             }
-            return base.SaveChanges();
-        }
+         return base.SaveChanges();
+     }
     }
 }

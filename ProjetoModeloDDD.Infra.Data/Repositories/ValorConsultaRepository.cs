@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
-    public class ValorConsultaRepository : RepositoryBase<ValorConsulta>, IValorConslutaRepository
+    public class ValorConsultaRepository : RepositoryBase<ValorConsulta>, IValorConsultaRepository
     {
     }
 }

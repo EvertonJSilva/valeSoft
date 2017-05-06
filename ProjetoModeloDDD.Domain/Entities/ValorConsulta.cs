@@ -11,6 +11,6 @@ namespace ProjetoModeloDDD.Domain.Entities
         public decimal Valor { get; set; }
         public string Classificacao { get; set; }
         public string Sessao { get; set; }
-        public int ValorConsultaID { get; set; }
+        public int ValorConsultaId { get; set; }
     }
 }

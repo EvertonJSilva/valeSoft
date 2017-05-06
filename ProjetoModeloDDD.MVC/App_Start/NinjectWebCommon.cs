@@ -72,14 +72,38 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
             kernel.Bind<IClienteAppService>().To<ClienteAppService>();
             kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
+            kernel.Bind<IConsultaAppService>().To<ConsultaAppService>();
+            kernel.Bind<IFolhaAppService>().To<FolhaAppService>();
+            kernel.Bind<IFolhaDetalheAppService>().To<FolhaDetalheAppService>();
+            kernel.Bind<ILiberacaoAppService>().To<LiberacaoAppService>();
+            kernel.Bind<IPacienteAppService>().To<PacienteAppService>();
+            kernel.Bind<IProfissionalAppService>().To<ProfissionalAppService>();
+            kernel.Bind<ITaxaDoacaoAppService>().To<TaxaDoacaoAppService>();
+            kernel.Bind<IValorConsultaAppService>().To<ValorConsultaAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IClienteService>().To<ClienteService>();
             kernel.Bind<IProdutoService>().To<ProdutoService>();
+            kernel.Bind<IConsultaService>().To<ConsultaService>();
+            kernel.Bind<IFolhaService>().To<FolhaService>();
+            kernel.Bind<IFolhaDetalheService>().To<FolhaDetalheService>();
+            kernel.Bind<ILiberacaoService>().To<LiberacaoService>();
+            kernel.Bind<IPacienteService>().To<PacienteService>();
+            kernel.Bind<IProfissionalService>().To<ProfissionalService>();
+            kernel.Bind<ITaxaDoacaoService>().To<TaxaDoacaoService>();
+            kernel.Bind<IValorConsultaService>().To<ValorConsultaService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IClienteRepository>().To<ClienteRepository>();
             kernel.Bind<IProdutoRepository>().To<ProdutoRepository>();
+            kernel.Bind<IConsultaRepository>().To<ConsultaRepository>();
+            kernel.Bind<IFolhaRepository>().To<FolhaRepository>();
+            kernel.Bind<IFolhaDetalheRepository>().To<FolhaDetalheRepository>();
+            kernel.Bind<ILiberacaoRepository>().To<LiberacaoRepository>();
+            kernel.Bind<IPacienteRepository>().To<PacienteRepository>();
+            kernel.Bind<IProfissionalRepository>().To<ProfissionalRepository>();
+            kernel.Bind<ITaxaDoacaoRepository>().To<TaxaDoacaoRepository>();
+            kernel.Bind<IValorConsultaRepository>().To<ValorConsultaRepository>();
         }        
     }
 }

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ConsultaViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Autorizacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormaAutorizar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataHoraConsulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorConsulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Convenio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorCopart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorConvenio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoSessao)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autorizacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormaAutorizar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataHoraConsulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorConsulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Convenio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorCopart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorConvenio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoSessao)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Login)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ConsultaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ConsultaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConsultaId })
+        </td>
+    </tr>
+}
+
+</table>

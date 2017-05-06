@@ -9,7 +9,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string TipoProfissional { get; set; }
         public decimal Valor { get; set; }
 
-        public int TaxaDoacaoID { get; set; }
+        public int TaxaDoacaoId { get; set; }
         
     }
 }

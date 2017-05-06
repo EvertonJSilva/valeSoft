@@ -1,0 +1,58 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.PacienteViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PacienteViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomePaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonePaciente1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonePaciente1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonePaciente2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonePaciente2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarteirinhaPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarteirinhaPaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CopartPaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CopartPaciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PacienteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

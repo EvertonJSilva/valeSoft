@@ -8,7 +8,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         public ValorConsultaConfiguration()
         {
 
-            HasKey(v => v.ValorConsultaID);
+            HasKey(v => v.ValorConsultaId);
 
         }
     }
