@@ -17,8 +17,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string TipoSessao { get; set; }
         public DateTime DataCadastro { get; set; }
         //referencia a liberacao
-        //public int LiberacaoId { get; set; }
-        //public int ProfissionalId { get; set; }
+        public int LiberacaoId { get; set; }
+        public int ProfissionalId { get; set; }
         //referencia ao login que lançou a consulta
         public string Login { get; set; }
 

@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ConsultaViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Consultas";
 }
 
-<h2>Index</h2>
+<h2>Consultas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar Novo", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered table-striped table-condensed">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Autorizacao)
@@ -36,9 +36,6 @@
             @Html.DisplayNameFor(model => model.TipoSessao)
         </th>
         
-        <th>
-            @Html.DisplayNameFor(model => model.Login)
-        </th>
         <th></th>
     </tr>
 
@@ -70,12 +67,9 @@
         </td>
         
         <td>
-            @Html.DisplayFor(modelItem => item.Login)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ConsultaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ConsultaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ConsultaId })
+            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Consultas", new { id = item.ConsultaId })'"><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = item.ConsultaId })'"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Consultas", new { id = item.ConsultaId })'"><i class="fa fa-trash-o "></i></button>
         </td>
     </tr>
 }

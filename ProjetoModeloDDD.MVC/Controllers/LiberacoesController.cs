@@ -13,10 +13,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
     public class LiberacoesController : Controller
     {
         private readonly ILiberacaoAppService _liberacaoApp;
+        private readonly IPacienteAppService _pacienteApp;
 
-        public LiberacoesController(ILiberacaoAppService liberacaoApp)
+
+        public LiberacoesController(ILiberacaoAppService liberacaoApp, IPacienteAppService pacienteApp)
         {
             _liberacaoApp = liberacaoApp;
+            _pacienteApp = pacienteApp;
         }
 
         // GET: Consulta
@@ -32,12 +35,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
+
+            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
             return View(liberacaoViewModel);
         }
 
         // GET: Consulta/Create
         public ActionResult Create()
         {
+            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
+
             return View();
         }
 
@@ -54,6 +61,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
+
             return View(liberacao);
         }
 
@@ -63,6 +72,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
+            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
             return View(liberacaoViewModel);
         }
 
@@ -79,6 +89,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
+
+            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
             return View(liberacao);
         }
 

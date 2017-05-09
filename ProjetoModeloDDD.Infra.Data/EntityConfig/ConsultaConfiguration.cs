@@ -21,13 +21,13 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
                 .HasMaxLength(20)
                 .IsRequired();
 
-            //HasRequired(c => c.Profissional)
-             //.WithMany()
-             //.HasForeignKey(c => c.ProfissionalId);
+            HasRequired(c => c.Profissional)
+             .WithMany()
+             .HasForeignKey(c => c.ProfissionalId);
 
-            //HasRequired(c => c.Liberacao)
-             //.WithMany()
-             //.HasForeignKey(c => c.LiberacaoId);
+            HasRequired(c => c.Liberacao)
+             .WithMany()
+             .HasForeignKey(c => c.LiberacaoId);
 
 
         }

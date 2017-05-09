@@ -1,13 +1,13 @@
 ﻿@model ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>LiberacaoViewModel</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -34,11 +34,17 @@
             @Html.DisplayFor(model => model.QuantidadeRealizada)
         </dd>
 
-        
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.NomePaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.NomePaciente)
+        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.LiberacaoId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.LiberacaoId }) |
+    @Html.ActionLink("Voltar para lista", "Index")
 </p>

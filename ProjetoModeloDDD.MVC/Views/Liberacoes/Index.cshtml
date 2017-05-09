@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Liberações";
 }
 
-<h2>Index</h2>
+<h2>Liberações</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar Novo", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered table-striped table-condensed">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NumeroLiberacao)
@@ -20,7 +20,10 @@
         <th>
             @Html.DisplayNameFor(model => model.QuantidadeRealizada)
         </th>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.Paciente.NomePaciente)
+        </th>
+
         <th></th>
     </tr>
 
@@ -35,12 +38,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.QuantidadeRealizada)
         </td>
-       
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LiberacaoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LiberacaoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LiberacaoId })
+            @Html.DisplayFor(modelItem => item.Paciente.NomePaciente)
         </td>
+
+        <td>
+            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Liberacoes", new { id = item.LiberacaoId })'"><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Liberacoes", new { id = item.LiberacaoId })'"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Liberacoes", new { id = item.LiberacaoId })'"><i class="fa fa-trash-o "></i></button>
+    </td>
     </tr>
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -11,16 +12,18 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Key]
         public int ProfissionalId { get; set; }
 
+        [DisplayName("Nome")]
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string NomeProfissional { get; set; }
 
+        [DisplayName("Tipo")]
         [Required(ErrorMessage = "Preencha o campo Tipo")]
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string TipoProfissional { get; set; }
-
+        
         [Required(ErrorMessage = "Preencha o campo Login")]
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]

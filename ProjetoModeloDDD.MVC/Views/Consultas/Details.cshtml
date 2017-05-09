@@ -1,13 +1,13 @@
 ﻿@model ProjetoModeloDDD.MVC.ViewModels.ConsultaViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>ConsultaViewModel</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -74,20 +74,25 @@
             @Html.DisplayFor(model => model.TipoSessao)
         </dd>
 
-       
-        
-
         <dt>
-            @Html.DisplayNameFor(model => model.Login)
+            @Html.DisplayNameFor(model => model.Liberacao.NumeroLiberacao)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Login)
+            @Html.DisplayFor(model => model.Liberacao.NumeroLiberacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profissional.NomeProfissional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profissional.NomeProfissional)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ConsultaId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ConsultaId }) |
+    @Html.ActionLink("Volta para lista", "Index")
 </p>

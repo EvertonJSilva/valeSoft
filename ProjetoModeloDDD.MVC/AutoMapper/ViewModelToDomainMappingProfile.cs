@@ -20,6 +20,8 @@ namespace ProjetoModeloDDD.MVC.AutoMapper
             Mapper.CreateMap<Consulta, ConsultaViewModel>();
             Mapper.CreateMap<Liberacao, LiberacaoViewModel>();
             Mapper.CreateMap<Paciente, PacienteViewModel>();
+            Mapper.CreateMap<Profissional, ProfissionalViewModel>();
+
         }
     }
 }

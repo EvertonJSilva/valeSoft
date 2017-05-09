@@ -14,10 +14,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
 
         private readonly IConsultaAppService _consultaApp;
+        private readonly ILiberacaoAppService _liberacaoApp;
+        private readonly IProfissionalAppService _profissionalApp;
 
-        public ConsultasController (IConsultaAppService consultaApp)
+
+        public ConsultasController (IConsultaAppService consultaApp, ILiberacaoAppService liberacaoApp, IProfissionalAppService profissionalApp)
         {
             _consultaApp = consultaApp;
+            _liberacaoApp = liberacaoApp;
+            _profissionalApp = profissionalApp;
+
         }
         
         // GET: Consulta
@@ -33,12 +39,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var consulta = _consultaApp.GetById(id);
             var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
+            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao");
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
+
             return View(consultaViewModel);
         }
 
         // GET: Consulta/Create
         public ActionResult Create()
         {
+            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao");
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
+
             return View();
         }
 
@@ -55,6 +67,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao", consulta.LiberacaoId);
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
+
             return View(consulta);
         }
 
@@ -64,6 +79,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var consulta = _consultaApp.GetById(id);
             var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
+
+            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao", consulta.LiberacaoId);
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consultaViewModel);
         }
 
@@ -80,6 +98,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
+
+            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao", consulta.LiberacaoId);
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
 

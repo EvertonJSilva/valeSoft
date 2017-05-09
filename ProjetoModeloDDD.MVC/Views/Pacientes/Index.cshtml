@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.PacienteViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Pacientes";
 }
 
-<h2>Index</h2>
+<h2>Pacientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar Novo", "Create")
 </p>
-<table class="table">
+<table class="table table-bordered table-striped table-condensed">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NomePaciente)
@@ -47,9 +47,10 @@
             @Html.DisplayFor(modelItem => item.CopartPaciente)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PacienteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PacienteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PacienteId })
+            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Pacientes", new { id = item.PacienteId })'"><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Pacientes", new { id = item.PacienteId })'"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Pacientes", new { id = item.PacienteId })'"><i class="fa fa-trash-o "></i></button>
+
         </td>
     </tr>
 }
