@@ -51,11 +51,12 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
             modelBuilder.Configurations.Add(new ProfissionalConfiguration());
             modelBuilder.Configurations.Add(new TaxaDoacaoConfiguration());
             modelBuilder.Configurations.Add(new ValorConsultaConfiguration());
-      
+            modelBuilder.Configurations.Add(new ConsultaConfiguration());
+
 
         }
 
-       public override int SaveChanges()
+        public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
            {

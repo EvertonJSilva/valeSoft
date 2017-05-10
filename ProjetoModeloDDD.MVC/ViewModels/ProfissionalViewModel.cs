@@ -33,7 +33,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string Senha { get; set; }
-
+        
         [Required(ErrorMessage = "Preencha o campo CPF")]
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]

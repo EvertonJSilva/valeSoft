@@ -168,6 +168,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PacientesController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -280,11 +281,14 @@
     <Content Include="Content\SiteB\js\jquery.backstretch.min.js" />
     <Content Include="Content\SiteB\js\jquery.dcjqaccordion.2.7.js" />
     <Content Include="Content\SiteB\js\jquery.js" />
+    <Content Include="Content\SiteB\js\jquery.maskedinput.js" />
+    <Content Include="Content\SiteB\js\jquery.maskedinput.min.js" />
     <Content Include="Content\SiteB\js\jquery.nicescroll.js" />
     <Content Include="Content\SiteB\js\jquery.scrollTo.min.js" />
     <Content Include="Content\SiteB\js\jquery.sparkline.js" />
     <Content Include="Content\SiteB\js\jquery.tagsinput.js" />
     <Content Include="Content\SiteB\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\SiteB\js\Mascaras.js" />
     <Content Include="Content\SiteB\js\morris-conf.js" />
     <Content Include="Content\SiteB\js\sparkline-chart.js" />
     <Content Include="Content\SiteB\js\tasks.js" />
@@ -442,6 +446,11 @@
     <Content Include="Views\Pacientes\Details.cshtml" />
     <Content Include="Views\Pacientes\Edit.cshtml" />
     <Content Include="Views\Pacientes\Index.cshtml" />
+    <Content Include="Views\Profissionais\Create.cshtml" />
+    <Content Include="Views\Profissionais\Delete.cshtml" />
+    <Content Include="Views\Profissionais\Details.cshtml" />
+    <Content Include="Views\Profissionais\Edit.cshtml" />
+    <Content Include="Views\Profissionais\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -191,3 +191,5 @@ C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\b
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.xml

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel>
+
+@{
+    ViewBag.Title = "Profissionais";
+}
+
+<h2>Profissionais</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table table-bordered table-striped table-condensed">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeProfissional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoProfissional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INSS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeProfissional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoProfissional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INSS)
+        </td>
+        <td>
+            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Profissionais", new { id = item.ProfissionalId })'"><i class="fa fa-check"></i></button>
+            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Profissionais", new { id = item.ProfissionalId })'"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Profissionais", new { id = item.ProfissionalId })'"><i class="fa fa-trash-o "></i></button>
+
+         </td>
+    </tr>
+}
+
+</table>

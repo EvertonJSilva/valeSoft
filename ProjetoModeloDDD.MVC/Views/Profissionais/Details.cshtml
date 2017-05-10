@@ -1,0 +1,66 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProfissional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeProfissional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoProfissional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoProfissional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProfissionalId }) |
+    @Html.ActionLink("Voltar para lista", "Index")
+</p>
