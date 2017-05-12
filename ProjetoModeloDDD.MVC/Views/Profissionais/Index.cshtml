@@ -1,64 +1,75 @@
 ﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel>
-
+@using GridMvc.Html
 @{
     ViewBag.Title = "Profissionais";
 }
 
 <h2>Profissionais</h2>
+<hr />
+@using (Html.BeginForm("Index", "Profissionais", FormMethod.Get))
+{
+    <p>
+        Localizar por:
+        <div class="form-group">
 
-<p>
-    @Html.ActionLink("Criar Novo", "Create")
-</p>
-<table class="table table-bordered table-striped table-condensed">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeProfissional)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoProfissional)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Senha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cpf)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.INSS)
-        </th>
-        <th></th>
-    </tr>
+            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "CPF", Value = "1"},
+                                    new SelectListItem { Selected = false, Text = "Nome do profissional", Value = "2"},
+                                }, "Value", "text", @ViewBag.LocalizarPor)
+                     , new { @class = "form-control", @style = "float:left", })
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeProfissional)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoProfissional)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Senha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cpf)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.INSS)
-        </td>
-        <td>
-            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Profissionais", new { id = item.ProfissionalId })'"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Profissionais", new { id = item.ProfissionalId })'"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Profissionais", new { id = item.ProfissionalId })'"><i class="fa fa-trash-o "></i></button>
+            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            &nbsp;
+            <button type="submit" class="btn btn-theme">Pesquisar</button>
+            &nbsp;
+            @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
 
-         </td>
-    </tr>
+        </div>
+    </p>
 }
 
-</table>
+<div style="margin-right:50px">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(model => model.NomeProfissional).Titled("Nome");
+    columns.Add(model => model.TipoProfissional).Titled("Tipo profissional");
+    columns.Add(model => model.Cpf).Titled("CPF");
+    columns.Add(model => model.INSS).Titled("INSS");
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => SalvarCustonHelper(o.ProfissionalId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => EditarCustonHelper(o.ProfissionalId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => DeletarCustonHelper(o.ProfissionalId));
+
+}).WithPaging(5).Sortable(true)
+</div>
+
+@helper SalvarCustonHelper(int id)
+{
+    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Profissionais", new { id = id })'"><i class="fa fa-check"></i></button>
+}
+
+@helper EditarCustonHelper(int id)
+{
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Profissionais", new { id = id })'"><i class="fa fa-pencil"></i></button>
+}
+
+@helper DeletarCustonHelper(int id)
+{
+    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Profissionais", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+}
+
+
+
+

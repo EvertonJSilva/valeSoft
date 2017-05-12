@@ -52,9 +52,12 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         [ScaffoldColumn(false)]
         public DateTime DataCadastro { get; set; }
-                
+
+        [DisplayName("Liberação")]
         //referencia a liberacao
         public int LiberacaoId { get; set; }
+
+        [DisplayName("Profissional")]
         public int ProfissionalId { get; set; }
 
         //referencia ao login que lançou a consulta

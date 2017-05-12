@@ -39,9 +39,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
 
-        public ActionResult Reenvio()
+        public ActionResult Reenvio(string email)
         {
-            return View();
+            return  RedirectToAction("Index", "Home"); ;
         }
 
     }

@@ -6,6 +6,8 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Services
 {
     public interface IConsultaService : IServiceBase<Consulta>
     {
-    
+
+        IEnumerable<Consulta> ObterConsultasPorPaciente(Paciente paciente);
+        IEnumerable<Consulta> ObterConsultasPorProfissional(Profissional profissional);
     }
 }

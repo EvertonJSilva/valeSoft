@@ -1,4 +1,6 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.Domain.Interfaces.Repositories;
 using ProjetoModeloDDD.Domain.Interfaces.Services;
 
@@ -14,6 +16,14 @@ namespace ProjetoModeloDDD.Domain.Services
             _consultaRepository = consultaRepository;
         }
 
-        
+        public IEnumerable<Consulta> ObterConsultasPorPaciente(Paciente paciente)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Consulta> ObterConsultasPorProfissional(Profissional profissional)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

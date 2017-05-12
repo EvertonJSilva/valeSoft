@@ -22,9 +22,26 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Consulta
-        public ActionResult Index()
+        public ActionResult Index(string palavra, int? LocalizarPor)
         {
             var profissionalViewModel = Mapper.Map<IEnumerable<Profissional>, IEnumerable<ProfissionalViewModel>>(_profissionalApp.GetAll());
+
+            int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
+            if (!String.IsNullOrEmpty(palavra))
+            {
+                switch (idLocalizacao)
+                {
+                    case 1:
+                        profissionalViewModel = profissionalViewModel.Where(s => s.Cpf.Contains(palavra));
+                        break;
+                    case 2:
+                        profissionalViewModel = profissionalViewModel.Where(s => s.NomeProfissional.Contains(palavra));
+                        break;
+                }
+
+            }
+
             return View(profissionalViewModel);
         }
 

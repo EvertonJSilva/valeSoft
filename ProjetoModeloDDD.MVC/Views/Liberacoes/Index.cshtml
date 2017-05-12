@@ -1,53 +1,75 @@
 ﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel>
-
+@using GridMvc.Html
 @{
     ViewBag.Title = "Liberações";
 }
 
 <h2>Liberações</h2>
 
-<p>
-    @Html.ActionLink("Criar Novo", "Create")
-</p>
-<table class="table table-bordered table-striped table-condensed">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NumeroLiberacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuantidadeTotal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuantidadeRealizada)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Paciente.NomePaciente)
-        </th>
+<hr />
+@using (Html.BeginForm("Index", "Liberacoes", FormMethod.Get))
+{
+    <p>
+        Localizar por:
+        <div class="form-group">
 
-        <th></th>
-    </tr>
+            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "Liberação", Value = "1"},
+                                    new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
+                                }, "Value", "text", @ViewBag.LocalizarPor)
+                     , new { @class = "form-control", @style = "float:left", })
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumeroLiberacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuantidadeTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuantidadeRealizada)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Paciente.NomePaciente)
-        </td>
+            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            &nbsp;
+            <button type="submit" class="btn btn-theme">Pesquisar</button>
+            &nbsp;
+            @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
 
-        <td>
-            <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Liberacoes", new { id = item.LiberacaoId })'"><i class="fa fa-check"></i></button>
-            <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Liberacoes", new { id = item.LiberacaoId })'"><i class="fa fa-pencil"></i></button>
-            <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Liberacoes", new { id = item.LiberacaoId })'"><i class="fa fa-trash-o "></i></button>
-    </td>
-    </tr>
+        </div>
+    </p>
+}
+<div style="margin-right:50px">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(model => model.NumeroLiberacao).Titled("Número da liberação");
+    columns.Add(model => model.QuantidadeTotal).Titled("Quantidade liberada");
+    columns.Add(model => model.QuantidadeRealizada).Titled("Quantidade realizada");
+    columns.Add(model => model.Paciente.NomePaciente).Titled("Nome paciente");
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => SalvarCustonHelper(o.LiberacaoId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => EditarCustonHelper(o.LiberacaoId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => DeletarCustonHelper(o.LiberacaoId));
+
+}).WithPaging(5).Sortable(true)
+</div>
+
+@helper SalvarCustonHelper(int id)
+{
+    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Liberacoes", new { id = id })'"><i class="fa fa-check"></i></button>
 }
 
-</table>
+@helper EditarCustonHelper(int id)
+{
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Liberacoes", new { id = id })'"><i class="fa fa-pencil"></i></button>
+}
+
+@helper DeletarCustonHelper(int id)
+{
+    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Liberacoes", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+}
+
+
+
+

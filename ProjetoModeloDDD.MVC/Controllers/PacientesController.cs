@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace ProjetoModeloDDD.MVC.Controllers
 {
@@ -19,12 +20,29 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _pacienteApp = pacienteApp;
         }
 
-        // GET: Paciente
-        public ActionResult Index()
+       // GET: Paciente
+        public ActionResult Index(string palavra, int? LocalizarPor)
         {
             var pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
+            int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
+            if (!String.IsNullOrEmpty(palavra))
+            {
+                switch (idLocalizacao)
+                {
+                    case 1:
+                        pacienteViewModel = pacienteViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
+                        break;
+                    case 2:
+                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                        break;
+                }
+
+            }
+
             return View(pacienteViewModel);
         }
+
 
         // GET: Paciente/Details/5
         public ActionResult Details(int id)

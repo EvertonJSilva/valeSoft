@@ -11,7 +11,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             if(Session["Usuario"] == null)
             { 
-                return RedirectToAction("indexnovo","login");
+                return RedirectToAction("index","login");
             }
            return View(); 
         }

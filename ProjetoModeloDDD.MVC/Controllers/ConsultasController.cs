@@ -27,9 +27,25 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
         
         // GET: Consulta
-        public ActionResult Index()
+        public ActionResult Index(string palavra, int? LocalizarPor)
         {
             var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+
+            int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
+            if (!String.IsNullOrEmpty(palavra))
+            {
+                switch (idLocalizacao)
+                {
+                    case 2:
+                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.Contains(palavra));
+                        break;
+                    case 1:
+                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.NumeroLiberacao.Contains(palavra));
+                        break;
+                }
+
+            }
             return View(consultaViewModel);
         }
 
