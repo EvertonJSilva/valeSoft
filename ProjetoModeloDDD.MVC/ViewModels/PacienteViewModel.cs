@@ -9,6 +9,10 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 {
     public class PacienteViewModel
     {
+
+        public string palavra { get; set; }
+        public int localizarPor { get; set; }
+
         [Key]
         public int PacienteId { get; set; }
 

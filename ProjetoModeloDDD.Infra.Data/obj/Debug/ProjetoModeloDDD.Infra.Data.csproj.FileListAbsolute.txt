@@ -50,6 +50,9 @@ C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\RdlCompile.cache
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\RdlCompile.compiled
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe.config
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.rsp
@@ -87,6 +90,5 @@ D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Projeto
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.xml
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb

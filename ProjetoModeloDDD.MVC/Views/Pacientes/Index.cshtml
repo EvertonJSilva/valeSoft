@@ -21,16 +21,22 @@
                                     new SelectListItem { Selected = true, Text = "Número da carteira", Value = "1"},
                                     new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
                                 }, "Value", "text", @ViewBag.LocalizarPor)
-                     , new { @class = "form-control", @style = "float:left", })
+        , new { @class = "form-control", @style = "float:left", })
 
-            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            @Html.TextBox("palavra", @ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
             &nbsp;
             <button type="submit" class="btn btn-theme">Pesquisar</button>
+       
             &nbsp;
             @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
+          
+            &nbsp;
+            @Html.ActionLink("Imprimir", "Report", new { palavra = ViewBag.palavra } , new { @class = "btn btn-theme", @style = "background-color:#358a2f" }) 
 
         </div>
     </p>
+
+
 }
 
 <div style="margin-right:50px">

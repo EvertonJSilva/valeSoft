@@ -117,8 +117,6 @@ C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\o
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\RdlCompile.cache
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\RdlCompile.compiled
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.Net4.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe.config
@@ -156,6 +154,9 @@ D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\GridMvc.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.Common.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.WebForms.DLL
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.Web.Infrastructure.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.dll
@@ -166,6 +167,7 @@ D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ReportViewerForMvc.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.dll
@@ -198,3 +200,8 @@ D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.pdb
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\msvcr120.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\msvcr120.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.SqlServer.Types.dll
