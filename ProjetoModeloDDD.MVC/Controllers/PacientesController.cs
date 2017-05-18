@@ -43,6 +43,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return View(pacienteViewModel);
         }
 
+        //[HttpPost]
         public ActionResult Report(string palavra, int? LocalizarPor)
         {
             var pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
@@ -125,6 +126,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var pacienteDomain = Mapper.Map<PacienteViewModel, Paciente>(paciente);
+                
                 _pacienteApp.Update(pacienteDomain);
 
                 return RedirectToAction("Index");

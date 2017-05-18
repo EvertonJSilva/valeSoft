@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TelefonePaciente1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TelefonePaciente1, new { htmlAttributes = new { @class = "form-control" , @type = "tel" } })
+                @Html.EditorFor(model => model.TelefonePaciente1, new { htmlAttributes = new { @class = "form-control" , @type = "text", @id= "telefone1" } })
                 @Html.ValidationMessageFor(model => model.TelefonePaciente1, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TelefonePaciente2, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TelefonePaciente2, new { htmlAttributes = new { @class = "form-control" , @type = "tel" } })
+                @Html.EditorFor(model => model.TelefonePaciente2, new { htmlAttributes = new { @class = "form-control" , @type = "text" , @id = "telefone2"} })
                 @Html.ValidationMessageFor(model => model.TelefonePaciente2, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -72,5 +72,8 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $("#telefone1").mask("(99) 99999-9999");
+        $("#telefone2").mask("(99) 99999-9999");
+    </script>
 }

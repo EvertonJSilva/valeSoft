@@ -211,6 +211,7 @@
     <Compile Include="ViewModels\FolhaDetalheViewModel.cs" />
     <Compile Include="ViewModels\FolhaViewModel.cs" />
     <Compile Include="ViewModels\LiberacaoViewModel.cs" />
+    <Compile Include="ViewModels\LocalizarViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PacienteViewModel.cs" />
     <Compile Include="ViewModels\ProdutoViewModel.cs" />

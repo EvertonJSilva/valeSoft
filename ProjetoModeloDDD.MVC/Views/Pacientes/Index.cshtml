@@ -1,8 +1,6 @@
 ﻿@using GridMvc.Html
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-
-@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.PacienteViewModel>
+@model Tuple<IEnumerable<ProjetoModeloDDD.MVC.ViewModels.PacienteViewModel>, ProjetoModeloDDD.MVC.ViewModels.LocalizarViewModel>
 
 @{
     ViewBag.Title = "Pacientes";
@@ -21,23 +19,28 @@
                                     new SelectListItem { Selected = true, Text = "Número da carteira", Value = "1"},
                                     new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
                                 }, "Value", "text", @ViewBag.LocalizarPor)
-        , new { @class = "form-control", @style = "float:left", })
+                 , new { @class = "form-control", @style = "float:left", })
 
-            @Html.TextBox("palavra", @ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            @Html.EditorFor(tuple => tuple.Item2.palavra, new { htmlAttributes = new { @class = "form-control" } })
+
+
+            @*@Html.TextBox("palavra", @ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })*@
+           
             &nbsp;
+
             <button type="submit" class="btn btn-theme">Pesquisar</button>
        
             &nbsp;
             @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
           
             &nbsp;
-            @Html.ActionLink("Imprimir", "Report", new { palavra = ViewBag.palavra } , new { @class = "btn btn-theme", @style = "background-color:#358a2f" }) 
+            @Html.ActionLink("Imprimir", "Report", new { palavra = ViewBag.palavra }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post }) 
 
         </div>
     </p>
-
-
 }
+
+
 
 <div style="margin-right:50px">
     @Html.Grid(Model).Columns(columns =>
@@ -102,4 +105,11 @@
                     <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Pacientes", new { id = item.PacienteId })'"><i class="fa fa-check"></i></button>
                     <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Pacientes", new { id = item.PacienteId })'"><i class="fa fa-pencil"></i></button>
                     <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Pacientes", new { id = item.PacienteId })'"><i class="fa fa-trash-o "></i></button>*@
-
+<script type="text/javascript">
+$(function() {
+    $('dosubmit').click(function(e) {
+        e.preventDefault();
+        $(this).parents('form').first().submit();
+    });
+});
+</script>
