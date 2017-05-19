@@ -26,6 +26,8 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
         public DbSet<ValorConsulta> ValorConsultas { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
 
+        public DbSet<Producao> Producoes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -52,6 +54,7 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
             modelBuilder.Configurations.Add(new TaxaDoacaoConfiguration());
             modelBuilder.Configurations.Add(new ValorConsultaConfiguration());
             modelBuilder.Configurations.Add(new ConsultaConfiguration());
+            modelBuilder.Configurations.Add(new ProducaoConfiguration());
 
 
         }

@@ -1,0 +1,47 @@
+﻿@using GridMvc.Html
+
+@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ProducaoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomePaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarteirinhaPaciente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sessao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorConvenio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomePaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarteirinhaPaciente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sessao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorConvenio)
+        </td>
+        
+    </tr>
+}
+
+</table>

@@ -11,10 +11,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjetoModeloDDD.Application</RootNamespace>
     <AssemblyName>ProjetoModeloDDD.Application</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,7 @@
     <Compile Include="Interface\IFolhaDetalheAppService.cs" />
     <Compile Include="Interface\ILiberacaoAppService.cs" />
     <Compile Include="Interface\IPacienteAppService.cs" />
+    <Compile Include="Interface\IProducaoAppService.cs" />
     <Compile Include="Interface\IProdutoAppService.cs" />
     <Compile Include="Interface\IProfissionalAppService.cs" />
     <Compile Include="Interface\ITaxaDoacaoAppService.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Interface\IValorConsultaAppService.cs" />
     <Compile Include="PacienteAppService.cs" />
     <Compile Include="LiberacaoAppService.cs" />
+    <Compile Include="ProducaoAppService.cs" />
     <Compile Include="ProdutoAppService.cs" />
     <Compile Include="ProfissionalAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

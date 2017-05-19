@@ -11,10 +11,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProjetoModeloDDD.Infra.Data</RootNamespace>
     <AssemblyName>ProjetoModeloDDD.Infra.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -62,6 +63,7 @@
     <Compile Include="EntityConfig\FolhaDetalheConfiguration.cs" />
     <Compile Include="EntityConfig\LiberacaoConfiguration.cs" />
     <Compile Include="EntityConfig\PacienteConfiguration.cs" />
+    <Compile Include="EntityConfig\ProducaoConfiguration.cs" />
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
     <Compile Include="EntityConfig\ProfissionalConfiguration.cs" />
     <Compile Include="EntityConfig\TaxaDoacaoConfiguration.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Repositories\FolhaRepository.cs" />
     <Compile Include="Repositories\LiberacaoRepository.cs" />
     <Compile Include="Repositories\PacienteRepository.cs" />
+    <Compile Include="Repositories\ProducaoRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
     <Compile Include="Repositories\ProfissionalRepository.cs" />
     <Compile Include="Repositories\RespositoryBase.cs" />
@@ -88,12 +91,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\Pacientes.rdlc" />
+    <EmbeddedResource Include="Reports\Producao.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ProjetoModeloDDD.Domain.Entities.Producao.datasource" />
     <None Include="ProjetoModeloDDD.Infra.Data.Contexto.ProjetoModeloContext2.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
