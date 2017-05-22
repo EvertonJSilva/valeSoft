@@ -11,7 +11,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 {
     public class ProducaoController : Controller
     {
-
+         
         private readonly IProducaoAppService _producaoApp;
 
         public ProducaoController(IProducaoAppService producaoApp)

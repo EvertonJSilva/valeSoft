@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string CarteirinhaPaciente { get; set; }
         [DisplayName("Sessão")]
         public string Sessao { get; set; }
-        [DisplayName("ValorConvenio")]
+        [DisplayName("ValorConvenio")] 
         public decimal ValorConvenio { get; set; }
 
 
