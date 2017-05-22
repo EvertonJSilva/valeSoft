@@ -2,7 +2,9 @@
 using ProjetoModeloDDD.Application.Interface;
 using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.MVC.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace ProjetoModeloDDD.MVC.Controllers
@@ -46,15 +48,65 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
         // GET: Producao
-        public ActionResult Index()
+        public ActionResult Index(string palavra, int? LocalizarPor)
         {
 
             var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
-           
+
+            int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
+            if(!String.IsNullOrEmpty(palavra))
+            {
+                switch (idLocalizacao)
+                {
+                    case 2:
+                        producaoViewModel = producaoViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                        break;
+                    case 1:
+                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
+                        break;     
+                }
+            }
 
             return View(producaoViewModel);
 
         }
+
+        public ActionResult Report(string palavra, int? LocalizarPor)
+        {
+            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+
+            int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
+            if (!String.IsNullOrEmpty(palavra))
+            {
+                switch (idLocalizacao)
+                {
+                    case 2:
+                        producaoViewModel = producaoViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                        break;
+                    case 1:
+                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
+                        break;
+                }
+            }
+
+            var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
+            viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+            viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Producao.rdlc";
+
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", producaoViewModel));
+
+            viewer.SizeToReportContent = true;
+            viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
+            viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
+
+            ViewBag.ReportViewer = viewer;
+
+            return View();
+        }
+
+
 
 
 

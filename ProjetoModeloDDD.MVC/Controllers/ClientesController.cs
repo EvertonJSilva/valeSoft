@@ -16,6 +16,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _clienteApp = clienteApp;
         }
 
+
+
         // GET: Clientes
         public ActionResult Index()
         {

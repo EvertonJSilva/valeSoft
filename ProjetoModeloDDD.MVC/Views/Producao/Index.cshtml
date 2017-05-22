@@ -3,45 +3,46 @@
 @model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ProducaoViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Produçao";
 }
 
-<h2>Index</h2>
+<h2>Produção</h2>
+<hr/>
 
+@using (Html.BeginForm("Index", "Producao", FormMethod.Get))
+{
+    <p>
+        Localizar por:
+        <div class="form-group">
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomePaciente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CarteirinhaPaciente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sessao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ValorConvenio)
-        </th>
-        <th></th>
-    </tr>
+            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "Carteirinha", Value = "1"},
+                                    new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
+                                }, "Value", "text", @ViewBag.LocalizarPor)
+                     , new { @class = "form-control", @style = "float:left", })
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomePaciente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CarteirinhaPaciente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sessao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ValorConvenio)
-        </td>
-        
-    </tr>
+            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            &nbsp;
+            <button type="submit" class="btn btn-theme">Pesquisar</button>
+            &nbsp;
+            @Html.ActionLink("Imprimir", "Report", new { palavra = ViewBag.palavra }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post })
+
+            
+
+        </div>
+    </p>
 }
 
-</table>
+<div style="margin-right:50px">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(model => model.NomePaciente).Titled("Nome Paciente");
+    columns.Add(model => model.CarteirinhaPaciente).Titled("Carteirinha");
+    columns.Add(model => model.Sessao).Titled("Sessao");
+    columns.Add(model => model.ValorConvenio).Titled("Valor");
+    
+
+}).WithPaging(5).Sortable(true)
+</div>
+

@@ -68,7 +68,6 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox32</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -290,8 +289,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Producao</DataSetName>
-        <Top>0.97578cm</Top>
-        <Left>1.0166cm</Left>
+        <Top>0.81703cm</Top>
+        <Left>1.11228cm</Left>
         <Height>1.2cm</Height>
         <Width>17.44896cm</Width>
         <Style>
@@ -576,66 +575,6 @@
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox38">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Today();</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox38</rd:DefaultName>
-              <Top>1.32674cm</Top>
-              <Left>13.47202cm</Left>
-              <Height>0.52944cm</Height>
-              <Width>1.33583cm</Width>
-              <ZIndex>6</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox39">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!OverallPageNumber</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox39</rd:DefaultName>
-              <Top>1.32674cm</Top>
-              <Left>16.20132cm</Left>
-              <Height>0.52944cm</Height>
-              <Width>1.28292cm</Width>
-              <ZIndex>7</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox20">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -674,7 +613,7 @@
               <Left>12.48424cm</Left>
               <Height>0.83812cm</Height>
               <Width>2.5cm</Width>
-              <ZIndex>8</ZIndex>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -754,7 +693,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
           <Top>3.18354cm</Top>
-          <Left>1.0166cm</Left>
+          <Left>1.01063cm</Left>
           <Height>0.6cm</Height>
           <Width>4.45792cm</Width>
           <ZIndex>2</ZIndex>

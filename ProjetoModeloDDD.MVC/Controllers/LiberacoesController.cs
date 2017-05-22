@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private readonly ILiberacaoAppService _liberacaoApp;
         private readonly IPacienteAppService _pacienteApp;
 
-
+            
         public LiberacoesController(ILiberacaoAppService liberacaoApp, IPacienteAppService pacienteApp)
         {
             _liberacaoApp = liberacaoApp;

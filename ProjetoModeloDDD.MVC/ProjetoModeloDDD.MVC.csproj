@@ -512,6 +512,7 @@
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Pacientes\Report.cshtml" />
     <Content Include="Views\Producao\Index.cshtml" />
+    <Content Include="Views\Producao\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
