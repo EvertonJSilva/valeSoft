@@ -14,19 +14,11 @@
         Localizar por:
         <div class="form-group">
 
-            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
-                                {
-                                    new SelectListItem { Selected = true, Text = "Número da carteira", Value = "1"},
-                                    new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
-                                }, "Value", "text", @ViewBag.LocalizarPor)
+            @Html.DropDownList("LocalizarPor", new SelectList(Model.Item2.localizarPor)
                  , new { @class = "form-control", @style = "float:left", })
 
-            @Html.EditorFor(tuple => tuple.Item2.palavra, new { htmlAttributes = new { @class = "form-control" } })
-
-
-            @*@Html.TextBox("palavra", @ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })*@
-           
-            &nbsp;
+            @Html.TextBox("palavra", @Model.Item2.palavra as string, new { @class = "form-control", @style = "float:left" })
+             &nbsp;
 
             <button type="submit" class="btn btn-theme">Pesquisar</button>
        
@@ -34,7 +26,7 @@
             @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
           
             &nbsp;
-            @Html.ActionLink("Imprimir", "Report", new { palavra = ViewBag.palavra }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post }) 
+            @Html.ActionLink("Imprimir", "Report", new { palavra =  Model.Item2.palavra, localicarPor = Model.Item2.localizarPor }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post }) 
 
         </div>
     </p>
@@ -43,7 +35,7 @@
 
 
 <div style="margin-right:50px">
-    @Html.Grid(Model).Columns(columns =>
+    @Html.Grid(Model.Item1).Columns(columns =>
 {
     columns.Add(model => model.NomePaciente).Titled("Nome");
     columns.Add(model => model.TelefonePaciente1).Titled("Telefone 1");

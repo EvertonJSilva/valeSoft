@@ -1,0 +1,40 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.TipoProfissionalViewModel
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Deletar</h2>
+
+<h3>Deseja realmente excluir esse registro?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nivelAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nivelAcesso)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

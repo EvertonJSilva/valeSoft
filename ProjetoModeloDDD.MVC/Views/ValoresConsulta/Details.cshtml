@@ -1,0 +1,50 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.ValorConsultaViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ValorConsultaViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sigla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sigla)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Classificacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classificacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sessao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sessao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ValorConsultaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

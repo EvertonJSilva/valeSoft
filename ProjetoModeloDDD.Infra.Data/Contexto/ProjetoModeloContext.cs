@@ -25,8 +25,9 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
         public DbSet<TaxaDoacao> TaxaDoacoes { get; set; }
         public DbSet<ValorConsulta> ValorConsultas { get; set; }
         public DbSet<Paciente> Pacientes { get; set; }
-
         public DbSet<Producao> Producoes { get; set; }
+        public DbSet<TipoProfissional> TiposProfissional { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -55,6 +56,7 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
             modelBuilder.Configurations.Add(new ValorConsultaConfiguration());
             modelBuilder.Configurations.Add(new ConsultaConfiguration());
             modelBuilder.Configurations.Add(new ProducaoConfiguration());
+            modelBuilder.Configurations.Add(new TipoProfissionalConfiguration());
 
 
         }

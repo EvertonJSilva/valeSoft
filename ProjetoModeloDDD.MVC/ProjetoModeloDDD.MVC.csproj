@@ -202,6 +202,9 @@
     <Compile Include="Controllers\ProducaoController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Controllers\ProfissionaisController.cs" />
+    <Compile Include="Controllers\TaxasDoacaoController.cs" />
+    <Compile Include="Controllers\TiposProfissionalController.cs" />
+    <Compile Include="Controllers\ValoresConsultaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +222,7 @@
     <Compile Include="ViewModels\ProdutoViewModel.cs" />
     <Compile Include="ViewModels\ProfissionalViewModel.cs" />
     <Compile Include="ViewModels\TaxaDoacaoViewModel.cs" />
+    <Compile Include="ViewModels\TipoProfissionalViewModel.cs" />
     <Compile Include="ViewModels\ValorConsultaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -513,6 +517,21 @@
     <Content Include="Views\Pacientes\Report.cshtml" />
     <Content Include="Views\Producao\Index.cshtml" />
     <Content Include="Views\Producao\Report.cshtml" />
+    <Content Include="Views\TiposProfissional\Index.cshtml" />
+    <Content Include="Views\TiposProfissional\Create.cshtml" />
+    <Content Include="Views\TiposProfissional\Delete.cshtml" />
+    <Content Include="Views\TiposProfissional\Details.cshtml" />
+    <Content Include="Views\TiposProfissional\Edit.cshtml" />
+    <Content Include="Views\ValoresConsulta\Index.cshtml" />
+    <Content Include="Views\TaxasDoacao\Create.cshtml" />
+    <Content Include="Views\ValoresConsulta\Create.cshtml" />
+    <Content Include="Views\TaxasDoacao\Index.cshtml" />
+    <Content Include="Views\TaxasDoacao\Delete.cshtml" />
+    <Content Include="Views\TaxasDoacao\Details.cshtml" />
+    <Content Include="Views\TaxasDoacao\Edit.cshtml" />
+    <Content Include="Views\ValoresConsulta\Delete.cshtml" />
+    <Content Include="Views\ValoresConsulta\Details.cshtml" />
+    <Content Include="Views\ValoresConsulta\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

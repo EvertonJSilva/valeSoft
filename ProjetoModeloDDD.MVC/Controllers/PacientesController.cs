@@ -21,43 +21,46 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
        // GET: Paciente
-        public ActionResult Index(string palavra, int? LocalizarPor)
+        public ActionResult Index(LocalizarViewModel localizar)
         {
             var pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
-            int idLocalizacao = LocalizarPor.GetValueOrDefault();
-
-            if (!String.IsNullOrEmpty(palavra))
+            
+            if (!String.IsNullOrEmpty(localizar.palavra))
             {
-                switch (idLocalizacao)
+                switch (localizar.localizarPor[0])
                 {
-                    case 1:
-                        pacienteViewModel = pacienteViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
+                    case "Carteira":
+                        pacienteViewModel = pacienteViewModel.Where(s => s.CarteirinhaPaciente.Contains(localizar.palavra));
                         break;
-                    case 2:
-                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                    case "Nome":
+                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente.Contains(localizar.palavra));
                         break;
                 }
 
             }
 
-            return View(pacienteViewModel);
+            LocalizarViewModel localizarViewModel = new LocalizarViewModel();
+            localizarViewModel.localizarPor = new List<string>(new string[] { "Nome","Carteira" });
+
+            var tuple = new Tuple<IEnumerable<PacienteViewModel>, LocalizarViewModel>(pacienteViewModel, localizarViewModel);
+
+            return View(tuple);
         }
 
         //[HttpPost]
-        public ActionResult Report(string palavra, int? LocalizarPor)
+        public ActionResult Report(LocalizarViewModel localizar)
         {
             var pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
-            int idLocalizacao = LocalizarPor.GetValueOrDefault();
             
-            if (!String.IsNullOrEmpty(palavra))
+            if (!String.IsNullOrEmpty(localizar.palavra))
             {
-                switch (idLocalizacao)
+                switch (localizar.localizarPor[0])
                 {
-                    case 1:
-                        pacienteViewModel = pacienteViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
+                    case "Carteira":
+                        pacienteViewModel = pacienteViewModel.Where(s => s.CarteirinhaPaciente.Contains(localizar.palavra));
                         break;
-                    case 2:
-                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                    case "Nome":
+                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente.Contains(localizar.palavra));
                         break;
                 }
 

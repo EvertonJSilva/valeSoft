@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.TaxaDoacaoViewModel>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "TaxaDoacao";
+}
+
+<h2>Taxas de doação</h2>
+<hr />
+@using (Html.BeginForm("Index", "TaxasDoacao", FormMethod.Get))
+{
+    <p>
+        Localizar por:
+        <div class="form-group">
+
+            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "id", Value = "1"},
+                                    new SelectListItem { Selected = false, Text = "Profissional", Value = "2"},
+                                }, "Value", "text", @ViewBag.LocalizarPor)
+                     , new { @class = "form-control", @style = "float:left", })
+
+            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            &nbsp;
+            <button type="submit" class="btn btn-theme">Pesquisar</button>
+            &nbsp;
+            @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
+
+        </div>
+    </p>
+}
+
+<div style="margin-right:50px">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(model => model.TaxaDoacaoId).Titled("Código");
+    columns.Add(model => model.TipoProfissional).Titled("Profissional");
+    columns.Add(model => model.Valor).Titled("Valor");
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => SalvarCustonHelper(o.TaxaDoacaoId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => EditarCustonHelper(o.TaxaDoacaoId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => DeletarCustonHelper(o.TaxaDoacaoId));
+
+}).WithPaging(5).Sortable(true)
+</div>
+
+@helper SalvarCustonHelper(int id)
+{
+    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "TaxasDoacao", new { id = id })'"><i class="fa fa-check"></i></button>
+}
+
+@helper EditarCustonHelper(int id)
+{
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "ValoresConsulta", new { id = id })'"><i class="fa fa-pencil"></i></button>
+}
+
+@helper DeletarCustonHelper(int id)
+{
+    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "ValoresConsulta", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+}
+
+
+
+

@@ -1,89 +1,89 @@
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.Net4.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe.config
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.rsp
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csi.exe
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csi.rsp
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.AppContext.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe.config
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.rsp
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\msvcr120.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\msvcr120.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Views\Login\IndexNovo.cshtml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll.config
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\GridMvc.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.Common.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.WebForms.DLL
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.SqlServer.Types.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Common.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Mvc.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ReportViewerForMvc.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Razor.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\WebActivatorEx.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\WebGrease.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Common.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Mvc.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Razor.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.Net4.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csi.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csi.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.AppContext.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Collections.Immutable.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.IO.FileSystem.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\System.Reflection.Metadata.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\msvcr120.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\msvcr120.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Views\Login\IndexNovo.cshtml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\GridMvc.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.Common.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.SqlServer.Types.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.Web.Infrastructure.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Common.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Mvc.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ReportViewerForMvc.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Razor.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Deployment.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\WebActivatorEx.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\WebGrease.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Common.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Mvc.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Razor.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Deployment.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
