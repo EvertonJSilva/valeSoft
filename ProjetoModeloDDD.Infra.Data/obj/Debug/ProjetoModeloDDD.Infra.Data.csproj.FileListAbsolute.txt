@@ -50,6 +50,46 @@ C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 C:\Users\Tork\Documents\VisualStudio2017\Unipsico_Projeto\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csi.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csi.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.AppContext.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.IO.FileSystem.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\vbc.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\vbc.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\vbc.rsp
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\VBCSCompiler.exe
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.dll.config
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Domain.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Domain.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe.config
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.rsp
@@ -92,43 +132,3 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\RdlCompile.compiled
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.exe.config
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csc.rsp
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csi.exe
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\csi.rsp
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.AppContext.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.Collections.Immutable.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.IO.FileSystem.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\System.Reflection.Metadata.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\vbc.exe
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\vbc.exe.config
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\vbc.rsp
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\VBCSCompiler.exe
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\roslyn\VBCSCompiler.exe.config
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.dll.config
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Infra.Data.pdb
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Domain.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\ProjetoModeloDDD.Domain.pdb
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.xml
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
-D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb

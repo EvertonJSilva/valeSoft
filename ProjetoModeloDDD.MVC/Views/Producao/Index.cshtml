@@ -11,7 +11,7 @@
 
 @using (Html.BeginForm("Index", "Producao", FormMethod.Get))
 {
-    <p>
+    <p>    
         Localizar por:
         <div class="form-group">
 
@@ -26,7 +26,8 @@
             &nbsp;
             <button type="submit" class="btn btn-theme">Pesquisar</button>
             &nbsp;
-            @Html.ActionLink("Imprimir", "Report", new { palavra = ViewBag.palavra }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post })
+            @Html.ActionLink("Produção", "Report", new { palavra = ViewBag.palavra }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post })
+            @Html.ActionLink("Protocolo", "Protocolo", new { palavra = ViewBag.palavra }, new { @class = "btn btn-theme", @style = "background-color:#358a2f", @FormMethod.Post })
 
             
              

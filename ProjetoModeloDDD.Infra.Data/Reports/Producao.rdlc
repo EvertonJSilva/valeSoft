@@ -6,143 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.36224cm</Width>
+              <Width>4.777cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.36224cm</Width>
+              <Width>4.2919cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.65328cm</Width>
+              <Width>2.86572cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.36224cm</Width>
+              <Width>3.6569cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
-            <TablixRow>
-              <Height>0.6cm</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox30">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Nome Paciente</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox30</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox32">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Carteirinha Paciente</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox34">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Sessao</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox34</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox36">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Valor Convenio</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox36</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
             <TablixRow>
               <Height>0.6cm</Height>
               <TablixCells>
@@ -246,7 +122,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ValorConvenio.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -262,6 +140,83 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox40">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>TOTAL GERAL PREVISTO A RECEBER *Descontar coparticipação paga no ato*</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox43">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox43</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -281,18 +236,32 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Group1">
+                <GroupExpressions>
+                  <GroupExpression>=Math.Ceiling(RowNumber(Nothing) / 20)</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>Producao</DataSetName>
-        <Top>0.81703cm</Top>
-        <Left>1.11228cm</Left>
+        <Top>0.17639cm</Top>
+        <Left>0.92707cm</Left>
         <Height>1.2cm</Height>
-        <Width>17.74cm</Width>
+        <Width>15.59152cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -300,427 +269,30 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.96875in</Height>
-    <Style />
+    <Height>3.99653in</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Body>
-  <Width>8.42107in</Width>
+  <Width>6.80795in</Width>
   <Page>
     <PageHeader>
-      <Height>3.88938cm</Height>
+      <Height>7.35719cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Rectangle Name="Rectangle1">
-          <ReportItems>
-            <Textbox Name="Textbox18">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>FORMULÁRIO</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>9pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontFamily>Calibri</FontFamily>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>4.00398cm</Left>
-              <Height>0.83812cm</Height>
-              <Width>8.48025cm</Width>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <VerticalAlign>Middle</VerticalAlign>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox19">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>TÍTULO:</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>MODELO DE FATURA DE PRESTADORES</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox19</rd:DefaultName>
-              <Top>1.01451cm</Top>
-              <Left>3.96871cm</Left>
-              <Height>0.87694cm</Height>
-              <Width>8.51553cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox21">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>DATA:</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value />
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>9pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>1.01451cm</Top>
-              <Left>12.48424cm</Left>
-              <Height>0.87694cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox22">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>REVISÃO:</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>03</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>9pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox22</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>14.98424cm</Left>
-              <Height>0.80284cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox23">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>PÁGINA:</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value />
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>9pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox23</rd:DefaultName>
-              <Top>1.01451cm</Top>
-              <Left>14.98424cm</Left>
-              <Height>0.87694cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>4</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Image Name="Unimed2">
-              <Source>Embedded</Source>
-              <Value>Unimed</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.10583cm</Top>
-              <Height>1.75035cm</Height>
-              <Width>3.86287cm</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Image>
-            <Textbox Name="Textbox20">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>CÓDIGO:</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>7pt</FontSize>
-                        <FontWeight>Normal</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>FM-SUP-12.017</Value>
-                      <Style>
-                        <FontStyle>Normal</FontStyle>
-                        <FontSize>9pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <TextDecoration>None</TextDecoration>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox20</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>12.48424cm</Left>
-              <Height>0.83812cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>6</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <KeepTogether>true</KeepTogether>
-          <Top>0.24931cm</Top>
-          <Left>0.94605cm</Left>
-          <Height>1.91972cm</Height>
-          <Width>17.48424cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Rectangle>
-        <Textbox Name="Textbox24">
+        <Textbox Name="Textbox30">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Código da RDA</Value>
+                  <Value>Nome do Usuario</Value>
                   <Style>
-                    <FontStyle>Normal</FontStyle>
-                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <TextDecoration>None</TextDecoration>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>2.58354cm</Top>
-          <Left>1.0166cm</Left>
-          <Height>0.6cm</Height>
-          <Width>4.45792cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-            <BackgroundColor>LightGrey</BackgroundColor>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox25">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Nome da RDA (Razão Social)</Value>
-                  <Style>
-                    <FontStyle>Normal</FontStyle>
-                    <FontSize>9pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextDecoration>None</TextDecoration>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>3.18354cm</Top>
-          <Left>1.01063cm</Left>
-          <Height>0.6cm</Height>
-          <Width>4.45792cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-            <BackgroundColor>LightGrey</BackgroundColor>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox27">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>UNIPSICO - COOPERATIVA DE TRABALHO EM PSICOLOGIA DO VALE DO SINOS</Value>
-                  <Style>
-                    <FontStyle>Normal</FontStyle>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Normal</FontWeight>
-                    <TextDecoration>None</TextDecoration>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -729,12 +301,171 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>3.18354cm</Top>
-          <Left>5.46855cm</Left>
-          <Height>0.6cm</Height>
-          <Width>12.99701cm</Width>
+          <rd:DefaultName>Textbox30</rd:DefaultName>
+          <Top>4.85924cm</Top>
+          <Left>0.89532cm</Left>
+          <Height>2.08167cm</Height>
+          <Width>4.82135cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Silver</BackgroundColor>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox32">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Cód. do Usuário
+*O codigo do usuario deve contar 17 digitos.* </Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>4.85924cm</Top>
+          <Left>5.75195cm</Left>
+          <Height>2.08167cm</Height>
+          <Width>4.46732cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Silver</BackgroundColor>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox34">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Cód. TUSS</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox34</rd:DefaultName>
+          <Top>4.85924cm</Top>
+          <Left>10.21927cm</Left>
+          <Height>2.08167cm</Height>
+          <Width>2.78606cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Silver</BackgroundColor>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox36">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Valor
+*Descontar coparticipação paga no ato*</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox36</rd:DefaultName>
+          <Top>4.85924cm</Top>
+          <Left>13.04061cm</Left>
+          <Height>2.08167cm</Height>
+          <Width>3.47798cm</Width>
           <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Silver</BackgroundColor>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="Unimed2">
+          <Source>Embedded</Source>
+          <Value>Unimed</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.36781cm</Top>
+          <Left>0.92707cm</Left>
+          <Height>2.05549cm</Height>
+          <Width>3.86287cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox68">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Formulario</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox68</rd:DefaultName>
+          <Top>0.36781cm</Top>
+          <Left>4.78994cm</Left>
+          <Height>1.12917cm</Height>
+          <Width>6.01141cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -746,7 +477,305 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox26">
+        <Textbox Name="Textbox69">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Titulo
+</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>Modelo de Fatura de Prestadores</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox69</rd:DefaultName>
+          <Top>1.53225cm</Top>
+          <Left>4.82522cm</Left>
+          <Height>0.89104cm</Height>
+          <Width>5.97614cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox70">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Codigo:
+</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>FM-SUP-12.017</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox70</rd:DefaultName>
+          <Top>0.36781cm</Top>
+          <Left>10.83663cm</Left>
+          <Height>1.12917cm</Height>
+          <Width>3.0073cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox71">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Revisao:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve">
+</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>3</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox71</rd:DefaultName>
+          <Top>0.36781cm</Top>
+          <Left>13.90892cm</Left>
+          <Height>1.12917cm</Height>
+          <Width>2.60967cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox72">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Data:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve">
+</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox71</rd:DefaultName>
+          <Top>1.53225cm</Top>
+          <Left>10.83663cm</Left>
+          <Height>0.89104cm</Height>
+          <Width>3.037cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox73">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Pagina:</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve">
+</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>/</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!TotalPages</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve">
+</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox71</rd:DefaultName>
+          <Top>1.49697cm</Top>
+          <Left>13.90891cm</Left>
+          <Height>0.92632cm</Height>
+          <Width>2.60967cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox81">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Código RDA</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox81</rd:DefaultName>
+          <Top>2.96016cm</Top>
+          <Left>0.92707cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.03433cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Silver</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox82">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Nome do RDA(Razão Social)</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox81</rd:DefaultName>
+          <Top>3.59544cm</Top>
+          <Left>0.8918cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.0696cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>Silver</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox74">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -762,16 +791,52 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox26</rd:DefaultName>
-          <Top>2.58354cm</Top>
-          <Left>5.46855cm</Left>
-          <Height>0.6cm</Height>
-          <Width>12.99701cm</Width>
-          <ZIndex>4</ZIndex>
+          <rd:DefaultName>Textbox68</rd:DefaultName>
+          <Top>2.99544cm</Top>
+          <Left>5.9614cm</Left>
+          <Height>0.6049cm</Height>
+          <Width>10.55718cm</Width>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
             </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox75">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>UNIPSICO - COOPERATIVA DE TRABALHO EM PSICOLOGIA DO VALE DO SINOS</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox68</rd:DefaultName>
+          <Top>3.60034cm</Top>
+          <Left>5.9614cm</Left>
+          <Height>0.6049cm</Height>
+          <Width>10.55718cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -785,12 +850,74 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox85">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>INTERNO </Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve">
+</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>As informações contidas neste documento são proprietárias e para uso interno.
+</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>Propriedade da Unimed Vale do Sinos</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox85</rd:DefaultName>
+          <Top>0.32137cm</Top>
+          <Left>0.92707cm</Left>
+          <Height>1.49958cm</Height>
+          <Width>15.59152cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <TopMargin>0cm</TopMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

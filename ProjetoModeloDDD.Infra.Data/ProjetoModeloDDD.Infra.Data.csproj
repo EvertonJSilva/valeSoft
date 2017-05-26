@@ -92,6 +92,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\Protocolo.rdlc" />
     <EmbeddedResource Include="Reports\Pacientes.rdlc" />
     <EmbeddedResource Include="Reports\Producao.rdlc" />
   </ItemGroup>
