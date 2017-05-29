@@ -21,8 +21,10 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
             .IsRequired()
             .HasMaxLength(50);
 
-        Property(p => p.TipoProfissional)
-            .IsRequired();
+        HasRequired(p => p.TipoProfissional)
+           .WithMany()
+           .HasForeignKey(p => p.TipoProfissionalId);
+            
         }
     }
 }

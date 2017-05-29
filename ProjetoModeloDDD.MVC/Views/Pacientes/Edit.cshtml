@@ -44,7 +44,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CarteirinhaPaciente, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CarteirinhaPaciente, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CarteirinhaPaciente, new { htmlAttributes = new { @class = "form-control" } , @type = "text", @id = "carteira"})
                 @Html.ValidationMessageFor(model => model.CarteirinhaPaciente, "", new { @class = "text-danger", @type = "number" })
             </div>
         </div>
@@ -74,6 +74,7 @@
 @section Scripts {
     <script>
         $("#telefone1").mask("(99) 99999-9999");
+        $("#carteira").mask("9999.9999.999999.99-9");
         $("#telefone2").mask("(99) 99999-9999");
     </script>
 }

@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Autorizacao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Autorizacao, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                @Html.EditorFor(model => model.Autorizacao, new { htmlAttributes = new { @class = "form-control", @type = "text", @id = "autorizacao" } })
                 @Html.ValidationMessageFor(model => model.Autorizacao, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -47,46 +47,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ValorConsulta, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorConsulta, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "1", @step = "any" } })
-                @Html.ValidationMessageFor(model => model.ValorConsulta, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Convenio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Convenio", new SelectList(new List<SelectListItem>
-                                {
-                                    new SelectListItem { Selected = true, Text = "Unimed", Value = "1"},
-                                }, "Text", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
-                 @Html.ValidationMessageFor(model => model.Convenio, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ValorCopart, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorCopart, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
-                @Html.ValidationMessageFor(model => model.ValorCopart, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ValorConvenio, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorConvenio, new { htmlAttributes = new { @class = "form-control" , @type = "number" } })
-                @Html.ValidationMessageFor(model => model.ValorConvenio, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.TipoSessao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TipoSessao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("TipoSessao", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "Comparecimento", Value = "50000470"},
+                                    new SelectListItem { Selected = false, Text = "Não-Comparecimento", Value = "60000678"},
+                                    new SelectListItem { Selected = false, Text = "Psico-Social", Value = "80000509"}
+                                }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoSessao, "", new { @class = "text-danger" })
-            </div>
+              </div>
         </div>
 
         <div class="form-group">
@@ -105,6 +75,42 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Convenio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Convenio", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "Unimed", Value = "1"},
+                                }, "Text", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Convenio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValorConsulta, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorConsulta, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "1", @step = "any" } })
+                @Html.ValidationMessageFor(model => model.ValorConsulta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValorCopart, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorCopart, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                @Html.ValidationMessageFor(model => model.ValorCopart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ValorConvenio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorConvenio, new { htmlAttributes = new { @class = "form-control" , @type = "number" } })
+                @Html.ValidationMessageFor(model => model.ValorConvenio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -120,4 +126,7 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+            $("#autorizacao").mask("9999.9999.99-99999999");
+    </script>
 }

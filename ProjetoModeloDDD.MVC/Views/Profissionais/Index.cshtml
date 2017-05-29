@@ -33,7 +33,7 @@
     @Html.Grid(Model).Columns(columns =>
 {
     columns.Add(model => model.NomeProfissional).Titled("Nome");
-    columns.Add(model => model.TipoProfissional).Titled("Tipo profissional");
+    columns.Add(model => model.TipoProfissional.Descricao).Titled("Tipo profissional");
     columns.Add(model => model.Cpf).Titled("CPF");
     columns.Add(model => model.INSS).Titled("INSS");
     columns.Add()

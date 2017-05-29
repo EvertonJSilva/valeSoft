@@ -18,12 +18,11 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string NomeProfissional { get; set; }
 
-        [DisplayName("Tipo")]
-        [Required(ErrorMessage = "Preencha o campo Tipo")]
-        [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
-        [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
-        public string TipoProfissional { get; set; }
-        
+        [DisplayName("Profissional")]
+        public int TipoProfissionalId { get; set; }
+
+        public virtual TipoProfissionalViewModel TipoProfissional { get; set; }
+
         [Required(ErrorMessage = "Preencha o campo Login")]
         [MaxLength(250, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]

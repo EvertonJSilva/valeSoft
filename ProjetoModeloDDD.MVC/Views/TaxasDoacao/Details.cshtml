@@ -1,21 +1,21 @@
 ﻿@model ProjetoModeloDDD.MVC.ViewModels.TaxaDoacaoViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhe";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>TaxaDoacaoViewModel</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TipoProfissional)
+            @Html.DisplayNameFor(model => model.TipoProfissionalId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TipoProfissional)
+            @Html.DisplayFor(model => model.TipoProfissional.Descricao)
         </dd>
 
         <dt>
@@ -29,6 +29,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TaxaDoacaoId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.TaxaDoacaoId }) |
+    @Html.ActionLink("Voltar para lista", "Index")
 </p>

@@ -20,6 +20,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
         public string Descricao { get; set; }
 
+
+        [DisplayName("Nível de acesso")]
         [Required(ErrorMessage = "Preencha o campo nível de acesso")]
         public int nivelAcesso { get; set; }
     }

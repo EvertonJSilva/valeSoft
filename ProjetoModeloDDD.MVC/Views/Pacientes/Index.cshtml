@@ -41,7 +41,10 @@
     columns.Add(model => model.TelefonePaciente1).Titled("Telefone 1");
     columns.Add(model => model.TelefonePaciente2).Titled("Telefone 2");
     columns.Add(model => model.CarteirinhaPaciente).Titled("Carteirinha");
-    columns.Add(model => model.CopartPaciente).Titled("Cooparticipação?");
+    columns.Add().Titled("Cooparticipação?")
+        .Sanitized(false)
+        .Encoded(false)
+        .RenderValueAs(o => CooParticipacaoCustonHelper(o.CopartPaciente));
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
@@ -60,6 +63,16 @@
 
 }).WithPaging(5).Sortable(true)
 </div>
+
+@helper CooParticipacaoCustonHelper(Boolean tem)
+{
+if (tem) {
+     <span class="badge bg-success">Sim</span>
+    }
+else { 
+     <span class="badge bg-important">Não</span>
+}
+}
 
 @helper SalvarCustonHelper(int id)
 {

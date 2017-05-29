@@ -12,13 +12,15 @@ namespace ProjetoModeloDDD.MVC.Controllers
     public class ProfissionaisController : Controller
     {
         private readonly IProfissionalAppService _profissionalApp;
-        
+        private readonly ITipoProfissionalAppService _tipoProfissionalAppService;
 
-        public ProfissionaisController(IProfissionalAppService profissionalApp)
+
+
+        public ProfissionaisController(IProfissionalAppService profissionalApp, ITipoProfissionalAppService tipoProfissionalAppService)
         {
             _profissionalApp = profissionalApp;
- 
-        }
+            _tipoProfissionalAppService = tipoProfissionalAppService;
+    }
 
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
@@ -56,7 +58,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta/Create
         public ActionResult Create()
         {
-           
+            ViewBag.TipoProfissionalId = new SelectList(_tipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao");
+
             return View();
         }
 
@@ -72,8 +75,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 return RedirectToAction("Index");
             }
+            ViewBag.TipoProfissionalId = new SelectList(_tipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", profissional.TipoProfissionalId);
 
-            
             return View(profissional);
         }
 
@@ -82,6 +85,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var profissional = _profissionalApp.GetById(id);
             var profissionalViewModel = Mapper.Map<Profissional, ProfissionalViewModel>(profissional);
+
+            ViewBag.TipoProfissionalId = new SelectList(_tipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", profissionalViewModel.TipoProfissionalId);
 
             return View(profissionalViewModel);
         }
@@ -99,7 +104,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-              return View(profissional);
+            ViewBag.TipoProfissionalId = new SelectList(_tipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", profissional.TipoProfissionalId);
+
+            return View(profissional);
         }
 
         // GET: Consulta/Delete/5

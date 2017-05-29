@@ -8,6 +8,11 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         public TaxaDoacaoConfiguration()
         {
             HasKey(t => t.TaxaDoacaoId);
+
+            HasRequired(p => p.TipoProfissional)
+           .WithMany()
+           .HasForeignKey(p => p.TipoProfissionalId);
+
         }
     }
 }

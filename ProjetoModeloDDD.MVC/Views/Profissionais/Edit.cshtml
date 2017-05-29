@@ -26,18 +26,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoProfissional, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TipoProfissionalId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TipoProfissional", new SelectList(new List<SelectListItem>
-                                {
-                                    new SelectListItem { Selected = true, Text = "Administrativo", Value = "1"},
-                                    new SelectListItem { Selected = true, Text = "Psicólogo", Value = "2"},
-                                    new SelectListItem { Selected = true, Text = "Diretoria", Value = "3"},
-                                    new SelectListItem { Selected = true, Text = "Admin", Value = "4"},
-                                }, "Text", "Text"), new { @class = "form-control" })
-
-                @Html.ValidationMessageFor(model => model.TipoProfissional, "", new { @class = "text-danger" })
+                @Html.DropDownList("TipoProfissionalId", @ViewBag.TipoProfissionalId as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TipoProfissionalId, "", new { @class = "text-danger" })
             </div>
+
         </div>
 
         <div class="form-group">

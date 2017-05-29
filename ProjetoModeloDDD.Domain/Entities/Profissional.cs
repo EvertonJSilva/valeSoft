@@ -8,7 +8,8 @@ namespace ProjetoModeloDDD.Domain.Entities
     {
         public int ProfissionalId { get; set; }
         public string NomeProfissional { get; set; }
-        public string TipoProfissional { get; set; }
+        public int TipoProfissionalId { get; set; }
+        public virtual TipoProfissional TipoProfissional { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         public string Cpf { get; set; }

@@ -33,7 +33,7 @@
     @Html.Grid(Model).Columns(columns =>
 {
     columns.Add(model => model.TaxaDoacaoId).Titled("Código");
-    columns.Add(model => model.TipoProfissional).Titled("Profissional");
+    columns.Add(model => model.TipoProfissional.Descricao).Titled("Profissional");
     columns.Add(model => model.Valor).Titled("Valor");
     columns.Add()
         .Encoded(false)
@@ -61,12 +61,12 @@
 
 @helper EditarCustonHelper(int id)
 {
-    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "ValoresConsulta", new { id = id })'"><i class="fa fa-pencil"></i></button>
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "TaxasDoacao", new { id = id })'"><i class="fa fa-pencil"></i></button>
 }
 
 @helper DeletarCustonHelper(int id)
 {
-    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "ValoresConsulta", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "TaxasDoacao", new { id = id })'"><i class="fa fa-trash-o "></i></button>
 }
 
 

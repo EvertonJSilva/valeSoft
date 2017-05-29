@@ -29,8 +29,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         [DisplayName("Sessão")]
         [Required(ErrorMessage = "Preencha o campo Sessão")]
-        [MaxLength(6, ErrorMessage = "Máximo 6 caracteres")]
-        [MinLength(6, ErrorMessage = "Minimo 6 caracteres")]
+        [MaxLength(8, ErrorMessage = "Máximo 8 caracteres")]
+        [MinLength(8, ErrorMessage = "Minimo 8 caracteres")]
         public string Sessao { get; set; }
 
         [Key]

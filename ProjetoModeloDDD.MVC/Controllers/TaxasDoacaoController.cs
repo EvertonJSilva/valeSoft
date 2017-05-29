@@ -12,10 +12,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
     public class TaxasDoacaoController : Controller
     {
         private readonly ITaxaDoacaoAppService _TaxaDoacaoAppService;
+        private readonly ITipoProfissionalAppService _TipoProfissionalAppService;
 
-        public TaxasDoacaoController(ITaxaDoacaoAppService TaxaDoacaoAppService)
+
+        public TaxasDoacaoController(ITaxaDoacaoAppService TaxaDoacaoAppService, ITipoProfissionalAppService TipoProfissionalAppService)
         {
             _TaxaDoacaoAppService = TaxaDoacaoAppService;
+            _TipoProfissionalAppService = TipoProfissionalAppService;
         }
 
         // GET: Consulta
@@ -38,7 +41,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         taxaDoacaoViewModel = list;
                         break;
                     case 2:
-                        taxaDoacaoViewModel = taxaDoacaoViewModel.Where(s => s.TipoProfissional.Contains(palavra));
+                        taxaDoacaoViewModel = taxaDoacaoViewModel.Where(s => s.TipoProfissional.Descricao.Contains(palavra));
                         break;
                 }
 
@@ -53,12 +56,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var taxaDoacao = _TaxaDoacaoAppService.GetById(id);
             var taxaDoacaoViewModel = Mapper.Map<TaxaDoacao, TaxaDoacaoViewModel>(taxaDoacao);
 
+            ViewBag.TipoProfissionalId = new SelectList(_TipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", taxaDoacaoViewModel.TipoProfissionalId);
+
             return View(taxaDoacaoViewModel);
         }
 
         // GET: Consulta/Create
         public ActionResult Create()
         {
+            ViewBag.TipoProfissionalId = new SelectList(_TipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao");
+
             return View();
         }
 
@@ -75,6 +82,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.TipoProfissionalId = new SelectList(_TipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", taxaDoacao.TipoProfissionalId);
+
             return View(taxaDoacao);
         }
 
@@ -83,6 +92,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var taxaDoacao = _TaxaDoacaoAppService.GetById(id);
             var taxaDoacaoViewModel = Mapper.Map<TaxaDoacao, TaxaDoacaoViewModel>(taxaDoacao);
+
+            ViewBag.TipoProfissionalId = new SelectList(_TipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", taxaDoacaoViewModel.TipoProfissionalId);
 
             return View(taxaDoacaoViewModel);
         }

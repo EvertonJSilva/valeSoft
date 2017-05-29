@@ -18,7 +18,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [DisplayName("ValorConvenio")] 
         public decimal ValorConvenio { get; set; }
 
-
+        public bool revisado { get; set; }
 
 
     }

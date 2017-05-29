@@ -14,6 +14,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string CarteirinhaPaciente { get; set; }
         public string Sessao { get; set; }
         public decimal ValorConvenio { get; set; }
+        public bool revisado { get; set; }
 
 
 
