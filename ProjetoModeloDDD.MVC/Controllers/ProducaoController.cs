@@ -60,7 +60,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
                         break;
                     case 1:
                         producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
@@ -83,7 +83,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
                         break;
                     case 1:
                         producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
@@ -117,7 +117,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.NomePaciente.Contains(palavra));
+                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
                         break;
                     case 1:
                         producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));

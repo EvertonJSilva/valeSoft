@@ -7,6 +7,7 @@ namespace ProjetoModeloDDD.Domain.Entities
     {
         public int ConsultaId { get; set; }
         public string Autorizacao { get; set; }
+     //   public string Status { get; set; }
         public string FormaAutorizar { get; set; }
         public DateTime DataHoraConsulta { get; set; }
         public decimal ValorConsulta { get; set; }

@@ -10,16 +10,22 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
             HasKey(c => c.ConsultaId);
 
             Property(c => c.Autorizacao)
-                .HasMaxLength(70)
-                .IsRequired();
+                .HasMaxLength(70);
+            //.IsRequired();
 
             Property(c => c.FormaAutorizar)
-                .HasMaxLength(70)
-                .IsRequired();
+                .HasMaxLength(70);
+            //.IsRequired();
 
             Property(c => c.TipoSessao)
-                .HasMaxLength(20)
-                .IsRequired();
+                .HasMaxLength(20);
+            //.IsRequired();
+
+            //Property(c => c.DataHoraConsulta);
+            //Property(c => c.ValorConsulta);
+            //Property(c => c.ValorConvenio);
+            //Property(c => c.ValorCopart);
+            //Property(c => c.DataCadastro);
 
             HasRequired(c => c.Profissional)
              .WithMany()

@@ -83,8 +83,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao", consulta.LiberacaoId);
-            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
+            ViewBag.LiberacaoId = listaLiberacao(consulta);
+            ViewBag.ProfissionalId = listaProfissional(consulta);
 
             return View(consulta);
         }
@@ -95,9 +95,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var consulta = _consultaApp.GetById(id);
             var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
+            
+            ViewBag.LiberacaoId = listaLiberacao(consultaViewModel);
+            ViewBag.ProfissionalId = listaProfissional(consultaViewModel);
 
-            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao", consulta.LiberacaoId);
-            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consultaViewModel);
         }
 
@@ -106,17 +107,40 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ConsultaViewModel consulta)
         {
-            if (ModelState.IsValid)
+
+            ViewBag.LiberacaoId = listaLiberacao(consulta);
+            ViewBag.ProfissionalId = listaProfissional(consulta);
+
+            if (consulta.ProfissionalId == 1)
             {
+                ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
+
+                return View(consulta);
+            }
+
+            if (consulta.DataHoraConsulta.Year == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
+
+                return View(consulta);
+            }
+
+            if (consulta.DataHoraConsulta < DateTime.Now)
+            {
+                ModelState.AddModelError(string.Empty, @"Data da consulta deve maior que hoje.");
+
+                return View(consulta);
+            }
+
+
+            if (ModelState.IsValid)
+            {    
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
                 _consultaApp.Update(consultaDomain);
 
                 return RedirectToAction("Index");
             }
 
-
-            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao", consulta.LiberacaoId);
-            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional", consulta.ProfissionalId);
             return View(consulta);
         }
 
@@ -139,5 +163,34 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             return RedirectToAction("Index");
         }
+        
+        public IEnumerable<SelectListItem> listaProfissional(ConsultaViewModel consulta)
+        {
+            IEnumerable<SelectListItem> selectListProfissional =
+               from c in _profissionalApp.GetAll()
+               select new SelectListItem
+               {
+                   Selected = (c.ProfissionalId == consulta.ProfissionalId),
+                   Text = c.NomeProfissional,
+                   Value = c.ProfissionalId.ToString()
+               };
+
+            return selectListProfissional;
+        }
+
+        public IEnumerable<SelectListItem> listaLiberacao(ConsultaViewModel consulta)
+        {
+            IEnumerable<SelectListItem> selectListLiberacao =
+                from c in _liberacaoApp.GetAll()
+                select new SelectListItem
+                {
+                    Selected = (c.LiberacaoId == consulta.LiberacaoId),
+                    Text = c.NumeroLiberacao,
+                    Value = c.LiberacaoId.ToString()
+                };
+
+            return selectListLiberacao;
+        }
+
     }
 }

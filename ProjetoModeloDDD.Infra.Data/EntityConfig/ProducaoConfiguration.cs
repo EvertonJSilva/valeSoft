@@ -9,14 +9,14 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         public ProducaoConfiguration()
         {
             HasKey(p => p.ProducaoId);
-
-            Property(p => p.NomePaciente)
-               .IsRequired()
-               .HasMaxLength(150);
-
+       
             Property(p => p.CarteirinhaPaciente)
                .IsRequired()
                .HasMaxLength(150);
+
+            HasRequired(l => l.Consulta)
+             .WithMany()
+             .HasForeignKey(l => l.ConsultaId);
 
         }
 

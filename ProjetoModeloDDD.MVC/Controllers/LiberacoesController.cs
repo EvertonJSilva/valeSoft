@@ -14,12 +14,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
         private readonly ILiberacaoAppService _liberacaoApp;
         private readonly IPacienteAppService _pacienteApp;
+        private readonly IConsultaAppService _consultaApp;
 
-            
-        public LiberacoesController(ILiberacaoAppService liberacaoApp, IPacienteAppService pacienteApp)
+
+        public LiberacoesController(ILiberacaoAppService liberacaoApp, IPacienteAppService pacienteApp, IConsultaAppService consultaApp)
         {
             _liberacaoApp = liberacaoApp;
             _pacienteApp = pacienteApp;
+            _consultaApp = consultaApp;
         }
 
         // GET: Consulta
@@ -72,7 +74,23 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
+
                 _liberacaoApp.Add(liberacaoDomain);
+
+                for (int i = 0; i <= liberacaoDomain.QuantidadeTotal; i++)
+                {
+                    var consultaDomain = new Consulta();
+                    consultaDomain.LiberacaoId = liberacaoDomain.LiberacaoId;
+                    consultaDomain.Convenio = "Unimed";
+                    
+                    //não informado/
+                    consultaDomain.ProfissionalId = 1;
+                    
+                    _consultaApp.Add(consultaDomain);
+                }
+
+
+                
 
                 return RedirectToAction("Index");
             }

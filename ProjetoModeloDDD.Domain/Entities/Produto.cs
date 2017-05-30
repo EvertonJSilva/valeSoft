@@ -9,5 +9,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public bool Disponivel { get; set; }
         public int ClienteId { get; set; }
         public virtual Cliente Cliente { get; set; }
+
+
     }
+
 }

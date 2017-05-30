@@ -9,17 +9,13 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Key]
         public int ProducaoId { get; set; }
 
-        [DisplayName("Nome")]
-        public string NomePaciente { get; set; }
         [DisplayName("Carteirinha")]
         public string CarteirinhaPaciente { get; set; }
-        [DisplayName("Sessão")]
-        public string Sessao { get; set; }
-        [DisplayName("ValorConvenio")] 
-        public decimal ValorConvenio { get; set; }
 
         public bool revisado { get; set; }
 
+        public int ConsultaId { get; set; }
+        public virtual ConsultaViewModel Consulta { get; set; }
 
     }
 }
