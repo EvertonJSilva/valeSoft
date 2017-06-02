@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage = "Preencha o campo Nome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
-        public string Nome { get; set; }
+        public string Nome { get; set; }    
 
         [Required(ErrorMessage = "Preencha o campo Sobrenome")]
         [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]

@@ -92,6 +92,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\Demonstrativo.rdlc" />
     <EmbeddedResource Include="Reports\Protocolo.rdlc" />
     <EmbeddedResource Include="Reports\Pacientes.rdlc" />
     <EmbeddedResource Include="Reports\Producao.rdlc" />
@@ -101,7 +102,10 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ProjetoModeloDDD.Domain.Entities.Consulta.datasource" />
+    <None Include="ProjetoModeloDDD.Domain.Entities.Paciente.datasource" />
     <None Include="ProjetoModeloDDD.Domain.Entities.Producao.datasource" />
+    <None Include="ProjetoModeloDDD.Domain.Entities.Profissional.datasource" />
     <None Include="ProjetoModeloDDD.Infra.Data.Contexto.ProjetoModeloContext2.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

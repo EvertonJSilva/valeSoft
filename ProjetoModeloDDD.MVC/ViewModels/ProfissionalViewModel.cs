@@ -43,6 +43,13 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string INSS { get; set; }
 
+        [DisplayName("Data de Ingresso")]
+        [Required(ErrorMessage ="Preencha a data de ingresso")]
+        public DateTime DataIngresso { get; set; }
+        [DisplayName("Matricula")]
+        [Required(ErrorMessage ="Preencha a Matricula")]
+        public int Matricula { get; set; }
+
 
 
     }

@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.777cm</Width>
+              <Width>4.82135cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.2919cm</Width>
+              <Width>4.47085cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.86572cm</Width>
+              <Width>2.75078cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.6569cm</Width>
+              <Width>3.47239cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NomePaciente.Value</Value>
+                              <Value />
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -61,7 +61,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CarteirinhaPaciente.Value</Value>
+                              <Value />
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -80,25 +80,26 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Sessao">
+                    <Textbox Name="TipoSessao">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Sessao.Value</Value>
+                              <Value>=Fields!TipoSessao.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Sessao</rd:DefaultName>
+                      <rd:DefaultName>TipoSessao</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -238,7 +239,7 @@
             <TablixMember>
               <Group Name="Group1">
                 <GroupExpressions>
-                  <GroupExpression>=Math.Ceiling(RowNumber(Nothing) / 20)</GroupExpression>
+                  <GroupExpression>=Math.Ceiling(RowNumber(Nothing) / 25)</GroupExpression>
                 </GroupExpressions>
                 <PageBreak>
                   <BreakLocation>Between</BreakLocation>
@@ -257,11 +258,11 @@
         </TablixRowHierarchy>
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
-        <DataSetName>Producao</DataSetName>
+        <DataSetName>Consulta</DataSetName>
         <Top>0.17639cm</Top>
         <Left>0.92707cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.59152cm</Width>
+        <Width>15.51538cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -279,7 +280,7 @@
   <Width>6.80795in</Width>
   <Page>
     <PageHeader>
-      <Height>7.35719cm</Height>
+      <Height>7.39247cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -302,8 +303,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox30</rd:DefaultName>
-          <Top>4.85924cm</Top>
-          <Left>0.89532cm</Left>
+          <Top>5.27552cm</Top>
+          <Left>0.92707cm</Left>
           <Height>2.08167cm</Height>
           <Width>4.82135cm</Width>
           <Style>
@@ -337,7 +338,7 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <Top>4.85924cm</Top>
+          <Top>5.27552cm</Top>
           <Left>5.75195cm</Left>
           <Height>2.08167cm</Height>
           <Width>4.46732cm</Width>
@@ -373,8 +374,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox34</rd:DefaultName>
-          <Top>4.85924cm</Top>
-          <Left>10.21927cm</Left>
+          <Top>5.27552cm</Top>
+          <Left>10.18399cm</Left>
           <Height>2.08167cm</Height>
           <Width>2.78606cm</Width>
           <ZIndex>2</ZIndex>
@@ -410,8 +411,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox36</rd:DefaultName>
-          <Top>4.85924cm</Top>
-          <Left>13.04061cm</Left>
+          <Top>5.27552cm</Top>
+          <Left>12.96447cm</Left>
           <Height>2.08167cm</Height>
           <Width>3.47798cm</Width>
           <ZIndex>3</ZIndex>
@@ -431,7 +432,7 @@
           <Source>Embedded</Source>
           <Value>Unimed</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.36781cm</Top>
+          <Top>0.3678cm</Top>
           <Left>0.92707cm</Left>
           <Height>2.05549cm</Height>
           <Width>3.86287cm</Width>
@@ -462,9 +463,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox68</rd:DefaultName>
           <Top>0.36781cm</Top>
-          <Left>4.78994cm</Left>
+          <Left>4.78995cm</Left>
           <Height>1.12917cm</Height>
-          <Width>6.01141cm</Width>
+          <Width>5.97613cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -502,7 +503,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox69</rd:DefaultName>
           <Top>1.53225cm</Top>
-          <Left>4.82522cm</Left>
+          <Left>4.78994cm</Left>
           <Height>0.89104cm</Height>
           <Width>5.97614cm</Width>
           <ZIndex>6</ZIndex>
@@ -541,9 +542,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox70</rd:DefaultName>
           <Top>0.36781cm</Top>
-          <Left>10.83663cm</Left>
+          <Left>10.79578cm</Left>
           <Height>1.12917cm</Height>
-          <Width>3.0073cm</Width>
+          <Width>3.037cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -587,7 +588,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox71</rd:DefaultName>
           <Top>0.36781cm</Top>
-          <Left>13.90892cm</Left>
+          <Left>13.83278cm</Left>
           <Height>1.12917cm</Height>
           <Width>2.60967cm</Width>
           <ZIndex>8</ZIndex>
@@ -638,8 +639,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox71</rd:DefaultName>
-          <Top>1.53225cm</Top>
-          <Left>10.83663cm</Left>
+          <Top>1.53226cm</Top>
+          <Left>10.79578cm</Left>
           <Height>0.89104cm</Height>
           <Width>3.037cm</Width>
           <ZIndex>9</ZIndex>
@@ -694,9 +695,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox71</rd:DefaultName>
-          <Top>1.49697cm</Top>
-          <Left>13.90891cm</Left>
-          <Height>0.92632cm</Height>
+          <Top>1.53225cm</Top>
+          <Left>13.83278cm</Left>
+          <Height>0.89104cm</Height>
           <Width>2.60967cm</Width>
           <ZIndex>10</ZIndex>
           <Style>
@@ -726,9 +727,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox81</rd:DefaultName>
-          <Top>2.96016cm</Top>
+          <Top>2.99544cm</Top>
           <Left>0.92707cm</Left>
-          <Height>0.6cm</Height>
+          <Height>0.6049cm</Height>
           <Width>5.03433cm</Width>
           <ZIndex>11</ZIndex>
           <Style>
@@ -759,10 +760,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox81</rd:DefaultName>
-          <Top>3.59544cm</Top>
-          <Left>0.8918cm</Left>
+          <Top>3.60034cm</Top>
+          <Left>0.92707cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.0696cm</Width>
+          <Width>5.03433cm</Width>
           <ZIndex>12</ZIndex>
           <Style>
             <Border>
@@ -795,7 +796,7 @@
           <Top>2.99544cm</Top>
           <Left>5.9614cm</Left>
           <Height>0.6049cm</Height>
-          <Width>10.55718cm</Width>
+          <Width>10.48105cm</Width>
           <ZIndex>13</ZIndex>
           <Style>
             <Border>
@@ -827,10 +828,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox68</rd:DefaultName>
-          <Top>3.60034cm</Top>
+          <Top>3.59544cm</Top>
           <Left>5.9614cm</Left>
           <Height>0.6049cm</Height>
-          <Width>10.55718cm</Width>
+          <Width>10.48105cm</Width>
           <ZIndex>14</ZIndex>
           <Style>
             <Border>
@@ -930,11 +931,105 @@
       </ConnectionProperties>
       <rd:DataSourceID>85b34471-c957-4c02-af7f-7263f24c9ea9</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="ProjetoModeloDDDDomainEntities1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>01c5acfd-3c6b-465d-a4c8-1cb2fa3f8cf6</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ProjetoModeloDDDDomainEntities2">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>d0bd0911-2cd9-42b8-8f07-e78d5f85ebf8</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ProjetoModeloDDDDomainEntities3">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>9b0c244f-4b0a-4098-94a7-df51ac4d2d60</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Producao">
+    <DataSet Name="Consulta">
       <Query>
-        <DataSourceName>ProjetoModeloDDDDomainEntities</DataSourceName>
+        <DataSourceName>ProjetoModeloDDDDomainEntities1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Autorizacao">
+          <DataField>Autorizacao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ConsultaId">
+          <DataField>ConsultaId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Convenio">
+          <DataField>Convenio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataCadastro">
+          <DataField>DataCadastro</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DataHoraConsulta">
+          <DataField>DataHoraConsulta</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="FormaAutorizar">
+          <DataField>FormaAutorizar</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Liberacao">
+          <DataField>Liberacao</DataField>
+          <rd:TypeName>ProjetoModeloDDD.Domain.Entities.Liberacao</rd:TypeName>
+        </Field>
+        <Field Name="LiberacaoId">
+          <DataField>LiberacaoId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Login">
+          <DataField>Login</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Profissional">
+          <DataField>Profissional</DataField>
+          <rd:TypeName>ProjetoModeloDDD.Domain.Entities.Profissional</rd:TypeName>
+        </Field>
+        <Field Name="ProfissionalId">
+          <DataField>ProfissionalId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TipoSessao">
+          <DataField>TipoSessao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ValorConsulta">
+          <DataField>ValorConsulta</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValorConvenio">
+          <DataField>ValorConvenio</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValorCopart">
+          <DataField>ValorCopart</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ProjetoModeloDDD.Domain.Entities</rd:DataSetName>
+        <rd:TableName>Consulta</rd:TableName>
+        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.Consulta, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Paciente">
+      <Query>
+        <DataSourceName>ProjetoModeloDDDDomainEntities2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -942,21 +1037,58 @@
           <DataField>CarteirinhaPaciente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CopartPaciente">
+          <DataField>CopartPaciente</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
         <Field Name="NomePaciente">
           <DataField>NomePaciente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PacienteId">
+          <DataField>PacienteId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TelefonePaciente1">
+          <DataField>TelefonePaciente1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TelefonePaciente2">
+          <DataField>TelefonePaciente2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ProjetoModeloDDD.Domain.Entities</rd:DataSetName>
+        <rd:TableName>Paciente</rd:TableName>
+        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.Paciente, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Producao">
+      <Query>
+        <DataSourceName>ProjetoModeloDDDDomainEntities3</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CarteirinhaPaciente">
+          <DataField>CarteirinhaPaciente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Consulta">
+          <DataField>Consulta</DataField>
+          <rd:TypeName>ProjetoModeloDDD.Domain.Entities.Consulta</rd:TypeName>
+        </Field>
+        <Field Name="ConsultaId">
+          <DataField>ConsultaId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="ProducaoId">
           <DataField>ProducaoId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Sessao">
-          <DataField>Sessao</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ValorConvenio">
-          <DataField>ValorConvenio</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="revisado">
+          <DataField>revisado</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
