@@ -14,6 +14,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string Senha { get; set; }
         public string Cpf { get; set; }
         public string INSS { get; set; }
+        public DateTime DataIngresso { get; set; }
+        public int Matricula { get; set; }
 
 
     }
