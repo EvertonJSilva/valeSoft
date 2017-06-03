@@ -19,6 +19,10 @@ namespace ProjetoModeloDDD.Application
             _producaoService = producaoService;
         }
 
+        public Producao GetPorConsultaID(int id)
+        {
+            return _producaoService.GetPorConsultaID(id);
+        }
 
     }
 }

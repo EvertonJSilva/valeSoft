@@ -16,14 +16,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private readonly IConsultaAppService _consultaApp;
         private readonly ILiberacaoAppService _liberacaoApp;
         private readonly IProfissionalAppService _profissionalApp;
-
-
-        public ConsultasController (IConsultaAppService consultaApp, ILiberacaoAppService liberacaoApp, IProfissionalAppService profissionalApp)
+        private readonly IProducaoAppService _producaoApp;
+        
+        public ConsultasController (IConsultaAppService consultaApp,
+                                ILiberacaoAppService liberacaoApp, 
+                                IProfissionalAppService profissionalApp,
+                                IProducaoAppService producaoApp)
         {
             _consultaApp = consultaApp;
             _liberacaoApp = liberacaoApp;
             _profissionalApp = profissionalApp;
-
+            _producaoApp = producaoApp;
         }
         
         // GET: Consulta
@@ -136,8 +139,28 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {    
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
+                consultaDomain.Status = "Agendado";
+
                 _consultaApp.Update(consultaDomain);
 
+                //inserir na produção
+                try
+                {
+                    _producaoApp.GetPorConsultaID(consultaDomain.ConsultaId);
+                }
+                catch (Exception e)
+                {
+                    var producaoDomain = new Producao();
+                    var liberacaoDomain = new Liberacao();
+
+                    liberacaoDomain =  _liberacaoApp.GetById(consultaDomain.LiberacaoId);
+
+                    producaoDomain.revisado = false;
+                    producaoDomain.ConsultaId = consultaDomain.ConsultaId;
+                    producaoDomain.CarteirinhaPaciente = liberacaoDomain.Paciente.CarteirinhaPaciente;
+
+                    _producaoApp.Add(producaoDomain);
+                }
                 return RedirectToAction("Index");
             }
 

@@ -17,6 +17,9 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
                 .HasMaxLength(70);
             //.IsRequired();
 
+            Property(c => c.Status)
+                .HasMaxLength(20);
+
             Property(c => c.TipoSessao)
                 .HasMaxLength(20);
             //.IsRequired();

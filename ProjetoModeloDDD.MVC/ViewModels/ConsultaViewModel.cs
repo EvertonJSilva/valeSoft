@@ -19,6 +19,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
         public string Autorizacao { get; set; }
 
+        [DisplayName("Status")]
+        public string Status { get; set; }
 
         [DisplayName("Forma autorizado")]
         [Required(ErrorMessage = "Preencha o campo Forma de Autorização")]
@@ -26,6 +28,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         public string FormaAutorizar { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DisplayName("Data da consulta")]
         public DateTime DataHoraConsulta { get; set; }
 

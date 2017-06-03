@@ -53,8 +53,6 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
-
-            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
             return View(liberacaoViewModel);
         }
 
@@ -82,6 +80,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     var consultaDomain = new Consulta();
                     consultaDomain.LiberacaoId = liberacaoDomain.LiberacaoId;
                     consultaDomain.Convenio = "Unimed";
+                    consultaDomain.Status = "Pré-agendado";
                     
                     //não informado/
                     consultaDomain.ProfissionalId = 1;
@@ -94,9 +93,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 return RedirectToAction("Index");
             }
-
-            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
-
+            
+            ViewBag.PacienteId = listaPaciente(liberacao);
             return View(liberacao);
         }
 
@@ -106,7 +104,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
-            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
+            ViewBag.PacienteId = listaPaciente(liberacaoViewModel);
             return View(liberacaoViewModel);
         }
 
@@ -124,7 +122,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
 
-            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente", liberacao.PacienteId);
+            ViewBag.PacienteId = listaPaciente(liberacao);
             return View(liberacao);
         }
 
@@ -147,5 +145,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IEnumerable<SelectListItem> listaPaciente(LiberacaoViewModel liberacao)
+        {
+            IEnumerable<SelectListItem> selectListPaciente =
+               from c in _pacienteApp.GetAll()
+               select new SelectListItem
+               {
+                   Selected = (c.PacienteId == liberacao.PacienteId),
+                   Text = c.NomePaciente,
+                   Value = c.PacienteId.ToString()
+               };
+
+            return selectListPaciente;
+        }
+
     }
 }

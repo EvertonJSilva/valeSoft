@@ -11,7 +11,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 {
     public class ProducaoController : Controller
     {
-         
+        
         private readonly IProducaoAppService _producaoApp;
 
         public ProducaoController(IProducaoAppService producaoApp)
@@ -74,7 +74,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Report(string palavra, int? LocalizarPor)
         {
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+//            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+
+            var producaoViewModel = _producaoApp.GetAll();
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
@@ -95,7 +97,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
             viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Producao.rdlc";
 
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", producaoViewModel));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
 
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);

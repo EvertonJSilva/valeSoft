@@ -24,21 +24,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NomePaciente">
+                    <Textbox Name="nomePaciente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NomePaciente.Value</Value>
+                              <Value>=Fields!nomePaciente.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NomePaciente</rd:DefaultName>
+                      <rd:DefaultName>nomePaciente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -54,21 +54,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CarteirinhaPaciente">
+                    <Textbox Name="carteirinhaPaciente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CarteirinhaPaciente.Value</Value>
+                              <Value>=Fields!carteirinhaPaciente.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CarteirinhaPaciente</rd:DefaultName>
+                      <rd:DefaultName>carteirinhaPaciente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -84,21 +84,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Sessao">
+                    <Textbox Name="sessaoConsulta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Sessao.Value</Value>
+                              <Value>=Fields!sessaoConsulta.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Sessao</rd:DefaultName>
+                      <rd:DefaultName>sessaoConsulta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -114,14 +114,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ValorConvenio">
+                    <Textbox Name="valorConsulta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ValorConvenio.Value</Value>
+                              <Value>=Fields!valorConsulta.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -130,7 +130,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ValorConvenio</rd:DefaultName>
+                      <rd:DefaultName>valorConsulta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -189,14 +189,14 @@
                 <TablixCell />
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox43">
+                    <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Value>=Sum(Fields!valorConsulta.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
@@ -206,7 +206,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox43</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -928,41 +928,44 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>85b34471-c957-4c02-af7f-7263f24c9ea9</rd:DataSourceID>
+      <rd:DataSourceID>dfee9c6d-433c-462f-9db0-6cfe35873a9c</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ProjetoModeloDDDDomainEntities1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>6d7db977-e203-4e04-a506-1432866e0e04</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Producao">
       <Query>
-        <DataSourceName>ProjetoModeloDDDDomainEntities</DataSourceName>
+        <DataSourceName>ProjetoModeloDDDDomainEntities1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CarteirinhaPaciente">
-          <DataField>CarteirinhaPaciente</DataField>
+        <Field Name="carteirinhaPaciente">
+          <DataField>carteirinhaPaciente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="NomePaciente">
-          <DataField>NomePaciente</DataField>
+        <Field Name="nomePaciente">
+          <DataField>nomePaciente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ProducaoId">
-          <DataField>ProducaoId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Sessao">
-          <DataField>Sessao</DataField>
+        <Field Name="sessaoConsulta">
+          <DataField>sessaoConsulta</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ValorConvenio">
-          <DataField>ValorConvenio</DataField>
+        <Field Name="valorConsulta">
+          <DataField>valorConsulta</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ProjetoModeloDDD.Domain.Entities</rd:DataSetName>
-        <rd:TableName>Producao</rd:TableName>
-        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.Producao, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ProducaoReport</rd:TableName>
+        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.ProducaoReport, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

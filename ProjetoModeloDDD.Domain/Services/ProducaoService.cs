@@ -19,7 +19,9 @@ namespace ProjetoModeloDDD.Domain.Services
             _producaoRepository = producaoRepository;
         }
 
-
-
+        public Producao GetPorConsultaID(int id)
+        {
+            return _producaoRepository.GetPorConsultaID(id);
+        }
     }
 }

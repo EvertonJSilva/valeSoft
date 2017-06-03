@@ -42,6 +42,7 @@
     <Compile Include="Entities\Liberacao.cs" />
     <Compile Include="Entities\Paciente.cs" />
     <Compile Include="Entities\Producao.cs" />
+    <Compile Include="Entities\ProducaoReport.cs" />
     <Compile Include="Entities\Produto.cs" />
     <Compile Include="Entities\Profissional.cs" />
     <Compile Include="Entities\TaxaDoacao.cs" />
