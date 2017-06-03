@@ -1,50 +1,99 @@
-﻿@model ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel
+﻿@model Tuple<ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel, IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ConsultaViewModel>> 
+
+@using GridMvc.Html
 
 @{
     ViewBag.Title = "Detalhes";
 }
 
-<h2>Detalhes</h2>
+<h2>Detalhes da liberação</h2>
 
 <div>
     <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.NumeroLiberacao)
+            @Html.DisplayNameFor(Model => Model.Item1.NumeroLiberacao)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.NumeroLiberacao)
+            @Html.DisplayFor(Model => Model.Item1.NumeroLiberacao)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QuantidadeTotal)
+            @Html.DisplayNameFor(Model => Model.Item1.QuantidadeTotal)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QuantidadeTotal)
+            @Html.DisplayFor(Model => Model.Item1.QuantidadeTotal)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QuantidadeRealizada)
+            @Html.DisplayNameFor(Model => Model.Item1.QuantidadeRealizada)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QuantidadeRealizada)
+            @Html.DisplayFor(Model => Model.Item1.QuantidadeRealizada)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Paciente.NomePaciente)
+            Paciente
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Paciente.NomePaciente)
+            @Html.DisplayFor(Model => Model.Item1.Paciente.NomePaciente)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.LiberacaoId }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Item1.LiberacaoId }) |
     @Html.ActionLink("Voltar para lista", "Index")
 </p>
+
+<hr />
+<h4>Consultas</h4>
+
+<div style="margin-right:50px">
+    @Html.Grid(Model.Item2).Columns(columns =>
+   {
+       columns.Add(model => model.Status).Titled("Status");
+       columns.Add(model => model.Autorizacao).Titled("Autorização");
+       columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
+       columns.Add(model => model.DataHoraConsulta).Titled("Data consulta");
+       columns.Add(model => model.ValorConsulta).Titled("Valor Consulta");
+       columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
+
+       columns.Add()
+           .Encoded(false)
+           .Sanitized(false)
+           .SetWidth(30)
+           .RenderValueAs(o => SalvarCustonHelper(o.ConsultaId));
+       columns.Add()
+           .Encoded(false)
+           .Sanitized(false)
+           .SetWidth(30)
+           .RenderValueAs(o => EditarCustonHelper(o.ConsultaId));
+       columns.Add()
+           .Encoded(false)
+           .Sanitized(false)
+           .SetWidth(30)
+           .RenderValueAs(o => DeletarCustonHelper(o.ConsultaId));
+
+   }).WithPaging(5).Sortable(true)
+</div>
+
+@helper SalvarCustonHelper(int id)
+{
+    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Consultas", new { id = id })'"><i class="fa fa-check"></i></button>
+}
+
+@helper EditarCustonHelper(int id)
+{
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = id })'"><i class="fa fa-pencil"></i></button>
+}
+
+@helper DeletarCustonHelper(int id)
+{
+    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Consultas", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+}

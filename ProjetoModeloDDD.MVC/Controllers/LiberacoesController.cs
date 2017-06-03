@@ -53,7 +53,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
-            return View(liberacaoViewModel);
+            var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+            
+            consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == id);
+
+            var tuple = new Tuple<LiberacaoViewModel, IEnumerable<ConsultaViewModel>>(liberacaoViewModel, consultasViewModel);
+
+            return View(tuple);
         }
 
         // GET: Consulta/Create
@@ -88,13 +94,23 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     _consultaApp.Add(consultaDomain);
                 }
 
+                return RedirectToAction("Details","Liberacoes", new { id = liberacaoDomain.LiberacaoId });
 
-                
+                //liberacaoDomain.Paciente = _pacienteApp.GetById(liberacaoDomain.PacienteId);
 
-                return RedirectToAction("Index");
+                //var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacaoDomain);
+
+                //var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+
+                //consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == liberacaoDomain.LiberacaoId);
+
+                //var tuple = new Tuple<LiberacaoViewModel, IEnumerable<ConsultaViewModel>>(liberacaoViewModel, consultasViewModel);
+
+                //return View("Details",tuple);
             }
             
-            ViewBag.PacienteId = listaPaciente(liberacao);
+            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
+
             return View(liberacao);
         }
 
