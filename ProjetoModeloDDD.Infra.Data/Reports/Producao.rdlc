@@ -24,21 +24,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NomePaciente">
+                    <Textbox Name="nomePaciente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!nomePaciente.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NomePaciente</rd:DefaultName>
+                      <rd:DefaultName>nomePaciente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -54,52 +54,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CarteirinhaPaciente">
+                    <Textbox Name="carteirinhaPaciente">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!carteirinhaPaciente.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CarteirinhaPaciente</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                    <rd:Selected>true</rd:Selected>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TipoSessao">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!TipoSessao.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>TipoSessao</rd:DefaultName>
+                      <rd:DefaultName>carteirinhaPaciente</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -115,14 +84,44 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ValorConvenio">
+                    <Textbox Name="sessaoConsulta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ValorConvenio.Value</Value>
+                              <Value>=Fields!sessaoConsulta.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>sessaoConsulta</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="valorConsulta">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!valorConsulta.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -131,7 +130,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ValorConvenio</rd:DefaultName>
+                      <rd:DefaultName>valorConsulta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -190,14 +189,14 @@
                 <TablixCell />
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox43">
+                    <Textbox Name="valorConsulta1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Value>=Sum(Fields!valorConsulta.Value)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
@@ -207,7 +206,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox43</rd:DefaultName>
+                      <rd:DefaultName>valorConsulta1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -220,6 +219,7 @@
                         <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -258,11 +258,11 @@
         </TablixRowHierarchy>
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
-        <DataSetName>Consulta</DataSetName>
+        <DataSetName>Producao</DataSetName>
         <Top>0.17639cm</Top>
         <Left>0.92707cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.51538cm</Width>
+        <Width>15.51537cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -929,172 +929,37 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>85b34471-c957-4c02-af7f-7263f24c9ea9</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="ProjetoModeloDDDDomainEntities1">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>01c5acfd-3c6b-465d-a4c8-1cb2fa3f8cf6</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="ProjetoModeloDDDDomainEntities2">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>d0bd0911-2cd9-42b8-8f07-e78d5f85ebf8</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="ProjetoModeloDDDDomainEntities3">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>9b0c244f-4b0a-4098-94a7-df51ac4d2d60</rd:DataSourceID>
+      <rd:DataSourceID>443ba478-a759-4373-a924-c3012195c6d6</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Consulta">
-      <Query>
-        <DataSourceName>ProjetoModeloDDDDomainEntities1</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Autorizacao">
-          <DataField>Autorizacao</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ConsultaId">
-          <DataField>ConsultaId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Convenio">
-          <DataField>Convenio</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="DataCadastro">
-          <DataField>DataCadastro</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="DataHoraConsulta">
-          <DataField>DataHoraConsulta</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="FormaAutorizar">
-          <DataField>FormaAutorizar</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Liberacao">
-          <DataField>Liberacao</DataField>
-          <rd:TypeName>ProjetoModeloDDD.Domain.Entities.Liberacao</rd:TypeName>
-        </Field>
-        <Field Name="LiberacaoId">
-          <DataField>LiberacaoId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Login">
-          <DataField>Login</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Profissional">
-          <DataField>Profissional</DataField>
-          <rd:TypeName>ProjetoModeloDDD.Domain.Entities.Profissional</rd:TypeName>
-        </Field>
-        <Field Name="ProfissionalId">
-          <DataField>ProfissionalId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TipoSessao">
-          <DataField>TipoSessao</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ValorConsulta">
-          <DataField>ValorConsulta</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ValorConvenio">
-          <DataField>ValorConvenio</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ValorCopart">
-          <DataField>ValorCopart</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>ProjetoModeloDDD.Domain.Entities</rd:DataSetName>
-        <rd:TableName>Consulta</rd:TableName>
-        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.Consulta, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="Paciente">
-      <Query>
-        <DataSourceName>ProjetoModeloDDDDomainEntities2</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="CarteirinhaPaciente">
-          <DataField>CarteirinhaPaciente</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CopartPaciente">
-          <DataField>CopartPaciente</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="NomePaciente">
-          <DataField>NomePaciente</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PacienteId">
-          <DataField>PacienteId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TelefonePaciente1">
-          <DataField>TelefonePaciente1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TelefonePaciente2">
-          <DataField>TelefonePaciente2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>ProjetoModeloDDD.Domain.Entities</rd:DataSetName>
-        <rd:TableName>Paciente</rd:TableName>
-        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.Paciente, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
     <DataSet Name="Producao">
       <Query>
-        <DataSourceName>ProjetoModeloDDDDomainEntities3</DataSourceName>
+        <DataSourceName>ProjetoModeloDDDDomainEntities</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CarteirinhaPaciente">
-          <DataField>CarteirinhaPaciente</DataField>
+        <Field Name="carteirinhaPaciente">
+          <DataField>carteirinhaPaciente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Consulta">
-          <DataField>Consulta</DataField>
-          <rd:TypeName>ProjetoModeloDDD.Domain.Entities.Consulta</rd:TypeName>
+        <Field Name="nomePaciente">
+          <DataField>nomePaciente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ConsultaId">
-          <DataField>ConsultaId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="sessaoConsulta">
+          <DataField>sessaoConsulta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ProducaoId">
-          <DataField>ProducaoId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="revisado">
-          <DataField>revisado</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
+        <Field Name="valorConsulta">
+          <DataField>valorConsulta</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>ProjetoModeloDDD.Domain.Entities</rd:DataSetName>
-        <rd:TableName>Producao</rd:TableName>
-        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.Producao, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ProducaoReport</rd:TableName>
+        <rd:ObjectDataSourceType>ProjetoModeloDDD.Domain.Entities.ProducaoReport, ProjetoModeloDDD.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
