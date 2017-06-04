@@ -87,7 +87,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     consultaDomain.LiberacaoId = liberacaoDomain.LiberacaoId;
                     consultaDomain.Convenio = "Unimed";
                     consultaDomain.Status = "Pré-agendado";
-                    
+                    consultaDomain.ValorConsulta = 0;
+                    consultaDomain.ValorConvenio = 0;
+                    consultaDomain.ValorCopart = 0;
+
                     //não informado/
                     consultaDomain.ProfissionalId = 1;
                     

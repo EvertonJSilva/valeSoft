@@ -24,11 +24,15 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
                 .HasMaxLength(20);
             //.IsRequired();
 
-            //Property(c => c.DataHoraConsulta);
+            Property(c => c.DataHoraConsulta)
+                .IsOptional()
+                .HasColumnType("datetime2");
+
             //Property(c => c.ValorConsulta);
             //Property(c => c.ValorConvenio);
             //Property(c => c.ValorCopart);
-            //Property(c => c.DataCadastro);
+            Property(c => c.DataCadastro)
+                .HasColumnType("DateTime2");
 
             HasRequired(c => c.Profissional)
              .WithMany()

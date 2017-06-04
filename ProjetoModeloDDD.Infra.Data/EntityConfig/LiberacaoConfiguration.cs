@@ -9,6 +9,7 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         {
             HasKey(l => l.LiberacaoId);
 
+
              Property(l => l.NumeroLiberacao)
                 .IsRequired();
 
