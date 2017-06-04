@@ -32,10 +32,13 @@
 <div style="margin-right:50px">
     @Html.Grid(Model).Columns(columns =>
 {
+    columns.Add(model => model.Paciente.NomePaciente).Titled("Nome");
     columns.Add(model => model.NumeroLiberacao).Titled("Número da liberação");
-    columns.Add(model => model.QuantidadeTotal).Titled("Quantidade liberada");
+    columns.Add(model => model.QuantidadeTotal).Titled("Quantidade Solicitada");
     columns.Add(model => model.QuantidadeRealizada).Titled("Quantidade realizada");
-    columns.Add(model => model.Paciente.NomePaciente).Titled("Nome paciente");
+    columns.Add(model => model.MedicoEncaminhante).Titled("Medico Encaminhante");
+    columns.Add(model => model.CRM).Titled("CRM");
+
     columns.Add()
         .Encoded(false)
         .Sanitized(false)

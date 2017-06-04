@@ -102,6 +102,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ProjetoModeloDDD.Domain.Entities.DemonstrativoReport.datasource" />
     <None Include="ProjetoModeloDDD.Domain.Entities.Producao.datasource" />
   </ItemGroup>
   <ItemGroup>

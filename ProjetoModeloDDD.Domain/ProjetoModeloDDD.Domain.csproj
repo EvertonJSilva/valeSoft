@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Consulta.cs" />
+    <Compile Include="Entities\DemonstrativoReport.cs" />
     <Compile Include="Entities\Folha.cs" />
     <Compile Include="Entities\FolhaDetalhe.cs" />
     <Compile Include="Entities\Liberacao.cs" />

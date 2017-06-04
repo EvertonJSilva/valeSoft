@@ -51,9 +51,9 @@
             <div class="col-md-10">
                 @Html.DropDownList("TipoSessao", new SelectList(new List<SelectListItem>
                                 {
-                                    new SelectListItem { Selected = true, Text = "Comparecimento", Value = "50000470"},
-                                    new SelectListItem { Selected = false, Text = "Não-Comparecimento", Value = "60000678"},
-                                    new SelectListItem { Selected = false, Text = "Psico-Social", Value = "80000509"}
+                                    new SelectListItem { Selected = true, Text = "50000470", Value = "50000470"},
+                                    new SelectListItem { Selected = false, Text = "60000678", Value = "60000678"},
+                                    new SelectListItem { Selected = false, Text = "80000509", Value = "80000509"}
                                 }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoSessao, "", new { @class = "text-danger" })
               </div>

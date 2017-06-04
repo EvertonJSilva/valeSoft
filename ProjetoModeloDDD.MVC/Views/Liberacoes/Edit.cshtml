@@ -40,6 +40,20 @@
                 @Html.ValidationMessageFor(model => model.QuantidadeRealizada, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MedicoEncaminhante, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MedicoEncaminhante, new { htmlAttributes = new { @class = "form-control", @type = "text", @id = "Medico Encaminhante" } })
+                @Html.ValidationMessageFor(model => model.MedicoEncaminhante, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CRM, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CRM, new { htmlAttributes = new { @class = "form-control", @type = "text", @id = "CRM" } })
+                @Html.ValidationMessageFor(model => model.CRM, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
         <div class="form-group">

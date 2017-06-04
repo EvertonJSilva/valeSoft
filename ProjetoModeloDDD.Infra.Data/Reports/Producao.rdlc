@@ -219,7 +219,6 @@
                         <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -277,7 +276,7 @@
       </Border>
     </Style>
   </Body>
-  <Width>6.80795in</Width>
+  <Width>8.49545in</Width>
   <Page>
     <PageHeader>
       <Height>7.39247cm</Height>
@@ -612,6 +611,7 @@
                   <Value>Data:</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Format>d</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -625,12 +625,15 @@
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
+                    <Format>d</Format>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value xml:space="preserve">
 </Value>
-                  <Style />
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -655,13 +658,31 @@
           </Style>
         </Textbox>
         <Textbox Name="Textbox73">
-          <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Pagina:</Value>
+                  <Value>Pagina:
+</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>/</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!TotalPages</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -669,24 +690,9 @@
                 <TextRun>
                   <Value xml:space="preserve">
 </Value>
-                  <Style />
-                </TextRun>
-                <TextRun>
-                  <Value>=Globals!PageNumber</Value>
-                  <Style />
-                </TextRun>
-                <TextRun>
-                  <Value>/</Value>
-                  <Style />
-                </TextRun>
-                <TextRun>
-                  <Value>=Globals!TotalPages</Value>
-                  <Style />
-                </TextRun>
-                <TextRun>
-                  <Value xml:space="preserve">
-</Value>
-                  <Style />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -818,7 +824,7 @@
                 <TextRun>
                   <Value>UNIPSICO - COOPERATIVA DE TRABALHO EM PSICOLOGIA DO VALE DO SINOS</Value>
                   <Style>
-                    <FontSize>8pt</FontSize>
+                    <FontSize>7pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>

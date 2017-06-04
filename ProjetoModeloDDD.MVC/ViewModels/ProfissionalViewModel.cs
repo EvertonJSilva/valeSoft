@@ -44,8 +44,10 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string INSS { get; set; }
 
         [DisplayName("Data de Ingresso")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage ="Preencha a data de ingresso")]
         public DateTime DataIngresso { get; set; }
+
         [DisplayName("Matricula")]
         [Required(ErrorMessage ="Preencha a Matricula")]
         public int Matricula { get; set; }

@@ -12,6 +12,14 @@
     <h4></h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Model => Model.Item1.Paciente.NomePaciente)
+        </dd>
         <dt>
             @Html.DisplayNameFor(Model => Model.Item1.NumeroLiberacao)
         </dt>
@@ -21,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(Model => Model.Item1.QuantidadeTotal)
+            Quantidade Solicitada
         </dt>
 
         <dd>
@@ -35,14 +43,21 @@
         <dd>
             @Html.DisplayFor(Model => Model.Item1.QuantidadeRealizada)
         </dd>
-
         <dt>
-            Paciente
+            @Html.DisplayNameFor(Model => Model.Item1.MedicoEncaminhante)
         </dt>
 
         <dd>
-            @Html.DisplayFor(Model => Model.Item1.Paciente.NomePaciente)
+            @Html.DisplayFor(Model => Model.Item1.MedicoEncaminhante)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Item1.CRM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item1.CRM)
+        </dd>
+        
 
     </dl>
 </div>
@@ -56,31 +71,33 @@
 
 <div style="margin-right:50px">
     @Html.Grid(Model.Item2).Columns(columns =>
-   {
-       columns.Add(model => model.Status).Titled("Status");
-       columns.Add(model => model.Autorizacao).Titled("Autorização");
-       columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
-       columns.Add(model => model.DataHoraConsulta).Titled("Data consulta");
-       columns.Add(model => model.ValorConsulta).Titled("Valor Consulta");
-       columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
+{
+    columns.Add(model => model.Status).Titled("Status");
+    columns.Add(model => model.Autorizacao).Titled("Autorização");
+    columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
+    columns.Add(model => model.DataHoraConsulta).Titled("Data consulta");
+    columns.Add(model => model.ValorConsulta).Titled("Valor Consulta");
+    columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
+    columns.Add(model => model.Liberacao.MedicoEncaminhante).Titled("Medico Encaminhante");
+    columns.Add(model => model.Liberacao.CRM).Titled("CRM");
 
-       columns.Add()
-           .Encoded(false)
-           .Sanitized(false)
-           .SetWidth(30)
-           .RenderValueAs(o => SalvarCustonHelper(o.ConsultaId));
-       columns.Add()
-           .Encoded(false)
-           .Sanitized(false)
-           .SetWidth(30)
-           .RenderValueAs(o => EditarCustonHelper(o.ConsultaId));
-       columns.Add()
-           .Encoded(false)
-           .Sanitized(false)
-           .SetWidth(30)
-           .RenderValueAs(o => DeletarCustonHelper(o.ConsultaId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => SalvarCustonHelper(o.ConsultaId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => EditarCustonHelper(o.ConsultaId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => DeletarCustonHelper(o.ConsultaId));
 
-   }).WithPaging(5).Sortable(true)
+}).WithPaging(5).Sortable(true)
 </div>
 
 @helper SalvarCustonHelper(int id)

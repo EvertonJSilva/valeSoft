@@ -24,6 +24,13 @@
                 @Html.ValidationMessageFor(model => model.NomePaciente, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CarteirinhaPaciente, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CarteirinhaPaciente, new { htmlAttributes = new { @class = "form-control" }, @type = "text", @id = "carteira" })
+                @Html.ValidationMessageFor(model => model.CarteirinhaPaciente, "", new { @class = "text-danger", @type = "number" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.TelefonePaciente1, htmlAttributes: new { @class = "control-label col-md-2" })

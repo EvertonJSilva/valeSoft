@@ -75,8 +75,6 @@ D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\Micros
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.csprojResolveAssemblyReference.cache
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.dll
 D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csc.exe
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csc.exe.config
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csc.rsp
@@ -87,8 +85,10 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.AppContext.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.Collections.Immutable.dll

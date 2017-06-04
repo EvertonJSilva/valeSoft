@@ -533,6 +533,7 @@
     <Content Include="Views\ValoresConsulta\Details.cshtml" />
     <Content Include="Views\ValoresConsulta\Edit.cshtml" />
     <Content Include="Views\Producao\Protocolo.cshtml" />
+    <Content Include="Views\Producao\Demonstrativo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

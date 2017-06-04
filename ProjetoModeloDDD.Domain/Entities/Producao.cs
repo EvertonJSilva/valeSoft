@@ -18,6 +18,8 @@ namespace ProjetoModeloDDD.Domain.Entities
 
         public int ConsultaId { get; set; }
         public virtual Consulta Consulta { get; set; }
+        public virtual Profissional Profissional { get; set; }
+         
 
 
 

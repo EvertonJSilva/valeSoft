@@ -20,14 +20,19 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string NumeroLiberacao { get; set; }
 
 
-        [DisplayName("Quantidade total")]
-        [Required(ErrorMessage = "Preencha o campo Quantidade Total de Consultas")]
+        [DisplayName("Quantidade Solicitada")]
+        [Required(ErrorMessage = "Preencha o campo Quantidade Solicitada de Consultas")]
         public int QuantidadeTotal { get; set; }
 
 
         [DisplayName("Quantidade já realizado")]
         //essa deve vir padrão com o numero 0
         public int QuantidadeRealizada { get; set; }
+
+        [DisplayName("Medico Encaminhante")]
+        public string MedicoEncaminhante { get; set; }
+        [DisplayName("CRM Medico Encaminhante")]
+        public string CRM { get; set; }
 
         public int PacienteId { get; set; }
         public virtual PacienteViewModel Paciente { get; set; }

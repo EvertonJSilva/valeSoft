@@ -13,6 +13,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public int ProfissionalId { get; set; }
 
         public virtual Profissional Profissional { get; set; }
+        public virtual Producao Producao { get; set; }
 
 
 

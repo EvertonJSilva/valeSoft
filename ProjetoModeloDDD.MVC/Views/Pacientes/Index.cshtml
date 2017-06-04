@@ -38,9 +38,10 @@
     @Html.Grid(Model.Item1).Columns(columns =>
 {
     columns.Add(model => model.NomePaciente).Titled("Nome");
-    columns.Add(model => model.TelefonePaciente1).Titled("Telefone 1");
-    columns.Add(model => model.TelefonePaciente2).Titled("Telefone 2");
-    columns.Add(model => model.CarteirinhaPaciente).Titled("Carteirinha");
+    columns.Add(model => model.CarteirinhaPaciente).Titled("Matricula");
+    columns.Add(model => model.TelefonePaciente1).Titled("Contato 1");
+    columns.Add(model => model.TelefonePaciente2).Titled("Contato 2");
+    
     columns.Add().Titled("Cooparticipação?")
         .Sanitized(false)
         .Encoded(false)
