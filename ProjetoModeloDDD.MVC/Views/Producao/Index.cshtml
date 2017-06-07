@@ -39,6 +39,7 @@
 <div style="margin-right:50px">
     @Html.Grid(Model).Columns(columns =>
 {
+    columns.Add(model => model.ProducaoId).Titled("Id");
     columns.Add(model => model.Consulta.Liberacao.Paciente.NomePaciente).Titled("Nome Paciente");
     columns.Add(model => model.Consulta.Profissional.NomeProfissional).Titled("Nome Profissional");
     columns.Add(model => model.CarteirinhaPaciente).Titled("Carteirinha");
@@ -57,19 +58,51 @@
 
 
 
-@helper revisadoCustomHelper(bool revisado,int id){
+@helper revisadoCustomHelper(bool revisado,int idProducao){
 
 if (revisado)
 {
-        <input data-size="mini" type="checkbox" checked data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+    <input data-width="65" onclick ="Revisar(this)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" checked data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
 }
 else
 {
-        <input data-size="mini" type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+   <input data-width="65" onchange ="Revisar(this)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+}
+    
+    <script>
+        function Revisar(n) {
+            var row = n.parentNode.parentNode.parentNode;
+            var cols = row.getElementsByTagName("td");
+            var i = 0;
+
+            //while (i < cols.length) {
+                
+            //    var val = cols[i].childNodes[0].nodeValue
+            //    if (val != null) {
+            //        alert(val);
+            //    }
+            //    i++;
+            //}
+
+            EnviaRevisar(cols[0].childNodes[0].nodeValue);
+            elemento.bootstrapToggle();            
+        }
+
+        function EnviaRevisar(n) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Revisar", "Producao")',
+                // contentType: "application/json; charset=utf-8",
+                data: { producaoId: n },
+                dataType: "json",
+                success: function (result) {
+                    alert(result);
+                    window.locationre = result.url;
+                }
+            });
+        }
+
+    </script>
+    
 }
 
-
-}
-
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

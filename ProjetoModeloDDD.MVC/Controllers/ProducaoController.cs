@@ -19,7 +19,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _producaoApp = producaoApp;
 
         }
-   
+
 
 
         // GET: Producao
@@ -45,6 +45,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
         //    return View(producaoViewModel);
 
         //}
+
+            
+        public ActionResult Revisar(int producaoId)
+        {
+            var producao = _producaoApp.GetById(producaoId);
+            producao.revisado = true;
+
+            _producaoApp.Update(producao);
+
+            return View();
+        }
 
 
         // GET: Producao

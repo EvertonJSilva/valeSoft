@@ -68,7 +68,7 @@
 
     @helper EditarCustonHelper(int id)
     {
-        <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = id })'"><i class="fa fa-pencil"></i></button>
+        <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = id, idLiberacao = 0 })'"><i class="fa fa-pencil"></i></button>
 }
 
     @helper DeletarCustonHelper(int id)

@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig_teste.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -250,7 +251,11 @@
     <Content Include="Content\SiteA\Js\morris\morris-0.4.3.min.css" />
     <Content Include="Content\SiteA\Js\morris\morris.js" />
     <Content Include="Content\SiteA\Js\morris\raphael-2.1.0.min.js" />
+    <Content Include="Content\SiteB\css\bootstrap-toggle.css" />
+    <Content Include="Content\SiteB\css\bootstrap-toggle.min.css" />
     <Content Include="Content\SiteB\css\bootstrap.css" />
+    <Content Include="Content\SiteB\css\bootstrap2-toggle.css" />
+    <Content Include="Content\SiteB\css\bootstrap2-toggle.min.css" />
     <Content Include="Content\SiteB\css\style-responsive.css" />
     <Content Include="Content\SiteB\css\style.css" />
     <Content Include="Content\SiteB\css\table-responsive.css" />
@@ -258,6 +263,7 @@
     <Content Include="Content\SiteB\css\zabuto_calendar.css" />
     <Content Include="Content\SiteB\font-awesome\css\font-awesome.css" />
     <Content Include="Content\SiteB\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\SiteB\img\blog-bg.jpg" />
     <Content Include="Content\SiteB\img\checkbox-gray.png" />
@@ -299,7 +305,11 @@
     <Content Include="Content\SiteB\img\zoom.png" />
     <Content Include="Content\SiteB\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
     <Content Include="Content\SiteB\js\bootstrap-switch.js" />
+    <Content Include="Content\SiteB\js\bootstrap-toggle.js" />
+    <Content Include="Content\SiteB\js\bootstrap-toggle.min.js" />
     <Content Include="Content\SiteB\js\bootstrap.min.js" />
+    <Content Include="Content\SiteB\js\bootstrap2-toggle.js" />
+    <Content Include="Content\SiteB\js\bootstrap2-toggle.min.js" />
     <Content Include="Content\SiteB\js\calendar-conf-events.js" />
     <Content Include="Content\SiteB\js\chart-master\Chart.js" />
     <Content Include="Content\SiteB\js\chartjs-conf.js" />
@@ -374,6 +384,7 @@
     <Content Include="Content\SiteC\scripts\morris-demo.js" />
     <Content Include="Content\SiteC\scripts\siminta.js" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -426,6 +437,16 @@
     <Content Include="Content\SiteC\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\SiteC\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="Content\SiteB\js\bootstrap-toggle.min.js.map" />
+    <Content Include="Content\SiteB\js\bootstrap2-toggle.min.js.map" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\SiteB\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\everton.pubxml" />
     <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

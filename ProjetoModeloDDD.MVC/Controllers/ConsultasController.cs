@@ -93,12 +93,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Consulta/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id, int idLiberacao)
         {
             var consulta = _consultaApp.GetById(id);
             var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
-            
+            ViewBag.idLiberacaoOrigem = idLiberacao;
+        
             ViewBag.LiberacaoId = listaLiberacao(consultaViewModel);
             ViewBag.ProfissionalId = listaProfissional(consultaViewModel);
 
@@ -108,9 +109,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // POST: Consulta/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ConsultaViewModel consulta)
+        public ActionResult Edit(ConsultaViewModel consulta, int idLiberacaoOrigem)
         {
-
+            ViewBag.idLiberacaoOrigem = idLiberacaoOrigem;
             ViewBag.LiberacaoId = listaLiberacao(consulta);
             ViewBag.ProfissionalId = listaProfissional(consulta);
 
@@ -161,7 +162,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                     _producaoApp.Add(producaoDomain);
                 }
-                return RedirectToAction("Index");
+
+                ///redireciona para a liberacao
+                if (idLiberacaoOrigem > 0){
+                   return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
+                }else
+                {
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(consulta);

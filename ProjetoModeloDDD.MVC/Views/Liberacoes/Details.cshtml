@@ -78,39 +78,19 @@
     columns.Add(model => model.DataHoraConsulta).Titled("Data consulta");
     columns.Add(model => model.ValorConsulta).Titled("Valor Consulta");
     columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
-    columns.Add(model => model.Liberacao.MedicoEncaminhante).Titled("Medico Encaminhante");
-    columns.Add(model => model.Liberacao.CRM).Titled("CRM");
 
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => SalvarCustonHelper(o.ConsultaId));
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
         .SetWidth(30)
         .RenderValueAs(o => EditarCustonHelper(o.ConsultaId));
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => DeletarCustonHelper(o.ConsultaId));
 
 }).WithPaging(5).Sortable(true)
 </div>
 
-@helper SalvarCustonHelper(int id)
-{
-    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Consultas", new { id = id })'"><i class="fa fa-check"></i></button>
-}
 
 @helper EditarCustonHelper(int id)
 {
-    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = id })'"><i class="fa fa-pencil"></i></button>
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = id, idLiberacao = Model.Item1.LiberacaoId })'"><i class="fa fa-pencil"></i></button>
 }
 
-@helper DeletarCustonHelper(int id)
-{
-    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Consultas", new { id = id })'"><i class="fa fa-trash-o "></i></button>
-}
