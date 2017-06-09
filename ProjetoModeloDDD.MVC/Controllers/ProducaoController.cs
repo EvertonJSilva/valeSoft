@@ -121,9 +121,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Protocolo(string palavra, int? LocalizarPor)
         {
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+            //var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+
+            var producaoViewModel = _producaoApp.GetAll();
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
 
             if (!String.IsNullOrEmpty(palavra))
             {
@@ -142,7 +145,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
             viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Protocolo.rdlc";
 
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Protocolo", producaoViewModel));
+            //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Protocolo", producaoViewModel));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
 
             viewer.SizeToReportContent = true;  
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);    
