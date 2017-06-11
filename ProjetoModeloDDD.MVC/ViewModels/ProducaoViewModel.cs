@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ProjetoModeloDDD.Domain.Entities;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoModeloDDD.MVC.ViewModels
@@ -16,6 +17,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         public int ConsultaId { get; set; }
         public virtual ConsultaViewModel Consulta { get; set; }
+
+     
 
     }
 }

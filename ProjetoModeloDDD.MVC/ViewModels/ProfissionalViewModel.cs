@@ -43,8 +43,10 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Mínimo {0} caracteres")]
         public string INSS { get; set; }
 
-        [DisplayName("Data de Ingresso")]
+        
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayName("Data de Ingresso")]
         [Required(ErrorMessage ="Preencha a data de ingresso")]
         public DateTime DataIngresso { get; set; }
 

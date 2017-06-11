@@ -159,7 +159,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Demonstrativo(string palavra, int? LocalizarPor)
         {
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+            //var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+
+            var producaoViewModel = _producaoApp.GetAll();
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
@@ -180,7 +182,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
             viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Demonstrativo.rdlc";
 
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
+            //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", DemonstrativoReport.GerarLista(producaoViewModel)));
 
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
