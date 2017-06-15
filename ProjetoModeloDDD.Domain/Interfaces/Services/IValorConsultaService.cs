@@ -6,6 +6,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Services
 {
     public interface IValorConsultaService : IServiceBase<ValorConsulta>
     {
-
+        IEnumerable<ValorConsulta> GetPorSigla(string sigla);
     }
 }

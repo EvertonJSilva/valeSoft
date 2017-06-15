@@ -19,6 +19,10 @@ namespace ProjetoModeloDDD.Application
             _valorConsultaService = valorConsultaService;
         }
 
+        public IEnumerable<ValorConsulta> GetPorSigla(string sigla)
+        {
+            return _valorConsultaService.GetPorSigla(sigla);
+        }
 
     }
 }

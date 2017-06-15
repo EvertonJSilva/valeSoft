@@ -10,6 +10,25 @@
     <h4></h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            Liberacao
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Liberacao.NumeroLiberacao)
+        </dd>
+
+
+        <dt>
+            Paciente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Liberacao.Paciente.NomePaciente)
+        </dd>
+
+
         <dt>
             @Html.DisplayNameFor(model => model.Autorizacao)
         </dt>
@@ -35,19 +54,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ValorConsulta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValorConsulta)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Convenio)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Convenio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoSessao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoSessao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorConsulta)
         </dd>
 
         <dt>
@@ -67,23 +94,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TipoSessao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TipoSessao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Liberacao.NumeroLiberacao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Liberacao.NumeroLiberacao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Profissional.NomeProfissional)
+            Profissional
         </dt>
 
         <dd>

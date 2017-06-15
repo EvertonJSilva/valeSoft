@@ -33,6 +33,11 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(8, ErrorMessage = "Minimo 8 caracteres")]
         public string Sessao { get; set; }
 
+
+        [DisplayName("Solicta copart")]
+        [Required(ErrorMessage = "Preencha o campo")]
+        public bool temCopart { get; set; }
+
         [Key]
         public int ValorConsultaId { get; set; }
 

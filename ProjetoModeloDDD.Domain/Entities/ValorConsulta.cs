@@ -10,6 +10,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string Sigla { get; set; }
         public decimal Valor { get; set; }
         public string Classificacao { get; set; }
+        public bool TemCopart { get; set; }
         public string Sessao { get; set; }
         public int ValorConsultaId { get; set; }
     }

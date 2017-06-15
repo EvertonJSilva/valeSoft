@@ -10,6 +10,8 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
 
             HasKey(v => v.ValorConsultaId);
 
+            Property(v => v.TemCopart)
+                .IsOptional();
         }
     }
 }

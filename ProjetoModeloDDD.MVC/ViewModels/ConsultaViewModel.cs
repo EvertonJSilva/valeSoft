@@ -33,7 +33,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [DisplayName("Data da consulta")]
         public DateTime DataHoraConsulta { get; set; }
 
-        [DisplayName("Valor da consulta")]
+        [DisplayName("Valor da consulta R$")]
         public decimal ValorConsulta { get; set; }
 
         [DisplayName("Convênio")]
@@ -42,10 +42,10 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         public string Convenio { get; set; }
 
-        [DisplayName("Valor co-participação")]
+        [DisplayName("Valor coparticipação R$:")]
         public decimal ValorCopart { get; set; }
 
-        [DisplayName("Valor do Convênio")]
+        [DisplayName("Valor do Convênio R$:")]
         public decimal ValorConvenio { get; set; }
 
         [DisplayName("Tipo da sessão")]

@@ -10,5 +10,10 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
     public class ValorConsultaRepository : RepositoryBase<ValorConsulta>, IValorConsultaRepository
     {
+        public IEnumerable<ValorConsulta> GetPorSigla(string sigla)
+        {
+            return Db.ValorConsultas.Where(p => p.Sigla  == sigla);
+        }
+
     }
 }

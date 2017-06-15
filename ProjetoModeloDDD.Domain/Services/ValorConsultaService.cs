@@ -1,4 +1,6 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.Domain.Interfaces.Repositories;
 using ProjetoModeloDDD.Domain.Interfaces.Services;
 
@@ -12,6 +14,11 @@ namespace ProjetoModeloDDD.Domain.Services
             : base(valorConsultaRepository)
         {
             _valorConsultaRepository = valorConsultaRepository;
+        }
+
+        public IEnumerable<ValorConsulta> GetPorSigla(string sigla)
+        {
+            return _valorConsultaRepository.GetPorSigla(sigla);
         }
     }
 }

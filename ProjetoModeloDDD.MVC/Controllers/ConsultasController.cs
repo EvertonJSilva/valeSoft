@@ -17,18 +17,21 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private readonly ILiberacaoAppService _liberacaoApp;
         private readonly IProfissionalAppService _profissionalApp;
         private readonly IProducaoAppService _producaoApp;
-        
-        public ConsultasController (IConsultaAppService consultaApp,
-                                ILiberacaoAppService liberacaoApp, 
+        private readonly IValorConsultaAppService _valorApp;
+
+        public ConsultasController(IConsultaAppService consultaApp,
+                                ILiberacaoAppService liberacaoApp,
                                 IProfissionalAppService profissionalApp,
-                                IProducaoAppService producaoApp)
+                                IProducaoAppService producaoApp,
+                                IValorConsultaAppService valorApp)
         {
             _consultaApp = consultaApp;
             _liberacaoApp = liberacaoApp;
             _profissionalApp = profissionalApp;
             _producaoApp = producaoApp;
+            _valorApp = valorApp;
         }
-        
+
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
@@ -62,6 +65,30 @@ namespace ProjetoModeloDDD.MVC.Controllers
             ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
 
             return View(consultaViewModel);
+        }
+
+        public ActionResult ListaValores(string sessao, string liberacaoid)
+        {
+            var liberacao = _liberacaoApp.GetById(Int32.Parse(liberacaoid));
+
+            var valoresConsultas = ListaValoresConsultas(liberacao.Paciente.CarteirinhaPaciente.Substring(0,4), sessao);
+
+            var valor = valoresConsultas.FirstOrDefault(c => c.Selected);
+            
+            return Json(valor, JsonRequestBehavior.AllowGet);
+        }
+
+        public IEnumerable<ListaValores> ListaValoresConsultas(string sigla, string sessao)
+        {
+            IEnumerable<ListaValores> selectListvalores =
+                          from c in _valorApp.GetPorSigla(sigla)
+                          select new ListaValores(c)
+                          {
+                              Selected = (c.Sessao == sessao)
+                          };
+
+            return selectListvalores;
+
         }
 
         // GET: Consulta/Create
@@ -99,7 +126,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
             ViewBag.idLiberacaoOrigem = idLiberacao;
-        
+
             ViewBag.LiberacaoId = listaLiberacao(consultaViewModel);
             ViewBag.ProfissionalId = listaProfissional(consultaViewModel);
 
@@ -114,7 +141,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             ViewBag.idLiberacaoOrigem = idLiberacaoOrigem;
             ViewBag.LiberacaoId = listaLiberacao(consulta);
             ViewBag.ProfissionalId = listaProfissional(consulta);
-
+            
             if (consulta.ProfissionalId == 1)
             {
                 ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
@@ -138,7 +165,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
             if (ModelState.IsValid)
-            {    
+            {
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
                 consultaDomain.Status = "Agendado";
 
@@ -154,7 +181,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     var producaoDomain = new Producao();
                     var liberacaoDomain = new Liberacao();
 
-                    liberacaoDomain =  _liberacaoApp.GetById(consultaDomain.LiberacaoId);
+                    liberacaoDomain = _liberacaoApp.GetById(consultaDomain.LiberacaoId);
 
                     producaoDomain.revisado = false;
                     producaoDomain.ConsultaId = consultaDomain.ConsultaId;
@@ -164,9 +191,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 }
 
                 ///redireciona para a liberacao
-                if (idLiberacaoOrigem > 0){
-                   return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
-                }else
+                if (idLiberacaoOrigem > 0) {
+                    return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
+                } else
                 {
                     return RedirectToAction("Index");
                 }
@@ -194,7 +221,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             return RedirectToAction("Index");
         }
-        
+
         public IEnumerable<SelectListItem> listaProfissional(ConsultaViewModel consulta)
         {
             IEnumerable<SelectListItem> selectListProfissional =
@@ -223,5 +250,63 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return selectListLiberacao;
         }
 
+    }
+
+
+    public class ListaValores : SelectListItem
+    {
+
+        public decimal _ValorConsulta { get; set; }
+        public decimal _ValorCopart { get; set; }
+        public decimal _ValorConvenio { get; set; }
+
+        public ListaValores(ValorConsulta valorConsulta)
+        {
+            this.Value = valorConsulta.Sessao;
+            this.Text = calculaTexto(valorConsulta.Sessao);
+            this._ValorConsulta = valorConsulta.Valor;
+            this._ValorCopart = CalculaCopart(valorConsulta);
+            this._ValorConvenio = CalculaConvenio(valorConsulta);
+        }
+
+        private decimal CalculaCopart(ValorConsulta valorConsulta)
+        {
+            switch (valorConsulta.TemCopart)
+            {
+                case true:
+                    return 15;
+                case false:
+                    return 0;
+                default:
+                    return 0;
+            }
+        }
+
+        private decimal CalculaConvenio(ValorConsulta valorConsulta)
+        {
+            switch (valorConsulta.TemCopart)
+            {
+                case true:
+                    return valorConsulta.Valor - 15;
+                case false:
+                    return 0;
+                default:
+                    return 0;
+            }
+        }
+
+        private string calculaTexto(string sessao)
+        {
+            switch (sessao) {
+                case "50000470":
+                    return "Comparecimento";
+                case "80000509":
+                    return "Não-Comparecimento";
+                case "60000678":
+                    return "Psico-Social";
+                default:
+                    return "";
+            }
+        }
     }
 }

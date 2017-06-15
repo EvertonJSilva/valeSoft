@@ -54,7 +54,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
             var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
-            
+
             consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == id);
 
             var tuple = new Tuple<LiberacaoViewModel, IEnumerable<ConsultaViewModel>>(liberacaoViewModel, consultasViewModel);
@@ -93,11 +93,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                     //não informado/
                     consultaDomain.ProfissionalId = 1;
-                    
+
                     _consultaApp.Add(consultaDomain);
                 }
 
-                return RedirectToAction("Details","Liberacoes", new { id = liberacaoDomain.LiberacaoId });
+                return RedirectToAction("Details", "Liberacoes", new { id = liberacaoDomain.LiberacaoId });
 
                 //liberacaoDomain.Paciente = _pacienteApp.GetById(liberacaoDomain.PacienteId);
 
@@ -111,7 +111,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 //return View("Details",tuple);
             }
-            
+
             ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
 
             return View(liberacao);
@@ -180,4 +180,5 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
     }
+
 }

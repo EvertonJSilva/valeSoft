@@ -49,6 +49,14 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.LiberacaoId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("LiberacaoId", @ViewBag.LiberacaoId as SelectList, new { @class = "form-control", @onchange = "MostraValores()", @id = "LiberacaoId" })
+                @Html.ValidationMessageFor(model => model.LiberacaoId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.TipoSessao, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -56,21 +64,15 @@
                 @Html.DropDownList("TipoSessao", new SelectList(new List<SelectListItem>
                                 {
                                     new SelectListItem { Selected = true, Text = "Comparecimento", Value = "50000470"},
-                                    new SelectListItem { Selected = false, Text = "Não-Comparecimento", Value = "60000678"},
-                                    new SelectListItem { Selected = false, Text = "Psico-Social", Value = "80000509"}
-                                }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
+                                    new SelectListItem { Selected = false, Text = "Não-Comparecimento", Value = "80000509"},
+                                    new SelectListItem { Selected = false, Text = "Psico-Social", Value = "60000678"}
+                                }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control", @onchange = "MostraValores()", @id = "TipoSessao" })
+
                 @Html.ValidationMessageFor(model => model.TipoSessao, "", new { @class = "text-danger" })
              </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LiberacaoId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("LiberacaoId", @ViewBag.LiberacaoId as SelectList, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.LiberacaoId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+        
         <div class="form-group">
             @Html.LabelFor(model => model.ProfissionalId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -94,7 +96,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ValorConsulta, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorConsulta, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.EditorFor(model => model.ValorConsulta, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @id = "ValorConsulta" } })
                 @Html.ValidationMessageFor(model => model.ValorConsulta, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -102,7 +104,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ValorCopart, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorCopart, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.EditorFor(model => model.ValorCopart, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @id = "ValorCopart" } })
                 @Html.ValidationMessageFor(model => model.ValorCopart, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -110,7 +112,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ValorConvenio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorConvenio, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.EditorFor(model => model.ValorConvenio, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" , @id = "ValorConvenio"} })
                 @Html.ValidationMessageFor(model => model.ValorConvenio, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -132,7 +134,38 @@
     @Scripts.Render("~/bundles/jqueryval")
 
     <script>
-            $("#autorizacao").mask("9999.9999.99-99999999");
+        function MostraValores() {
+          
+            var e1 = document.getElementById("TipoSessao");
+            var sessao = e1.options[e1.selectedIndex].value;
+
+            var e2 = document.getElementById("LiberacaoId");
+            var liberacao = e2.options[e2.selectedIndex].value;
+
+            ListaValores(sessao, liberacao);
+            
+        };
+
+        function ListaValores(sessao, liberacao) {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListaValores", "Consultas")',
+                // contentType: "application/json; charset=utf-8",
+                data: { sessao: sessao, liberacaoId: liberacao },
+                dataType: "json",
+                success: function (result) {
+                    $('input[name="ValorConsulta"]').val(((result._ValorConsulta).toFixed(2)).replace('.',','))
+                    $('input[name="ValorCopart"]').val(((result._ValorCopart).toFixed(2)).replace('.',','))
+                    $('input[name="ValorConvenio"]').val(((result._ValorConvenio).toFixed(2)).replace('.',','))
+
+                    window.locationre = result.url;
+                }
+            });
+        }
+
+        $("#autorizacao").mask("9999.9999.99-99999999");
+        
     </script>
+
 }
 

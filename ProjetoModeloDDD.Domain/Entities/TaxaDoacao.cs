@@ -10,7 +10,6 @@ namespace ProjetoModeloDDD.Domain.Entities
         public virtual TipoProfissional TipoProfissional { get; set; }
         public int TipoProfissionalId { get; set; }
         public decimal Valor { get; set; }
-
         public int TaxaDoacaoId { get; set; }
         
     }

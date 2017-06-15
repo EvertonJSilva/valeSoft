@@ -52,6 +52,18 @@
 
         </div>
 
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.temCopart, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.temCopart)
+                    @Html.ValidationMessageFor(model => model.temCopart, "", new { @class = "text-danger", @type = "number" })
+                </div>
+            </div>
+        </div>
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Salvar" class="btn btn-default" />
