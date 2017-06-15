@@ -17,11 +17,11 @@ namespace ProjetoModeloDDD.Domain.Entities
 
         public DemonstrativoReport(Producao producao)
         {
-            this.Matricula = producao.Profissional.Matricula;
-            this.NomeProfissional = producao.Profissional.NomeProfissional;
-            this.DataIngresso = producao.Profissional.DataIngresso;
-            this.INSS = producao.Profissional.INSS;
-            this.CPF = producao.Profissional.Cpf;
+            this.Matricula = producao.Consulta.Profissional.Matricula;
+            this.NomeProfissional = producao.Consulta.Profissional.NomeProfissional;
+            this.DataIngresso = producao.Consulta.Profissional.DataIngresso;
+            this.INSS = producao.Consulta.Profissional.INSS;
+            this.CPF = producao.Consulta.Profissional.Cpf;
             this.ValorConsulta = producao.Consulta.ValorConsulta;
             this.ValorCopart = producao.Consulta.ValorCopart;
             this.ValorConvenio = producao.Consulta.ValorConvenio;

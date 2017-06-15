@@ -86,12 +86,6 @@
     <Compile Include="Repositories\ValorConsultaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
-      <Project>{984cb356-b992-441e-bf81-a36d1b30add0}</Project>
-      <Name>ProjetoModeloDDD.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Reports\Demonstrativo.rdlc" />
     <EmbeddedResource Include="Reports\Protocolo.rdlc" />
     <EmbeddedResource Include="Reports\Pacientes.rdlc" />
@@ -104,9 +98,16 @@
     </None>
     <None Include="ProjetoModeloDDD.Domain.Entities.DemonstrativoReport.datasource" />
     <None Include="ProjetoModeloDDD.Domain.Entities.Producao.datasource" />
+    <None Include="ProjetoModeloDDD.Domain.Entities.ProtocoloReport.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
+      <Project>{984cb356-b992-441e-bf81-a36d1b30add0}</Project>
+      <Name>ProjetoModeloDDD.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

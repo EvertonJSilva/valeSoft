@@ -46,6 +46,7 @@
     <Compile Include="Entities\ProducaoReport.cs" />
     <Compile Include="Entities\Produto.cs" />
     <Compile Include="Entities\Profissional.cs" />
+    <Compile Include="Entities\ProtocoloReport.cs" />
     <Compile Include="Entities\TaxaDoacao.cs" />
     <Compile Include="Entities\TipoProfissional.cs" />
     <Compile Include="Entities\Usuario.cs" />
@@ -93,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ProjetoModeloDDD.Domain.Entities.ProtocoloReport.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

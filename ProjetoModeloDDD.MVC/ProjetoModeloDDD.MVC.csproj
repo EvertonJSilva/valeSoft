@@ -447,6 +447,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Properties\DataSources\ProjetoModeloDDD.Domain.Entities.ProducaoReport.datasource" />
     <None Include="Properties\PublishProfiles\everton.pubxml" />
     <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
