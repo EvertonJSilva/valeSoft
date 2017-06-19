@@ -289,7 +289,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 case true:
                     return valorConsulta.Valor - 15;
                 case false:
-                    return 0;
+                    return valorConsulta.Valor;
                 default:
                     return 0;
             }

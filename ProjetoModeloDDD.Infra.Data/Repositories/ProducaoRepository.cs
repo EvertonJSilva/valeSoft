@@ -14,5 +14,13 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
         {
           return   Db.Producoes.Where(p => p.Consulta.ConsultaId == id).Single();     
         }
+
+        public IEnumerable<Producao> GetListaPorData(DateTime datainicial, DateTime dataFinal)
+        {
+            return Db.Producoes.Where(p => p.Consulta.DataHoraConsulta >= datainicial
+                                && p.Consulta.DataHoraConsulta <= dataFinal);
+            
+        }
+
     }
 }

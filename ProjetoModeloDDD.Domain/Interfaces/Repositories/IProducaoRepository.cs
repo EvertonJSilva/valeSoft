@@ -12,5 +12,7 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
     public interface IProducaoRepository : IRepositoryBase<Producao>
     {
         Producao GetPorConsultaID(int id);
-    }
+
+        IEnumerable<Producao> GetListaPorData(DateTime datainicial, DateTime dataFinal);
+        }
 }

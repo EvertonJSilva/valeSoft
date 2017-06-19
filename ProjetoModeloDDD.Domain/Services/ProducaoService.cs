@@ -18,6 +18,10 @@ namespace ProjetoModeloDDD.Domain.Services
         {
             _producaoRepository = producaoRepository;
         }
+        public IEnumerable<Producao> GetListaPorData(DateTime dataInicial, DateTime dataFinal)
+        {
+            return _producaoRepository.GetListaPorData(dataInicial, dataFinal);
+        }
 
         public Producao GetPorConsultaID(int id)
         {

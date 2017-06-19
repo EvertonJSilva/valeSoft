@@ -20,37 +20,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         }
 
-
-
-        // GET: Producao
-        //public ActionResult Index(string palavra, int? LocalizarPor)
-        //{
-
-        //    var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
-        //    int idLocalizacao = LocalizarPor.GetValueOrDefault();
-
-        //    if(!String.IsNullOrEmpty(palavra))
-        //    {
-        //        switch(idLocalizacao)
-        //        {
-        //            case 2:
-        //                producaoViewModel = producaoViewModel.Where(p => p.NomePaciente.Contains(palavra));
-        //                break;
-        //            case 1:
-        //                producaoViewModel = producaoViewModel.Where(p => p.CarteirinhaPaciente.Contains(palavra));
-        //                break;
-        //        }
-        //    }
-
-        //    return View(producaoViewModel);
-
-        //}
-
+        
             
-        public ActionResult Revisar(int producaoId)
+        public ActionResult Revisar(int producaoId, int cancelamento)
         {
             var producao = _producaoApp.GetById(producaoId);
-            producao.revisado = true;
+            if(cancelamento == 1)
+            {
+                producao.revisado = false;
+            }
+            else
+            {
+                producao.revisado = true;
+            }
 
             _producaoApp.Update(producao);
 
@@ -59,10 +41,21 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
         // GET: Producao
-        public ActionResult Index(string palavra, int? LocalizarPor)
+        public ActionResult Index(string palavra, int? LocalizarPor, string dataInicial, string dataFinal, string acao )
         {
 
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
+            //caso não tenha passado nada traz tudo
+            if (String.IsNullOrEmpty(dataInicial))
+            {
+                dataInicial = DateTime.MinValue.ToString();
+            }
+            if (String.IsNullOrEmpty(dataFinal))
+            {
+                dataFinal = DateTime.MaxValue.ToString();
+            }
+
+            var listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal));
+            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
@@ -71,38 +64,43 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
+                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                     case 1:
-                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
+                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.ToLower().Contains(palavra.ToLower()));
                         break;     
                 }
             }
 
-            return View(producaoViewModel);
+            ///salva dados temp para poder passar paras as outras acoes
+            TempData["listaProducao"] = producaoViewModel;
+
+            switch (acao)
+            {
+                case null:
+                    return View(producaoViewModel);
+                    
+                case "REPORT":
+                    return RedirectToAction("Report");
+
+                case "PROTOCOLO":
+                    return RedirectToAction("Protocolo");
+
+                case "DEMONSTRATIVO":
+                    return RedirectToAction("Demonstrativo");
+
+                default:
+                    return View(producaoViewModel);
+            }
+
 
         }
 
-        public ActionResult Report(string palavra, int? LocalizarPor)
+        public ActionResult Report()
         {
-//            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
 
-            var producaoViewModel = _producaoApp.GetAll();
+            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
 
-            int idLocalizacao = LocalizarPor.GetValueOrDefault();
-
-            if (!String.IsNullOrEmpty(palavra))
-            {
-                switch (idLocalizacao)
-                {
-                    case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
-                        break;
-                    case 1:
-                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
-                        break;
-                }
-            }
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
@@ -119,27 +117,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return View(producaoViewModel);
         }
 
-        public ActionResult Protocolo(string palavra, int? LocalizarPor)
+        public ActionResult Protocolo()
         {
-            //var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
 
-            var producaoViewModel = _producaoApp.GetAll();
-
-            int idLocalizacao = LocalizarPor.GetValueOrDefault();
-
-
-            if (!String.IsNullOrEmpty(palavra))
-            {
-                switch (idLocalizacao)
-                {
-                    case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
-                        break;
-                    case 1:
-                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
-                        break;
-                }
-            }
+            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
@@ -159,24 +140,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Demonstrativo(string palavra, int? LocalizarPor)
         {
-            //var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(_producaoApp.GetAll());
-
-            var producaoViewModel = _producaoApp.GetAll();
-
-            int idLocalizacao = LocalizarPor.GetValueOrDefault();
-
-            if (!String.IsNullOrEmpty(palavra))
-            {
-                switch (idLocalizacao)
-                {
-                    case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.Contains(palavra));
-                        break;
-                    case 1:
-                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.Contains(palavra));
-                        break;
-                }
-            }
+            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
