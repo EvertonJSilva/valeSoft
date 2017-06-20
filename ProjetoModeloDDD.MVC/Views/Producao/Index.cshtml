@@ -17,26 +17,33 @@
     @Html.TextBox("dataFinal", ViewBag.DataFinal as string, new { @class = "form-control", @type = "Date", @style = "Width:70" })
     <hr />
     <p>
-        Localizar por:
-        <div class="form-group">
+
+            Localizar por:
+            <div class="form-group">
 
 
-            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
+                @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
                                 {
-                                    new SelectListItem { Selected = true, Text = "Carteirinha", Value = "1"},
                                     new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
-                                }, "Value", "text", @ViewBag.LocalizarPor)
+                                    new SelectListItem { Selected = true, Text = "Carteirinha", Value = "1"},
+
+       }, "Value", "text", @ViewBag.LocalizarPor)
                      , new { @class = "form-control", @style = "float:left", })
 
-            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
-            &nbsp;
-            <button type="submit" class="btn btn-theme">Pesquisar</button>
-  
-            &nbsp;
-    </div>
-    </p>
+                @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+                &nbsp;
+                <button type="submit" class="btn btn-theme">Pesquisar</button>
 
-    
+                &nbsp;
+            </div>
+</p>
+        @Html.RadioButton("criterio", "todos", true)<span> Todos</span>
+        @Html.RadioButton("criterio", "revisados")<span> Revisados</span>
+        @Html.RadioButton("criterio", "nao-revisados")<span> Não revisados</span>
+
+        <p style="float:none"></p>
+
+
     <button name="acao" value="REPORT" type="submit" class="btn btn-theme" style="background-color:#358a2f">Produção</button>
     <button name="acao" value="PROTOCOLO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Protocolo</button>
     <button name="acao" value="DEMONSTRATIVO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Demonstrativo</button>
@@ -64,7 +71,7 @@
 
 
 
-}).WithPaging(5).Sortable(true)
+}).WithPaging(15).Sortable(true)
 </div>
 
 

@@ -41,7 +41,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
         // GET: Producao
-        public ActionResult Index(string palavra, int? LocalizarPor, string dataInicial, string dataFinal, string acao )
+        public ActionResult Index(string palavra,
+                                    int? LocalizarPor,
+                                    string dataInicial,
+                                    string dataFinal,
+                                    string acao,
+                                    string criterio)
         {
 
             //caso não tenha passado nada traz tudo
@@ -53,11 +58,25 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 dataFinal = DateTime.MaxValue.ToString();
             }
-
+            
             var listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal));
             var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
+
+            switch (criterio)
+            {
+                case "todos":
+                    break;
+                case "revisados":
+                    producaoViewModel = producaoViewModel.Where(s => s.revisado == true );
+                    break;
+                case "nao-revisados":
+                    producaoViewModel = producaoViewModel.Where(s => s.revisado == false);
+                    break;
+                default:
+                    break;
+            }
 
             if(!String.IsNullOrEmpty(palavra))
             {
