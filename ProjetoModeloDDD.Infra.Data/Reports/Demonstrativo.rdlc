@@ -1042,7 +1042,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 29,29,0))</Value>
+                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 14,14,0))</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
