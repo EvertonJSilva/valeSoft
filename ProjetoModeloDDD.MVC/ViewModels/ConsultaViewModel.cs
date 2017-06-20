@@ -30,7 +30,7 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DisplayName("Data da consulta")]
+        [DisplayName("Data Consulta")]
         public DateTime DataHoraConsulta { get; set; }
 
         [DisplayName("Valor da consulta R$")]
