@@ -23,6 +23,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
        // GET: Paciente
         public ActionResult Index(LocalizarViewModel localizar)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
             
             if (!String.IsNullOrEmpty(localizar.palavra))

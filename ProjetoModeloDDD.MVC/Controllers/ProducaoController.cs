@@ -19,8 +19,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _producaoApp = producaoApp;
 
         }
-
-        
+       
             
         public ActionResult Revisar(int producaoId, int cancelamento)
         {
@@ -48,6 +47,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
                                     string acao,
                                     string criterio)
         {
+
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
 
             //caso não tenha passado nada traz tudo
             if (String.IsNullOrEmpty(dataInicial))

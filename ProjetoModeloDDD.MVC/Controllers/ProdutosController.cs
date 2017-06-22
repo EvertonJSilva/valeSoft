@@ -22,6 +22,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Cliente
         public ActionResult Index()
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var produtoViewModel = Mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoViewModel>>(_produtoApp.GetAll());
 
             return View(produtoViewModel);

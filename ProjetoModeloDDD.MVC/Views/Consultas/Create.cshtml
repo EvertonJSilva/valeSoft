@@ -4,7 +4,7 @@
     ViewBag.Title = "Incluir";
 }
 
-<h2>Incluir</h2>
+<h2>Incluir Consulta</h2>
 
 
 @using (Html.BeginForm())
@@ -62,7 +62,7 @@
 
                                     new SelectListItem { Selected = true, Text = "Comparecimento", Value = "50000470"},
                                     new SelectListItem { Selected = false, Text = "Não-Comparecimento", Value = "80000509"},
-                                    new SelectListItem { Selected = false, Text = "Psico-Social", Value = "60000678"}
+                                    new SelectListItem { Selected = false, Text = "Psicossocial", Value = "60000678"}
            }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoSessao, "", new { @class = "text-danger" })
               </div>

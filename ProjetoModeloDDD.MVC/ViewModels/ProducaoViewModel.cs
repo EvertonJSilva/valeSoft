@@ -17,8 +17,13 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         public int ConsultaId { get; set; }
         public virtual ConsultaViewModel Consulta { get; set; }
-
-     
-
+        
+        public string DataConsulta {
+            get
+            {
+                return Consulta.DataHoraConsulta.Date.ToString("dd/MM/yyyy");
+            }
+                
+                }
     }
 }

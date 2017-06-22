@@ -37,7 +37,7 @@
     columns.Add(model => model.Cpf).Titled("CPF");
     columns.Add(model => model.INSS).Titled("INSS");
     columns.Add(model => model.Matricula).Titled("Matricula");
-    columns.Add(model => model.DataIngresso).Titled("Data de Ingresso");
+    columns.Add(model => model.DataIngressoFormatada).Titled("Data de Ingresso");
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
@@ -54,7 +54,7 @@
         .SetWidth(30)
         .RenderValueAs(o => DeletarCustonHelper(o.ProfissionalId));
 
-}).WithPaging(5).Sortable(true)
+}).WithPaging(20).Sortable(true)
 </div>
 
 @helper SalvarCustonHelper(int id)

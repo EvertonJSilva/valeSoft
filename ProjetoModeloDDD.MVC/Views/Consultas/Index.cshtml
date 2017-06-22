@@ -31,17 +31,17 @@
     }
 
  
-    <div style="margin-right:50px">
+    <div style="margin-right:30px">
         @Html.Grid(Model).Columns(columns =>
    {
        columns.Add(model => model.Status).Titled("Status");
-       columns.Add(model => model.Autorizacao).Titled("Autorização");
-       columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
-       columns.Add(model => model.DataHoraConsulta).Titled("Data consulta");
-       columns.Add(model => model.ValorConsulta).Titled("Valor Consulta");
+       columns.Add(model => model.Autorizacao).Titled("Autorização").SetWidth(300);
+       columns.Add(model => model.FormaAutorizar).Titled("Autorização");
+       columns.Add(model => model.dataConsulaFormatada).Titled("Data consulta").SetWidth(100);
+       columns.Add(model => model.ValorConsulta).Titled("Valor").SetWidth(100);
        columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
        columns.Add(model => model.Liberacao.NumeroLiberacao).Titled("Numero Liberação");
-       columns.Add(model => model.Liberacao.Paciente.NomePaciente).Titled("Paciente");
+       columns.Add(model => model.Liberacao.Paciente.NomePaciente).Titled("Paciente").SetWidth(600);
        columns.Add()
            .Encoded(false)
            .Sanitized(false)
@@ -58,7 +58,7 @@
            .SetWidth(30)
            .RenderValueAs(o => DeletarCustonHelper(o.ConsultaId));
 
-   }).WithPaging(5).Sortable(true)
+   }).WithPaging(20).Sortable(true)
     </div>
 
     @helper SalvarCustonHelper(int id)

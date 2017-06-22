@@ -35,6 +35,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
+
             var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();

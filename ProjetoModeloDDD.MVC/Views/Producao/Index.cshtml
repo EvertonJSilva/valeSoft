@@ -11,9 +11,9 @@
 
 @using (Html.BeginForm("Index", "Producao", FormMethod.Get))
 {
-    <p style="float:left"> De :</p>
+    <span style="font-size: 15px; vertical-align:sub; float:left; line-height: 30px" > De :&nbsp</span>
     @Html.TextBox("dataInicial", ViewBag.DataInicial as string, new { @class = "form-control", @type = "Date" })
-    <p style="float:left"> Até:</p>
+    <p style="font-size: 15px; vertical-align:sub; float:left; line-height: 30px" > Até:&nbsp</p>
     @Html.TextBox("dataFinal", ViewBag.DataFinal as string, new { @class = "form-control", @type = "Date", @style = "Width:70" })
     <hr />
     <p>
@@ -60,7 +60,7 @@
     columns.Add(model => model.Consulta.Liberacao.Paciente.NomePaciente).Titled("Nome Paciente");
     columns.Add(model => model.Consulta.Profissional.NomeProfissional).Titled("Profissional");
     columns.Add(model => model.CarteirinhaPaciente).Titled("Carteirinha").SetWidth(165);
-    columns.Add(model => model.Consulta.DataHoraConsulta).Titled("Data Consulta");
+    columns.Add(model => model.DataConsulta).Titled("Data Consulta");
     columns.Add(model => model.Consulta.Autorizacao).Titled("Autorização");
     columns.Add(model => model.Consulta.Liberacao.NumeroLiberacao).Titled("Liberação");
     columns.Add(model => model.Consulta.TipoSessao).Titled("Sessão");
@@ -125,6 +125,6 @@ else
         }
 
     </script>
-
+    
 }
 

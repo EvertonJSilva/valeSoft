@@ -74,5 +74,12 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         public virtual ProfissionalViewModel Profissional { get; set; }
 
+        public string dataConsulaFormatada {
+            get
+            {
+                return this.DataHoraConsulta == DateTime.MinValue ? "" : this.DataHoraConsulta.ToString("dd/MM/yyyy"); 
+            }
+        }
+
     }
 }

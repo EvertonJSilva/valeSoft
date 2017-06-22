@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ProjetoModeloDDD.Application;
 using ProjetoModeloDDD.Application.Interface;
 using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.MVC.ViewModels;
@@ -13,9 +14,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
         private readonly IProfissionalAppService _profissionalApp;
         private readonly ITipoProfissionalAppService _tipoProfissionalAppService;
-
-
-
+        
         public ProfissionaisController(IProfissionalAppService profissionalApp, ITipoProfissionalAppService tipoProfissionalAppService)
         {
             _profissionalApp = profissionalApp;
@@ -25,6 +24,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var profissionalViewModel = Mapper.Map<IEnumerable<Profissional>, IEnumerable<ProfissionalViewModel>>(_profissionalApp.GetAll());
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
@@ -71,6 +75,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var profissionalDomain = Mapper.Map<ProfissionalViewModel, Profissional>(profissional);
+
+                profissionalDomain.Senha = Util.encryption(profissionalDomain.Senha);
                 _profissionalApp.Add(profissionalDomain);
 
                 return RedirectToAction("Index");

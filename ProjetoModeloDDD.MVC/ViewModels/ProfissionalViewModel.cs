@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -54,7 +55,14 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage ="Preencha a Matricula")]
         public int Matricula { get; set; }
 
+        public string DataIngressoFormatada
+        {
+            get
+            {
+                return this.DataIngresso.ToString("dd/MM/yyyy");
+            }
 
+        }
 
     }
 }

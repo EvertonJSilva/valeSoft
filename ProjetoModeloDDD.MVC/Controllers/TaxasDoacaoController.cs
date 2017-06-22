@@ -24,6 +24,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
+
             var taxaDoacaoViewModel = Mapper.Map<IEnumerable<TaxaDoacao>, IEnumerable<TaxaDoacaoViewModel>>(_TaxaDoacaoAppService.GetAll());
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 

@@ -22,6 +22,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
+            if (Session["Usuario"] == null)
+            {
+                return RedirectToAction("index", "login");
+            }
+
             var tipoProfissinoalViewModel = Mapper.Map<IEnumerable<TipoProfissional>, IEnumerable<TipoProfissionalViewModel>>(_tipoProfissionalApp.GetAll());
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
