@@ -1,10 +1,13 @@
-﻿using System;
+﻿using ProjetoModeloDDD.Domain.Interfaces.Repositories;
+using System;
 using System.Collections.Generic;
 
 namespace ProjetoModeloDDD.Domain.Entities
 {
     public class DemonstrativoReport
     {
+
+        private readonly ITaxaDoacaoRepository _taxaDoacaoRepository;
 
         public int Matricula { get; set; }
         public string NomeProfissional { get; set; }
@@ -14,6 +17,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public decimal ValorConsulta { get; set; }
         public decimal ValorCopart { get; set; }
         public decimal ValorConvenio { get; set; }
+        public decimal ValorDoacao { get; set; }
+
 
         public DemonstrativoReport(Producao producao)
         {
@@ -25,7 +30,7 @@ namespace ProjetoModeloDDD.Domain.Entities
             this.ValorConsulta = producao.Consulta.ValorConsulta;
             this.ValorCopart = producao.Consulta.ValorCopart;
             this.ValorConvenio = producao.Consulta.ValorConvenio;
-
+            this.ValorDoacao = _taxaDoacaoRepository.GetById(producao.Consulta.Profissional.TipoProfissionalId).Valor;
         }
 
         static public List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista)
