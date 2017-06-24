@@ -1,6 +1,7 @@
 ﻿using ProjetoModeloDDD.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjetoModeloDDD.Domain.Entities
 {
@@ -30,7 +31,17 @@ namespace ProjetoModeloDDD.Domain.Entities
             this.ValorConsulta = producao.Consulta.ValorConsulta;
             this.ValorCopart = producao.Consulta.ValorCopart;
             this.ValorConvenio = producao.Consulta.ValorConvenio;
-            this.ValorDoacao = _taxaDoacaoRepository.GetById(producao.Consulta.Profissional.TipoProfissionalId).Valor;
+
+            try
+            {
+                var valoresTaxas = _taxaDoacaoRepository.GetAll();
+                var valor = valoresTaxas.Where(v => v.TipoProfissionalId == producao.Consulta.Profissional.TipoProfissionalId);
+                this.ValorDoacao = valor.First().Valor;
+            }
+            catch (Exception)
+            {
+                this.ValorDoacao = 0;
+            } 
         }
 
         static public List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista)
