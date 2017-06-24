@@ -19,6 +19,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public decimal ValorCopart { get; set; }
         public decimal ValorConvenio { get; set; }
         public decimal ValorDoacao { get; set; }
+        public decimal ValorOutrosDescontos { get; set; }
+        public decimal ValorOutrosAcrecimos { get; set; }
 
 
         public DemonstrativoReport(Producao producao)
@@ -31,7 +33,9 @@ namespace ProjetoModeloDDD.Domain.Entities
             this.ValorConsulta = producao.Consulta.ValorConsulta;
             this.ValorCopart = producao.Consulta.ValorCopart;
             this.ValorConvenio = producao.Consulta.ValorConvenio;
-
+            this.ValorOutrosDescontos = 0;
+            this.ValorOutrosAcrecimos = 0;
+            
             try
             {
                 var valoresTaxas = _taxaDoacaoRepository.GetAll();
@@ -42,6 +46,8 @@ namespace ProjetoModeloDDD.Domain.Entities
             {
                 this.ValorDoacao = 0;
             } 
+
+
         }
 
         static public List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista)
