@@ -16,7 +16,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string INSS { get; set; }
         public DateTime DataIngresso { get; set; }
         public int Matricula { get; set; }
-
+        public decimal TaxaBancaria { get; set; }
 
     }
 }

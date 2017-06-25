@@ -55,6 +55,10 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [Required(ErrorMessage ="Preencha a Matricula")]
         public int Matricula { get; set; }
 
+        [DisplayName("Taxa Bancaria")]
+        [Required(ErrorMessage = "Preencha a Taxa Bancaria")]
+        public decimal TaxaBancaria { get; set; }
+
         public string DataIngressoFormatada
         {
             get
