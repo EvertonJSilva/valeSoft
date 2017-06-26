@@ -75,6 +75,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 case "revisados":
                     producaoViewModel = producaoViewModel.Where(s => s.revisado == true );
                     break;
+                case "consolidados":
+                    producaoViewModel = producaoViewModel.Where(s => s.Consolidado == true);
+                    break;
                 case "nao-revisados":
                     producaoViewModel = producaoViewModel.Where(s => s.revisado == false);
                     break;

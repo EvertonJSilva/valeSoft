@@ -15,6 +15,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
 
         public bool revisado { get; set; }
 
+        public bool Consolidado { get; set; }
+
         public int ConsultaId { get; set; }
         public virtual ConsultaViewModel Consulta { get; set; }
         
