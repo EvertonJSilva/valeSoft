@@ -41,6 +41,7 @@
         @Html.RadioButton("criterio", "revisados")<span> Revisados</span>
         @Html.RadioButton("criterio", "nao-revisados")<span> Não revisados</span>
         @Html.RadioButton("criterio", "consolidado")<span> Consolidados</span>
+        @Html.RadioButton("criterio", "nao-consolidado")<span> Não Consolidados</span>
 
         <p style="float:none"></p>
 
@@ -73,7 +74,7 @@
     columns.Add().Titled("Consolidado")
         .Encoded(false)
         .Sanitized(false)
-        .RenderValueAs(o => consolidadoCustomHelper(o.revisado, o.ProducaoId));
+        .RenderValueAs(o => consolidadoCustomHelper(o.Consolidado, o.ProducaoId));
 
 
 }).WithPaging(15).Sortable(true)

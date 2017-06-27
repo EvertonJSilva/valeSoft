@@ -39,6 +39,23 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
 
+        public ActionResult Consolidar(int producaoId, int cancelamento)
+        {
+            var producao = _producaoApp.GetById(producaoId);
+            if (cancelamento == 1)
+            {
+                producao.Consolidado = false;
+            }
+            else
+            {
+                producao.Consolidado = true;
+            }
+
+            _producaoApp.Update(producao);
+
+            return View();
+        }
+
         // GET: Producao
         public ActionResult Index(string palavra,
                                     int? LocalizarPor,
@@ -76,10 +93,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     producaoViewModel = producaoViewModel.Where(s => s.revisado == true );
                     break;
                 case "consolidados":
-                    producaoViewModel = producaoViewModel.Where(s => s.Consolidado == true);
+                    producaoViewModel = producaoViewModel.Where(c => c.Consolidado == true);
                     break;
                 case "nao-revisados":
                     producaoViewModel = producaoViewModel.Where(s => s.revisado == false);
+                    break;
+                case "nao-consolidados":
+                    producaoViewModel = producaoViewModel.Where(c => c.Consolidado == false);
                     break;
                 default:
                     break;

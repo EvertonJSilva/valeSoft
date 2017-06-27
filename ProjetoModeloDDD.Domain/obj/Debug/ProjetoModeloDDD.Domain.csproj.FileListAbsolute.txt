@@ -132,4 +132,3 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
