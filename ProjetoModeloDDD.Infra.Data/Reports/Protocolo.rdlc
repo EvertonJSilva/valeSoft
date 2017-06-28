@@ -653,7 +653,19 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
+                  <Value>=Fields!dataInicial.Value</Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> à </Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!dataFinal.Value</Value>
                   <Style>
                     <Format>d</Format>
                   </Style>
@@ -1228,7 +1240,19 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
+                  <Value>=Fields!dataInicial.Value</Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> à </Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!dataFinal.Value</Value>
                   <Style>
                     <Format>d</Format>
                   </Style>
@@ -2683,6 +2707,14 @@ FM-SUP-12.008</Value>
         <Field Name="carteirinhaPaciente">
           <DataField>carteirinhaPaciente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dataFinal">
+          <DataField>dataFinal</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dataInicial">
+          <DataField>dataInicial</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="nomePaciente">
           <DataField>nomePaciente</DataField>

@@ -12,6 +12,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string carteirinhaPaciente { get; set; }
         public string sessaoConsulta { get; set; }
         public decimal valorConsulta { get; set; }
+        public DateTime dataInicial { get; set; }
+        public DateTime dataFinal { get; set; }
 
         public ProducaoReport(Producao producao)
         {
@@ -19,6 +21,8 @@ namespace ProjetoModeloDDD.Domain.Entities
             this.carteirinhaPaciente = producao.CarteirinhaPaciente;
             this.sessaoConsulta = producao.Consulta.TipoSessao;
             this.valorConsulta = producao.Consulta.ValorConvenio;
+            this.dataInicial = producao.dataInicial;
+            this.dataFinal = producao.dataFinal;
         }
 
         static public List<ProducaoReport> GerarLista(IEnumerable<Producao> producaoLista)

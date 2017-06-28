@@ -74,6 +74,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (String.IsNullOrEmpty(dataInicial))
             {
                 dataInicial = DateTime.MinValue.ToString();
+                
+
             }
             if (String.IsNullOrEmpty(dataFinal))
             {
@@ -83,6 +85,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal));
             var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
 
+            
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
             switch (criterio)
