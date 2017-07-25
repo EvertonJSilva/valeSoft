@@ -23,15 +23,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
        // GET: Paciente
         public ActionResult Index(LocalizarViewModel localizar)
         {
+            IEnumerable<PacienteViewModel> pacienteViewModel;
+
             if (Session["Usuario"] == null)
             {
                 return RedirectToAction("index", "login");
             }
-
-            var pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
             
+
             if (!String.IsNullOrEmpty(localizar.palavra))
             {
+                pacienteViewModel = Mapper.Map<IEnumerable<Paciente>, IEnumerable<PacienteViewModel>>(_pacienteApp.GetAll());
+
                 switch (localizar.localizarPor[0])
                 {
                     case "Carteira":
@@ -42,6 +45,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         break;
                 }
 
+            }
+            else
+            {
+                pacienteViewModel = new List<PacienteViewModel> { new PacienteViewModel() };
             }
 
             LocalizarViewModel localizarViewModel = new LocalizarViewModel();

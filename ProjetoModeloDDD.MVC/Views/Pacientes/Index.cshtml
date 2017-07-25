@@ -32,37 +32,36 @@
     </p>
 }
 
-
-
 <div style="margin-right:50px">
-    @Html.Grid(Model.Item1).Columns(columns =>
-{
-    columns.Add(model => model.NomePaciente).Titled("Nome");
-    columns.Add(model => model.CarteirinhaPaciente).Titled("Matricula");
-    columns.Add(model => model.TelefonePaciente1).Titled("Contato 1");
-    columns.Add(model => model.TelefonePaciente2).Titled("Contato 2");
-    
-    columns.Add().Titled("Cooparticipação?")
-        .Sanitized(false)
-        .Encoded(false)
-        .RenderValueAs(o => CooParticipacaoCustonHelper(o.CopartPaciente));
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => SalvarCustonHelper(o.PacienteId));
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => EditarCustonHelper(o.PacienteId));
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => DeletarCustonHelper(o.PacienteId));
+           @Html.Grid(Model.Item1).Columns(columns =>
+           {
+               columns.Add(model => model.NomePaciente).Titled("Nome");
+               columns.Add(model => model.CarteirinhaPaciente).Titled("Matricula");
+               columns.Add(model => model.TelefonePaciente1).Titled("Contato 1");
+               columns.Add(model => model.TelefonePaciente2).Titled("Contato 2");
 
-}).WithPaging(20).Sortable(true)
+               columns.Add().Titled("Cooparticipação?")
+                   .Sanitized(false)
+                   .Encoded(false)
+                   .RenderValueAs(o => CooParticipacaoCustonHelper(o.CopartPaciente));
+               columns.Add()
+                   .Encoded(false)
+                   .Sanitized(false)
+                   .SetWidth(30)
+                   .RenderValueAs(o => SalvarCustonHelper(o.PacienteId));
+               columns.Add()
+                   .Encoded(false)
+                   .Sanitized(false)
+                   .SetWidth(30)
+                   .RenderValueAs(o => EditarCustonHelper(o.PacienteId));
+               columns.Add()
+                   .Encoded(false)
+                   .Sanitized(false)
+                   .SetWidth(30)
+                   .RenderValueAs(o => DeletarCustonHelper(o.PacienteId));
+
+           }).WithPaging(20).Sortable(true)
+        
 </div>
 
 @helper CooParticipacaoCustonHelper(Boolean tem)

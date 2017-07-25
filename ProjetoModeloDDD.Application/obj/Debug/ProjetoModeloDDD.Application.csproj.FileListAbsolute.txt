@@ -145,3 +145,38 @@ D:\Valesoft\ProjetoModeloDDD.Application\bin\Debug\Microsoft.CodeDom.Providers.D
 D:\Valesoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.csprojResolveAssemblyReference.cache
 D:\Valesoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.dll
 D:\Valesoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.pdb
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csc.exe
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csc.exe.config
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csc.rsp
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csi.exe
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\csi.rsp
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.AppContext.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.IO.FileSystem.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\vbc.exe
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\vbc.exe.config
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\vbc.rsp
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\VBCSCompiler.exe
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Application.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Application.pdb
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Domain.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\ProjetoModeloDDD.Domain.pdb
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.csprojResolveAssemblyReference.cache
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.pdb

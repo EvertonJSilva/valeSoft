@@ -27,16 +27,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
+            IEnumerable<LiberacaoViewModel> liberacaoViewModel;
+
             if (Session["Usuario"] == null)
             {
                 return RedirectToAction("index", "login");
             }
 
-            var liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
             if (!String.IsNullOrEmpty(palavra))
             {
+                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
+
                 switch (idLocalizacao)
                 {
                     case 1:
@@ -48,6 +51,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 }
 
             }
+            else
+            {
+                liberacaoViewModel = new List<LiberacaoViewModel> { new LiberacaoViewModel() };
+                liberacaoViewModel.ToList().First().Paciente = new PacienteViewModel();
+            }
+
 
             return View(liberacaoViewModel);
         }

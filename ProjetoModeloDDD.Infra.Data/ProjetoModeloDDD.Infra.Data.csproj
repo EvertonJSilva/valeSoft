@@ -67,6 +67,7 @@
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
     <Compile Include="EntityConfig\ProfissionalConfiguration.cs" />
     <Compile Include="EntityConfig\TaxaDoacaoConfiguration.cs" />
+    <Compile Include="EntityConfig\TaxaExtraProfissionalConfiguration.cs" />
     <Compile Include="EntityConfig\TipoProfissionalConfiguration.cs" />
     <Compile Include="EntityConfig\ValorConsultaConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Repositories\ProfissionalRepository.cs" />
     <Compile Include="Repositories\RespositoryBase.cs" />
     <Compile Include="Repositories\TaxaDoacaoRepository.cs" />
+    <Compile Include="Repositories\TaxaExtraProfissionalRepository.cs" />
     <Compile Include="Repositories\TipoProfissionalRepository.cs" />
     <Compile Include="Repositories\ValorConsultaRepository.cs" />
   </ItemGroup>

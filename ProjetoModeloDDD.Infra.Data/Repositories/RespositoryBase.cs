@@ -28,7 +28,7 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
         {
             return Db.Set<TEntity>().ToList();
         }
-
+        
         public void Update(TEntity obj)
         {
             Db.Entry(obj).State = EntityState.Modified;

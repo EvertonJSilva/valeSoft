@@ -82,6 +82,7 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind<IValorConsultaAppService>().To<ValorConsultaAppService>();
             kernel.Bind<IProducaoAppService>().To<ProducaoAppService>();
             kernel.Bind<ITipoProfissionalAppService>().To<TipoProfissionalAppService>();
+            kernel.Bind<ITaxaExtraProfissionalAppService>().To<TaxaExtraProfissionalAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IClienteService>().To<ClienteService>();
@@ -96,6 +97,7 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind<IValorConsultaService>().To<ValorConsultaService>();
             kernel.Bind<IProducaoService>().To<ProducaoService>();
             kernel.Bind<ITipoProfissionalService>().To<TipoProfissionalService>();
+            kernel.Bind<ITaxaExtraProfissionalService>().To<TaxaExtraProfissionalService>();
 
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
@@ -111,6 +113,8 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind<IValorConsultaRepository>().To<ValorConsultaRepository>();
             kernel.Bind<IProducaoRepository>().To<ProducaoRepository>();
             kernel.Bind<ITipoProfissionalRepository>().To<TipoProfissionalRepository>();
+            kernel.Bind<ITaxaExtraProfissionalRepository>().To<TaxaExtraProfissionalRepository>();
+
 
         }
     }

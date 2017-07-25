@@ -64,6 +64,7 @@
     <Compile Include="Interface\IProdutoAppService.cs" />
     <Compile Include="Interface\IProfissionalAppService.cs" />
     <Compile Include="Interface\ITaxaDoacaoAppService.cs" />
+    <Compile Include="Interface\ITaxaExtraprofissionalAppService.cs" />
     <Compile Include="Interface\ITipoProfissionalAppService.cs" />
     <Compile Include="Interface\IUsuarioAppService.cs" />
     <Compile Include="Interface\IValorConsultaAppService.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="ProfissionalAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaxaDoacaoAppService.cs" />
+    <Compile Include="TaxaExtraProfissionalAppService.cs" />
     <Compile Include="TipoProfissionalAppService.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ValorConsultaAppService.cs" />
