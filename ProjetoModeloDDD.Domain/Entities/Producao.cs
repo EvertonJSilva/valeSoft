@@ -15,7 +15,9 @@ namespace ProjetoModeloDDD.Domain.Entities
         //public string Sessao { get; set; }
         //public decimal ValorConvenio { get; set; }
         public bool revisado { get; set; }
-
+        public bool Consolidado { get; set; }
+        public DateTime dataInicial { get; set; }
+        public DateTime dataFinal { get; set; }
         public int ConsultaId { get; set; }
         public virtual Consulta Consulta { get; set; }
         public virtual Profissional Profissional { get; set; }

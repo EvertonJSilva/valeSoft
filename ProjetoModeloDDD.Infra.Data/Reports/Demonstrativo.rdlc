@@ -15,10 +15,10 @@
               <Width>1.99176cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.58185cm</Width>
+              <Width>3.14966cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60289cm</Width>
+              <Width>3.03508cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1013,7 +1013,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 29, 1,nothing))</Value>
+                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 14, 1,nothing))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1647,7 +1647,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox379">
+                    <Textbox Name="ValorOutrosDescontos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1661,7 +1661,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox379</rd:DefaultName>
+                      <rd:DefaultName>ValorOutrosDescontos</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1683,8 +1683,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!ValorOutrosDescontos.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1699,6 +1701,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1833,8 +1836,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Sum(Fields!ValorConvenio.Value)*0.0715</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1849,6 +1854,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1947,7 +1953,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox394">
+                    <Textbox Name="ValorDoacao">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1961,7 +1967,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox394</rd:DefaultName>
+                      <rd:DefaultName>ValorDoacao</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1983,8 +1989,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!ValorDoacao.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1999,6 +2007,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2133,14 +2142,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Fields!TaxaBancaria.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox390</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -2247,7 +2255,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox384">
+                    <Textbox Name="ValorOutrosAcrecimos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -2261,7 +2269,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox384</rd:DefaultName>
+                      <rd:DefaultName>ValorOutrosAcrecimos</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -2283,6 +2291,43 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
+                              <Value>=Fields!ValorOutrosAcrecimos.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox385</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
                               <Value />
                               <Style />
                             </TextRun>
@@ -2290,7 +2335,123 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox385</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -2433,7 +2594,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value xml:space="preserve"> </Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2496,8 +2657,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2525,8 +2689,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + ReportItems!Textbox395.Value + ReportItems!Textbox385.Value+ ReportItems!Textbox390.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2554,8 +2721,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total Ingressos</Value>
-                              <Style />
+                              <Value>Ingr.:</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2570,6 +2745,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2583,8 +2759,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>TotalDispendios</Value>
-                              <Style />
+                              <Value>Desc.:</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + ReportItems!Textbox395.Value + ReportItems!Textbox385.Value+ ReportItems!Textbox390.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2599,6 +2783,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2704,7 +2889,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Value>Total</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -2736,8 +2921,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=ReportItems!Textbox311.Value - ReportItems!Textbox312.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2752,6 +2939,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2832,6 +3020,9 @@
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
                   <Group Name="Details" />
                 </TablixMember>
                 <TablixMember>
@@ -2847,7 +3038,7 @@
         <DataSetName>Demonstrativo</DataSetName>
         <Top>0.27313cm</Top>
         <Left>0.57891cm</Left>
-        <Height>10.8cm</Height>
+        <Height>11.4cm</Height>
         <Width>17.91973cm</Width>
         <Style>
           <Border>
@@ -2856,7 +3047,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.3595in</Height>
+    <Height>4.92459in</Height>
     <Style />
   </Body>
   <Width>7.52029in</Width>
@@ -2979,11 +3170,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Período: 01/12/2016 à 31/12/2016                                          </Value>
+                  <Value>Período: 01/12/2016 à 31/12/2016                                   </Value>
                   <Style>
                     <FontStyle>Normal</FontStyle>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
                     <FontWeight>Normal</FontWeight>
                     <TextDecoration>None</TextDecoration>
                   </Style>
@@ -2993,7 +3183,6 @@
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
                     <FontWeight>Normal</FontWeight>
                     <TextDecoration>None</TextDecoration>
                   </Style>
@@ -3008,7 +3197,6 @@
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
                     <FontWeight>Normal</FontWeight>
                     <TextDecoration>None</TextDecoration>
                   </Style>
@@ -3018,7 +3206,6 @@
                   <Style>
                     <FontStyle>Normal</FontStyle>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
                     <FontWeight>Normal</FontWeight>
                     <TextDecoration>None</TextDecoration>
                   </Style>
@@ -3028,42 +3215,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox88</rd:DefaultName>
-          <Top>0.46771cm</Top>
+          <Top>0.20285cm</Top>
           <Left>0.57891cm</Left>
-          <Height>0.82048cm</Height>
+          <Height>1.74652cm</Height>
           <Width>12.2204cm</Width>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox94">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Eu como sócio da UNIPSICO VALE DO SINOS, venho através desta declarar que sou ciente de meus direitos e deveres com a cooperativa, descritos no Estatuto Social e Regimeto Interno.</Value>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox94</rd:DefaultName>
-          <Top>1.42929cm</Top>
-          <Left>0.57891cm</Left>
-          <Height>1.25014cm</Height>
-          <Width>12.2204cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -3094,16 +3249,48 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox95</rd:DefaultName>
-          <Top>0.38833cm</Top>
+          <Top>0.17639cm</Top>
           <Left>12.9757cm</Left>
-          <Height>2.24701cm</Height>
+          <Height>3.09367cm</Height>
           <Width>5.52294cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
             </Border>
             <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox94">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Eu como sócio da UNIPSICO VALE DO SINOS, venho através desta declarar que sou ciente de meus direitos e deveres com a cooperativa, descritos no Estatuto Social e Regimeto Interno.</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox94</rd:DefaultName>
+          <Top>2.06401cm</Top>
+          <Left>0.55245cm</Left>
+          <Height>1.25014cm</Height>
+          <Width>12.2204cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -3129,8 +3316,8 @@ RUA JÚLIO DE CASTILHOS, 351 - SALA, 605 - NOVO HAMBURGO(051) 3593-3434</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox96</rd:DefaultName>
-          <Top>2.78527cm</Top>
-          <Left>0.57891cm</Left>
+          <Top>3.39353cm</Top>
+          <Left>0.55245cm</Left>
           <Height>1.50125cm</Height>
           <Width>12.2204cm</Width>
           <ZIndex>3</ZIndex>
@@ -3168,8 +3355,8 @@ _____/_____/_____</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox97</rd:DefaultName>
-          <Top>2.81172cm</Top>
-          <Left>12.9757cm</Left>
+          <Top>3.41998cm</Top>
+          <Left>12.94924cm</Left>
           <Height>1.50125cm</Height>
           <Width>2.75244cm</Width>
           <ZIndex>4</ZIndex>
@@ -3202,8 +3389,8 @@ _______________</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox98</rd:DefaultName>
-          <Top>2.78527cm</Top>
-          <Left>15.90453cm</Left>
+          <Top>3.39353cm</Top>
+          <Left>15.87807cm</Left>
           <Height>1.50125cm</Height>
           <Width>2.59411cm</Width>
           <ZIndex>5</ZIndex>
@@ -3277,6 +3464,10 @@ _______________</Value>
           <DataField>NomeProfissional</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="TaxaBancaria">
+          <DataField>TaxaBancaria</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
         <Field Name="ValorConsulta">
           <DataField>ValorConsulta</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
@@ -3287,6 +3478,18 @@ _______________</Value>
         </Field>
         <Field Name="ValorCopart">
           <DataField>ValorCopart</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValorDoacao">
+          <DataField>ValorDoacao</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValorOutrosAcrecimos">
+          <DataField>ValorOutrosAcrecimos</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ValorOutrosDescontos">
+          <DataField>ValorOutrosDescontos</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>

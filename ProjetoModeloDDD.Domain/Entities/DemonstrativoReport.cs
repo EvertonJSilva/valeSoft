@@ -21,6 +21,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public decimal ValorDoacao { get; set; }
         public decimal ValorOutrosDescontos { get; set; }
         public decimal ValorOutrosAcrecimos { get; set; }
+        public decimal TaxaBancaria { get; set; }
 
 
         public DemonstrativoReport(Producao producao)
@@ -35,6 +36,8 @@ namespace ProjetoModeloDDD.Domain.Entities
             this.ValorConvenio = producao.Consulta.ValorConvenio;
             this.ValorOutrosDescontos = 0;
             this.ValorOutrosAcrecimos = 0;
+            this.TaxaBancaria = producao.Consulta.Profissional.TaxaBancaria;
+            
             
             try
             {
@@ -60,7 +63,7 @@ namespace ProjetoModeloDDD.Domain.Entities
             }
 
             return lista;
-        }
+        }  
 
 
     }

@@ -1,5 +1,5 @@
-﻿@model Tuple<ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel, IEnumerable < ProjetoModeloDDD.MVC.ViewModels.TaxaExtraProfissionalViewModel>>
-@using GridMvc.Html
+﻿@model ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel
+
 @{
     ViewBag.Title = "Detalhes";
 }
@@ -11,119 +11,77 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(Model => Model.Item1.NomeProfissional)
+            @Html.DisplayNameFor(model => model.NomeProfissional)
         </dt>
 
         <dd>
-            @Html.DisplayFor(Model => Model.Item1.NomeProfissional)
+            @Html.DisplayFor(model => model.NomeProfissional)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(Model => Model.Item1.TipoProfissional.Descricao)
+            @Html.DisplayNameFor(model => model.TipoProfissional.Descricao)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => Model.Item1.TipoProfissional.Descricao)
+            @Html.DisplayFor(model => model.TipoProfissional.Descricao)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => Model.Item1.Login)
+            @Html.DisplayNameFor(model => model.Login)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => Model.Item1.Login)
-        </dd>
-
-        
-        <dt>
-            @Html.DisplayNameFor(model => Model.Item1.Cpf)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => Model.Item1.Cpf)
+            @Html.DisplayFor(model => model.Login)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => Model.Item1.INSS)
+            @Html.DisplayNameFor(model => model.Senha)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => Model.Item1.INSS)
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INSS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INSS)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Item1.Matricula)
+            @Html.DisplayNameFor(model => model.Matricula)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => Model.Item1.Matricula)
+            @Html.DisplayFor(model => model.Matricula)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => Model.Item1.DataIngresso)
+            @Html.DisplayNameFor(model => model.DataIngresso)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => Model.Item1.DataIngresso)
+            @Html.DisplayFor(model => model.DataIngresso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxaBancaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxaBancaria)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.Item1.ProfissionalId }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProfissionalId }) |
     @Html.ActionLink("Voltar para lista", "Index")
 </p>
-
-<h2>Valores extras</h2>
-<hr />
-@using (Html.BeginForm("Index", "TaxasExtrasProfissional", FormMethod.Get))
-{
-    <p>
-        <div class="form-group">
-
-            @*@Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
-                                {
-                                    new SelectListItem { Selected = true, Text = "CPF", Value = "1"},
-                                    new SelectListItem { Selected = false, Text = "Nome do profissional", Value = "2"},
-                                }, "Value", "text", @ViewBag.LocalizarPor)
-                     , new { @class = "form-control", @style = "float:left", })
-
-            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
-            &nbsp;
-            <button type="submit" class="btn btn-theme">Pesquisar</button>*@
-            &nbsp;
-            @Html.ActionLink("Novo valor", "Create", "TaxasExtrasProfissional", new {idProfissional = Model.Item1.ProfissionalId  },new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
-
-        </div>
-    </p>
-}
-
-<div style="margin-right:50px">
-@Html.Grid(Model.Item2).Columns(columns =>
-{
-    columns.Add(model => model.dataCompensar).Titled("Data para compensar");
-    columns.Add(model => model.tipo).Titled("Tipo");
-    columns.Add(model => model.descricao).Titled("Descrição");
-    columns.Add(model => model.dataInsercao).Titled("Alterado em");
-    columns.Add(model => model.valor).Titled("valor");
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => EditarCustonHelper(o.TaxaExtraProfissionalId));
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => DeletarCustonHelper(o.TaxaExtraProfissionalId));
-
-}).WithPaging(20).Sortable(true)
-</div>
-
-@helper EditarCustonHelper(int id)
-{
-    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "TaxasExtrasProfissional", new { id = id })'"><i class="fa fa-pencil"></i></button>
-}
-
-@helper DeletarCustonHelper(int id)
-{
-    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "TaxasExtrasProfissional", new { id = id })'"><i class="fa fa-trash-o "></i></button>
-}

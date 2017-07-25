@@ -40,6 +40,8 @@
         @Html.RadioButton("criterio", "todos", true)<span> Todos</span>
         @Html.RadioButton("criterio", "revisados")<span> Revisados</span>
         @Html.RadioButton("criterio", "nao-revisados")<span> Não revisados</span>
+        @Html.RadioButton("criterio", "consolidados")<span> Consolidados</span>
+        @Html.RadioButton("criterio", "nao-consolidados")<span> Não Consolidados</span>
 
         <p style="float:none"></p>
 
@@ -69,12 +71,65 @@
         .Encoded(false)
         .Sanitized(false)
         .RenderValueAs(o => revisadoCustomHelper(o.revisado, o.ProducaoId)); ;
-
+    columns.Add().Titled("Consolidado")
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(o => consolidadoCustomHelper(o.Consolidado, o.ProducaoId));
 
 
 }).WithPaging(15).Sortable(true)
 </div>
 
+
+@helper consolidadoCustomHelper(bool consolidado, int idProducao)
+ {
+
+if (consolidado)
+{
+        <input data-width="65" onchange="Consolidar(this, 1)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" checked data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+}
+else
+{
+        <input data-width="65" onchange="Consolidar(this, 2)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+}
+
+    <script>
+
+function Consolidar(n, cancelar) {
+
+    var row = n.parentNode.parentNode.parentNode;
+    var cols = row.getElementsByTagName("td");
+    var i = 0;
+
+    //while (i < cols.length) {
+
+    //    var val = cols[i].childNodes[0].nodeValue
+    //    if (val != null) {
+    //        alert(val);
+    //    }
+    //    i++;
+    //}
+
+    EnviaConsolidar(cols[0].childNodes[0].nodeValue, cancelar);
+    elemento.bootstrapToggle();
+}
+
+function EnviaConsolidar(n, cancelar) {
+    $.ajax({
+        type: "POST",
+        url: '@Url.Action("Consolidar", "Producao")',
+        // contentType: "application/json; charset=utf-8",
+        data: { producaoId: n, cancelamento: cancelar },
+        dataType: "json",
+        success: function (result) {
+            alert(result);
+            window.locationre = result.url;
+        }
+    });
+}
+
+    </script>
+}
 
 
 @helper revisadoCustomHelper(bool revisado, int idProducao)
@@ -90,9 +145,9 @@ else
 }
 
     <script>
-        
+
         function Revisar(n, cancelar) {
-            
+
             var row = n.parentNode.parentNode.parentNode;
             var cols = row.getElementsByTagName("td");
             var i = 0;
@@ -110,6 +165,7 @@ else
             elemento.bootstrapToggle();
         }
 
+
         function EnviaRevisar(n, cancelar) {
             $.ajax({
                 type: "POST",
@@ -124,7 +180,9 @@ else
             });
         }
 
+       
+
     </script>
-    
+
 }
 
