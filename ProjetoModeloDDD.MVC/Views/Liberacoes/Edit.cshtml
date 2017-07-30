@@ -40,6 +40,15 @@
                 @Html.ValidationMessageFor(model => model.QuantidadeRealizada, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProfissionalId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ProfissionalId", @ViewBag.ProfissionalId as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProfissionalId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
         <div class="form-group">
             @Html.LabelFor(model => model.MedicoEncaminhante, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

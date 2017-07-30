@@ -12,5 +12,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string MedicoEncaminhante { get; set; }
         public string CRM { get; set; }
         public virtual Paciente Paciente { get; set; }
+        public int ProfissionalId { get; set; }
+        public virtual Profissional Profissional { get; set; }
     }
 }

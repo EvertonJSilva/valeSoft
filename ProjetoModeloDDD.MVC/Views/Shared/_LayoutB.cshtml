@@ -87,19 +87,24 @@
                         </a>
                     </li>
                    
+                    @if (((int)Session["nivelAcesso"]) != 2)
+                    {
                     <li>
                         <a href="/Profissionais/Index/">
                             <i class="fa fa-credit-card"></i>
                             <span>Profissionais</span>
                         </a>
                     </li>
+                    }
                     <li>
                         <a href="/Producao/Index/">
                             <i class="fa fa-print"></i>
                             <span>Produção</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
+                    @if (((int)Session["nivelAcesso"]) != 2)
+                    {
+                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-cogs"></i>
                             <span>Configurações</span>
@@ -110,7 +115,7 @@
                             <li><a href="/TaxasDoacao/Index/">Taxas de doação</a></li>
                         </ul>
                     </li>
-
+                    }
                 </ul>
                 <!-- sidebar menu end-->
             </div>

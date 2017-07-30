@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Consolidar";
+}
+
+<h3>Registros consolidados com sucesso!</h3>
+<div>
+    <h4></h4>
+    <hr />
+    
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Voltar para lista", "Index")
+        </div>
+    }
+</div>

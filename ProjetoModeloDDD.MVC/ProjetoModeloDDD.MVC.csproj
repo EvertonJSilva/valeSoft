@@ -54,6 +54,8 @@
         </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
+    <PublishDatabases>false</PublishDatabases>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper">
@@ -267,44 +269,10 @@
     <Content Include="Content\SiteB\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\SiteB\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\SiteB\img\blog-bg.jpg" />
-    <Content Include="Content\SiteB\img\checkbox-gray.png" />
-    <Content Include="Content\SiteB\img\friends\fr-01.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-02.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-03.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-04.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-05.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-06.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-07.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-08.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-09.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-10.jpg" />
-    <Content Include="Content\SiteB\img\friends\fr-11.jpg" />
     <Content Include="Content\SiteB\img\fundo-azul.jpg" />
     <Content Include="Content\SiteB\img\golden-defocused-lights-background.jpg" />
-    <Content Include="Content\SiteB\img\instagram.jpg" />
-    <Content Include="Content\SiteB\img\login-bg.jpg" />
-    <Content Include="Content\SiteB\img\lorde.jpg" />
-    <Content Include="Content\SiteB\img\mask.png" />
-    <Content Include="Content\SiteB\img\ny.jpg" />
-    <Content Include="Content\SiteB\img\portfolio\port01.jpg" />
-    <Content Include="Content\SiteB\img\portfolio\port02.jpg" />
-    <Content Include="Content\SiteB\img\portfolio\port03.jpg" />
-    <Content Include="Content\SiteB\img\portfolio\port04.jpg" />
-    <Content Include="Content\SiteB\img\portfolio\port05.jpg" />
-    <Content Include="Content\SiteB\img\portfolio\port06.jpg" />
-    <Content Include="Content\SiteB\img\product.jpg" />
-    <Content Include="Content\SiteB\img\product.png" />
-    <Content Include="Content\SiteB\img\profile-01.jpg" />
-    <Content Include="Content\SiteB\img\profile-02.jpg" />
-    <Content Include="Content\SiteB\img\radio-gray.png" />
-    <Content Include="Content\SiteB\img\ui-danro.jpg" />
-    <Content Include="Content\SiteB\img\ui-divya.jpg" />
-    <Content Include="Content\SiteB\img\ui-sam.jpg" />
-    <Content Include="Content\SiteB\img\ui-sherman.jpg" />
-    <Content Include="Content\SiteB\img\ui-zac.jpg" />
-    <Content Include="Content\SiteB\img\weather.jpg" />
-    <Content Include="Content\SiteB\img\zoom.png" />
+    <Content Include="Content\SiteB\img\logoUnipsico.png" />
+    <Content Include="Content\SiteB\img\logoValesoft.png" />
     <Content Include="Content\SiteB\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
     <Content Include="Content\SiteB\js\bootstrap-switch.js" />
     <Content Include="Content\SiteB\js\bootstrap-toggle.js" />
@@ -392,6 +360,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ReportViewerWebForm.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\SiteA\font-awesome\fonts\fontawesome-webfontba72.eot" />
@@ -415,9 +384,6 @@
     <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\SiteB\img\.DS_Store" />
-    <Content Include="Content\SiteB\img\friends\.DS_Store" />
-    <Content Include="Content\SiteB\img\portfolio\.DS_Store" />
     <Content Include="Content\SiteB\js\.DS_Store" />
     <Content Include="Content\SiteB\js\bootstrap-inputmask\.DS_Store" />
     <Content Include="Content\SiteB\js\chart-master\.DS_Store" />
@@ -454,6 +420,8 @@
     <Content Include="Properties\DataSources\ProjetoModeloDDD.Domain.Entities.ProducaoReport.datasource" />
     <None Include="Properties\PublishProfiles\everton.pubxml" />
     <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
@@ -563,10 +531,13 @@
     <Content Include="Views\Producao\Demonstrativo.cshtml" />
     <Content Include="Views\TaxasExtrasProfissional\Edit.cshtml" />
     <Content Include="Views\TaxasExtrasProfissional\Delete.cshtml" />
+    <Content Include="Views\Producao\Consolidar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\SiteA\Icon\" />
+    <Folder Include="Content\SiteB\img\friends\" />
+    <Folder Include="Content\SiteB\img\portfolio\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

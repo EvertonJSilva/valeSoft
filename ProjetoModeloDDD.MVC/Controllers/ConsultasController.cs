@@ -58,6 +58,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 }
 
             }
+
+            // médicos só vem as consultas dele
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            if (nivelAcesso == 2)
+            {
+                var IdProfissional = (int)Session["idProfissional"];
+
+                consultaViewModel = consultaViewModel.Where(s => s.Profissional.ProfissionalId == IdProfissional);
+            }
+
             return View(consultaViewModel);
         }
 
@@ -114,6 +124,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
+                consultaDomain.DataCadastro = DateTime.Now;
                 _consultaApp.Add(consultaDomain);
 
                 return RedirectToAction("Index");

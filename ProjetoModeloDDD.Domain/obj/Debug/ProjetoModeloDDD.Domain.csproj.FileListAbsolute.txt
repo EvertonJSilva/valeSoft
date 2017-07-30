@@ -163,6 +163,6 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\Pro
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\ProjetoModeloDDD.Domain.pdb
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
