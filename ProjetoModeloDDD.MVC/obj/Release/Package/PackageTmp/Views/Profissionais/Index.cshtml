@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "Profissionais";
+}
+
+<h2>Profissionais</h2>
+<hr />
+@using (Html.BeginForm("Index", "Profissionais", FormMethod.Get))
+{
+    <p>
+        Localizar por:
+        <div class="form-group">
+
+            @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "CPF", Value = "1"},
+                                    new SelectListItem { Selected = false, Text = "Nome do profissional", Value = "2"},
+                                }, "Value", "text", @ViewBag.LocalizarPor)
+                     , new { @class = "form-control", @style = "float:left", })
+
+            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+            &nbsp;
+            <button type="submit" class="btn btn-theme">Pesquisar</button>
+            &nbsp;
+            @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
+
+        </div>
+    </p>
+}
+
+<div style="margin-right:50px">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(model => model.NomeProfissional).Titled("Nome");
+    columns.Add(model => model.TipoProfissional.Descricao).Titled("Tipo profissional");
+    columns.Add(model => model.Cpf).Titled("CPF");
+    columns.Add(model => model.INSS).Titled("INSS");
+    columns.Add(model => model.Matricula).Titled("Matricula");
+    columns.Add(model => model.DataIngressoFormatada).Titled("Data de Ingresso");
+    columns.Add(model => model.TaxaBancaria).Titled("Taxa Bancaria");
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => SalvarCustonHelper(o.ProfissionalId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => EditarCustonHelper(o.ProfissionalId));
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => DeletarCustonHelper(o.ProfissionalId));
+
+}).WithPaging(20).Sortable(true)
+</div>
+
+@helper SalvarCustonHelper(int id)
+{
+    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Profissionais", new { id = id })'"><i class="fa fa-check"></i></button>
+}
+
+@helper EditarCustonHelper(int id)
+{
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Profissionais", new { id = id })'"><i class="fa fa-pencil"></i></button>
+}
+
+@helper DeletarCustonHelper(int id)
+{
+    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Profissionais", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+}
+
+
+
+

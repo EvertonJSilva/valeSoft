@@ -1,0 +1,63 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletar</h2>
+
+<h3>Tem certeza que deseja excluir esse registro??</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroLiberacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroLiberacao)
+        </dd>
+
+        <dt>
+            Quantidade Solcitada
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeRealizada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeRealizada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicoEncaminhante)
+        </dt>
+
+        <dd>
+            Médico que encaminhou
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CRM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CRM)
+        </dd>
+       
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar par alista", "Index")
+        </div>
+    }
+</div>

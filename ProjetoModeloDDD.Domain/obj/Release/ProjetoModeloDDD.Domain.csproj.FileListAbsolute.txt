@@ -33,6 +33,5 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\P
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.pdb
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb

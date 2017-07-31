@@ -179,8 +179,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 return View(consulta);
             }
-
-
+            
             if (ModelState.IsValid)
             {
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);

@@ -109,7 +109,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 _liberacaoApp.Add(liberacaoDomain);
 
-                for (int i = 0; i <= liberacaoDomain.QuantidadeTotal; i++)
+                for (int i = 0; i < liberacaoDomain.QuantidadeTotal; i++)
                 {
                     var consultaDomain = new Consulta();
                     consultaDomain.DataCadastro = DateTime.Now;

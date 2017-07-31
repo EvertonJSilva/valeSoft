@@ -50,3 +50,4 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Relea
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.csprojResolveAssemblyReference.cache
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.pdb
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Producao.rdlc

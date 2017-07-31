@@ -162,8 +162,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
-            viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-            viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Producao.rdlc";
+            //viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+        
+            #if !DEBUG
+                viewer.LocalReport.ReportPath = "bin\\Reports\\Producao.rdlc";
+            #else
+                viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Producao.rdlc";
+            #endif 
 
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
 
@@ -182,8 +187,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
-            viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-            viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Protocolo.rdlc";
+           // viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+            
+            #if !DEBUG
+                viewer.LocalReport.ReportPath = "bin\\Reports\\Protocolo.rdlc";
+            #else
+                viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Protocolo.rdlc";
+            #endif 
+
 
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Protocolo", producaoViewModel));
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
@@ -223,7 +234,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-            viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Demonstrativo.rdlc";
+                        
+            #if !DEBUG
+                viewer.LocalReport.ReportPath = "bin\\Reports\\Demonstrativo.rdlc";
+            #else
+                viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Demonstrativo.rdlc";
+            #endif 
+
 
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", DemonstrativoReport.GerarLista(producaoViewModel)));
