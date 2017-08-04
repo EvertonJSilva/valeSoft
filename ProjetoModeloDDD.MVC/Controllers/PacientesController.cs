@@ -41,7 +41,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         pacienteViewModel = pacienteViewModel.Where(s => s.CarteirinhaPaciente.Contains(localizar.palavra));
                         break;
                     case "Nome":
-                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente.Contains(localizar.palavra));
+                        pacienteViewModel = pacienteViewModel.Where(s => s.NomePaciente. ToLower().Contains(localizar.palavra.ToLower()));
                         break;
                 }
 

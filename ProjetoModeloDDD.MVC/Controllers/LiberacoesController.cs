@@ -50,7 +50,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         liberacaoViewModel = liberacaoViewModel.Where(s => s.NumeroLiberacao.Contains(palavra));
                         break;
                     case 2:
-                        liberacaoViewModel = liberacaoViewModel.Where(s => s.Paciente.NomePaciente.Contains(palavra));
+                        liberacaoViewModel = liberacaoViewModel.Where(s => s.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                 }
 
