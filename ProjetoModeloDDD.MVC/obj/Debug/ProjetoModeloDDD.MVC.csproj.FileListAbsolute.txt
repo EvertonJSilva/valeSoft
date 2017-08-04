@@ -266,7 +266,6 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\New
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.Net4.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe.config
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.rsp
@@ -302,36 +301,9 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Views\Login\
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll.config
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.pdb
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\GridMvc.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.Common.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.WebForms.DLL
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.SqlServer.Types.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.Web.Infrastructure.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Common.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Mvc.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ReportViewerForMvc.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Razor.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Deployment.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\WebActivatorEx.dll
-D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\WebGrease.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Application.pdb
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Domain.pdb
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.Infra.Data.pdb
@@ -356,3 +328,9 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.J
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\bin\AutoMapper.Net4.dll
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Producao.rdlc
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demonstrativo.rdlc
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
+D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.DataVisualization.DLL

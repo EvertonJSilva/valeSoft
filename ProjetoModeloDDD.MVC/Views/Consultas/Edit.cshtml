@@ -22,7 +22,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Autorizacao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Autorizacao, new { htmlAttributes = new { @class = "form-control", @type="text", @id = "autorizacao" } })
+                @Html.EditorFor(model => model.Autorizacao, new { htmlAttributes = new { @class = "form-control", @onkeypress="mascaraMutuario(this,cpfCnpj)", @type= "text", @id = "autorizacao" , @maxlength = "21" }  })
                 @Html.ValidationMessageFor(model => model.Autorizacao, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,6 +34,8 @@
                     {
                         new SelectListItem { Selected = true, Text = "Telefone", Value = "1"},
                         new SelectListItem { Selected = false, Text = "Internet", Value = "2"},
+                        new SelectListItem { Selected = false, Text = "Guia", Value = "3"},
+
                     }, "Text", "Text", @ViewBag.LocalizarPor), new { @class = "form-control" })
 
 
@@ -66,7 +68,7 @@
                                     new SelectListItem { Selected = true, Text = "Comparecimento", Value = "50000470"},
                                     new SelectListItem { Selected = false, Text = "Não-Comparecimento", Value = "80000509"},
                                     new SelectListItem { Selected = false, Text = "Psicossocial", Value = "60000678"}
-                                }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control", @onchange = "MostraValores()", @id = "TipoSessao" })
+                                }, "Value", "Text", @ViewBag.LocalizarPor), new { @class = "form-control", @onchange = "MostraValores()", @onfocus = "MostraValores()", @id = "TipoSessao" })
 
                 @Html.ValidationMessageFor(model => model.TipoSessao, "", new { @class = "text-danger" })
              </div>
@@ -154,16 +156,52 @@
                 data: { sessao: sessao, liberacaoId: liberacao },
                 dataType: "json",
                 success: function (result) {
+                    
                     $('input[name="ValorConsulta"]').val(((result._ValorConsulta).toFixed(2)))
                     $('input[name="ValorCopart"]').val(((result._ValorCopart).toFixed(2)))
                     $('input[name="ValorConvenio"]').val(((result._ValorConvenio).toFixed(2)))
-
+                    
+                    
                     window.locationre = result.url;
                 }
             });
         }
 
-        $("#autorizacao").mask('9999.9999.99-99999999');
+        //$("#autorizacao").OnKeyPress = "formatarAutorizacao"
+
+        function mascaraMutuario(o, f) {
+            v_obj = o
+            v_fun = f
+            setTimeout('execmascara()', 1)
+        }
+
+        function execmascara() {
+            v_obj.value = v_fun(v_obj.value)
+        }
+
+        function cpfCnpj(v) {
+
+            //Remove tudo o que não é dígito
+            v = v.replace(/\D/g, "")
+
+            if (v.length <= 5) { //CPF
+
+                v = v.replace(/(\d{4})(\d)/, "$1.$2")
+
+            } else { //CNPJ
+                //9999.9999.99-99999999
+                v = v.replace(/^(\d{4})(\d)/, "$1.$2")
+
+                v = v.replace(/^(\d{4})\.(\d{4})(\d)/, "$1.$2.$3")
+
+                v = v.replace(/(\d{4})\.(\d{4})\.(\d{2})(\d)/, "$1.$2.$3-$4")
+            }
+
+            return v
+
+        }
+
+        //$("#autorizacao").mask('9999.9999.99-99999999');
         
     </script>
 
