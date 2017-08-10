@@ -16,16 +16,18 @@
         <p>
             Saiba exatamente todas consultas marcadas para o dia, podendo consultar por paciente ou profissional.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Ir &raquo;</a></p>
+        <p>@Html.ActionLink("Ir...", "index", "Consultas", null, new { @class = "btn btn-default" })</p>
+
     </div>
     <div class="col-md-4">
         <h2>Liberações</h2>
         <p>Cadastre ou consulte liberações dos convênios médicos de forma simples e fácil.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Ir &raquo;</a></p>
+        <p>@Html.ActionLink("Ir...", "index", "Liberacoes", null, new { @class = "btn btn-default" })</p>
+
     </div>
     <div class="col-md-4">
         <h2>Pacientes</h2>
         <p>Obtenha a lista de todos os pacientes cadastrados ou realiza novos cadastros.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Ir &raquo;</a></p>
-    </div>
+        <p>@Html.ActionLink("Ir...", "index", "Pacientes", null, new { @class = "btn btn-default" })</p>
+  </div>
 </div>

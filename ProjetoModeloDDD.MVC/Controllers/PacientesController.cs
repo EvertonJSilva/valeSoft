@@ -54,7 +54,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             LocalizarViewModel localizarViewModel = new LocalizarViewModel();
             localizarViewModel.localizarPor = new List<string>(new string[] { "Nome","Carteira" });
 
-            var tuple = new Tuple<IEnumerable<PacienteViewModel>, LocalizarViewModel>(pacienteViewModel, localizarViewModel);
+            var tuple = new Tuple<IEnumerable<PacienteViewModel>, LocalizarViewModel>(pacienteViewModel.OrderBy(p => p.NomePaciente), localizarViewModel);
 
             return View(tuple);
         }

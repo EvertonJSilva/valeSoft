@@ -50,7 +50,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.Contains(palavra));
+                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                     case 1:
                         consultaViewModel = consultaViewModel.Where(s => s.Liberacao.NumeroLiberacao.Contains(palavra));

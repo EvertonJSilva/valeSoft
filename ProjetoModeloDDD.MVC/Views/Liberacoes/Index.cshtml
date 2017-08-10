@@ -15,8 +15,8 @@
 
             @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
                                 {
-                                    new SelectListItem { Selected = true, Text = "Liberação", Value = "1"},
-                                    new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
+                                    new SelectListItem { Selected = true, Text = "Nome Paciente", Value = "2"},
+                                    new SelectListItem { Selected = false, Text = "Liberação", Value = "1"},
                                 }, "Value", "text", @ViewBag.LocalizarPor)
                      , new { @class = "form-control", @style = "float:left", })
 

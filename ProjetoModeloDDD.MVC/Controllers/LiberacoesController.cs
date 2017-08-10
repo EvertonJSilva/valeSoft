@@ -71,7 +71,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
 
-            return View(liberacaoViewModel);
+            return View(liberacaoViewModel.OrderBy(p => p.NumeroLiberacao).OrderBy(p => p.Paciente.NomePaciente));
         }
 
         // GET: Consulta/Details/5

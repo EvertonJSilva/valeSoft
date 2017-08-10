@@ -81,5 +81,14 @@ namespace ProjetoModeloDDD.MVC.ViewModels
             }
         }
 
+        public string valorFormatado
+        {
+            get
+            {
+                return this.ValorConsulta <= 0 ? "" : this.ValorConsulta.ToString();
+            }
+        }
+
+
     }
 }
