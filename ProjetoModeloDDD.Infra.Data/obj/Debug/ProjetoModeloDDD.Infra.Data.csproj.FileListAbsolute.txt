@@ -215,3 +215,4 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Producao.rdlc
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Producao.rdlc

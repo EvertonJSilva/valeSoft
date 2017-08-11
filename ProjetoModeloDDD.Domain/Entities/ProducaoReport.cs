@@ -18,6 +18,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public ProducaoReport(Producao producao)
         {
             this.nomePaciente = producao.Consulta.Liberacao.Paciente.NomePaciente;
+            nomePaciente.ToUpper();
             this.carteirinhaPaciente = producao.CarteirinhaPaciente;
             this.sessaoConsulta = producao.Consulta.TipoSessao;
             this.valorConsulta = producao.Consulta.ValorConvenio;
