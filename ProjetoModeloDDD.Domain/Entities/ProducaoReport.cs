@@ -32,8 +32,9 @@ namespace ProjetoModeloDDD.Domain.Entities
             
             foreach (Producao producao in producaoLista)
             {
+                if (producao.Consolidado == true) { 
                 lista.Add(new ProducaoReport(producao));
-                
+                }
             }
 
             return lista;
