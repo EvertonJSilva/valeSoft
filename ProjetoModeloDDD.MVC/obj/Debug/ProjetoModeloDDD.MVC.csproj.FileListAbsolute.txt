@@ -265,3 +265,4 @@ D:\Valesoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
 D:\Valesoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
 D:\Valesoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 D:\Valesoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+D:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\favicon.ico

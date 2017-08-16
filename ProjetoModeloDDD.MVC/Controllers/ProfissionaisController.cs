@@ -14,11 +14,15 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
         private readonly IProfissionalAppService _profissionalApp;
         private readonly ITipoProfissionalAppService _tipoProfissionalAppService;
-        
-        public ProfissionaisController(IProfissionalAppService profissionalApp, ITipoProfissionalAppService tipoProfissionalAppService)
+        private readonly ITaxaExtraProfissionalAppService _taxaExtraProfissionalAppService;
+
+        public ProfissionaisController(IProfissionalAppService profissionalApp,
+                ITipoProfissionalAppService tipoProfissionalAppService,
+                ITaxaExtraProfissionalAppService taxaExtraProfissionalAppService)
         {
             _profissionalApp = profissionalApp;
             _tipoProfissionalAppService = tipoProfissionalAppService;
+            _taxaExtraProfissionalAppService = taxaExtraProfissionalAppService;
     }
 
         // GET: Consulta
@@ -54,9 +58,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Details(int id)
         {
             var profissional = _profissionalApp.GetById(id);
-            var profissionalViewModel = Mapper.Map<Profissional, ProfissionalViewModel>(profissional);
+            var taxasExtra = _taxaExtraProfissionalAppService.GetAll();
 
-             return View(profissionalViewModel);
+            var profissionalViewModel = Mapper.Map<Profissional, ProfissionalViewModel>(profissional);
+            var taxaEstraProfissionalViewModel = Mapper.Map<IEnumerable<TaxaExtraProfissional>, IEnumerable<TaxaExtraProfissionalViewModel>>(taxasExtra.Where(t => t.ProfissionalId == profissional.ProfissionalId));
+
+            var tuple = new Tuple<ProfissionalViewModel, IEnumerable<TaxaExtraProfissionalViewModel>>(profissionalViewModel, taxaEstraProfissionalViewModel);
+            return View(tuple);
         }
 
         // GET: Consulta/Create

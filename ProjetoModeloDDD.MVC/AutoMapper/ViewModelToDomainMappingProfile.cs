@@ -25,6 +25,7 @@ namespace ProjetoModeloDDD.MVC.AutoMapper
             Mapper.CreateMap<TipoProfissional, TipoProfissionalViewModel>();
             Mapper.CreateMap<TaxaDoacao, TaxaDoacaoViewModel>();
             Mapper.CreateMap<ValorConsulta, ValorConsultaViewModel>();
+            Mapper.CreateMap<TaxaExtraProfissional, TaxaExtraProfissionalViewModel>();
 
 
         }

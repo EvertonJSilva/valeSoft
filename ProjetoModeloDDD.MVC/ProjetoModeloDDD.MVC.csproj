@@ -204,6 +204,7 @@
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Controllers\ProfissionaisController.cs" />
     <Compile Include="Controllers\TaxasDoacaoController.cs" />
+    <Compile Include="Controllers\TaxasExtrasProfissionalController.cs" />
     <Compile Include="Controllers\TiposProfissionalController.cs" />
     <Compile Include="Controllers\ValoresConsultaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,6 +224,7 @@
     <Compile Include="ViewModels\ProdutoViewModel.cs" />
     <Compile Include="ViewModels\ProfissionalViewModel.cs" />
     <Compile Include="ViewModels\TaxaDoacaoViewModel.cs" />
+    <Compile Include="ViewModels\TaxaExtraProfissionalViewModel.cs" />
     <Compile Include="ViewModels\TipoProfissionalViewModel.cs" />
     <Compile Include="ViewModels\ValorConsultaViewModel.cs" />
   </ItemGroup>
@@ -490,6 +492,7 @@
     <Content Include="Views\Liberacoes\Details.cshtml" />
     <Content Include="Views\Liberacoes\Edit.cshtml" />
     <Content Include="Views\Liberacoes\Index.cshtml" />
+    <Content Include="Views\TaxasExtrasProfissional\Create.cshtml" />
     <None Include="Views\Login\Index.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -558,6 +561,8 @@
     <Content Include="Views\ValoresConsulta\Edit.cshtml" />
     <Content Include="Views\Producao\Protocolo.cshtml" />
     <Content Include="Views\Producao\Demonstrativo.cshtml" />
+    <Content Include="Views\TaxasExtrasProfissional\Edit.cshtml" />
+    <Content Include="Views\TaxasExtrasProfissional\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
