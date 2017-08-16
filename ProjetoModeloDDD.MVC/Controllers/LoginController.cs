@@ -20,6 +20,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Index()
         {
             Session["usuario"] = null;
+            Session["nivelAcesso"] = null;
+            Session["idProfissional"] = null;
+            
             LoginViewModel _loginViewModel = new LoginViewModel();
             return View(_loginViewModel);
         }
@@ -27,6 +30,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Logout()
         {
             Session["usuario"] = null;
+            Session["nivelAcesso"] = null;
+            Session["idProfissional"] = null;
+
             LoginViewModel _loginViewModel = new LoginViewModel();
             return View(_loginViewModel);
         }
@@ -50,7 +56,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             if (login.usuario == "sa" && login.senha == "ValeSoft#9090")
             {
-                Session["usuario"] = new Usuario(login.usuario, login.senha);
+                Session["usuario"] = new Usuario(login.usuario, login.senha, 0, 0);
+                Session["nivelAcesso"] = 0;
+                Session["idProfissional"] = 0;
+
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -76,7 +85,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 }
 
-                Session["usuario"] = new Usuario(login.usuario, profissionais.First().Senha);
+                Session["usuario"] = new Usuario(login.usuario, profissionais.First().Senha,
+                                                profissionais.First().TipoProfissional.nivelAcesso,
+                                                profissionais.First().ProfissionalId);
+
+                Session["nivelAcesso"] = profissionais.First().TipoProfissional.nivelAcesso;
+                Session["idProfissional"] = profissionais.First().ProfissionalId;
+
+
                 return RedirectToAction("Index", "Home");
                 
             }

@@ -95,7 +95,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var taxaExtraProfissional = _taxaExtraprofissionalAppService.GetById(id);
             var taxaExtraProfissionalViewModel = Mapper.Map<TaxaExtraProfissional, TaxaExtraProfissionalViewModel>(taxaExtraProfissional);
 
-          //  ViewBag.TipoProfissionalId = new SelectList(_tipoProfissionalAppService.GetAll(), "TipoProfissionalId", "Descricao", profissionalViewModel.TipoProfissionalId);
+            var profissional = _profissionalApp.GetById(taxaExtraProfissional.ProfissionalId);
+            ViewBag.ProfissionalId = profissional.ProfissionalId;
+            ViewBag.ProfissionalNome = profissional.NomeProfissional;
 
             return View(taxaExtraProfissionalViewModel);
         }
@@ -108,9 +110,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var taxaExtraProfissionalDomain = Mapper.Map<TaxaExtraProfissionalViewModel, TaxaExtraProfissional>(taxaExtra);
+
+                taxaExtraProfissionalDomain.dataInsercao = DateTime.Now;
                 _taxaExtraprofissionalAppService.Update(taxaExtraProfissionalDomain);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Profissionais", new { id = taxaExtraProfissionalDomain.ProfissionalId });
             }
 
            
@@ -122,7 +126,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var taxaExtraProfissional = _taxaExtraprofissionalAppService.GetById(id);
             var taxaExtraProfissionalViewModel = Mapper.Map<TaxaExtraProfissional, TaxaExtraProfissionalViewModel>(taxaExtraProfissional);
-
+            var profissional = _profissionalApp.GetById(taxaExtraProfissional.ProfissionalId);
+            ViewBag.ProfissionalId = profissional.ProfissionalId;
+            ViewBag.ProfissionalNome = profissional.NomeProfissional;
+            
             return View(taxaExtraProfissionalViewModel);
         }
 
@@ -134,7 +141,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var taxaExtraProfissional = _taxaExtraprofissionalAppService.GetById(id);
             _taxaExtraprofissionalAppService.Remove(taxaExtraProfissional);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Profissionais", new { id = taxaExtraProfissional.ProfissionalId });
         }
     }
 }

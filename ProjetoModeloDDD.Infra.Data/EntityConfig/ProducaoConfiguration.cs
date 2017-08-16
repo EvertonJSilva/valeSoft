@@ -18,6 +18,15 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
              .WithMany()
              .HasForeignKey(l => l.ConsultaId);
 
+            Property(p => p.dataInicial)
+                .IsOptional()
+                .HasColumnType("datetime2");
+
+            Property(p => p.dataFinal)
+                .IsOptional()
+                .HasColumnType("datetime2");
+
+
         }
 
     }

@@ -45,7 +45,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         profissionalViewModel = profissionalViewModel.Where(s => s.Cpf.Contains(palavra));
                         break;
                     case 2:
-                        profissionalViewModel = profissionalViewModel.Where(s => s.NomeProfissional.Contains(palavra));
+                        profissionalViewModel = profissionalViewModel.Where(s => s.NomeProfissional.ToLower().Contains(palavra.ToLower()));
                         break;
                 }
 
@@ -110,6 +110,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ProfissionalViewModel profissional)
         {
+
             if (ModelState.IsValid)
             {
                 var profissionalDomain = Mapper.Map<ProfissionalViewModel, Profissional>(profissional);

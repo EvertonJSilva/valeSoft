@@ -1,14 +1,14 @@
-﻿@model ProjetoModeloDDD.Domain.Entities.TaxaExtraProfissional
+﻿@model ProjetoModeloDDD.MVC.ViewModels.TaxaExtraProfissionalViewModel
 
 @{
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Valores extras</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Deseja realmente excluir este registro?</h3>
 <div>
-    <h4>TaxaExtraProfissional</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -51,22 +51,17 @@
             @Html.DisplayFor(model => model.valor)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProfissionalId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProfissionalId)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            
+            @Html.ActionLink("Voltar para lista", "Details", "Profissionais", new { id = @ViewBag.ProfissionalId }, new { })
+
+
         </div>
     }
 </div>

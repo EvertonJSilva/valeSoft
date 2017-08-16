@@ -17,6 +17,10 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
                 .WithMany()
                 .HasForeignKey(l => l.PacienteId);
 
+            HasRequired(c => c.Profissional)
+             .WithMany()
+             .HasForeignKey(c => c.ProfissionalId);
+
         }
     }
 }

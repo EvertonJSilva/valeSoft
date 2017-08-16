@@ -34,8 +34,14 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         [DisplayName("CRM Medico Encaminhante")]
         public string CRM { get; set; }
 
+        [DisplayName("Paciente")]
         public int PacienteId { get; set; }
         public virtual PacienteViewModel Paciente { get; set; }
+
+        [DisplayName("Profissional")]
+        public int ProfissionalId { get; set; }
+        public virtual ProfissionalViewModel Profissional { get; set; }
+
 
     }
 }

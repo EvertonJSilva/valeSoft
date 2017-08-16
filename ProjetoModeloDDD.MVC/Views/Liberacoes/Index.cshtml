@@ -15,8 +15,8 @@
 
             @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
                                 {
-                                    new SelectListItem { Selected = true, Text = "Liberação", Value = "1"},
-                                    new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
+                                    new SelectListItem { Selected = true, Text = "Nome Paciente", Value = "2"},
+                                    new SelectListItem { Selected = false, Text = "Liberação", Value = "1"},
                                 }, "Value", "text", @ViewBag.LocalizarPor)
                      , new { @class = "form-control", @style = "float:left", })
 
@@ -33,6 +33,7 @@
     @Html.Grid(Model).Columns(columns =>
 {
     columns.Add(model => model.Paciente.NomePaciente).Titled("Nome");
+    columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
     columns.Add(model => model.NumeroLiberacao).Titled("Número da liberação");
     columns.Add(model => model.QuantidadeTotal).Titled("Quantidade Solicitada");
     columns.Add(model => model.QuantidadeRealizada).Titled("Quantidade realizada");

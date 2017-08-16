@@ -1,4 +1,4 @@
-﻿@model Tuple<ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel, IEnumerable < ProjetoModeloDDD.MVC.ViewModels.TaxaExtraProfissionalViewModel>>
+﻿@model Tuple<ProjetoModeloDDD.MVC.ViewModels.ProfissionalViewModel, IEnumerable<ProjetoModeloDDD.MVC.ViewModels.TaxaExtraProfissionalViewModel>>
 @using GridMvc.Html
 @{
     ViewBag.Title = "Detalhes";
@@ -34,13 +34,6 @@
             @Html.DisplayFor(model => Model.Item1.Login)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => Model.Item1.Senha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => Model.Item1.Senha)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => Model.Item1.Cpf)
@@ -71,6 +64,12 @@
         <dd>
             @Html.DisplayFor(model => Model.Item1.DataIngresso)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => Model.Item1.TaxaBancaria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => Model.Item1.TaxaBancaria)
+        </dd>
 
     </dl>
 </div>
@@ -79,7 +78,7 @@
     @Html.ActionLink("Voltar para lista", "Index")
 </p>
 
-<h2>Valores</h2>
+<h2>Valores extras</h2>
 <hr />
 @using (Html.BeginForm("Index", "TaxasExtrasProfissional", FormMethod.Get))
 {
@@ -87,34 +86,30 @@
         <div class="form-group">
 
             @*@Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
-                                {
-                                    new SelectListItem { Selected = true, Text = "CPF", Value = "1"},
-                                    new SelectListItem { Selected = false, Text = "Nome do profissional", Value = "2"},
-                                }, "Value", "text", @ViewBag.LocalizarPor)
-                     , new { @class = "form-control", @style = "float:left", })
+                                    {
+                                        new SelectListItem { Selected = true, Text = "CPF", Value = "1"},
+                                        new SelectListItem { Selected = false, Text = "Nome do profissional", Value = "2"},
+                                    }, "Value", "text", @ViewBag.LocalizarPor)
+                         , new { @class = "form-control", @style = "float:left", })
 
-            @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+                @Html.TextBox("palavra", ViewBag.palavra as string, new { @class = "form-control", @type = "text", @placeholder = "Digite...", @style = "float:left" })
+                &nbsp;
+                <button type="submit" class="btn btn-theme">Pesquisar</button>*@
             &nbsp;
-            <button type="submit" class="btn btn-theme">Pesquisar</button>*@
-            &nbsp;
-            @Html.ActionLink("Novo valor", "Create", "TaxasExtrasProfissional", new {idProfissional = Model.Item1.ProfissionalId  },new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
+            @Html.ActionLink("Novo valor", "Create", "TaxasExtrasProfissional", new { idProfissional = Model.Item1.ProfissionalId }, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
 
         </div>
     </p>
 }
 
 <div style="margin-right:50px">
-@Html.Grid(Model.Item2).Columns(columns =>
+    @Html.Grid(Model.Item2).Columns(columns =>
 {
-    columns.Add(model => model.dataCompensar).Titled("Data compensar");
+    columns.Add(model => model.dataCompensar).Titled("Data para compensar");
+    columns.Add(model => model.tipo).Titled("Tipo");
     columns.Add(model => model.descricao).Titled("Descrição");
-    columns.Add(model => model.dataInsercao).Titled("Adicionado em:");
+    columns.Add(model => model.dataInsercao).Titled("Alterado em");
     columns.Add(model => model.valor).Titled("valor");
-    columns.Add()
-        .Encoded(false)
-        .Sanitized(false)
-        .SetWidth(30)
-        .RenderValueAs(o => SalvarCustonHelper(o.TaxaExtraProfissionalId));
     columns.Add()
         .Encoded(false)
         .Sanitized(false)
@@ -129,11 +124,6 @@
 }).WithPaging(20).Sortable(true)
 </div>
 
-@helper SalvarCustonHelper(int id)
-{
-    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "TaxasExtrasProfissional", new { id = id })'"><i class="fa fa-check"></i></button>
-}
-
 @helper EditarCustonHelper(int id)
 {
     <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "TaxasExtrasProfissional", new { id = id })'"><i class="fa fa-pencil"></i></button>
@@ -143,3 +133,6 @@
 {
     <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "TaxasExtrasProfissional", new { id = id })'"><i class="fa fa-trash-o "></i></button>
 }
+
+
+

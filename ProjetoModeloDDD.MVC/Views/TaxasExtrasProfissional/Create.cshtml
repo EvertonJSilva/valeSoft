@@ -13,11 +13,17 @@
     <div class="form-horizontal">
         <h4></h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
             @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.tipo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("tipo", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "Crédito", Value = "Crédito"},
+                                    new SelectListItem { Selected = false, Text = "Débito", Value = "Débito"},
+                                }, "Text", "Text", ""), new { @class = "form-control" })
+
+                @*@Html.EditorFor(model => model.FormaAutorizar, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -70,5 +76,5 @@
             }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para lista", "Details", "Profissionais", new { id = @ViewBag.ProfissionalId }, new { })
 </div>

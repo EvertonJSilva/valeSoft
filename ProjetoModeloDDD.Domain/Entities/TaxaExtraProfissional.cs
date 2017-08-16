@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public DateTime dataCompensar { get; set; }
         public decimal valor { get; set; }
 
-        public virtual TipoProfissional Profissional { get; set; }
+        public virtual Profissional Profissional { get; set; }
         public int ProfissionalId { get; set; }
     }
 }

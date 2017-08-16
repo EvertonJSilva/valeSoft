@@ -9,6 +9,7 @@
 <h2>Produção</h2>
 <hr />
 
+
 @using (Html.BeginForm("Index", "Producao", FormMethod.Get))
 {
     <span style="font-size: 15px; vertical-align:sub; float:left; line-height: 30px" > De :&nbsp</span>
@@ -40,14 +41,24 @@
         @Html.RadioButton("criterio", "todos", true)<span> Todos</span>
         @Html.RadioButton("criterio", "revisados")<span> Revisados</span>
         @Html.RadioButton("criterio", "nao-revisados")<span> Não revisados</span>
+        @Html.RadioButton("criterio", "consolidados")<span> Consolidados</span>
+        @Html.RadioButton("criterio", "nao-consolidados")<span> Não Consolidados</span>
 
         <p style="float:none"></p>
 
-
+        if (((int)Session["nivelAcesso"]) != 2)
+    {
     <button name="acao" value="REPORT" type="submit" class="btn btn-theme" style="background-color:#358a2f">Produção</button>
     <button name="acao" value="PROTOCOLO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Protocolo</button>
+    }
     <button name="acao" value="DEMONSTRATIVO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Demonstrativo</button>
 
+        if (((int)Session["nivelAcesso"]) != 2)
+        {
+    <button name="acao" value="CONSOLIDAR" type="submit" class="btn btn-theme" style="background-color:#ff0000">Consolidar</button>
+    }
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <hr />
 }
@@ -69,30 +80,107 @@
         .Encoded(false)
         .Sanitized(false)
         .RenderValueAs(o => revisadoCustomHelper(o.revisado, o.ProducaoId)); ;
-
+    columns.Add().Titled("Consolidado")
+        .Encoded(false)
+        .Sanitized(false)
+        .RenderValueAs(o => ConsolidadoCustonHelper(o.Consolidado));
 
 
 }).WithPaging(15).Sortable(true)
 </div>
 
+@helper ConsolidadoCustonHelper(Boolean tem)
+{
+if (tem)
+{
+        <span class="badge bg-success">Sim</span>
+}
+else {
+        <span class="badge bg-important">Não</span>
+}
+}
+
+
+
+
+@*@helper consolidadoCustomHelper(bool consolidado, int idProducao)
+{
+
+if (consolidado)
+{
+        <input data-width="65" onchange="Consolidar(this, 1)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" checked data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+}
+else
+{
+        <input data-width="65" onchange="Consolidar(this, 2)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+}*@
+
+    <script>
+
+function Consolidar(n, cancelar) {
+
+    var row = n.parentNode.parentNode.parentNode;
+    var cols = row.getElementsByTagName("td");
+    var i = 0;
+
+    //while (i < cols.length) {
+
+    //    var val = cols[i].childNodes[0].nodeValue
+    //    if (val != null) {
+    //        alert(val);
+    //    }
+    //    i++;
+    //}
+
+    EnviaConsolidar(cols[0].childNodes[0].nodeValue, cancelar);
+    elemento.bootstrapToggle();
+}
+
+function EnviaConsolidar(n, cancelar) {
+    $.ajax({
+        type: "POST",
+        url: '@Url.Action("Consolidar", "Producao")',
+        // contentType: "application/json; charset=utf-8",
+        data: { producaoId: n, cancelamento: cancelar },
+        dataType: "json",
+        success: function (result) {
+            alert(result);
+            window.locationre = result.url;
+        }
+    });
+}
+
+    </script>
+}
 
 
 @helper revisadoCustomHelper(bool revisado, int idProducao)
 {
-
-if (revisado)
+if (((int)Session["nivelAcesso"]) == 2)
 {
-        <input data-width="65" onchange="Revisar(this, 1)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" checked data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
+    if (revisado)
+    {
+            <span class="badge bg-success">Sim</span>
+    }
+    else {
+            <span class="badge bg-important">Não</span>
+    }
 }
 else
 {
-        <input data-width="65" onchange="Revisar(this, 2)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
-}
+    if (revisado)
+    {
+            <input data-width = "65" onchange = "Revisar(this, 1)" name = "checkbox" id = "checkbox" data-size = "mini" type = "checkbox" checked data-toggle = "toggle" data-on = "Sim" data-off = "Não" data-onstyle = "success" data-offstyle = "danger" >
+    }
+    else
+    {
+           <input data-width = "65" onchange = "Revisar(this, 2)" name = "checkbox" id = "checkbox" data-size = "mini" type = "checkbox" data-toggle = "toggle" data-on = "Sim" data-off = "Não" data-onstyle = "success" data-offstyle = "danger" >
+    }
 
-    <script>
-        
-        function Revisar(n, cancelar) {
-            
+        <script>
+
+            function Revisar(n, cancelar) {
+
             var row = n.parentNode.parentNode.parentNode;
             var cols = row.getElementsByTagName("td");
             var i = 0;
@@ -110,21 +198,22 @@ else
             elemento.bootstrapToggle();
         }
 
+
         function EnviaRevisar(n, cancelar) {
-            $.ajax({
-                type: "POST",
+                $.ajax({
+        type: "POST",
                 url: '@Url.Action("Revisar", "Producao")',
                 // contentType: "application/json; charset=utf-8",
                 data: { producaoId: n, cancelamento: cancelar},
-                dataType: "json",
-                success: function (result) {
-                    alert(result);
-                    window.locationre = result.url;
-                }
+                    dataType: "json",
+                    success: function(result) {
+            alert(result);
+            window.locationre = result.url;
+        }
             });
         }
-
-    </script>
-    
+        
+        </script>
+    }
 }
 

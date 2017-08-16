@@ -15,41 +15,63 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private readonly ILiberacaoAppService _liberacaoApp;
         private readonly IPacienteAppService _pacienteApp;
         private readonly IConsultaAppService _consultaApp;
+        private readonly IProfissionalAppService _profissionalApp;
 
-
-        public LiberacoesController(ILiberacaoAppService liberacaoApp, IPacienteAppService pacienteApp, IConsultaAppService consultaApp)
+        public LiberacoesController(ILiberacaoAppService liberacaoApp,
+                                    IPacienteAppService pacienteApp, 
+                                    IConsultaAppService consultaApp,
+                                    IProfissionalAppService profissionalApp)
         {
             _liberacaoApp = liberacaoApp;
             _pacienteApp = pacienteApp;
             _consultaApp = consultaApp;
+            _profissionalApp = profissionalApp;
         }
 
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor)
         {
+            IEnumerable<LiberacaoViewModel> liberacaoViewModel;
+
             if (Session["Usuario"] == null)
             {
                 return RedirectToAction("index", "login");
             }
 
-            var liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
             if (!String.IsNullOrEmpty(palavra))
             {
+                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
+
                 switch (idLocalizacao)
                 {
                     case 1:
                         liberacaoViewModel = liberacaoViewModel.Where(s => s.NumeroLiberacao.Contains(palavra));
                         break;
                     case 2:
-                        liberacaoViewModel = liberacaoViewModel.Where(s => s.Paciente.NomePaciente.Contains(palavra));
+                        liberacaoViewModel = liberacaoViewModel.Where(s => s.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                 }
 
+                var nivelAcesso = (int)Session["nivelAcesso"];
+                if (nivelAcesso == 2)
+                {
+                    var IdProfissional = (int)Session["idProfissional"];
+
+                    liberacaoViewModel = liberacaoViewModel.Where(s => s.ProfissionalId == IdProfissional);
+                }
+
+            }
+            else
+            {
+                liberacaoViewModel = new List<LiberacaoViewModel> { new LiberacaoViewModel() };
+                liberacaoViewModel.ToList().First().Paciente = new PacienteViewModel();
+                liberacaoViewModel.ToList().First().Profissional = new ProfissionalViewModel();
             }
 
-            return View(liberacaoViewModel);
+
+            return View(liberacaoViewModel.OrderBy(p => p.NumeroLiberacao).OrderBy(p => p.Paciente.NomePaciente));
         }
 
         // GET: Consulta/Details/5
@@ -71,6 +93,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Create()
         {
             ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
 
             return View();
         }
@@ -86,19 +109,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 _liberacaoApp.Add(liberacaoDomain);
 
-                for (int i = 0; i <= liberacaoDomain.QuantidadeTotal; i++)
+                for (int i = 0; i < liberacaoDomain.QuantidadeTotal; i++)
                 {
                     var consultaDomain = new Consulta();
+                    consultaDomain.DataCadastro = DateTime.Now;
                     consultaDomain.LiberacaoId = liberacaoDomain.LiberacaoId;
                     consultaDomain.Convenio = "Unimed";
                     consultaDomain.Status = "Pré-agendado";
                     consultaDomain.ValorConsulta = 0;
                     consultaDomain.ValorConvenio = 0;
                     consultaDomain.ValorCopart = 0;
-
-                    //não informado/
-                    consultaDomain.ProfissionalId = 1;
-
+                    
+                    consultaDomain.ProfissionalId = liberacaoDomain.ProfissionalId;
+                    
                     _consultaApp.Add(consultaDomain);
                 }
 
@@ -118,6 +141,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
             ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
+            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
 
             return View(liberacao);
         }
@@ -129,6 +153,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
             ViewBag.PacienteId = listaPaciente(liberacaoViewModel);
+            ViewBag.ProfissionalId = listaProfissional(liberacaoViewModel);
+
             return View(liberacaoViewModel);
         }
 
@@ -147,6 +173,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
             ViewBag.PacienteId = listaPaciente(liberacao);
+            ViewBag.ProfissionalId = listaProfissional(liberacao);
+
             return View(liberacao);
         }
 
@@ -168,6 +196,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _liberacaoApp.Remove(liberacao);
 
             return RedirectToAction("Index");
+        }
+
+        public IEnumerable<SelectListItem> listaProfissional(LiberacaoViewModel liberacao)
+        {
+            IEnumerable<SelectListItem> selectListProfissional =
+               from c in _profissionalApp.GetAll()
+               select new SelectListItem
+               {
+                   Selected = (c.ProfissionalId == liberacao.Profissional.ProfissionalId),
+                   Text = c.NomeProfissional,
+                   Value = c.ProfissionalId.ToString()
+               };
+
+            return selectListProfissional;
         }
 
         public IEnumerable<SelectListItem> listaPaciente(LiberacaoViewModel liberacao)

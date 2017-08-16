@@ -50,7 +50,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.Contains(palavra));
+                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                     case 1:
                         consultaViewModel = consultaViewModel.Where(s => s.Liberacao.NumeroLiberacao.Contains(palavra));
@@ -58,6 +58,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 }
 
             }
+
+            // médicos só vem as consultas dele
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            if (nivelAcesso == 2)
+            {
+                var IdProfissional = (int)Session["idProfissional"];
+
+                consultaViewModel = consultaViewModel.Where(s => s.Profissional.ProfissionalId == IdProfissional);
+            }
+
             return View(consultaViewModel);
         }
 
@@ -100,9 +110,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta/Create
         public ActionResult Create()
         {
-            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao");
-            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            
+            if (nivelAcesso == 2)
+            {
+                var IdProfissional = (int)Session["idProfissional"];              
+                ViewBag.ProfissionalId = listaProfissional(IdProfissional);
+            }
+            else
+            {
+                ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
+            }
 
+            ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao");
+            
             return View();
         }
 
@@ -114,6 +135,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
+                consultaDomain.DataCadastro = DateTime.Now;
                 _consultaApp.Add(consultaDomain);
 
                 return RedirectToAction("Index");
@@ -132,6 +154,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
             ViewBag.idLiberacaoOrigem = idLiberacao;
+
+            // médicos já sugere a matricula dele
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            if (consultaViewModel.Status == "Pré-agendado")
+            {
+                consultaViewModel.DataHoraConsulta = DateTime.Now;
+
+                if (nivelAcesso == 2)
+                {
+                    var IdProfissional = (int)Session["idProfissional"];
+                    consultaViewModel.ProfissionalId = IdProfissional;
+                }
+            }
+
 
             ViewBag.LiberacaoId = listaLiberacao(consultaViewModel);
             ViewBag.ProfissionalId = listaProfissional(consultaViewModel);
@@ -162,14 +198,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.DataHoraConsulta < DateTime.Now)
+            if (consulta.DataHoraConsulta < (DateTime.Now.AddDays(-10)))
             {
-                ModelState.AddModelError(string.Empty, @"Data da consulta deve maior que hoje.");
+                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a 10 dias.");
 
                 return View(consulta);
             }
-
-
+            
             if (ModelState.IsValid)
             {
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
@@ -226,6 +261,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _consultaApp.Remove(consulta);
 
             return RedirectToAction("Index");
+        }
+
+        public IEnumerable<SelectListItem> listaProfissional(int idProfissional)
+        {
+            IEnumerable<SelectListItem> selectListProfissional =
+               from c in _profissionalApp.GetAll()
+               select new SelectListItem
+               {
+                   Selected = (c.ProfissionalId == idProfissional),
+                   Text = c.NomeProfissional,
+                   Value = c.ProfissionalId.ToString()
+               };
+
+            return selectListProfissional;
         }
 
         public IEnumerable<SelectListItem> listaProfissional(ConsultaViewModel consulta)

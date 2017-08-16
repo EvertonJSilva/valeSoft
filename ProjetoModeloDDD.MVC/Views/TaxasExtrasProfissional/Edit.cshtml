@@ -1,17 +1,17 @@
-﻿@model ProjetoModeloDDD.Domain.Entities.TaxaExtraProfissional
+﻿@model ProjetoModeloDDD.MVC.ViewModels.TaxaExtraProfissionalViewModel
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Taxa Extra Profissional</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TaxaExtraProfissional</h4>
+        <h4></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.TaxaExtraProfissionalId)
@@ -19,7 +19,11 @@
         <div class="form-group">
             @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.tipo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("tipo", new SelectList(new List<SelectListItem>
+                                {
+                                    new SelectListItem { Selected = true, Text = "Crédito", Value = "Crédito"},
+                                    new SelectListItem { Selected = false, Text = "Débito", Value = "Débito"},
+                                }, "Text", "Text", ""), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,17 +37,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dataInsercao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dataInsercao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.dataInsercao, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.dataCompensar, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dataCompensar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.dataCompensar, new { htmlAttributes = new { @class = "form-control", @type = "Date" } })
                 @Html.ValidationMessageFor(model => model.dataCompensar, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -57,21 +53,23 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProfissionalId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Profissional", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProfissionalId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("ProfissionalNome", @ViewBag.ProfissionalNome as string)
                 @Html.ValidationMessageFor(model => model.ProfissionalId, "", new { @class = "text-danger" })
             </div>
         </div>
 
+        <input type="hidden" name="ProfissionalId" value="@ViewBag.ProfissionalId" />
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para lista", "Details", "Profissionais", new { id = @ViewBag.ProfissionalId }, new { })
 </div>
