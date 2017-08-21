@@ -15,8 +15,8 @@
                 
                 @Html.DropDownList("LocalizarPor", new SelectList(new List<SelectListItem>
                                 {
-                                    new SelectListItem { Selected = true, Text = "Liberação", Value = "1"},
-                                    new SelectListItem { Selected = false, Text = "Nome Paciente", Value = "2"},
+                                    new SelectListItem { Selected = true, Text = "Nome Paciente", Value = "2"},
+                                    new SelectListItem { Selected = false, Text = "Liberação", Value = "1"},
                                 }, "Value", "text", @ViewBag.LocalizarPor)
                      , new { @class = "form-control", @style = "float:left",  })
                 
@@ -34,13 +34,14 @@
         @Html.Grid(Model).Columns(columns =>
    {
        columns.Add(model => model.Status).Titled("Status");
-       columns.Add(model => model.Autorizacao).Titled("Autorização").SetWidth(300);
-       columns.Add(model => model.FormaAutorizar).Titled("Autorização");
-       columns.Add(model => model.dataConsulaFormatada).Titled("Data consulta").SetWidth(100);
-       columns.Add(model => model.ValorConsulta).Titled("Valor").SetWidth(100);
-       columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
-       columns.Add(model => model.Liberacao.NumeroLiberacao).Titled("Numero Liberação");
        columns.Add(model => model.Liberacao.Paciente.NomePaciente).Titled("Paciente").SetWidth(600);
+       columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
+       columns.Add(model => model.Liberacao.NumeroLiberacao).Titled("Liberação");
+       columns.Add(model => model.dataConsulaFormatada).Titled("Data").SetWidth(100);
+       columns.Add(model => model.Autorizacao).Titled("Autorização").SetWidth(300);
+       columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
+       columns.Add(model => model.valorFormatado).Titled("Valor").SetWidth(100);
+       
        columns.Add()
            .Encoded(false)
            .Sanitized(false)

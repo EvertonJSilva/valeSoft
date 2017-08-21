@@ -3170,7 +3170,45 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Período: 01/12/2016 à 31/12/2016                                   </Value>
+                  <Value>Período: </Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!dataInicial.Value</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>d</Format>
+                    <TextDecoration>None</TextDecoration>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> à </Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!dataFinal.Value</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontWeight>Normal</FontWeight>
+                    <Format>d</Format>
+                    <TextDecoration>None</TextDecoration>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve">                                   </Value>
                   <Style>
                     <FontStyle>Normal</FontStyle>
                     <FontFamily>Calibri</FontFamily>
@@ -3448,8 +3486,16 @@ _______________</Value>
           <DataField>CPF</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="dataFinal">
+          <DataField>dataFinal</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
         <Field Name="DataIngresso">
           <DataField>DataIngresso</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dataInicial">
+          <DataField>dataInicial</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="INSS">

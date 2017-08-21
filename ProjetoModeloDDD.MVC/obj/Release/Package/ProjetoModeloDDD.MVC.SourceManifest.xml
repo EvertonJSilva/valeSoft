@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Release\Package\PackageTmp" />
-  <setAcl path="D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Release\Package\PackageTmp" />
+  <setAcl path="E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>

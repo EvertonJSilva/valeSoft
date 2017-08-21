@@ -50,7 +50,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.Contains(palavra));
+                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                     case 1:
                         consultaViewModel = consultaViewModel.Where(s => s.Liberacao.NumeroLiberacao.Contains(palavra));
@@ -198,9 +198,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.DataHoraConsulta < (DateTime.Now.AddDays(-10)))
+            if (consulta.DataHoraConsulta < (DateTime.Now.AddDays(-16)))
             {
-                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a 10 dias.");
+                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a 15 dias.");
 
                 return View(consulta);
             }

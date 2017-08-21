@@ -45,7 +45,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         profissionalViewModel = profissionalViewModel.Where(s => s.Cpf.Contains(palavra));
                         break;
                     case 2:
-                        profissionalViewModel = profissionalViewModel.Where(s => s.NomeProfissional.Contains(palavra));
+                        profissionalViewModel = profissionalViewModel.Where(s => s.NomeProfissional.ToLower().Contains(palavra.ToLower()));
                         break;
                 }
 

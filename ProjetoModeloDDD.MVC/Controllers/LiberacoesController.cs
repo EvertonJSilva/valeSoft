@@ -40,9 +40,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
+            liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
+
+
             if (!String.IsNullOrEmpty(palavra))
             {
-                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
 
                 switch (idLocalizacao)
                 {
@@ -61,15 +63,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                     liberacaoViewModel = liberacaoViewModel.Where(s => s.ProfissionalId == IdProfissional);
                 }
-
             }
-            else
-            {
-                liberacaoViewModel = new List<LiberacaoViewModel> { new LiberacaoViewModel() };
-                liberacaoViewModel.ToList().First().Paciente = new PacienteViewModel();
-                liberacaoViewModel.ToList().First().Profissional = new ProfissionalViewModel();
-            }
-
+            
 
             return View(liberacaoViewModel.OrderBy(p => p.NumeroLiberacao).OrderBy(p => p.Paciente.NomePaciente));
         }

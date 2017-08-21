@@ -83,8 +83,8 @@
     columns.Add(model => model.Status).Titled("Status");
     columns.Add(model => model.Autorizacao).Titled("Autorização");
     columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
-    columns.Add(model => model.DataHoraConsulta).Titled("Data consulta");
-    columns.Add(model => model.ValorConsulta).Titled("Valor Consulta");
+    columns.Add(model => model.dataConsulaFormatada).Titled("Data consulta");
+    columns.Add(model => model.valorFormatado).Titled("Valor Consulta");
     columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
 
     columns.Add()
@@ -93,7 +93,7 @@
         .SetWidth(30)
         .RenderValueAs(o => EditarCustonHelper(o.ConsultaId));
 
-}).WithPaging(5).Sortable(true)
+}).WithPaging(100).Sortable(true)
 </div>
 
 
