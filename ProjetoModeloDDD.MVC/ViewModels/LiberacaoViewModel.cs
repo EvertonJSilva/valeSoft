@@ -20,6 +20,9 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string NumeroLiberacao { get; set; }
 
 
+        [DefaultValue(0)]
+        public int QuantidadeRealizadaExterno { get; set; }
+
         [DisplayName("Quantidade Solicitada")]
         [Required(ErrorMessage = "Preencha o campo Quantidade Solicitada de Consultas")]
         public int QuantidadeTotal { get; set; }

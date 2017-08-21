@@ -101,10 +101,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
+                liberacaoDomain.QuantidadeRealizadaExterno = liberacaoDomain.QuantidadeRealizada;
 
                 _liberacaoApp.Add(liberacaoDomain);
 
-                for (int i = 0; i < liberacaoDomain.QuantidadeTotal; i++)
+                for (int i = 0; i < liberacaoDomain.QuantidadeTotal-liberacaoDomain.QuantidadeRealizada; i++)
                 {
                     var consultaDomain = new Consulta();
                     consultaDomain.DataCadastro = DateTime.Now;

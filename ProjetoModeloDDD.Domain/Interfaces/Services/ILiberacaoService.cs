@@ -6,6 +6,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Services
 {
     public interface ILiberacaoService : IServiceBase<Liberacao>
     {
-
+        void AtualizarConsultasRealizadas(Liberacao liberacao);
     }
 }

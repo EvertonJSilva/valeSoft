@@ -87,18 +87,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var liberacao = _liberacaoApp.GetById(Int32.Parse(liberacaoid));
 
-            var valoresConsultas = ListaValoresConsultas(liberacao.Paciente.CarteirinhaPaciente.Substring(0,4), sessao);
+            var valoresConsultas = ListaValoresConsultas(liberacao.Paciente, sessao);
 
             var valor = valoresConsultas.FirstOrDefault(c => c.Selected);
             
             return Json(valor, JsonRequestBehavior.AllowGet);
         }
 
-        public IEnumerable<ListaValores> ListaValoresConsultas(string sigla, string sessao)
+        public IEnumerable<ListaValores> ListaValoresConsultas(Paciente paciente, string sessao)
         {
             IEnumerable<ListaValores> selectListvalores =
-                          from c in _valorApp.GetPorSigla(sigla)
-                          select new ListaValores(c)
+                          from c in _valorApp.GetPorSigla(paciente.CarteirinhaPaciente.Substring(0, 4))
+                          select new ListaValores(c, paciente)
                           {
                               Selected = (c.Sessao == sessao)
                           };
@@ -212,6 +212,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 _consultaApp.Update(consultaDomain);
 
+                _liberacaoApp.AtualizarConsultasRealizadas(_liberacaoApp.GetById(consultaDomain.LiberacaoId));
+
                 //inserir na produção
                 try
                 {
@@ -315,18 +317,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public decimal _ValorCopart { get; set; }
         public decimal _ValorConvenio { get; set; }
 
-        public ListaValores(ValorConsulta valorConsulta)
+        public ListaValores(ValorConsulta valorConsulta, Paciente paciente)
         {
             this.Value = valorConsulta.Sessao;
             this.Text = calculaTexto(valorConsulta.Sessao);
             this._ValorConsulta = valorConsulta.Valor;
-            this._ValorCopart = CalculaCopart(valorConsulta);
-            this._ValorConvenio = CalculaConvenio(valorConsulta);
+            this._ValorCopart = CalculaCopart(valorConsulta, paciente);
+            this._ValorConvenio = CalculaConvenio(valorConsulta, paciente);
         }
 
-        private decimal CalculaCopart(ValorConsulta valorConsulta)
+        private decimal CalculaCopart(ValorConsulta valorConsulta, Paciente paciente)
         {
-            switch (valorConsulta.TemCopart)
+            switch (valorConsulta.TemCopart && paciente.CopartPaciente)
             {
                 case true:
                     return 15;
@@ -337,9 +339,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
         }
 
-        private decimal CalculaConvenio(ValorConsulta valorConsulta)
+        private decimal CalculaConvenio(ValorConsulta valorConsulta, Paciente paciente)
         {
-            switch (valorConsulta.TemCopart)
+            switch (valorConsulta.TemCopart && paciente.CopartPaciente)
             {
                 case true:
                     return valorConsulta.Valor - 15;

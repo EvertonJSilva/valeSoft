@@ -19,6 +19,9 @@ namespace ProjetoModeloDDD.Application
             _liberacaoService = liberacaoService;
         }
 
-
+        public void AtualizarConsultasRealizadas(Liberacao liberacao)
+        {
+            _liberacaoService.AtualizarConsultasRealizadas(liberacao);
+        }
     }
 }

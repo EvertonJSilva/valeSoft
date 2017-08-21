@@ -8,6 +8,7 @@ namespace ProjetoModeloDDD.Domain.Entities
         public string NumeroLiberacao { get; set; }
         public int QuantidadeTotal { get; set; }
         public int QuantidadeRealizada { get; set; }
+        public int QuantidadeRealizadaExterno { get; set; }
         public int PacienteId { get; set; }
         public string MedicoEncaminhante { get; set; }
         public string CRM { get; set; }

@@ -9,10 +9,9 @@ namespace ProjetoModeloDDD.Infra.Data.EntityConfig
         {
             HasKey(l => l.LiberacaoId);
 
-
              Property(l => l.NumeroLiberacao)
                 .IsRequired();
-
+            
             HasRequired(l => l.Paciente)
                 .WithMany()
                 .HasForeignKey(l => l.PacienteId);
