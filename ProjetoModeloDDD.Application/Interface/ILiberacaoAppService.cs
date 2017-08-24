@@ -1,4 +1,5 @@
 ﻿using ProjetoModeloDDD.Domain.Entities;
+using System.Collections.Generic;
 
 namespace ProjetoModeloDDD.Application.Interface
 {
@@ -6,5 +7,7 @@ namespace ProjetoModeloDDD.Application.Interface
     {
 
         void AtualizarConsultasRealizadas(Liberacao liberacao);
+
+        IEnumerable<Liberacao> GetPorIdProfissional(int id);
     }
 }

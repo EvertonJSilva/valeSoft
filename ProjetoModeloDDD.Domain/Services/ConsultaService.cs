@@ -16,6 +16,11 @@ namespace ProjetoModeloDDD.Domain.Services
             _consultaRepository = consultaRepository;
         }
 
+        public IEnumerable<Consulta> GetPorIdProfissional(int id)
+        {
+           return _consultaRepository.GetPorIdProfissional(id);
+        }
+
         public IEnumerable<Consulta> ObterConsultasPorPaciente(Paciente paciente)
         {
             throw new NotImplementedException();

@@ -199,3 +199,4 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Debug\Microsoft.C
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache

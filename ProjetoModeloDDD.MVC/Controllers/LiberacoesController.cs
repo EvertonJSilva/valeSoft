@@ -40,7 +40,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
-            liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            if (nivelAcesso == 2)
+            {
+                var IdProfissional = (int)Session["idProfissional"];
+
+                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetPorIdProfissional(IdProfissional));
+            }
+            else
+            {
+                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
+            }
+
+
 
 
             if (!String.IsNullOrEmpty(palavra))
@@ -56,14 +68,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         break;
                 }
 
-                var nivelAcesso = (int)Session["nivelAcesso"];
-                if (nivelAcesso == 2)
-                {
-                    var IdProfissional = (int)Session["idProfissional"];
-
-                    liberacaoViewModel = liberacaoViewModel.Where(s => s.ProfissionalId == IdProfissional);
-                }
             }
+
             
 
             return View(liberacaoViewModel.OrderBy(p => p.NumeroLiberacao).OrderBy(p => p.Paciente.NomePaciente));

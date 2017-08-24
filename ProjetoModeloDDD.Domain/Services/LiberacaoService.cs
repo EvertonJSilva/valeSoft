@@ -34,5 +34,10 @@ namespace ProjetoModeloDDD.Domain.Services
             _liberacaoRepository.Update(liberacaoDomain);
             
         }
+
+        public IEnumerable<Liberacao> GetPorIdProfissional(int id)
+        {
+            return _liberacaoRepository.GetPorIdProfissional(id);
+        }
     }
 }

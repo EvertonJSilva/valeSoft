@@ -11,6 +11,9 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
     public class LiberacaoRepository : RepositoryBase<Liberacao>, ILiberacaoRepository
     {
-        
+        public IEnumerable<Liberacao> GetPorIdProfissional(int id)
+        { 
+            return Db.Liberacoes.Where(p => p.ProfissionalId == id);
+        }
     }
 }

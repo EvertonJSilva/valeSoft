@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
     public class ConsultaRepository : RepositoryBase<Consulta> , IConsultaRepository
-
     {
+        
+        public IEnumerable<Consulta> GetPorIdProfissional(int id)
+        {
+          return  Db.Consultas.Where(p => p.ProfissionalId == id);
+        }
+
     }
 }

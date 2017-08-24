@@ -40,8 +40,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return RedirectToAction("index", "login");
             }
 
+            IEnumerable<ConsultaViewModel> consultaViewModel;
 
-            var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+            // médicos só vem as consultas dele
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            if (nivelAcesso == 2)
+            {
+                var IdProfissional = (int)Session["idProfissional"];
+
+                consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetPorIdProfissional(IdProfissional));
+            }else
+            {
+                consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+            }
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
@@ -57,15 +68,6 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         break;
                 }
 
-            }
-
-            // médicos só vem as consultas dele
-            var nivelAcesso = (int)Session["nivelAcesso"];
-            if (nivelAcesso == 2)
-            {
-                var IdProfissional = (int)Session["idProfissional"];
-
-                consultaViewModel = consultaViewModel.Where(s => s.Profissional.ProfissionalId == IdProfissional);
             }
 
             return View(consultaViewModel);

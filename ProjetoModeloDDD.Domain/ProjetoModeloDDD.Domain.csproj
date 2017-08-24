@@ -66,6 +66,7 @@
     <Compile Include="Interfaces\Repositories\ITaxaExtraProfissionalRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITipoProfissionalRepository.cs" />
     <Compile Include="Interfaces\Repositories\IValorConsultaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\TEntity.cs" />
     <Compile Include="Interfaces\Services\IClienteService.cs" />
     <Compile Include="Interfaces\Services\IConsultaService.cs" />
     <Compile Include="Interfaces\Services\IFolhaDetalheService.cs" />
