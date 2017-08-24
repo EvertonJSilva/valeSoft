@@ -185,7 +185,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
             ViewBag.idLiberacaoOrigem = idLiberacaoOrigem;
             ViewBag.LiberacaoId = listaLiberacao(consulta);
             ViewBag.ProfissionalId = listaProfissional(consulta);
-            
+
+            if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
+            {
+                ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+
+                return View(consulta);
+            }
+
             if (consulta.ProfissionalId == 1)
             {
                 ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
@@ -200,9 +207,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.DataHoraConsulta < (DateTime.Now.AddDays(-16)))
+            if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
             {
-                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a 15 dias.");
+                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
 
                 return View(consulta);
             }

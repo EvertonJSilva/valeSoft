@@ -14,9 +14,6 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public int ConsultaId { get; set; }
 
         [DisplayName("Autorização")]
-        [Required(ErrorMessage = "Preencha o campo Autorizacao")]
-        [MaxLength(150, ErrorMessage = "Máximo 150 caracteres")]
-        [MinLength(2, ErrorMessage = "Minimo 2 caracteres")]
         public string Autorizacao { get; set; }
 
         [DisplayName("Status")]
