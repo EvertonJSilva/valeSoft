@@ -17,6 +17,12 @@ namespace ProjetoModeloDDD.Domain.Services
             : base(taxaRepository)
         {
             _taxaRepository = taxaRepository;
+           
+        }
+
+        public TaxaExtraProfissional GetPorIdTaxaExtraProfissional(int id)
+        {
+            return _taxaRepository.GetPorIdTaxaExtraProfissional(id);
         }
    }
 }

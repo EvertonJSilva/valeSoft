@@ -5,5 +5,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
 {
     public interface ITaxaExtraProfissionalRepository : IRepositoryBase<TaxaExtraProfissional>
     {
+        TaxaExtraProfissional GetPorIdTaxaExtraProfissional(int id);
     }
 }

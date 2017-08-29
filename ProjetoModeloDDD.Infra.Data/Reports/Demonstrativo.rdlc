@@ -1596,7 +1596,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>OUTROS VALORES</Value>
+                              <Value>OUTROS DESCONTOS</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2143,7 +2143,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TaxaBancaria.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2157,6 +2159,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2262,8 +2265,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!ValorOutrosAcrecimos.Value</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2291,7 +2296,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ValorOutrosAcrecimos.Value</Value>
+                              <Value />
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -2657,7 +2662,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value +
+ReportItems!Textbox285.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + 
+ReportItems!ValorOutrosAcrecimos.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                                 <Color>White</Color>
@@ -2689,7 +2696,8 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + ReportItems!Textbox395.Value + ReportItems!Textbox385.Value+ ReportItems!Textbox390.Value</Value>
+                              <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + 
+ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                                 <Color>White</Color>
@@ -2727,7 +2735,9 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>=Sum(Fields!ValorConvenio.Value)</Value>
+                              <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value +
+ReportItems!Textbox285.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + 
+ReportItems!ValorOutrosAcrecimos.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -2765,7 +2775,8 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + ReportItems!Textbox395.Value + ReportItems!Textbox385.Value+ ReportItems!Textbox390.Value</Value>
+                              <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + 
+ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -2923,7 +2934,7 @@
                             <TextRun>
                               <Value>=ReportItems!Textbox311.Value - ReportItems!Textbox312.Value</Value>
                               <Style>
-                                <Format>'R$'0.00;('R$'0.00)</Format>
+                                <Format>'R$'0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -3254,7 +3265,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox88</rd:DefaultName>
           <Top>0.20285cm</Top>
-          <Left>0.57891cm</Left>
+          <Left>0.61419cm</Left>
           <Height>1.74652cm</Height>
           <Width>12.2204cm</Width>
           <Style>

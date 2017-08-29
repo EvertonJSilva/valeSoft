@@ -14,6 +14,11 @@ namespace ProjetoModeloDDD.Application
         {
             _taxaService = taxaService;
         }
-    
+
+        public TaxaExtraProfissional GetPorIdTaxaExtraProfissional(int id)
+        {
+            return _taxaService.GetPorIdTaxaExtraProfissional(id);
+        }
+
     }
 }
