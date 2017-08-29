@@ -10,5 +10,11 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
     public class TaxaDoacaoRepository : RepositoryBase<TaxaDoacao>, ITaxaDoacaoRepository
     {
+
+        public IEnumerable<TaxaDoacao> GetPorIdTaxaProfissional(int id)
+        {
+            return Db.TaxaDoacoes.Where(t => t.TipoProfissionalId == id);
+        }
+
     }
 }

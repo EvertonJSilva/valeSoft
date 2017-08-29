@@ -1,6 +1,7 @@
 ﻿using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.Domain.Interfaces.Repositories;
 using ProjetoModeloDDD.Domain.Interfaces.Services;
+using System.Collections.Generic;
 
 namespace ProjetoModeloDDD.Domain.Services
 {
@@ -14,5 +15,9 @@ namespace ProjetoModeloDDD.Domain.Services
             _taxaDoacaoRepository = taxaDoacaoRepository;
         }
 
+        public IEnumerable<TaxaDoacao> GetPorIdTaxaProfissional(int id)
+        {
+            return _taxaDoacaoRepository.GetPorIdTaxaProfissional(id);
+        }
     }
 }

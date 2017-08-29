@@ -306,11 +306,7 @@ D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demo
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
 D:\Everton\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.DataVisualization.DLL
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\bin\AutoMapper.Net4.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Producao.rdlc
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demonstrativo.rdlc
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.DataVisualization.DLL
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\RdlCompile.cache
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\RdlCompile.compiled
@@ -408,3 +404,31 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.xml
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.pdb
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.Net4.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\GridMvc.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.SqlServer.Types.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Common.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ninject.Web.Mvc.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\PagedList.Mvc.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ReportViewerForMvc.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Helpers.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Mvc.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Optimization.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.Razor.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\WebActivatorEx.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\WebGrease.dll

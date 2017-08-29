@@ -6,6 +6,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Services
 {
     public interface ITaxaDoacaoService : IServiceBase<TaxaDoacao>
     {
-
+        IEnumerable<TaxaDoacao> GetPorIdTaxaProfissional(int id);
     }
 }

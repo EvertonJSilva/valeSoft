@@ -45,7 +45,8 @@ namespace ProjetoModeloDDD.Domain.Entities
             
             try
             {
-                var valoresTaxas = _taxaDoacaoRepository.GetAll();
+                
+                var valoresTaxas = _taxaDoacaoRepository.GetPorIdTaxaProfissional(producao.Consulta.Profissional.TipoProfissionalId);
                 var valor = valoresTaxas.Where(v => v.TipoProfissionalId == producao.Consulta.Profissional.TipoProfissionalId);
                 this.ValorDoacao = valor.First().Valor;
             }
