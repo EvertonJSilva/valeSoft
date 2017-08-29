@@ -19,7 +19,7 @@ namespace ProjetoModeloDDD.Application
             _taxaDoacaoService = taxaDoacaoService;
         }
 
-        public IEnumerable<TaxaDoacao> GetPorIdTaxaProfissional(int id)
+        public TaxaDoacao GetPorIdTaxaProfissional(int id)
         {
             return _taxaDoacaoService.GetPorIdTaxaProfissional(id);
         }

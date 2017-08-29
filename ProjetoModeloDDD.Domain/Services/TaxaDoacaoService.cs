@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.Domain.Services
             _taxaDoacaoRepository = taxaDoacaoRepository;
         }
 
-        public IEnumerable<TaxaDoacao> GetPorIdTaxaProfissional(int id)
+        public TaxaDoacao GetPorIdTaxaProfissional(int id)
         {
             return _taxaDoacaoRepository.GetPorIdTaxaProfissional(id);
         }

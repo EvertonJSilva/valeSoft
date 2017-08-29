@@ -6,6 +6,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
     public interface ITaxaDoacaoRepository : IRepositoryBase<TaxaDoacao>
     {
 
-        IEnumerable<TaxaDoacao> GetPorIdTaxaProfissional(int id);
+        TaxaDoacao GetPorIdTaxaProfissional(int id);
     }
 }
