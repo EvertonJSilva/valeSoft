@@ -62,7 +62,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             //caso não tenha passado nada traz tudo
             if (String.IsNullOrEmpty(dataInicial))
             {
-                dataInicial = DateTime.MinValue.ToString();
+                dataInicial = DateTime.Now.AddDays(-15).ToString();
             }
             if (String.IsNullOrEmpty(dataFinal))
             {

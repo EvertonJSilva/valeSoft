@@ -68,3 +68,4 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache

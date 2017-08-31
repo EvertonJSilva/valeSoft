@@ -13,10 +13,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
         
         private readonly IProducaoAppService _producaoApp;
+        private readonly ITaxaDoacaoAppService _taxaDoacaoApp;
+        private readonly ITaxaExtraProfissionalAppService _taxaExtraApp;
+        private readonly IDemonstrativoReportAppService _demonstrativoApp;
 
-        public ProducaoController(IProducaoAppService producaoApp)
+        public ProducaoController(IProducaoAppService producaoApp, ITaxaDoacaoAppService taxaDoacaoApp, ITaxaExtraProfissionalAppService taxaExtraApp, IDemonstrativoReportAppService demonstrativoApp)
         {
             _producaoApp = producaoApp;
+            _taxaDoacaoApp = taxaDoacaoApp;
+            _taxaExtraApp = taxaExtraApp;
+            _demonstrativoApp = demonstrativoApp;
 
         }
        
@@ -56,7 +62,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             //caso não tenha passado nada traz tudo
             if (String.IsNullOrEmpty(dataInicial))
             {
-                dataInicial = DateTime.MinValue.ToString();
+                dataInicial = DateTime.Now.AddDays(-15).ToString();
             }
             if (String.IsNullOrEmpty(dataFinal))
             {
@@ -243,7 +249,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", DemonstrativoReport.GerarLista(producaoViewModel)));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel,_taxaDoacaoApp,_taxaExtraApp)));
 
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
