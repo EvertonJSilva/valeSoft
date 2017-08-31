@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.MVC.AutoMapper
         protected override void Configure()
         {
             Mapper.CreateMap<Cliente, ClienteViewModel>();
-            Mapper.CreateMap<Produto, ProdutoViewModel>();
+            Mapper.CreateMap<Produto, ProdutoViewModel>();    
             Mapper.CreateMap<Usuario, LoginViewModel>();
             Mapper.CreateMap<Consulta, ConsultaViewModel>();
             Mapper.CreateMap<Liberacao, LiberacaoViewModel>();
