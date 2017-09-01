@@ -107,6 +107,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
+                liberacaoDomain.MedicoEncaminhante = liberacaoDomain.MedicoEncaminhante.ToUpper();
                 liberacaoDomain.QuantidadeRealizadaExterno = liberacaoDomain.QuantidadeRealizada;
 
                 _liberacaoApp.Add(liberacaoDomain);

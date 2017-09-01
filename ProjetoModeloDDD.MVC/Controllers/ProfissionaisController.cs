@@ -85,6 +85,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 var profissionalDomain = Mapper.Map<ProfissionalViewModel, Profissional>(profissional);
 
                 profissionalDomain.Senha = Util.encryption(profissionalDomain.Senha);
+                profissionalDomain.NomeProfissional = profissionalDomain.NomeProfissional.ToUpper();
                 _profissionalApp.Add(profissionalDomain);
 
                 return RedirectToAction("Index");
