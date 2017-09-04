@@ -8,7 +8,7 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Services
     {
         Producao GetPorConsultaID(int id);
 
-        IEnumerable<Producao> GetListaPorData(DateTime datainicial, DateTime dataFinal);
+        IEnumerable<Producao> GetListaPorData(DateTime datainicial, DateTime dataFinal, int idProfissional, string nomePaciente);
         
    }
 }

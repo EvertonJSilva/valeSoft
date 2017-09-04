@@ -86,7 +86,7 @@
         .RenderValueAs(o => ConsolidadoCustonHelper(o.Consolidado));
 
 
-}).WithPaging(15).Sortable(true)
+}).WithPaging(20,0,"grid1page").Sortable(true)
 </div>
 
 @helper ConsolidadoCustonHelper(Boolean tem)
@@ -151,7 +151,7 @@ function EnviaConsolidar(n, cancelar) {
 }
 
     </script>
-}
+
 
 
 @helper revisadoCustomHelper(bool revisado, int idProducao)

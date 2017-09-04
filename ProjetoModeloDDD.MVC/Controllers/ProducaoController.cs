@@ -51,8 +51,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                                     string dataInicial,
                                     string dataFinal,
                                     string acao,
-                                    string criterio)
+                                    string criterio,
+                                    string grid1page)
         {
+            if (String.IsNullOrEmpty(grid1page))
+            {
+                grid1page = "1";
+            }
 
             if (Session["Usuario"] == null)
             {
@@ -69,48 +74,78 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 dataFinal = DateTime.MaxValue.ToString();
             }
             
-            var listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal));
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
-
+            
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
+            IEnumerable<Producao> listaProducao = Enumerable.Empty<Producao>();
 
-            switch (criterio)
+            //médicos só vê os deles
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            int IdProfissional = 0 ;
+            if (nivelAcesso == 2)
             {
-                case "todos":
-                    break;
-                case "revisados":
-                    producaoViewModel = producaoViewModel.Where(s => s.revisado == true );
-                    break;
-                case "nao-revisados":
-                    producaoViewModel = producaoViewModel.Where(s => s.revisado == false);
-                    break;
-                default:
-                    break;
-            }
+                IdProfissional = (int)Session["idProfissional"];
 
-            if(!String.IsNullOrEmpty(palavra))
+                //producaoViewModel = producaoViewModel.Where(s => s.Consulta.ProfissionalId == IdProfissional);
+            }
+            
+            if (!String.IsNullOrEmpty(palavra))
             {
                 switch (idLocalizacao)
                 {
                     case 2:
-                        producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
+                        listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, palavra.ToLower());
+
+                     //   producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
                         break;
                     case 1:
-                        producaoViewModel = producaoViewModel.Where(s => s.CarteirinhaPaciente.ToLower().Contains(palavra.ToLower()));
-                        break;     
+                        listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");
+
+                        listaProducao = listaProducao.Where(s => s.CarteirinhaPaciente.ToLower().Contains(palavra.ToLower()));
+                        break;
+
                 }
             }
-
-           //médicos só vê os deles
-            var nivelAcesso = (int)Session["nivelAcesso"];
-            if (nivelAcesso == 2)
+            else
             {
-                var IdProfissional = (int)Session["idProfissional"];
+                listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");   
+            }
 
-                producaoViewModel = producaoViewModel.Where(s => s.Consulta.ProfissionalId == IdProfissional);
+            
+            switch (criterio)
+            {
+                case "todos":
+                    break;
+                case "nao-revisados":
+                    listaProducao = listaProducao.Where(s => s.revisado == false);
+                    break;
+                case "revisados":
+                    listaProducao = listaProducao.Where(s => s.revisado == true);
+                    break;
+                case "consolidados":
+                    listaProducao = listaProducao.Where(s => s.Consolidado == true);
+                    break;
+                case "nao-consolidados":
+                    listaProducao = listaProducao.Where(s => s.Consolidado == false);
+                    break;
+
+                default:
+                    break;
             }
 
 
+            //numero de paginas 
+            ViewBag.TotalPage = listaProducao.Count();
+            int listaPorPagina = 20;
+
+            if (acao == null)
+            {
+                listaProducao = listaProducao.Skip((int.Parse(grid1page) - 1) * listaPorPagina);
+                listaProducao = listaProducao.Take(listaPorPagina);
+            }
+            ViewBag.CurrentPage = int.Parse(grid1page);
+
+
+            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
 
             ///salva dados temp para poder passar paras as outras acoes
             TempData["listaProducao"] = producaoViewModel;

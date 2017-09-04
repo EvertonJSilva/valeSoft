@@ -116,6 +116,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var pacienteDomain = Mapper.Map<PacienteViewModel, Paciente>(paciente);
+                pacienteDomain.NomePaciente = pacienteDomain.NomePaciente.ToUpper();
                 _pacienteApp.Add(pacienteDomain);
 
                 return RedirectToAction("Index");

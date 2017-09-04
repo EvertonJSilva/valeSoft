@@ -18,9 +18,9 @@ namespace ProjetoModeloDDD.Domain.Services
         {
             _producaoRepository = producaoRepository;
         }
-        public IEnumerable<Producao> GetListaPorData(DateTime dataInicial, DateTime dataFinal)
+        public IEnumerable<Producao> GetListaPorData(DateTime dataInicial, DateTime dataFinal, int idProfissional, string nomePaciente)
         {
-            return _producaoRepository.GetListaPorData(dataInicial, dataFinal);
+            return _producaoRepository.GetListaPorData(dataInicial, dataFinal, idProfissional, nomePaciente);
         }
 
         public Producao GetPorConsultaID(int id)

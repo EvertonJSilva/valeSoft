@@ -24,9 +24,9 @@ namespace ProjetoModeloDDD.Application
             return _producaoService.GetPorConsultaID(id);
         }
 
-        public IEnumerable<Producao> GetListaPorData(DateTime dataInicial, DateTime dataFinal)
+        public IEnumerable<Producao> GetListaPorData(DateTime dataInicial, DateTime dataFinal,int idProfissional, string nomePaciente)
         {
-            return _producaoService.GetListaPorData(dataInicial, dataFinal);
+            return _producaoService.GetListaPorData(dataInicial, dataFinal, idProfissional,nomePaciente);
         }
 
     }

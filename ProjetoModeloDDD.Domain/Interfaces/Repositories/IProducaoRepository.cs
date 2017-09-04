@@ -13,6 +13,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
     {
         Producao GetPorConsultaID(int id);
 
-        IEnumerable<Producao> GetListaPorData(DateTime datainicial, DateTime dataFinal);
+        IEnumerable<Producao> GetListaPorData(DateTime datainicial, DateTime dataFinal, int idProfissional, string nomePaciente);
         }
 }

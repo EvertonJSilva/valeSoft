@@ -51,8 +51,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                                     string dataInicial,
                                     string dataFinal,
                                     string acao,
-                                    string criterio)
+                                    string criterio,
+                                    string grid1page)
         {
+            if (String.IsNullOrEmpty(grid1page))
+            {
+                grid1page = "1";
+            }
 
             if (Session["Usuario"] == null)
             {
@@ -70,7 +75,6 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
             
             var listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal));
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
 
@@ -79,16 +83,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 case "todos":
                     break;
                 case "revisados":
-                    producaoViewModel = producaoViewModel.Where(s => s.revisado == true );
+                    listaProducao = listaProducao.Where(s => s.revisado == true );
                     break;
                 case "nao-revisados":
-                    producaoViewModel = producaoViewModel.Where(s => s.revisado == false);
+                    listaProducao = listaProducao.Where(s => s.revisado == false);
                     break;
                 default:
                     break;
             }
 
-            if(!String.IsNullOrEmpty(palavra))
+            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
+
+            if (!String.IsNullOrEmpty(palavra))
             {
                 switch (idLocalizacao)
                 {
@@ -110,6 +116,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 producaoViewModel = producaoViewModel.Where(s => s.Consulta.ProfissionalId == IdProfissional);
             }
 
+
+            //numero de paginas 
+            ViewBag.TotalPage = producaoViewModel.Count();
+            int listaPorPagina = 20;
+
+            if (acao == null)
+            {
+                producaoViewModel = producaoViewModel.Skip((int.Parse(grid1page) - 1) * listaPorPagina);
+                producaoViewModel = producaoViewModel.Take(listaPorPagina);
+            }
+            ViewBag.CurrentPage = int.Parse(grid1page);
 
 
             ///salva dados temp para poder passar paras as outras acoes
