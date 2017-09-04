@@ -20,7 +20,7 @@ namespace ProjetoModeloDDD.Domain.Services
            
         }
 
-        public TaxaExtraProfissional GetPorIdTaxaExtraProfissional(int id)
+        public IEnumerable <TaxaExtraProfissional> GetPorIdTaxaExtraProfissional(int id)
         {
             return _taxaRepository.GetPorIdTaxaExtraProfissional(id);
         }

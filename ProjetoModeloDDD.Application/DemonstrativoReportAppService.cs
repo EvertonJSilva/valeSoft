@@ -35,19 +35,31 @@ namespace ProjetoModeloDDD.Application
                 TaxaDoacao valoresTaxas = taxaDoacao.GetPorIdTaxaProfissional(producao.Consulta.Profissional.TipoProfissionalId);
                 demonstrativo.ValorDoacao = valoresTaxas.Valor;
 
-                TaxaExtraProfissional valoresExtra = taxaExtra.GetPorIdTaxaExtraProfissional(producao.Consulta.Profissional.ProfissionalId);
-                if(valoresExtra.tipo == "Crédito")
+                 IEnumerable<TaxaExtraProfissional>  valoresExtra = taxaExtra.GetPorIdTaxaExtraProfissional(producao.Consulta.Profissional.ProfissionalId);
+
+                
+                foreach (var item in valoresExtra)
                 {
-                    demonstrativo.ValorOutrosAcrecimos = valoresExtra.valor;
-                }else
-                {
-                    demonstrativo.ValorOutrosDescontos = valoresExtra.valor;
+
+                    if(item.dataCompensar >= producao.dataInicial && item.dataCompensar < producao.dataFinal)
+                    { 
+
+                        if (item.tipo == "Crédito")
+                        {
+                            demonstrativo.ValorOutrosAcrecimos =+ item.valor;
+                        }
+                        else
+                        {
+                            demonstrativo.ValorOutrosDescontos =+ item.valor;
+                        }
+                    }
+
                 }
             }
             catch (Exception e)
             {
                 demonstrativo.ValorDoacao = 0;
-               
+                
             }
 
             return demonstrativo;

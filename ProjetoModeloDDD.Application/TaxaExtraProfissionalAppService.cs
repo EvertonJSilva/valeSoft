@@ -1,7 +1,7 @@
 ﻿using ProjetoModeloDDD.Application.Interface;
 using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.Domain.Interfaces.Services;
-
+using System.Collections.Generic;
 
 namespace ProjetoModeloDDD.Application
 {
@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.Application
             _taxaService = taxaService;
         }
 
-        public TaxaExtraProfissional GetPorIdTaxaExtraProfissional(int id)
+        public IEnumerable <TaxaExtraProfissional> GetPorIdTaxaExtraProfissional(int id)
         {
             return _taxaService.GetPorIdTaxaExtraProfissional(id);
         }
