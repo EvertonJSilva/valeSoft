@@ -41,7 +41,7 @@
        columns.Add(model => model.Autorizacao).Titled("Autorização").SetWidth(300);
        columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
        columns.Add(model => model.valorFormatado).Titled("Valor").SetWidth(100);
-       
+
        columns.Add()
            .Encoded(false)
            .Sanitized(false)
@@ -58,7 +58,7 @@
            .SetWidth(30)
            .RenderValueAs(o => DeletarCustonHelper(o.ConsultaId));
 
-   }).WithPaging(20).Sortable(true)
+   }).WithPaging(20, 0, "grid1page").Sortable(true)
     </div>
 
     @helper SalvarCustonHelper(int id)

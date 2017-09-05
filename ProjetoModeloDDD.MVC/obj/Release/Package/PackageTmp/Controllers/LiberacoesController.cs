@@ -93,9 +93,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta/Create
         public ActionResult Create()
         {
-            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
-            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
 
+            ViewBag.PacienteId = listaPaciente(1);
+
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            int IdProfissional = 2;
+
+            if (nivelAcesso == 2)
+            {
+                IdProfissional = (int)Session["idProfissional"];
+            }
+
+            ViewBag.ProfissionalId = listaProfissional(IdProfissional);
+
+            
             return View();
         }
 
@@ -107,7 +118,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
-                liberacaoDomain.MedicoEncaminhante = liberacaoDomain.MedicoEncaminhante.ToUpper();
+
+                if (!String.IsNullOrEmpty(liberacaoDomain.MedicoEncaminhante))
+                { 
+                    liberacaoDomain.MedicoEncaminhante = liberacaoDomain.MedicoEncaminhante.ToUpper();
+                }
+
                 liberacaoDomain.QuantidadeRealizadaExterno = liberacaoDomain.QuantidadeRealizada;
 
                 _liberacaoApp.Add(liberacaoDomain);
@@ -143,8 +159,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 //return View("Details",tuple);
             }
 
-            ViewBag.PacienteId = new SelectList(_pacienteApp.GetAll(), "PacienteId", "NomePaciente");
-            ViewBag.ProfissionalId = new SelectList(_profissionalApp.GetAll(), "ProfissionalId", "NomeProfissional");
+            ViewBag.PacienteId = listaPaciente(1);
+
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            int IdProfissional= 2;
+
+            if (nivelAcesso == 2)
+            {
+                IdProfissional = (int)Session["idProfissional"];
+            }
+
+            ViewBag.ProfissionalId = listaProfissional(IdProfissional);
 
             return View(liberacao);
         }
@@ -155,8 +180,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
-            ViewBag.PacienteId = listaPaciente(liberacaoViewModel);
-            ViewBag.ProfissionalId = listaProfissional(liberacaoViewModel);
+            ViewBag.PacienteId = listaPaciente(liberacaoViewModel.PacienteId);
+            ViewBag.ProfissionalId = listaProfissional(liberacaoViewModel.ProfissionalId);
 
             return View(liberacaoViewModel);
         }
@@ -175,8 +200,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
 
-            ViewBag.PacienteId = listaPaciente(liberacao);
-            ViewBag.ProfissionalId = listaProfissional(liberacao);
+            ViewBag.PacienteId = listaPaciente(liberacao.PacienteId);
+            ViewBag.ProfissionalId = listaProfissional(liberacao.ProfissionalId);
 
             return View(liberacao);
         }
@@ -201,13 +226,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        public IEnumerable<SelectListItem> listaProfissional(LiberacaoViewModel liberacao)
+        public IEnumerable<SelectListItem> listaProfissional(int idProfissional)
         {
             IEnumerable<SelectListItem> selectListProfissional =
-               from c in _profissionalApp.GetAll()
+               from c in _profissionalApp.GetAll().OrderBy(p => p.NomeProfissional)
                select new SelectListItem
                {
-                   Selected = (c.ProfissionalId == liberacao.Profissional.ProfissionalId),
+                   Selected = (c.ProfissionalId == idProfissional),
                    Text = c.NomeProfissional,
                    Value = c.ProfissionalId.ToString()
                };
@@ -215,13 +240,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return selectListProfissional;
         }
 
-        public IEnumerable<SelectListItem> listaPaciente(LiberacaoViewModel liberacao)
+        public IEnumerable<SelectListItem> listaPaciente(int idPaciente)
         {
             IEnumerable<SelectListItem> selectListPaciente =
-               from c in _pacienteApp.GetAll()
+               from c in _pacienteApp.GetAll().OrderBy(p => p.NomePaciente)
                select new SelectListItem
                {
-                   Selected = (c.PacienteId == liberacao.PacienteId),
+                   Selected = (c.PacienteId == idPaciente),
                    Text = c.NomePaciente,
                    Value = c.PacienteId.ToString()
                };

@@ -15,9 +15,9 @@ namespace ProjetoModeloDDD.Application
             _consultaService = consultaService;
         }
 
-        public IEnumerable<Consulta> GetPorIdProfissional(int id)
+        public IEnumerable<Consulta> GetPorIdProfissional(int id, string nomePaciente, string numeroliberacao)
         {
-            return _consultaService.GetPorIdProfissional(id);
+            return _consultaService.GetPorIdProfissional(id, nomePaciente,numeroliberacao);
         }
     }
 }

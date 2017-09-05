@@ -5,6 +5,6 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
 {
     public interface IConsultaRepository : IRepositoryBase<Consulta>
     {
-        IEnumerable<Consulta> GetPorIdProfissional(int id);
+        IEnumerable<Consulta> GetPorIdProfissional(int id,string nomePaciente, string numeroliberacao);
     }
 }

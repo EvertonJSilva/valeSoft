@@ -16,9 +16,9 @@ namespace ProjetoModeloDDD.Domain.Services
             _consultaRepository = consultaRepository;
         }
 
-        public IEnumerable<Consulta> GetPorIdProfissional(int id)
+        public IEnumerable<Consulta> GetPorIdProfissional(int id, string nomePaciente, string numeroliberacao)
         {
-           return _consultaRepository.GetPorIdProfissional(id);
+           return _consultaRepository.GetPorIdProfissional(id,nomePaciente,numeroliberacao);
         }
 
         public IEnumerable<Consulta> ObterConsultasPorPaciente(Paciente paciente)

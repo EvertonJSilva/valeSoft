@@ -9,7 +9,7 @@ namespace ProjetoModeloDDD.Domain.Interfaces.Services
 
         IEnumerable<Consulta> ObterConsultasPorPaciente(Paciente paciente);
         IEnumerable<Consulta> ObterConsultasPorProfissional(Profissional profissional);
-        IEnumerable<Consulta> GetPorIdProfissional(int id);
+        IEnumerable<Consulta> GetPorIdProfissional(int id, string nomePaciente, string numeroliberacao);
 
 
     }

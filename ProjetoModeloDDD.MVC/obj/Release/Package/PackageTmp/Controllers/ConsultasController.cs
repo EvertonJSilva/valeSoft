@@ -33,25 +33,27 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Consulta
-        public ActionResult Index(string palavra, int? LocalizarPor)
+        public ActionResult Index(string palavra, int? LocalizarPor, string grid1page)
         {
             if (Session["Usuario"] == null)
             {
                 return RedirectToAction("index", "login");
             }
+            if (String.IsNullOrEmpty(grid1page))
+            {
+                grid1page = "1";
+            }
 
-            IEnumerable<ConsultaViewModel> consultaViewModel;
+
+            IEnumerable<Consulta> listConsulta = Enumerable.Empty<Consulta>();
 
             // médicos só vem as consultas dele
             var nivelAcesso = (int)Session["nivelAcesso"];
+            int IdProfissional = 0;
             if (nivelAcesso == 2)
             {
-                var IdProfissional = (int)Session["idProfissional"];
+                IdProfissional = (int)Session["idProfissional"];
 
-                consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetPorIdProfissional(IdProfissional));
-            }else
-            {
-                consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
             }
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
@@ -61,14 +63,29 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 2:
-                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
+                        listConsulta = _consultaApp.GetPorIdProfissional(IdProfissional, palavra.ToLower(), "");
                         break;
                     case 1:
-                        consultaViewModel = consultaViewModel.Where(s => s.Liberacao.NumeroLiberacao.Contains(palavra));
+                        listConsulta = _consultaApp.GetPorIdProfissional(IdProfissional,"" ,palavra.ToLower());
                         break;
                 }
 
             }
+            else
+            {
+                listConsulta = _consultaApp.GetPorIdProfissional(IdProfissional, "", "");
+            }
+
+            //numero de paginas 
+            ViewBag.TotalPage = listConsulta.Count();
+            int listaPorPagina = 20;
+            
+            listConsulta = listConsulta.Skip((int.Parse(grid1page) - 1) * listaPorPagina);
+            listConsulta = listConsulta.Take(listaPorPagina);
+            
+            ViewBag.CurrentPage = int.Parse(grid1page);
+
+            var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(listConsulta);
 
             return View(consultaViewModel);
         }
@@ -134,8 +151,38 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ConsultaViewModel consulta)
         {
+            if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
+            {
+                ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+
+                return View(consulta);
+            }
+
+            if (consulta.ProfissionalId == 2)
+            {
+                ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
+
+                return View(consulta);
+            }
+
+            if (consulta.DataHoraConsulta.Year == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
+
+                return View(consulta);
+            }
+
+            if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+            {
+                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
+
+                return View(consulta);
+            }
+
+
             if (ModelState.IsValid)
             {
+                
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
                 consultaDomain.DataCadastro = DateTime.Now;
                 _consultaApp.Add(consultaDomain);
@@ -193,7 +240,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.ProfissionalId == 1)
+            if (consulta.ProfissionalId == 2)
             {
                 ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
 
