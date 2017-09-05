@@ -134,8 +134,38 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ConsultaViewModel consulta)
         {
+            if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
+            {
+                ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+
+                return View(consulta);
+            }
+
+            if (consulta.ProfissionalId == 2)
+            {
+                ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
+
+                return View(consulta);
+            }
+
+            if (consulta.DataHoraConsulta.Year == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
+
+                return View(consulta);
+            }
+
+            if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+            {
+                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
+
+                return View(consulta);
+            }
+
+
             if (ModelState.IsValid)
             {
+                
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
                 consultaDomain.DataCadastro = DateTime.Now;
                 _consultaApp.Add(consultaDomain);
@@ -193,7 +223,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.ProfissionalId == 1)
+            if (consulta.ProfissionalId == 2)
             {
                 ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
 
