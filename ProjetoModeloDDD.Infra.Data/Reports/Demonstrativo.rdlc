@@ -1840,7 +1840,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ValorConvenio.Value)*0.0715</Value>
+                              <Value>=(ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + 
+ReportItems!Textbox340.Value + ReportItems!Textbox285.Value + 
+ReportItems!Textbox352.Value + ReportItems!Textbox348.Value)*0.0715</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>

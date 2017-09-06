@@ -158,6 +158,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
+            if(consulta.Liberacao.PacienteId == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+
+                return View(consulta);
+            }
+
             if (consulta.ProfissionalId == 2)
             {
                 ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
@@ -236,6 +243,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
             {
                 ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+
+                return View(consulta);
+            }
+
+            if (consulta.Liberacao.PacienteId == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
                 return View(consulta);
             }

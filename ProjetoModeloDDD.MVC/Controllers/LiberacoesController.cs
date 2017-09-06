@@ -115,6 +115,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(LiberacaoViewModel liberacao)
         {
+
+            if (liberacao.PacienteId == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+
+                return View(liberacao);
+            }
+
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
@@ -191,6 +199,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(LiberacaoViewModel liberacao)
         {
+            if (liberacao.PacienteId == 3)
+            {
+                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+
+                return View(liberacao);
+            }
+
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
