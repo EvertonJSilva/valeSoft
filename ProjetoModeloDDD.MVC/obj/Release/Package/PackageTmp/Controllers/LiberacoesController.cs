@@ -29,9 +29,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Consulta
-        public ActionResult Index(string palavra, int? LocalizarPor)
+        public ActionResult Index(string palavra, int? LocalizarPor, string grid1page)
         {
-            IEnumerable<LiberacaoViewModel> liberacaoViewModel;
+            IEnumerable<Liberacao> listaLiberacao = Enumerable.Empty<Liberacao>();
 
             if (Session["Usuario"] == null)
             {
@@ -39,17 +39,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
-
+            int IdProfissional = 0;
             var nivelAcesso = (int)Session["nivelAcesso"];
             if (nivelAcesso == 2)
             {
-                var IdProfissional = (int)Session["idProfissional"];
-
-                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetPorIdProfissional(IdProfissional));
-            }
-            else
-            {
-                liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
+                IdProfissional = (int)Session["idProfissional"];
             }
             
             if (!String.IsNullOrEmpty(palavra))
@@ -58,16 +52,23 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 switch (idLocalizacao)
                 {
                     case 1:
-                        liberacaoViewModel = liberacaoViewModel.Where(s => s.NumeroLiberacao.Contains(palavra));
+                        listaLiberacao = _liberacaoApp.GetPorIdProfissional(IdProfissional, "", palavra);
+
                         break;
                     case 2:
-                        liberacaoViewModel = liberacaoViewModel.Where(s => s.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
+                        listaLiberacao = _liberacaoApp.GetPorIdProfissional(IdProfissional, palavra.ToLower(), "");
                         break;
                 }
 
             }
+            else
+            {
+                listaLiberacao = _liberacaoApp.GetPorIdProfissional(IdProfissional, "", "");
+            }
 
-            
+            listaLiberacao = Paginar(listaLiberacao, grid1page, 20);
+
+            var liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(listaLiberacao);
 
             return View(liberacaoViewModel.OrderBy(p => p.NumeroLiberacao).OrderBy(p => p.Paciente.NomePaciente));
         }
@@ -269,6 +270,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public IEnumerable<Liberacao> Paginar(IEnumerable<Liberacao> listConsulta, String paginaAtual, int listaPorPagina)
         {
+            if (String.IsNullOrEmpty(paginaAtual))
+            {
+                paginaAtual = "1";
+            }
 
             ViewBag.TotalPage = listConsulta.Count() / listaPorPagina;
 

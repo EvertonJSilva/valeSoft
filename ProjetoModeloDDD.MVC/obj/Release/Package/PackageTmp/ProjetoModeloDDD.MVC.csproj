@@ -279,6 +279,7 @@
     <Content Include="Content\SiteB\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\SiteB\img\favicon.ico" />
+    <Content Include="Content\SiteB\img\fundo-azul-1.jpg" />
     <Content Include="Content\SiteB\img\fundo-azul.jpg" />
     <Content Include="Content\SiteB\img\golden-defocused-lights-background.jpg" />
     <Content Include="Content\SiteB\img\logoUnipsico.png" />
