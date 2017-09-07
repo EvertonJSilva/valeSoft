@@ -160,3 +160,6 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.xml
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.pdb
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demonstrativo.rdlc
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc

@@ -436,12 +436,18 @@
     <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy.pubxml" />
-    <EmbeddedResource Include="Reports\Demonstrativo.rdlc" />
-    <EmbeddedResource Include="Reports\Pacientes.rdlc" />
+    <EmbeddedResource Include="Reports\Demonstrativo.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pacientes.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Producao.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Protocolo.rdlc" />
+    <EmbeddedResource Include="Reports\Protocolo.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
