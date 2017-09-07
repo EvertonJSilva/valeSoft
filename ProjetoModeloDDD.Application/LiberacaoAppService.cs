@@ -24,9 +24,9 @@ namespace ProjetoModeloDDD.Application
             _liberacaoService.AtualizarConsultasRealizadas(liberacao);
         }
 
-        public IEnumerable<Liberacao> GetPorIdProfissional(int id)
+        public IEnumerable<Liberacao> GetPorIdProfissional(int id, string nomePaciente, string numeroliberacao)
         {
-            return _liberacaoService.GetPorIdProfissional(id);
+            return _liberacaoService.GetPorIdProfissional(id, nomePaciente, numeroliberacao);
         }
     }
 }

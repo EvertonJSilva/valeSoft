@@ -338,8 +338,6 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Sys
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\WebActivatorEx.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\WebGrease.dll
-E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
-E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\AutoMapper.Net4.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\csc.exe.config
@@ -430,5 +428,7 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\System.Web.WebPages.Razor.xml
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.pdb
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csprojResolveAssemblyReference.cache
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb

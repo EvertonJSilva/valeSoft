@@ -133,17 +133,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
 
-            //numero de paginas 
-            ViewBag.TotalPage = listaProducao.Count();
-            int listaPorPagina = 20;
-
+            //paginacao apenas nas consultas de lista
             if (acao == null)
             {
-                listaProducao = listaProducao.Skip((int.Parse(grid1page) - 1) * listaPorPagina);
-                listaProducao = listaProducao.Take(listaPorPagina);
+                listaProducao = Paginar(listaProducao, grid1page, 20);
             }
-            ViewBag.CurrentPage = int.Parse(grid1page);
-
+            
 
             var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
 
@@ -296,6 +291,36 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
 
+        public IEnumerable<Producao> Paginar(IEnumerable<Producao> listConsulta, String paginaAtual, int listaPorPagina)
+        {
+
+            ViewBag.TotalPage = listConsulta.Count() / listaPorPagina;
+
+            listConsulta = listConsulta.Skip((int.Parse(paginaAtual) - 1) * listaPorPagina);
+            listConsulta = listConsulta.Take(listaPorPagina);
+
+            ViewBag.CurrentPage = int.Parse(paginaAtual);
+
+            if (ViewBag.CurrentPage == 1)
+            {
+                ViewBag.startPage = 1;
+            }
+            else
+            {
+                ViewBag.startPage = @ViewBag.CurrentPage - 1;
+            }
+
+            if ((ViewBag.CurrentPage + 5) < ViewBag.TotalPage)
+            {
+                ViewBag.endPage = ViewBag.CurrentPage + 5;
+            }
+            else
+            {
+                ViewBag.endPage = ViewBag.TotalPage;
+            }
+
+            return listConsulta;
+        }
 
 
     }

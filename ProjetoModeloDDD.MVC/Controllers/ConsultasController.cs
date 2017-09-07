@@ -76,14 +76,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 listConsulta = _consultaApp.GetPorIdProfissional(IdProfissional, "", "");
             }
 
-            //numero de paginas 
-            ViewBag.TotalPage = listConsulta.Count();
-            int listaPorPagina = 20;
-            
-            listConsulta = listConsulta.Skip((int.Parse(grid1page) - 1) * listaPorPagina);
-            listConsulta = listConsulta.Take(listaPorPagina);
-            
-            ViewBag.CurrentPage = int.Parse(grid1page);
+            listConsulta = Paginar(listConsulta, grid1page, 20);
+
+
 
             var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(listConsulta);
 
@@ -377,6 +372,36 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return selectListLiberacao;
         }
 
+        public IEnumerable<Consulta> Paginar(IEnumerable<Consulta> listConsulta, String paginaAtual, int listaPorPagina)
+        {
+
+            ViewBag.TotalPage = listConsulta.Count() / listaPorPagina;
+
+            listConsulta = listConsulta.Skip((int.Parse(paginaAtual) - 1) * listaPorPagina);
+            listConsulta = listConsulta.Take(listaPorPagina);
+
+            ViewBag.CurrentPage = int.Parse(paginaAtual);
+
+            if (ViewBag.CurrentPage == 1)
+            {
+                ViewBag.startPage = 1;
+            }
+            else
+            {
+                ViewBag.startPage = @ViewBag.CurrentPage - 1;
+            }
+
+            if ((ViewBag.CurrentPage + 5) < ViewBag.TotalPage)
+            {
+                ViewBag.endPage = ViewBag.CurrentPage + 5;
+            }
+            else
+            {
+                ViewBag.endPage = ViewBag.TotalPage;
+            }
+
+            return listConsulta;
+        }
     }
 
 
@@ -390,7 +415,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ListaValores(ValorConsulta valorConsulta, Paciente paciente)
         {
             this.Value = valorConsulta.Sessao;
-            this.Text = calculaTexto(valorConsulta.Sessao);
+            this.Text = CalculaTexto(valorConsulta.Sessao);
             this._ValorConsulta = valorConsulta.Valor;
             this._ValorCopart = CalculaCopart(valorConsulta, paciente);
             this._ValorConvenio = CalculaConvenio(valorConsulta, paciente);
@@ -422,7 +447,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
         }
 
-        private string calculaTexto(string sessao)
+        private string CalculaTexto(string sessao)
         {
             switch (sessao) {
                 case "50000470":
@@ -435,5 +460,6 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     return "";
             }
         }
+
     }
 }

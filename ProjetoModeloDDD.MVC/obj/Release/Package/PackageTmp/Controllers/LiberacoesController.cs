@@ -51,10 +51,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(_liberacaoApp.GetAll());
             }
-
-
-
-
+            
             if (!String.IsNullOrEmpty(palavra))
             {
 
@@ -115,6 +112,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(LiberacaoViewModel liberacao)
         {
+
+            if (liberacao.PacienteId == 1)
+            {
+                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+
+                return View(liberacao);
+            }
+
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
@@ -191,6 +196,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(LiberacaoViewModel liberacao)
         {
+            if (liberacao.PacienteId == 3)
+            {
+                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+
+                return View(liberacao);
+            }
+
             if (ModelState.IsValid)
             {
                 var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
@@ -252,6 +264,38 @@ namespace ProjetoModeloDDD.MVC.Controllers
                };
 
             return selectListPaciente;
+        }
+
+
+        public IEnumerable<Liberacao> Paginar(IEnumerable<Liberacao> listConsulta, String paginaAtual, int listaPorPagina)
+        {
+
+            ViewBag.TotalPage = listConsulta.Count() / listaPorPagina;
+
+            listConsulta = listConsulta.Skip((int.Parse(paginaAtual) - 1) * listaPorPagina);
+            listConsulta = listConsulta.Take(listaPorPagina);
+
+            ViewBag.CurrentPage = int.Parse(paginaAtual);
+
+            if (ViewBag.CurrentPage == 1)
+            {
+                ViewBag.startPage = 1;
+            }
+            else
+            {
+                ViewBag.startPage = @ViewBag.CurrentPage - 1;
+            }
+
+            if ((ViewBag.CurrentPage + 5) < ViewBag.TotalPage)
+            {
+                ViewBag.endPage = ViewBag.CurrentPage + 5;
+            }
+            else
+            {
+                ViewBag.endPage = ViewBag.TotalPage;
+            }
+
+            return listConsulta;
         }
 
     }

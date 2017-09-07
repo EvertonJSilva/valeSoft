@@ -35,9 +35,9 @@ namespace ProjetoModeloDDD.Domain.Services
             
         }
 
-        public IEnumerable<Liberacao> GetPorIdProfissional(int id)
+        public IEnumerable<Liberacao> GetPorIdProfissional(int id, string nomePaciente, string numeroliberacao)
         {
-            return _liberacaoRepository.GetPorIdProfissional(id);
+            return _liberacaoRepository.GetPorIdProfissional(id,nomePaciente,numeroliberacao);
         }
     }
 }

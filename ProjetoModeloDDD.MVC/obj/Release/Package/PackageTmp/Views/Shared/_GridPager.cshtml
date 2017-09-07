@@ -12,7 +12,8 @@
     @if (@ViewBag.CurrentPage != null && @ViewBag.TotalPage > 0)
     {
 
-        for(int i = 1; i <= @ViewBag.TotalPage/20; i++)
+
+        @*for(int i = 1; i <= @ViewBag.TotalPage/20; i++)
         {
             if (i == @ViewBag.CurrentPage)
             {
@@ -22,12 +23,56 @@
             {
             <li><a href="@Model.GetLinkForPage(i)">@i</a></li>
             }
+        }*@
+
+        if (@ViewBag.CurrentPage > 1)
+        {
+            <li>
+                <a href="@Model.GetLinkForPage(@ViewBag.CurrentPage - 1)">«</a>
+            </li>
         }
+
+        if (@ViewBag.startPage > 1)
+        {
+            <li>
+                <a href="@Model.GetLinkForPage(1)">1</a>
+            </li>
+            if (@ViewBag.startPage > 2)
+            {
+                <li><a href="@Model.GetLinkForPage(@ViewBag.startPage - 1)">...</a></li>
+            }
+        }
+        for (int i = @ViewBag.startPage; i <= @ViewBag.endPage; i++)
+        {
+            if (i == @ViewBag.CurrentPage)
+            {
+                <li class="active"><span>@i</span></li>
+            }
+            else
+            {
+                <li><a href="@Model.GetLinkForPage(i)">@i</a></li>
+            }
+        }
+        if (@ViewBag.endPage < @ViewBag.TotalPage)
+        {
+            if (@ViewBag.endPage < @ViewBag.TotalPage - 1)
+            {
+                <li><a href="@Model.GetLinkForPage(@ViewBag.endPage + 1)">...</a></li>
+            }
+            <li><a href="@Model.GetLinkForPage(@ViewBag.TotalPage)">@ViewBag.TotalPage</a></li>
+        }
+
+        if (@ViewBag.CurrentPage < @ViewBag.TotalPage)
+        {
+            <li><a href="@Model.GetLinkForPage(@ViewBag.CurrentPage + 1)">»</a></li>
+        }
+
+
 
     }
     else
     {
-        if(Model.CurrentPage > 1)
+        if (Model.CurrentPage > 1)
         {
             <li>
                 <a href="@Model.GetLinkForPage(Model.CurrentPage - 1)">«</a>

@@ -8,6 +8,6 @@ namespace ProjetoModeloDDD.Application.Interface
 
         void AtualizarConsultasRealizadas(Liberacao liberacao);
 
-        IEnumerable<Liberacao> GetPorIdProfissional(int id);
+        IEnumerable<Liberacao> GetPorIdProfissional(int id, string nomePaciente, string numeroliberacao);
     }
 }
