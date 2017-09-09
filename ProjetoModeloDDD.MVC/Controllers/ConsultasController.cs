@@ -153,12 +153,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if(consulta.Liberacao.PacienteId == 1)
-            {
-                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+           // if(consulta.Liberacao.PacienteId == 1)
+            //{
+              ///  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
-                return View(consulta);
-            }
+                //return View(consulta);
+            //}
 
             if (consulta.ProfissionalId == 2)
             {
@@ -242,12 +242,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.Liberacao.PacienteId == 1)
-            {
-                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+            //if (consulta.Liberacao.PacienteId == 1)
+            //{
+              //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
-                return View(consulta);
-            }
+                //return View(consulta);
+            //}
 
             if (consulta.ProfissionalId == 2)
             {
