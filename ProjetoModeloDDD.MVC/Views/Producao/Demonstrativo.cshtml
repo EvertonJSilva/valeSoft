@@ -6,9 +6,19 @@
 
 <h2>Demonstrativo dos Cooperados</h2>
 
+
+
 @Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer)
 
 
 <div>
-    @Html.ActionLink("Voltar para lista", "Index")
+    @Html.ActionLink("Voltar para lista", "Index", null, new { @style = "float:left" })
+    &nbsp;
+    &nbsp;
+@Html.ActionLink("Exportar PDF", "PDFExport")
+
 </div>              
+
+
+<script>
+</script>

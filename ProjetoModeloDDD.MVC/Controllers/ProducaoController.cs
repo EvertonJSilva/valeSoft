@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using Microsoft.Reporting.WebForms;
 using ProjetoModeloDDD.Application.Interface;
 using ProjetoModeloDDD.Domain.Entities;
 using ProjetoModeloDDD.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -213,6 +215,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
 
             ViewBag.ReportViewer = viewer;
+            TempData["report"] = viewer;
+
 
             return View(producaoViewModel);
         }
@@ -240,6 +244,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
 
             ViewBag.ReportViewer = viewer;
+
+            TempData["report"] = viewer;
 
             return View(producaoViewModel);
         }
@@ -281,17 +287,75 @@ namespace ProjetoModeloDDD.MVC.Controllers
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel,_taxaDoacaoApp,_taxaExtraApp)));
 
+            //Warning[] warnings;
+            //string[] streamIds;
+            //string mimeType = string.Empty;
+            //string encoding = "Processando";
+            //string extension = string.Empty;
+
+            //byte[] bytes = viewer.LocalReport.Render("PDF", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
+            //// byte[] bytes = viewer.LocalReport.Render("Excel", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
+            //// Now that you have all the bytes representing the PDF report, buffer it and send it to the client.          
+            //// System.Web.HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            //Response.Buffer = true;
+            //Response.Clear();
+            //Response.ContentType = mimeType;
+            //Response.AddHeader("content-disposition", "attachment; filename= filename" + "." + extension);
+            //Response.OutputStream.Write(bytes, 0, bytes.Length); // create the file  
+            //Response.Flush(); // send it to the client to download  
+            //Response.End();
+
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
 
             ViewBag.ReportViewer = viewer;
 
+            TempData["report"] = viewer;
+
             return View(producaoViewModel);
         }
 
+        
+         public ActionResult PDFExport()
+        {
+            var report = TempData["report"] as Microsoft.Reporting.WebForms.ReportViewer;
+            string[] streamids;
+            string minetype;
+            string encod;
+            string fextension;
+            string deviceInfo =
+              "<DeviceInfo>" +
+              "  <OutputFormat>EMF</OutputFormat>" +
+              "  <PageWidth>8.5in</PageWidth>" +
+              "  <PageHeight>11in</PageHeight>" +
+              "  <MarginTop>0.25in</MarginTop>" +
+              "  <MarginLeft>0.25in</MarginLeft>" +
+              "  <MarginRight>0.25in</MarginRight>" +
+              "  <MarginBottom>0.25in</MarginBottom>" +
+              "</DeviceInfo>";
+            Warning[] warnings;
+            byte[] rpbybe = report.LocalReport.Render("PDF", deviceInfo, out minetype, out encod, out fextension, out streamids,
+               out warnings);
 
-        public IEnumerable<Producao> Paginar(IEnumerable<Producao> listConsulta, String paginaAtual, int listaPorPagina)
+            Response.Buffer = true;
+            Response.Clear();
+            Response.ContentType = minetype;
+            Response.AddHeader("content-disposition", "attachment; filename= filename" + "." + fextension);
+            Response.OutputStream.Write(rpbybe, 0, rpbybe.Length); // create the file  
+            Response.Flush(); // send it to the client to download  
+            Response.End();
+            //using (FileStream fs = new FileStream("E:\\newwwfg.pdf", FileMode.Create))
+            //{
+            //    fs.Write(rpbybe, 0, rpbybe.Length);
+            //}
+
+            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+
+            return View(producaoViewModel);
+        }
+
+            public IEnumerable<Producao> Paginar(IEnumerable<Producao> listConsulta, String paginaAtual, int listaPorPagina)
         {
 
             ViewBag.TotalPage = (int) Math.Ceiling( (double) listConsulta.Count() / listaPorPagina) ;

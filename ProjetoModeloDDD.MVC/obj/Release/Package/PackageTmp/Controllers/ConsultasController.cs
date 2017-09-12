@@ -375,7 +375,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public IEnumerable<Consulta> Paginar(IEnumerable<Consulta> listConsulta, String paginaAtual, int listaPorPagina)
         {
 
-            ViewBag.TotalPage = listConsulta.Count() / listaPorPagina;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)listConsulta.Count() / listaPorPagina);
 
             listConsulta = listConsulta.Skip((int.Parse(paginaAtual) - 1) * listaPorPagina);
             listConsulta = listConsulta.Take(listaPorPagina);
