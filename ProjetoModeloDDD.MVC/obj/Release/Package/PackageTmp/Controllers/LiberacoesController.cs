@@ -79,9 +79,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
-            var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+            var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetPorIdProfissional(0, "", liberacao.NumeroLiberacao));
 
-            consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == id);
+            //consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == id);
 
             var tuple = new Tuple<LiberacaoViewModel, IEnumerable<ConsultaViewModel>>(liberacaoViewModel, consultasViewModel);
 
@@ -114,12 +114,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Create(LiberacaoViewModel liberacao)
         {
 
-            if (liberacao.PacienteId == 1)
-            {
-                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+            //if (liberacao.PacienteId == 1)
+            //{
+              //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
-                return View(liberacao);
-            }
+                //return View(liberacao);
+            //}
 
             if (ModelState.IsValid)
             {
@@ -197,12 +197,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(LiberacaoViewModel liberacao)
         {
-            if (liberacao.PacienteId == 3)
-            {
-                ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+          //  if (liberacao.PacienteId == 3)
+            //{
+              //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
-                return View(liberacao);
-            }
+                //return View(liberacao);
+            //}
 
             if (ModelState.IsValid)
             {

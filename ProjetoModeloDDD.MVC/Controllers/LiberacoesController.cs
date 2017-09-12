@@ -79,9 +79,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
 
-            var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetAll());
+            var consultasViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(_consultaApp.GetPorIdProfissional(0, "", liberacao.NumeroLiberacao));
 
-            consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == id);
+            //consultasViewModel = consultasViewModel.Where(s => s.LiberacaoId == id);
 
             var tuple = new Tuple<LiberacaoViewModel, IEnumerable<ConsultaViewModel>>(liberacaoViewModel, consultasViewModel);
 

@@ -211,8 +211,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
 
             viewer.SizeToReportContent = true;
+            viewer.ShowPrintButton = true;
+            viewer.ShowExportControls = false;
+            viewer.ShowRefreshButton = false;
+
+            viewer.PageCountMode = Microsoft.Reporting.WebForms.PageCountMode.Actual;
+            
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
-            viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
+            viewer.Height = 0;//System.Web.UI.WebControls.Unit.Percentage(10);
 
             ViewBag.ReportViewer = viewer;
             TempData["report"] = viewer;
@@ -242,6 +248,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.SizeToReportContent = true;  
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);    
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
+            viewer.ShowPrintButton = true;
+            viewer.ShowExportControls = false;
+            viewer.ShowRefreshButton = false;
 
             ViewBag.ReportViewer = viewer;
 
@@ -308,6 +317,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
+            viewer.ShowPrintButton = true;
+            viewer.ShowExportControls = false;
+            viewer.ShowRefreshButton = false;
 
             ViewBag.ReportViewer = viewer;
 
