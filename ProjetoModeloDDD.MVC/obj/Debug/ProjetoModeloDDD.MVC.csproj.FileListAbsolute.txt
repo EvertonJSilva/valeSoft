@@ -435,3 +435,6 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloD
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demonstrativo.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demonstrativo.rdlc
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
