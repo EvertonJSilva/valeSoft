@@ -60,17 +60,23 @@
 
 @helper SalvarCustonHelper(int id)
 {
-    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Profissionais", new { id = id })'"><i class="fa fa-check"></i></button>
+    <tooltip title="Detalhes">
+        <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Profissionais", new { id = id })'"><i class="fa fa-check"></i></button>
+    </tooltip>
 }
 
 @helper EditarCustonHelper(int id)
 {
-    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Profissionais", new { id = id })'"><i class="fa fa-pencil"></i></button>
+    <tooltip title="Editar">
+        <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Profissionais", new { id = id })'"><i class="fa fa-pencil"></i></button>
+    </tooltip>
 }
 
 @helper DeletarCustonHelper(int id)
 {
-    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Profissionais", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+    <tooltip title="Excluir">
+        <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Profissionais", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+    </tooltip>
 }
 
 

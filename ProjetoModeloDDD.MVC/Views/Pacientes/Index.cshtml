@@ -76,17 +76,23 @@ else {
 
 @helper SalvarCustonHelper(int id)
 {
-    <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Pacientes", new { id = id })'"><i class="fa fa-check"></i></button>
+    <tootltip title="Detalhes">
+        <button class="btn btn-success btn-xs" onclick="location.href='@Url.Action("Details", "Pacientes", new { id = id })'"><i class="fa fa-check"></i></button>
+    </tootltip>
 }
 
 @helper EditarCustonHelper(int id)
 {
-    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Pacientes", new { id = id })'"><i class="fa fa-pencil"></i></button>
+    <tootltip title="Editar">
+        <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Pacientes", new { id = id })'"><i class="fa fa-pencil"></i></button>
+    </tootltip>
 }
 
 @helper DeletarCustonHelper(int id)
 {
-    <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Pacientes", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+    <tootltip title="Excluir">
+        <button class="btn btn-danger btn-xs" onclick="location.href='@Url.Action("Delete", "Pacientes", new { id = id })'"><i class="fa fa-trash-o "></i></button>
+    </tootltip>
 }
 
 
