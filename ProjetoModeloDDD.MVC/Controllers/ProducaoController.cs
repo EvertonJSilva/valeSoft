@@ -198,6 +198,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
 
+            var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
+            var dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             //viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
@@ -208,7 +210,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Producao.rdlc";
             #endif 
 
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel, dataInicial, dataFinal)));
 
             viewer.SizeToReportContent = true;
             viewer.ShowPrintButton = true;
@@ -232,6 +234,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
 
+            var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
+            var dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
+
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
            // viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
             
@@ -243,7 +248,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Protocolo", producaoViewModel));
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel)));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel, dataInicial, dataFinal)));
 
             viewer.SizeToReportContent = true;  
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);    

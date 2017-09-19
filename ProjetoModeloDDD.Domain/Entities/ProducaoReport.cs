@@ -26,13 +26,17 @@ namespace ProjetoModeloDDD.Domain.Entities
             this.dataFinal = producao.dataFinal;
         }
 
-        static public List<ProducaoReport> GerarLista(IEnumerable<Producao> producaoLista)
+        static public List<ProducaoReport> GerarLista(IEnumerable<Producao> producaoLista, DateTime dataInicial, DateTime dataFinal)
         {
             List<ProducaoReport> lista = new List<ProducaoReport>();
             
             foreach (Producao producao in producaoLista)
             {
+                producao.dataInicial = dataInicial;
+                producao.dataFinal = dataFinal;
+
                 if (producao.revisado == true) { 
+
                 lista.Add(new ProducaoReport(producao));
                 }
             }
