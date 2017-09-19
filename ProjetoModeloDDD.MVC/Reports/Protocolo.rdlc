@@ -900,7 +900,7 @@ FM-SUP-12.008</Value>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1526,7 +1526,7 @@ FM-SUP-12.008</Value>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
