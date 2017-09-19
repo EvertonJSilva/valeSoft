@@ -655,7 +655,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Fields!dataInicial.Value</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
                 <TextRun>
@@ -667,7 +667,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Fields!dataFinal.Value</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1244,7 +1244,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Fields!dataInicial.Value</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
                 <TextRun>
@@ -1256,7 +1256,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Fields!dataFinal.Value</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
