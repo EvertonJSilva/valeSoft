@@ -434,7 +434,9 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\everton.pubxml" />
     <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy.pubxml" />
     <EmbeddedResource Include="Reports\Demonstrativo.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

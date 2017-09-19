@@ -138,7 +138,7 @@
             <TablixMember>
               <Group Name="Group1">
                 <GroupExpressions>
-                  <GroupExpression>=Math.Ceiling(RowNumber(Nothing) / 25)</GroupExpression>
+                  <GroupExpression>=Math.Ceiling(RowNumber(Nothing) / 13)</GroupExpression>
                 </GroupExpressions>
                 <PageBreak>
                   <BreakLocation>Between</BreakLocation>

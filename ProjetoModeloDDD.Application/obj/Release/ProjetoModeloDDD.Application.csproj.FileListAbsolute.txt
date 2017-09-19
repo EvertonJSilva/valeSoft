@@ -76,3 +76,38 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Release\Proj
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Release\ProjetoModeloDDD.Application.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Release\ProjetoModeloDDD.Application.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Application\obj\Release\ProjetoModeloDDD.Application.pdb
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\csc.exe
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\csc.exe.config
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\csc.rsp
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\csi.exe
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\csi.rsp
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\System.AppContext.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\System.Collections.Immutable.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\System.IO.FileSystem.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\System.Reflection.Metadata.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\vbc.exe
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\vbc.exe.config
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\vbc.rsp
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\VBCSCompiler.exe
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\roslyn\VBCSCompiler.exe.config
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\ProjetoModeloDDD.Application.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\ProjetoModeloDDD.Application.pdb
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\ProjetoModeloDDD.Domain.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\ProjetoModeloDDD.Domain.pdb
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\obj\Release\ProjetoModeloDDD.Application.csprojResolveAssemblyReference.cache
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\obj\Release\ProjetoModeloDDD.Application.dll
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\obj\Release\ProjetoModeloDDD.Application.pdb
