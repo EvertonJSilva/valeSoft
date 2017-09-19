@@ -829,6 +829,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1446,6 +1448,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1750,6 +1754,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2430,6 +2436,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>

@@ -214,7 +214,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             viewer.SizeToReportContent = true;
             viewer.ShowPrintButton = true;
-            viewer.ShowExportControls = false;
+            viewer.ShowExportControls = true;
             viewer.ShowRefreshButton = false;
 
             viewer.PageCountMode = Microsoft.Reporting.WebForms.PageCountMode.Actual;
@@ -254,7 +254,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);    
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.ShowPrintButton = true;
-            viewer.ShowExportControls = false;
+            viewer.ShowExportControls = true;
             viewer.ShowRefreshButton = false;
 
             ViewBag.ReportViewer = viewer;
@@ -323,7 +323,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.ShowPrintButton = true;
-            viewer.ShowExportControls = false;
+            viewer.ShowExportControls = true;
             viewer.ShowRefreshButton = false;
 
             ViewBag.ReportViewer = viewer;
