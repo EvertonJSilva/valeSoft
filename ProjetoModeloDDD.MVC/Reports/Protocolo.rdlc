@@ -833,11 +833,11 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=ReportItems!Textbox4.Value</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>n2</Format>
+                    <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1459,7 +1459,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=ReportItems!Textbox4.Value</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1772,11 +1772,11 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=ReportItems!Textbox4.Value</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>n2</Format>
+                    <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2461,7 +2461,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=ReportItems!Textbox4.Value</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
