@@ -829,6 +829,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1446,6 +1448,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1454,7 +1458,7 @@ FM-SUP-12.008</Value>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
           <Top>5.50956cm</Top>
-          <Left>19.7607cm</Left>
+          <Left>19.78715cm</Left>
           <Height>0.99688cm</Height>
           <Width>7.73098cm</Width>
           <ZIndex>32</ZIndex>
@@ -1750,6 +1754,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2430,6 +2436,8 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
+                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
               </TextRuns>
