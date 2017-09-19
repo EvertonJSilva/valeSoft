@@ -825,12 +825,19 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>R$ </Value>
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>#,0.00</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
                   <Value>=ReportItems!Textbox4.Value</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
-                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                    <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1444,12 +1451,19 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>R$ </Value>
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>#,0.00</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
                   <Value>=ReportItems!Textbox4.Value</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
-                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                    <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1750,12 +1764,19 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>R$ </Value>
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>#,0.00</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
                   <Value>=ReportItems!Textbox4.Value</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
-                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                    <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2432,12 +2453,19 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
+                  <Value>R$ </Value>
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>#,0.00</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
                   <Value>=ReportItems!Textbox4.Value</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>'R$'#,0.00;('R$'#,0.00)</Format>
-                    <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                    <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>

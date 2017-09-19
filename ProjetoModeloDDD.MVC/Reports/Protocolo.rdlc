@@ -473,7 +473,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -837,7 +837,7 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00</Format>
+                    <Format>n2</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1141,7 +1141,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1463,7 +1463,7 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00</Format>
+                    <Format>n2</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1699,7 +1699,7 @@ FM-SUP-12.008</Value>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1776,7 +1776,7 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00</Format>
+                    <Format>n2</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2010,7 +2010,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2277,7 +2277,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2388,7 +2388,7 @@ FM-SUP-12.008</Value>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -2465,7 +2465,7 @@ FM-SUP-12.008</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00</Format>
+                    <Format>n2</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
