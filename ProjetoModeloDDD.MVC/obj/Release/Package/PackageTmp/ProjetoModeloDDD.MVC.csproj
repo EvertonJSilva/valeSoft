@@ -440,6 +440,8 @@
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %2813%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %2814%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %2815%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %285%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %286%29.pubxml" />
@@ -453,6 +455,8 @@
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2813%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2814%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2815%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %285%29.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %286%29.pubxml" />

@@ -833,7 +833,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Format(CDbl(ReportItems!Textbox4.Value), "#.###,##")</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1459,7 +1459,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Format(CDbl(ReportItems!Textbox4.Value), "##.###,##")</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1772,7 +1772,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Format(CDbl(ReportItems!Textbox4.Value), "#.###,##")</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -2461,7 +2461,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Format(CDbl(ReportItems!Textbox4.Value), "##.###,##")</Value>
+                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
