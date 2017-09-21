@@ -833,7 +833,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
+                  <Value>=Replace(Replace(Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",","@"),".",","),"@",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -910,7 +910,7 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>6.52322cm</Top>
+          <Top>6.49649cm</Top>
           <Left>6.16221cm</Left>
           <Height>1.07625cm</Height>
           <Width>7.48414cm</Width>
@@ -1459,7 +1459,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
+                  <Value>=Replace(Replace(Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",","@"),".",","),"@",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -1472,7 +1472,7 @@ FM-SUP-12.008</Value>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
           <Top>5.50956cm</Top>
-          <Left>19.78715cm</Left>
+          <Left>19.7607cm</Left>
           <Height>0.99688cm</Height>
           <Width>7.73098cm</Width>
           <ZIndex>32</ZIndex>
@@ -1772,7 +1772,7 @@ FM-SUP-12.008</Value>
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",",".")</Value>
+                  <Value>=Replace(Replace(Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",","@"),".",","),"@",".")</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>

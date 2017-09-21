@@ -140,18 +140,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 listaProducao = Paginar(listaProducao, grid1page, 20);
             }
-            
 
             var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
+            TempData["listaProducao"] = producaoViewModel;
 
             ///salva dados temp para poder passar paras as outras acoes
-            TempData["listaProducao"] = producaoViewModel;
+            TempData["listaEntidadeProducao"] = listaProducao;
+
             TempData["dataInicial"] = dataInicial;
             TempData["dataFinal"] = dataFinal;
 
             switch (acao)
             {
                 case null:
+                    
                     return View(producaoViewModel);
                     
                 case "REPORT":
@@ -169,17 +171,20 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                     if ( diferenca.Days > 18  )
                     {
+                        
                         ModelState.AddModelError(string.Empty, @"Impossível consolidar. O período informado superior a 1 dias.");
 
+                        
                         return View(producaoViewModel);
                     }
 
-                    foreach (var producao in producaoViewModel)
+                    foreach (var producao in listaProducao)
                     {
                         if (!producao.revisado)
                         {
                             ModelState.AddModelError(string.Empty, @"Impossível consolidar. Existem itens não revisados.");
 
+                            
                             return View(producaoViewModel);
                         }
                     }
@@ -187,6 +192,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     return RedirectToAction("Consolidar");
 
                 default:
+                    
                     return View(producaoViewModel);
             }
 
@@ -195,8 +201,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Report()
         {
-
+            
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            //var producaoViewModel =(TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
             var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
             var dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
@@ -233,6 +240,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
 
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            //var producaoViewModel = (TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
             var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
             var dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
@@ -267,6 +275,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Consolidar()
         {
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            //var producaoViewModel = (TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
 
             foreach (var producao in producaoViewModel)
@@ -287,6 +296,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Demonstrativo()
         {
             var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            //var producaoViewModel = (TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
+
+            var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
+            var dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
@@ -299,7 +312,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
 
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel,_taxaDoacaoApp,_taxaExtraApp)));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel,_taxaDoacaoApp,_taxaExtraApp, dataInicial, dataFinal)));
 
             //Warning[] warnings;
             //string[] streamIds;

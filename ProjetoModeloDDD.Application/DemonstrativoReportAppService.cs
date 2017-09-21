@@ -9,7 +9,7 @@ namespace ProjetoModeloDDD.Application
     public class DemonstrativoReportAppService : IDemonstrativoReportAppService
     {
        
-        public DemonstrativoReport CriarDemonstrativoReport(Producao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra)
+        public DemonstrativoReport CriarDemonstrativoReport(Producao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
         {
             var demonstrativo = new DemonstrativoReport
             {
@@ -24,8 +24,8 @@ namespace ProjetoModeloDDD.Application
                 ValorOutrosDescontos = 0,
                 ValorOutrosAcrecimos = 0,
                 TaxaBancaria = producao.Consulta.Profissional.TaxaBancaria,
-                dataInicial = producao.dataInicial,
-                dataFinal = producao.dataFinal
+                dataInicial = dataInicial,
+                dataFinal = dataFinal
             };
 
 
@@ -65,13 +65,13 @@ namespace ProjetoModeloDDD.Application
             return demonstrativo;
         }
 
-        public List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra)
+        public List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
         {
             List<DemonstrativoReport> lista = new List<DemonstrativoReport>();
 
             foreach (Producao producao in producaoLista)
             {
-                lista.Add( CriarDemonstrativoReport(producao, taxaDoacao, taxaExtra));
+                lista.Add( CriarDemonstrativoReport(producao, taxaDoacao, taxaExtra, dataInicial,dataFinal));
             }
 
             return lista;

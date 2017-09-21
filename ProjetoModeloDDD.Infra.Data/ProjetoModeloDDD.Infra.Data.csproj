@@ -89,7 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\Demonstrativo.rdlc" />
-    <EmbeddedResource Include="Reports\Protocolo.rdlc" />
+    <EmbeddedResource Include="Reports\Protocolo.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Pacientes.rdlc" />
     <EmbeddedResource Include="Reports\Producao.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

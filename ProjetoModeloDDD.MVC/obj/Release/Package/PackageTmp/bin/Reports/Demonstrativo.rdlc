@@ -3201,7 +3201,7 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                     <FontStyle>Normal</FontStyle>
                     <FontFamily>Calibri</FontFamily>
                     <FontWeight>Normal</FontWeight>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                     <TextDecoration>None</TextDecoration>
                   </Style>
                 </TextRun>
@@ -3220,7 +3220,7 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                     <FontStyle>Normal</FontStyle>
                     <FontFamily>Calibri</FontFamily>
                     <FontWeight>Normal</FontWeight>
-                    <Format>d</Format>
+                    <Format>dd/MM/yyyy</Format>
                     <TextDecoration>None</TextDecoration>
                   </Style>
                 </TextRun>

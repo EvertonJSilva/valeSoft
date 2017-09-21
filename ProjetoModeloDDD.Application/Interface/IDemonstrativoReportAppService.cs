@@ -10,8 +10,8 @@ namespace ProjetoModeloDDD.Application.Interface
     public interface  IDemonstrativoReportAppService
 
     {
-        DemonstrativoReport CriarDemonstrativoReport(Producao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra);
-        List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra);
+        DemonstrativoReport CriarDemonstrativoReport(Producao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal);
+        List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal);
 
 
 
