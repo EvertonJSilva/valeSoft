@@ -948,7 +948,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox360">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -956,6 +956,159 @@
                           <TextRuns>
                             <TextRun>
                               <Value>004</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Nº DE ATENDIMENTOS SEM COPART (29,97)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 29.97, 1,nothing))</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 29.97,29.97,0))</Value>
+                              <Style>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox360">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>005</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -984,7 +1137,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nº DE ATENDIMENTOS (29,97)</Value>
+                              <Value>Nº DE ATENDIMENTOS COM COPART (14,97)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1108,7 +1261,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>005</Value>
+                              <Value>006</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1263,7 +1416,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>006</Value>
+                              <Value>007</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1416,7 +1569,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>007</Value>
+                              <Value>008</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1571,7 +1724,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>008</Value>
+                              <Value>009</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1724,7 +1877,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>009</Value>
+                              <Value>010</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1879,7 +2032,7 @@ ReportItems!Textbox352.Value + ReportItems!Textbox348.Value)*0.0715</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>010</Value>
+                              <Value>011</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2032,7 +2185,7 @@ ReportItems!Textbox352.Value + ReportItems!Textbox348.Value)*0.0715</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>011</Value>
+                              <Value>012</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2184,7 +2337,7 @@ ReportItems!Textbox352.Value + ReportItems!Textbox348.Value)*0.0715</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>012</Value>
+                              <Value>013</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -2670,6 +2823,7 @@ ReportItems!Textbox352.Value + ReportItems!Textbox348.Value)*0.0715</Value>
                             <TextRun>
                               <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value +
 ReportItems!Textbox285.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + 
+ReportItems!Textbox16.Value + 
 ReportItems!ValorOutrosAcrecimos.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
@@ -2742,7 +2896,8 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                             </TextRun>
                             <TextRun>
                               <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value +
-ReportItems!Textbox285.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + 
+ReportItems!Textbox285.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value +
+ReportItems!Textbox16.Value + 
 ReportItems!ValorOutrosAcrecimos.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
@@ -3040,6 +3195,9 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
                   <Group Name="Details" />
                 </TablixMember>
                 <TablixMember>
@@ -3055,7 +3213,7 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
         <DataSetName>Demonstrativo</DataSetName>
         <Top>0.27313cm</Top>
         <Left>0.57891cm</Left>
-        <Height>11.4cm</Height>
+        <Height>12cm</Height>
         <Width>17.91973cm</Width>
         <Style>
           <Border>

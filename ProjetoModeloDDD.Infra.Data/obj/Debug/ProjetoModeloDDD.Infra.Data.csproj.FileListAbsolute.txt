@@ -258,3 +258,4 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\Projeto
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo.rdlc

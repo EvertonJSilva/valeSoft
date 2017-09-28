@@ -137,3 +137,4 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\Proje
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.pdb
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo.rdlc
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo.rdlc
