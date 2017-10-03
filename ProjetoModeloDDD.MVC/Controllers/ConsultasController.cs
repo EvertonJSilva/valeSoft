@@ -263,13 +263,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(consulta);
             }
 
-            if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+            //médicos valida data
+            var nivelAcesso = (int)Session["nivelAcesso"];
+            if (nivelAcesso == 2)
             {
-                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
+                if ( DateTime.Now > (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 5).AddMonths(1)))
+                {
+                   ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
 
-                return View(consulta);
+                    return View(consulta);
+                }
             }
-            
+
             if (ModelState.IsValid)
             {
                 var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
