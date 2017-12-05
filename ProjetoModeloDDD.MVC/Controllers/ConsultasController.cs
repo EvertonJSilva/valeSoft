@@ -428,8 +428,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         private decimal CalculaCopart(ValorConsulta valorConsulta, Paciente paciente)
         {
+
+            if (paciente.PacienteId == 779) // larrisa valor fixo de 10 
+                return 10;
+
+            if (paciente.PacienteId == 748) // juliana
+                return 10;
+
             switch (valorConsulta.TemCopart && paciente.CopartPaciente)
             {
+                
                 case true:
                     return 15;
                 case false:
@@ -441,6 +449,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         private decimal CalculaConvenio(ValorConsulta valorConsulta, Paciente paciente)
         {
+
+            if (paciente.PacienteId == 779) // larrisa valor fixo de 10 
+                return valorConsulta.Valor - 10;
+
+            if (paciente.PacienteId == 748) // juliana 
+                return valorConsulta.Valor - 10;
+
             switch (valorConsulta.TemCopart && paciente.CopartPaciente)
             {
                 case true:

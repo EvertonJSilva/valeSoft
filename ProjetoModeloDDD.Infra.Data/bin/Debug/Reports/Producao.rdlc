@@ -212,7 +212,7 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>=Fields!carteirinhaPaciente.Value</Value>
+                                    <Value>=replace(replace(Fields!carteirinhaPaciente.Value, ".", ""), "-", "")</Value>
                                     <Style />
                                   </TextRun>
                                 </TextRuns>
