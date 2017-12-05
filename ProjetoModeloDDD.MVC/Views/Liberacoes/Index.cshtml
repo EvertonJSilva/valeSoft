@@ -24,7 +24,10 @@
             &nbsp;
             <button type="submit" class="btn btn-theme">Pesquisar</button>
             &nbsp;
-            @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })
+            @Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b, style='float:none'" })
+
+
+            @Html.CheckBox("criterio", false)<span> Mostrar liberações encerradas</span>
 
         </div>
     </p>

@@ -29,7 +29,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Consulta
-        public ActionResult Index(string palavra, int? LocalizarPor, string grid1page)
+        public ActionResult Index(string palavra, int? LocalizarPor, string grid1page, bool? criterio)
         {
             IEnumerable<Liberacao> listaLiberacao = Enumerable.Empty<Liberacao>();
 
@@ -66,6 +66,15 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 listaLiberacao = _liberacaoApp.GetPorIdProfissional(IdProfissional, "", "");
             }
 
+            switch (criterio)
+            {
+                case true:
+                    break;
+                default:
+                    listaLiberacao = listaLiberacao.Where(s => s.QuantidadeTotal != s.QuantidadeRealizada);
+                    break;
+            }
+
             listaLiberacao = Paginar(listaLiberacao, grid1page, 20);
 
             var liberacaoViewModel = Mapper.Map<IEnumerable<Liberacao>, IEnumerable<LiberacaoViewModel>>(listaLiberacao);
@@ -92,7 +101,15 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Create()
         {
 
-            ViewBag.PacienteId = listaPaciente(1);
+            popularviewBag();
+
+          
+            return View();
+        }
+
+        private void popularviewBag()
+        {
+            ViewBag.PacienteId = listaPaciente(1136);
 
             var nivelAcesso = (int)Session["nivelAcesso"];
             int IdProfissional = 2;
@@ -104,8 +121,6 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             ViewBag.ProfissionalId = listaProfissional(IdProfissional);
 
-            
-            return View();
         }
 
         // POST: Consulta/Create
@@ -131,6 +146,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 }
 
                 liberacaoDomain.QuantidadeRealizadaExterno = liberacaoDomain.QuantidadeRealizada;
+                if (liberacao.PacienteId == 1136) // nao deixa salvar paciente selecione
+                {
+                    ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+                    popularviewBag();
+                    return View(liberacao);
+                }
+
+                if (liberacao.ProfissionalId == 2) // nao deixa salvar profissional selecione
+                {
+                    ModelState.AddModelError(string.Empty, @"Profissional Selecionado Invalido");
+                    popularviewBag();
+                    return View(liberacao);
+                }
 
                 _liberacaoApp.Add(liberacaoDomain);
 
@@ -146,7 +174,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     consultaDomain.ValorCopart = 0;
                     
                     consultaDomain.ProfissionalId = liberacaoDomain.ProfissionalId;
-                    
+
+               
+
                     _consultaApp.Add(consultaDomain);
                 }
 
@@ -176,6 +206,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
             ViewBag.ProfissionalId = listaProfissional(IdProfissional);
+
+            
+
 
             return View(liberacao);
         }
