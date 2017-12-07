@@ -98,7 +98,6 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoMo
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.pdb
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb

@@ -94,6 +94,7 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\RdlCompile.compiled
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.pdb
+C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\roslyn\csc.exe
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\roslyn\csc.exe.config
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\roslyn\csc.rsp
@@ -120,6 +121,7 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\rosly
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\roslyn\vbc.rsp
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\roslyn\VBCSCompiler.exe
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\roslyn\VBCSCompiler.exe.config
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Producao.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\ProjetoModeloDDD.Infra.Data.dll.config
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\ProjetoModeloDDD.Infra.Data.dll
@@ -136,5 +138,3 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\Proje
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.pdb
-E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo.rdlc
-C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo.rdlc

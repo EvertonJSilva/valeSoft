@@ -190,6 +190,7 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.exe.confi
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\vbc.rsp
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\roslyn\VBCSCompiler.exe.config
+E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\favicon.ico
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\msvcr120.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
@@ -197,7 +198,6 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\m
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Demonstrativo.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
-E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Producao.rdlc
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\Views\Login\IndexNovo.cshtml
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll.config

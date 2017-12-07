@@ -8,6 +8,18 @@ namespace ProjetoModeloDDD.Domain.Entities
 {
     public class ProducaoReport
     {
+        //########### NOVO CAMPOS
+        //Matricula = producao.Consulta.Profissional.Matricula,
+        //        NomeProfissional = producao.Consulta.Profissional.NomeProfissional,
+        //        DataIngresso = producao.Consulta.Profissional.DataIngresso,
+        //        INSS = producao.Consulta.Profissional.INSS,
+        //        CPF = producao.Consulta.Profissional.Cpf,
+        //        ValorConsulta = producao.Consulta.ValorConsulta,
+        //        ValorCopart = producao.Consulta.ValorCopart,
+        //        ValorConvenio = producao.Consulta.ValorConvenio,
+        //        TaxaBancaria = producao.Consulta.Profissional.TaxaBancaria,
+
+
         public string nomePaciente { get; set; }
         public string carteirinhaPaciente { get; set; }
         public string sessaoConsulta { get; set; }

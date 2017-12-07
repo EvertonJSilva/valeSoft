@@ -33,7 +33,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         }
 
         // GET: Consulta
-        public ActionResult Index(string palavra, int? LocalizarPor, string grid1page)
+        public ActionResult Index(string palavra, int? LocalizarPor, string grid1page, bool? somenteMes)
         {
             if (Session["Usuario"] == null)
             {
@@ -75,6 +75,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 listConsulta = _consultaApp.GetPorIdProfissional(IdProfissional, "", "");
             }
+
+            switch (somenteMes)
+            {
+                case false:
+                    break;
+                default:
+                    if(nivelAcesso == 2)
+                        listConsulta = listConsulta.Where(s => s.DataHoraConsulta.Month == DateTime.Now.Month );
+                    break;
+            }
+
 
             listConsulta = Paginar(listConsulta, grid1page, 20);
 
@@ -267,7 +278,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var nivelAcesso = (int)Session["nivelAcesso"];
             if (nivelAcesso == 2)
             {
-                if ( DateTime.Now > (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 5).AddMonths(1)))
+                if ( DateTime.Now > (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 10).AddMonths(1)))
                 {
                    ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
 

@@ -16,6 +16,14 @@
     @Html.TextBox("dataInicial", ViewBag.DataInicial as string, new { @class = "form-control", @type = "Date" })
     <p style="font-size: 15px; vertical-align:sub; float:left; line-height: 30px" > Até:&nbsp</p>
     @Html.TextBox("dataFinal", ViewBag.DataFinal as string, new { @class = "form-control", @type = "Date", @style = "Width:70" })
+
+    <p style="float:none"></p>
+
+    if (((int)Session["nivelAcesso"]) == 2)
+    {
+        @Html.CheckBox("somenteMes", true)<span> Mostrar apenas consultas do mês</span>
+    }
+
     <hr />
     <p>
 
@@ -38,24 +46,44 @@
                 &nbsp;
             </div>
 </p>
-        @Html.RadioButton("criterio", "todos", true)<span> Todos</span>
-        @Html.RadioButton("criterio", "revisados")<span> Revisados</span>
-        @Html.RadioButton("criterio", "nao-revisados")<span> Não revisados</span>
-        @Html.RadioButton("criterio", "consolidados")<span> Consolidados</span>
-        @Html.RadioButton("criterio", "nao-consolidados")<span> Não Consolidados</span>
+        <p style='float:left'><font color="blue">Situação: &nbsp;</font></p>
+
+        @Html.RadioButton("criterio", "todos", true)<span> Todos&nbsp;</span>
+        @Html.RadioButton("criterio", "revisados")<span> Revisados&nbsp;</span>
+        @Html.RadioButton("criterio", "nao-revisados")<span> Não revisados&nbsp;</span>
+        @Html.RadioButton("criterio", "consolidados")<span> Consolidados&nbsp;</span>
+        @Html.RadioButton("criterio", "nao-consolidados")<span> Não Consolidados&nbsp;</span>
 
         <p style="float:none"></p>
 
-        if (((int)Session["nivelAcesso"]) != 2)
+        <p style='float:left'><font color="blue">Tipo de sessão: &nbsp; </font></p>
+    
+        @Html.RadioButton("criterioSessao", "todos", true)<span> Todos&nbsp;</span>
+        @Html.RadioButton("criterioSessao", "50000470")<span> 50000470&nbsp;</span>
+        @Html.RadioButton("criterioSessao", "80000509")<span> 80000509&nbsp;</span>
+        @Html.RadioButton("criterioSessao", "60000678")<span> 60000678&nbsp;</span>
+
+        <p style="float:none"></p>
+
+        <p style='float:left'><font color="blue">Copart: &nbsp; </font></p>
+
+        @Html.RadioButton("criterioCopart", "todos", true)<span> Todos&nbsp;</span>
+        @Html.RadioButton("criterioCopart", "com")<span> Com&nbsp;</span>
+        @Html.RadioButton("criterioCopart", "sem")<span> Sem&nbsp;</span>
+
+        <p style="float:none"></p>
+
+    if (((int)Session["nivelAcesso"]) != 2)
     {
-    <button name="acao" value="REPORT" type="submit" class="btn btn-theme" style="background-color:#358a2f">Produção</button>
-    <button name="acao" value="PROTOCOLO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Protocolo</button>
+        <button name="acao" value="REPORT" type="submit" class="btn btn-theme" style="background-color:#358a2f">Produção</button>
+        <button name="acao" value="PROTOCOLO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Protocolo</button>
     }
+    
     <button name="acao" value="DEMONSTRATIVO" type="submit" class="btn btn-theme" style="background-color:#358a2f">Demonstrativo</button>
 
-        if (((int)Session["nivelAcesso"]) != 2)
-        {
-    <button name="acao" value="CONSOLIDAR" type="submit" class="btn btn-theme" style="background-color:#ff0000">Consolidar</button>
+    if (((int)Session["nivelAcesso"]) != 2)
+    {
+        <button name="acao" value="CONSOLIDAR" type="submit" class="btn btn-theme" style="background-color:#ff0000">Consolidar</button>
     }
 
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -74,8 +102,10 @@
     columns.Add(model => model.DataConsulta).Titled("Data");
     columns.Add(model => model.Consulta.Autorizacao).Titled("Autorização");
     columns.Add(model => model.Consulta.Liberacao.NumeroLiberacao).Titled("Liberação");
-    columns.Add(model => model.Consulta.TipoSessao).Titled("Sessão");
-    columns.Add(model => model.Consulta.ValorConsulta).Titled("Valor");
+    columns.Add(model => model.Consulta.TipoSessao)
+        .Titled("Sessão")
+        .Filterable(true);
+    columns.Add(model => model.Consulta.ValorConsulta).Titled("Valor").Filterable(true);
     columns.Add(model => model.Consulta.ValorCopart).Titled("Coparticipação");
     columns.Add().Titled("Revisado")
         .Encoded(false)
@@ -87,7 +117,7 @@
         .RenderValueAs(o => ConsolidadoCustonHelper(o.Consolidado));
 
 
-}).WithPaging(20,0,"grid1page").Sortable(true)
+}).WithPaging(20,0,"grid1page").Sortable(true).Filterable(true)
 </div>
 
 @helper ConsolidadoCustonHelper(Boolean tem)
@@ -115,6 +145,8 @@ else
 {
         <input data-width="65" onchange="Consolidar(this, 2)" name="checkbox" id="checkbox" data-size="mini" type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" data-onstyle="success" data-offstyle="danger">
 }*@
+
+
 
     <script>
 

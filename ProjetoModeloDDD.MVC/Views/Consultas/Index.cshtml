@@ -26,6 +26,11 @@
                 &nbsp;
                <!--@Html.ActionLink("Criar Novo", "Create", null, new { @class = "btn btn-theme", @style = "background-color:#174e9b" })-->
         
+                @if (((int)Session["nivelAcesso"]) == 2)
+                {
+                 @Html.CheckBox("somenteMes", true)<span> Mostrar apenas consultas do mês</span>
+                }
+
             </div>
         </p>
     }

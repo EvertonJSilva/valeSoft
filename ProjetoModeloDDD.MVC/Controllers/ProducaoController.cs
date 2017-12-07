@@ -54,8 +54,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                                     string dataFinal,
                                     string acao,
                                     string criterio,
-                                    string grid1page)
+                                    string criterioSessao,
+                                    string criterioCopart,
+                                    string grid1page,
+                                    bool? somenteMes)
         {
+            var nivelAcesso = (int)Session["nivelAcesso"];
+
             if (String.IsNullOrEmpty(grid1page))
             {
                 grid1page = "1";
@@ -67,21 +72,25 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
             //caso não tenha passado nada traz tudo
-            if (String.IsNullOrEmpty(dataInicial))
+            if (String.IsNullOrEmpty(dataInicial) && (somenteMes == false || nivelAcesso != 2))
             {
                 dataInicial = DateTime.Now.AddDays(-15).ToString();
             }
-            if (String.IsNullOrEmpty(dataFinal))
+            if (String.IsNullOrEmpty(dataFinal) && (somenteMes == false || nivelAcesso != 2))
             {
                 dataFinal = DateTime.MaxValue.ToString();
             }
-            
-            
+
+            if ((somenteMes == true || !somenteMes.HasValue) && nivelAcesso == 2)
+            {
+                DateTime primeiroDia = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                dataFinal = primeiroDia.AddMonths(1).AddDays(-1).ToString();
+                dataInicial = primeiroDia.ToString();
+            }
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
             IEnumerable<Producao> listaProducao = Enumerable.Empty<Producao>();
 
             //médicos só vê os deles
-            var nivelAcesso = (int)Session["nivelAcesso"];
             int IdProfissional = 0 ;
             if (nivelAcesso == 2)
             {
@@ -134,6 +143,39 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     break;
             }
 
+            switch (criterioSessao)
+            {
+                case "todos":
+                    break;
+                case "50000470":
+                    listaProducao = listaProducao.Where(s => s.Consulta.TipoSessao == "50000470");
+                    break;
+                case "80000509":
+                    listaProducao = listaProducao.Where(s => s.Consulta.TipoSessao == "80000509");
+                    break;
+                case "60000678":
+                    listaProducao = listaProducao.Where(s => s.Consulta.TipoSessao == "60000678");
+                    break;
+               
+                default:
+                    break;
+            }
+
+            switch (criterioCopart)
+            {
+                case "todos":
+                    break;
+                case "com":
+                    listaProducao = listaProducao.Where(s => s.Consulta.Liberacao.Paciente.CopartPaciente == true);
+                    break;
+                case "sem":
+                    listaProducao = listaProducao.Where(s => s.Consulta.Liberacao.Paciente.CopartPaciente == false);
+                    break;
+
+
+                default:
+                    break;
+            }
 
             //paginacao apenas nas consultas de lista
             if (acao == null)
