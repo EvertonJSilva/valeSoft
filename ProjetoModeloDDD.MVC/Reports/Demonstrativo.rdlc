@@ -2633,13 +2633,11 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value
+                              <Value>=(ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value
  + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + 
 ReportItems!Textbox11.Value + 
-ReportItems!ValorOutrosAcrecimos.Value
--
-ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + 
-ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
+ReportItems!ValorOutrosAcrecimos.Value) - (ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + 
+ReportItems!Textbox395.Value + ReportItems!Textbox390.Value)</Value>
                               <Style>
                                 <Format>'R$'0.00</Format>
                               </Style>

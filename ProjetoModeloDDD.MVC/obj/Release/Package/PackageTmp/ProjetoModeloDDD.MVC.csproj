@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.4\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.4\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41A57B21-8D25-4F1A-81E0-3313B456A2BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoModeloDDD.MVC</RootNamespace>
+    <AssemblyName>ProjetoModeloDDD.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>&lt;Objects&gt;&lt;ObjectGroup Name="ProjetoModeloDDD-Implantação" Order="1"&gt;&lt;Destination Path="" /&gt;&lt;Object Type="DbFullSql"&gt;&lt;PreSource Path="Data Source=&amp;quot%3b177.99.213.116\SQLEXPRESS, 1433&amp;quot%3b%3bInitial Catalog=valeSoftDB_new%3bPersist Security Info=True%3bUser ID=sa%3bPassword=VS000Valesoft" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" /&gt;&lt;Source Path="obj\Debug\AutoScripts\ProjetoModeloDDD-Implantação_SchemaOnly.sql" Transacted="True" /&gt;&lt;/Object&gt;&lt;/ObjectGroup&gt;&lt;/Objects&gt;</PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ProjetoModeloDDD-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=ozuud8qfbd.database.windows.net,1433%3bInitial Catalog=testedb%3bPersist Security Info=True%3bUser ID=administrador%3bPassword=Horion+5931" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\ProjetoModeloDDD-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <PublishDatabases>false</PublishDatabases>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GridMvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.4\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReportViewerForMvc, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportViewerForMvc.1.0.1\lib\net45\ReportViewerForMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig_teste.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LiberacoesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PacientesController.cs" />
+    <Compile Include="Controllers\ProducaoController.cs" />
+    <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\ProfissionaisController.cs" />
+    <Compile Include="Controllers\TaxasDoacaoController.cs" />
+    <Compile Include="Controllers\TaxasExtrasProfissionalController.cs" />
+    <Compile Include="Controllers\TiposProfissionalController.cs" />
+    <Compile Include="Controllers\ValoresConsultaController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewModels\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\ConsultaViewModel.cs" />
+    <Compile Include="ViewModels\FolhaDetalheViewModel.cs" />
+    <Compile Include="ViewModels\FolhaViewModel.cs" />
+    <Compile Include="ViewModels\LiberacaoViewModel.cs" />
+    <Compile Include="ViewModels\LocalizarViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\PacienteViewModel.cs" />
+    <Compile Include="ViewModels\ProducaoViewModel.cs" />
+    <Compile Include="ViewModels\ProdutoViewModel.cs" />
+    <Compile Include="ViewModels\ProfissionalViewModel.cs" />
+    <Compile Include="ViewModels\TaxaDoacaoViewModel.cs" />
+    <Compile Include="ViewModels\TaxaExtraProfissionalViewModel.cs" />
+    <Compile Include="ViewModels\TipoProfissionalViewModel.cs" />
+    <Compile Include="ViewModels\ValorConsultaViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\SiteA\css\bootstrap.css" />
+    <Content Include="Content\SiteA\css\custom.css" />
+    <Content Include="Content\SiteA\css\font-awesome.css" />
+    <Content Include="Content\SiteA\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\SiteA\font\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\SiteA\Img\1.png" />
+    <Content Include="Content\SiteA\Img\2.png" />
+    <Content Include="Content\SiteA\Img\3.png" />
+    <Content Include="Content\SiteA\Img\4.png" />
+    <Content Include="Content\SiteA\Img\find_user.png" />
+    <Content Include="Content\SiteA\Js\bootstrap.min.js" />
+    <Content Include="Content\SiteA\Js\custom.js" />
+    <Content Include="Content\SiteA\Js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\SiteA\Js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Content\SiteA\Js\dataTables\jquery.dataTables.js" />
+    <Content Include="Content\SiteA\Js\jquery-1.10.2.js" />
+    <Content Include="Content\SiteA\Js\jquery.metisMenu.js" />
+    <Content Include="Content\SiteA\Js\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\SiteA\Js\morris\morris.js" />
+    <Content Include="Content\SiteA\Js\morris\raphael-2.1.0.min.js" />
+    <Content Include="Content\SiteB\css\bootstrap-toggle.css" />
+    <Content Include="Content\SiteB\css\bootstrap-toggle.min.css" />
+    <Content Include="Content\SiteB\css\bootstrap.css" />
+    <Content Include="Content\SiteB\css\bootstrap2-toggle.css" />
+    <Content Include="Content\SiteB\css\bootstrap2-toggle.min.css" />
+    <Content Include="Content\SiteB\css\style-responsive.css" />
+    <Content Include="Content\SiteB\css\style.css" />
+    <Content Include="Content\SiteB\css\table-responsive.css" />
+    <Content Include="Content\SiteB\css\to-do.css" />
+    <Content Include="Content\SiteB\css\zabuto_calendar.css" />
+    <Content Include="Content\SiteB\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\SiteB\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\SiteB\img\favicon.ico" />
+    <Content Include="Content\SiteB\img\fundo-azul-1.jpg" />
+    <Content Include="Content\SiteB\img\fundo-azul.jpg" />
+    <Content Include="Content\SiteB\img\golden-defocused-lights-background.jpg" />
+    <Content Include="Content\SiteB\img\logoUnipsico.png" />
+    <Content Include="Content\SiteB\img\logoValesoft.png" />
+    <Content Include="Content\SiteB\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="Content\SiteB\js\bootstrap-switch.js" />
+    <Content Include="Content\SiteB\js\bootstrap-toggle.js" />
+    <Content Include="Content\SiteB\js\bootstrap-toggle.min.js" />
+    <Content Include="Content\SiteB\js\bootstrap.min.js" />
+    <Content Include="Content\SiteB\js\bootstrap2-toggle.js" />
+    <Content Include="Content\SiteB\js\bootstrap2-toggle.min.js" />
+    <Content Include="Content\SiteB\js\calendar-conf-events.js" />
+    <Content Include="Content\SiteB\js\chart-master\Chart.js" />
+    <Content Include="Content\SiteB\js\chartjs-conf.js" />
+    <Content Include="Content\SiteB\js\common-scripts.js" />
+    <Content Include="Content\SiteB\js\easy-pie-chart.js" />
+    <Content Include="Content\SiteB\js\fancybox\jquery.fancybox.css" />
+    <Content Include="Content\SiteB\js\fancybox\jquery.fancybox.js" />
+    <Content Include="Content\SiteB\js\form-component.js" />
+    <Content Include="Content\SiteB\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="Content\SiteB\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\SiteB\js\gritter-conf.js" />
+    <Content Include="Content\SiteB\js\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\SiteB\js\gritter\css\jquery.gritter0.css" />
+    <Content Include="Content\SiteB\js\gritter\images\gritter-light.png" />
+    <Content Include="Content\SiteB\js\gritter\images\gritter-long.png" />
+    <Content Include="Content\SiteB\js\gritter\images\gritter.png" />
+    <Content Include="Content\SiteB\js\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\SiteB\js\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\SiteB\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\SiteB\js\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Content\SiteB\js\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Content\SiteB\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\SiteB\js\jquery.backstretch.min.js" />
+    <Content Include="Content\SiteB\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Content\SiteB\js\jquery.js" />
+    <Content Include="Content\SiteB\js\jquery.maskedinput.js" />
+    <Content Include="Content\SiteB\js\jquery.maskedinput.min.js" />
+    <Content Include="Content\SiteB\js\jquery.nicescroll.js" />
+    <Content Include="Content\SiteB\js\jquery.scrollTo.min.js" />
+    <Content Include="Content\SiteB\js\jquery.sparkline.js" />
+    <Content Include="Content\SiteB\js\jquery.tagsinput.js" />
+    <Content Include="Content\SiteB\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\SiteB\js\Mascaras.js" />
+    <Content Include="Content\SiteB\js\morris-conf.js" />
+    <Content Include="Content\SiteB\js\sparkline-chart.js" />
+    <Content Include="Content\SiteB\js\tasks.js" />
+    <Content Include="Content\SiteB\js\zabuto_calendar.js" />
+    <Content Include="Content\SiteB\lineicons\fonts\linecons.svg" />
+    <Content Include="Content\SiteB\lineicons\index.html" />
+    <Content Include="Content\SiteB\lineicons\lte-ie7.js" />
+    <Content Include="Content\SiteB\lineicons\style.css" />
+    <Content Include="Content\SiteC\css\main-style.css" />
+    <Content Include="Content\SiteC\css\style.css" />
+    <Content Include="Content\SiteC\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\SiteC\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\SiteC\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\SiteC\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\SiteC\img\logo.png" />
+    <Content Include="Content\SiteC\img\user.jpg" />
+    <Content Include="Content\SiteC\plugins\bootstrap\bootstrap.css" />
+    <Content Include="Content\SiteC\plugins\bootstrap\bootstrap.js" />
+    <Content Include="Content\SiteC\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\SiteC\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\SiteC\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Content\SiteC\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="Content\SiteC\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\SiteC\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\SiteC\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\SiteC\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\SiteC\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\SiteC\plugins\jquery-1.10.2.js" />
+    <Content Include="Content\SiteC\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Content\SiteC\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\SiteC\plugins\morris\morris.js" />
+    <Content Include="Content\SiteC\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Content\SiteC\plugins\pace\pace-theme-big-counter.css" />
+    <Content Include="Content\SiteC\plugins\pace\pace.js" />
+    <Content Include="Content\SiteC\plugins\social-buttons\social-buttons.css" />
+    <Content Include="Content\SiteC\plugins\timeline\timeline.css" />
+    <Content Include="Content\SiteC\scripts\dashboard-demo.js" />
+    <Content Include="Content\SiteC\scripts\flot-demo.js" />
+    <Content Include="Content\SiteC\scripts\morris-demo.js" />
+    <Content Include="Content\SiteC\scripts\siminta.js" />
+    <Content Include="favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ReportViewerWebForm.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\SiteA\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="Content\SiteA\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="Content\SiteA\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="Content\SiteA\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\SiteA\font\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\SiteA\font\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\SiteA\font\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\SiteA\font\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="Content\SiteB\.DS_Store" />
+    <Content Include="Content\SiteB\css\.DS_Store" />
+    <Content Include="Content\SiteB\font-awesome\.DS_Store" />
+    <Content Include="Content\SiteB\font-awesome\css\.DS_Store" />
+    <Content Include="Content\SiteB\font-awesome\fonts\.DS_Store" />
+    <Content Include="Content\SiteB\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\SiteB\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\SiteB\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\SiteB\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\SiteB\fonts\.DS_Store" />
+    <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\SiteB\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\SiteB\js\.DS_Store" />
+    <Content Include="Content\SiteB\js\bootstrap-inputmask\.DS_Store" />
+    <Content Include="Content\SiteB\js\chart-master\.DS_Store" />
+    <Content Include="Content\SiteB\js\fancybox\.DS_Store" />
+    <Content Include="Content\SiteB\js\fullcalendar\.DS_Store" />
+    <Content Include="Content\SiteB\js\gritter\.DS_Store" />
+    <Content Include="Content\SiteB\js\gritter\css\.DS_Store" />
+    <Content Include="Content\SiteB\js\gritter\images\.DS_Store" />
+    <Content Include="Content\SiteB\js\gritter\js\.DS_Store" />
+    <Content Include="Content\SiteB\js\jquery-easy-pie-chart\.DS_Store" />
+    <Content Include="Content\SiteB\lineicons\.DS_Store" />
+    <Content Include="Content\SiteB\lineicons\fonts\.DS_Store" />
+    <Content Include="Content\SiteB\lineicons\fonts\linecons.eot" />
+    <Content Include="Content\SiteB\lineicons\fonts\linecons.ttf" />
+    <Content Include="Content\SiteB\lineicons\fonts\linecons.woff" />
+    <Content Include="Content\SiteC\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\SiteC\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\SiteC\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\SiteC\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\SiteC\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\SiteC\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\SiteC\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Grid.mvc.readme" />
+    <Content Include="Content\SiteB\js\bootstrap-toggle.min.js.map" />
+    <Content Include="Content\SiteB\js\bootstrap2-toggle.min.js.map" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\SiteB\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\SiteB\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\everton.pubxml" />
+    <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2810%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2811%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2812%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2813%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2814%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2815%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2816%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %2818%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %286%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %287%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %288%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP %289%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2810%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2811%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2812%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2813%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2814%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2815%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2816%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %2818%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %286%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %287%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %288%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy %289%29.pubxml" />
+    <None Include="Properties\PublishProfiles\VSOfficium - Web Deploy.pubxml" />
+    <EmbeddedResource Include="Reports\Demonstrativo.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Pacientes.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Producao.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Protocolo.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\gridmvc.js" />
+    <Content Include="Scripts\gridmvc.lang.ru.js" />
+    <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Consultas\Create.cshtml" />
+    <Content Include="Views\Consultas\Delete.cshtml" />
+    <Content Include="Views\Consultas\Details.cshtml" />
+    <Content Include="Views\Consultas\Edit.cshtml" />
+    <Content Include="Views\Consultas\Index.cshtml" />
+    <Content Include="Views\Liberacoes\Create.cshtml" />
+    <Content Include="Views\Liberacoes\Delete.cshtml" />
+    <Content Include="Views\Liberacoes\Details.cshtml" />
+    <Content Include="Views\Liberacoes\Edit.cshtml" />
+    <Content Include="Views\Liberacoes\Index.cshtml" />
+    <Content Include="Views\TaxasExtrasProfissional\Create.cshtml" />
+    <None Include="Views\Login\Index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LayoutB.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Especiais.cshtml" />
+    <Content Include="Views\Produtos\Index.cshtml" />
+    <Content Include="Views\Produtos\Create.cshtml" />
+    <Content Include="Views\Produtos\Details.cshtml" />
+    <Content Include="Views\Produtos\Edit.cshtml" />
+    <Content Include="Views\Produtos\Delete.cshtml" />
+    <Content Include="Views\Shared\_LayoutA.cshtml" />
+    <Content Include="Views\Login\Reenvio.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Shared\_LayoutC.cshtml" />
+    <Content Include="Views\Login\IndexNovo.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Pacientes\Create.cshtml" />
+    <Content Include="Views\Pacientes\Delete.cshtml" />
+    <Content Include="Views\Pacientes\Details.cshtml" />
+    <Content Include="Views\Pacientes\Edit.cshtml" />
+    <Content Include="Views\Pacientes\Index.cshtml" />
+    <Content Include="Views\Profissionais\Create.cshtml" />
+    <Content Include="Views\Profissionais\Delete.cshtml" />
+    <Content Include="Views\Profissionais\Details.cshtml" />
+    <Content Include="Views\Profissionais\Edit.cshtml" />
+    <Content Include="Views\Profissionais\Index.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\Pacientes\Report.cshtml" />
+    <Content Include="Views\Producao\Index.cshtml" />
+    <Content Include="Views\Producao\Report.cshtml" />
+    <Content Include="Views\TiposProfissional\Index.cshtml" />
+    <Content Include="Views\TiposProfissional\Create.cshtml" />
+    <Content Include="Views\TiposProfissional\Delete.cshtml" />
+    <Content Include="Views\TiposProfissional\Details.cshtml" />
+    <Content Include="Views\TiposProfissional\Edit.cshtml" />
+    <Content Include="Views\ValoresConsulta\Index.cshtml" />
+    <Content Include="Views\TaxasDoacao\Create.cshtml" />
+    <Content Include="Views\ValoresConsulta\Create.cshtml" />
+    <Content Include="Views\TaxasDoacao\Index.cshtml" />
+    <Content Include="Views\TaxasDoacao\Delete.cshtml" />
+    <Content Include="Views\TaxasDoacao\Details.cshtml" />
+    <Content Include="Views\TaxasDoacao\Edit.cshtml" />
+    <Content Include="Views\ValoresConsulta\Delete.cshtml" />
+    <Content Include="Views\ValoresConsulta\Details.cshtml" />
+    <Content Include="Views\ValoresConsulta\Edit.cshtml" />
+    <Content Include="Views\Producao\Protocolo.cshtml" />
+    <Content Include="Views\Producao\Demonstrativo.cshtml" />
+    <Content Include="Views\TaxasExtrasProfissional\Edit.cshtml" />
+    <Content Include="Views\TaxasExtrasProfissional\Delete.cshtml" />
+    <Content Include="Views\Producao\Consolidar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\SiteA\Icon\" />
+    <Folder Include="Content\SiteB\img\friends\" />
+    <Folder Include="Content\SiteB\img\portfolio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoModeloDDD.Application\ProjetoModeloDDD.Application.csproj">
+      <Project>{04bb3549-5197-4106-992a-bbf275a138c6}</Project>
+      <Name>ProjetoModeloDDD.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
+      <Project>{984cb356-b992-441e-bf81-a36d1b30add0}</Project>
+      <Name>ProjetoModeloDDD.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjetoModeloDDD.Infra.Data\ProjetoModeloDDD.Infra.Data.csproj">
+      <Project>{89389cae-3b3a-4365-a012-d33af64a829c}</Project>
+      <Name>ProjetoModeloDDD.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>23720</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2244/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1\tools\AutoMapper.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.4\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.4\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
