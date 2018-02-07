@@ -8,8 +8,8 @@ namespace ProjetoModeloDDD.Application
 {
     public class DemonstrativoReportAppService : IDemonstrativoReportAppService
     {
-       
-        public DemonstrativoReport CriarDemonstrativoReport(DTOProducao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
+
+        public DemonstrativoReport CriarDemonstrativoReport(DTOProducao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal, List<DemonstrativoReport> lista)
         {
             var demonstrativo = new DemonstrativoReport
             {
@@ -25,41 +25,54 @@ namespace ProjetoModeloDDD.Application
                 ValorOutrosAcrecimos = 0,
                 TaxaBancaria = producao.taxaBancaria,
                 dataInicial = dataInicial,
-                dataFinal = dataFinal
+                dataFinal = dataFinal,
+                idProfissional = producao.profissionalId
             };
 
 
             try
             {
+                var existente = lista.Find(p => p.idProfissional == producao.profissionalId);
 
-                TaxaDoacao valoresTaxas = taxaDoacao.GetPorIdTaxaProfissional(producao.tipoProfissionalId);
-                demonstrativo.ValorDoacao = valoresTaxas.Valor;
-
-                 IEnumerable<TaxaExtraProfissional>  valoresExtra = taxaExtra.GetPorIdTaxaExtraProfissional(producao.profissionalId);
-
-                
-                foreach (var item in valoresExtra)
+                if (existente == null)
                 {
+                    TaxaDoacao valoresTaxas = taxaDoacao.GetPorIdTaxaProfissional(producao.tipoProfissionalId);
+                    demonstrativo.ValorDoacao = valoresTaxas.Valor;
 
-                    if(item.dataCompensar >= producao.dataInicial && item.dataCompensar < producao.dataFinal)
-                    { 
+                    IEnumerable<TaxaExtraProfissional> valoresExtra = taxaExtra.GetPorIdTaxaExtraProfissional(producao.profissionalId);
 
-                        if (item.tipo == "Crédito")
+
+                    foreach (var item in valoresExtra)
+                    {
+
+                        if (item.dataCompensar >= producao.dataInicial && item.dataCompensar < producao.dataFinal)
                         {
-                            demonstrativo.ValorOutrosAcrecimos =+ item.valor;
+
+                            if (item.tipo == "Crédito")
+                            {
+                                demonstrativo.ValorOutrosAcrecimos = +item.valor;
+                            }
+                            else
+                            {
+                                demonstrativo.ValorOutrosDescontos = +item.valor;
+                            }
                         }
-                        else
-                        {
-                            demonstrativo.ValorOutrosDescontos =+ item.valor;
-                        }
+
                     }
-
                 }
+                else
+                {
+                    demonstrativo.ValorOutrosAcrecimos = existente.ValorOutrosAcrecimos;
+                    demonstrativo.ValorOutrosDescontos = existente.ValorOutrosDescontos;
+                }
+
+
             }
             catch (Exception e)
             {
+                System.Console.WriteLine(e.Message);
                 demonstrativo.ValorDoacao = 0;
-                
+
             }
 
             return demonstrativo;
@@ -71,11 +84,11 @@ namespace ProjetoModeloDDD.Application
 
             foreach (DTOProducao producao in producaoLista)
             {
-                lista.Add( CriarDemonstrativoReport(producao, taxaDoacao, taxaExtra, dataInicial,dataFinal));
+                lista.Add(CriarDemonstrativoReport(producao, taxaDoacao, taxaExtra, dataInicial, dataFinal, lista));
             }
 
             return lista;
         }
-        
+
     }
 }
