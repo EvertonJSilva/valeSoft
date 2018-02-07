@@ -9,21 +9,21 @@ namespace ProjetoModeloDDD.Application
     public class DemonstrativoReportAppService : IDemonstrativoReportAppService
     {
        
-        public DemonstrativoReport CriarDemonstrativoReport(Producao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
+        public DemonstrativoReport CriarDemonstrativoReport(DTOProducao producao, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
         {
             var demonstrativo = new DemonstrativoReport
             {
-                Matricula = producao.Consulta.Profissional.Matricula,
-                NomeProfissional = producao.Consulta.Profissional.NomeProfissional,
-                DataIngresso = producao.Consulta.Profissional.DataIngresso,
-                INSS = producao.Consulta.Profissional.INSS,
-                CPF = producao.Consulta.Profissional.Cpf,
-                ValorConsulta = producao.Consulta.ValorConsulta,
-                ValorCopart = producao.Consulta.ValorCopart,
-                ValorConvenio = producao.Consulta.ValorConvenio,
+                Matricula = producao.matricula,
+                NomeProfissional = producao.nomeProfissional,
+                DataIngresso = producao.dataIngresso,
+                INSS = producao.INSS,
+                CPF = producao.CPF,
+                ValorConsulta = producao.valorConsulta,
+                ValorCopart = producao.valorCopart,
+                ValorConvenio = producao.valorConvenio,
                 ValorOutrosDescontos = 0,
                 ValorOutrosAcrecimos = 0,
-                TaxaBancaria = producao.Consulta.Profissional.TaxaBancaria,
+                TaxaBancaria = producao.taxaBancaria,
                 dataInicial = dataInicial,
                 dataFinal = dataFinal
             };
@@ -32,10 +32,10 @@ namespace ProjetoModeloDDD.Application
             try
             {
 
-                TaxaDoacao valoresTaxas = taxaDoacao.GetPorIdTaxaProfissional(producao.Consulta.Profissional.TipoProfissionalId);
+                TaxaDoacao valoresTaxas = taxaDoacao.GetPorIdTaxaProfissional(producao.tipoProfissionalId);
                 demonstrativo.ValorDoacao = valoresTaxas.Valor;
 
-                 IEnumerable<TaxaExtraProfissional>  valoresExtra = taxaExtra.GetPorIdTaxaExtraProfissional(producao.Consulta.Profissional.ProfissionalId);
+                 IEnumerable<TaxaExtraProfissional>  valoresExtra = taxaExtra.GetPorIdTaxaExtraProfissional(producao.profissionalId);
 
                 
                 foreach (var item in valoresExtra)
@@ -65,11 +65,11 @@ namespace ProjetoModeloDDD.Application
             return demonstrativo;
         }
 
-        public List<DemonstrativoReport> GerarLista(IEnumerable<Producao> producaoLista, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
+        public List<DemonstrativoReport> GerarLista(IEnumerable<DTOProducao> producaoLista, ITaxaDoacaoAppService taxaDoacao, ITaxaExtraProfissionalAppService taxaExtra, DateTime dataInicial, DateTime dataFinal)
         {
             List<DemonstrativoReport> lista = new List<DemonstrativoReport>();
 
-            foreach (Producao producao in producaoLista)
+            foreach (DTOProducao producao in producaoLista)
             {
                 lista.Add( CriarDemonstrativoReport(producao, taxaDoacao, taxaExtra, dataInicial,dataFinal));
             }

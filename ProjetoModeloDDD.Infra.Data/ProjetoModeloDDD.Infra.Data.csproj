@@ -74,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\ConsultaRepository.cs" />
+    <Compile Include="Repositories\DTOProducaoRepository.cs" />
     <Compile Include="Repositories\FolhaDetalheRepository.cs" />
     <Compile Include="Repositories\FolhaRepository.cs" />
     <Compile Include="Repositories\LiberacaoRepository.cs" />

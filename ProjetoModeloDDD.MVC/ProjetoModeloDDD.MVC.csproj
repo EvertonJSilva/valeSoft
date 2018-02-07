@@ -17,7 +17,7 @@
     <AssemblyName>ProjetoModeloDDD.MVC</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -223,6 +223,7 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ViewModels\ClienteViewModel.cs" />
     <Compile Include="ViewModels\ConsultaViewModel.cs" />
+    <Compile Include="ViewModels\DTOProducaoViewModel.cs" />
     <Compile Include="ViewModels\FolhaDetalheViewModel.cs" />
     <Compile Include="ViewModels\FolhaViewModel.cs" />
     <Compile Include="ViewModels\LiberacaoViewModel.cs" />

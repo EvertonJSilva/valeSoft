@@ -27,22 +27,22 @@ namespace ProjetoModeloDDD.Domain.Entities
         public DateTime dataInicial { get; set; }
         public DateTime dataFinal { get; set; }
 
-        public ProducaoReport(Producao producao)
+        public ProducaoReport(DTOProducao producao)
         {
-            this.nomePaciente = producao.Consulta.Liberacao.Paciente.NomePaciente;
+            this.nomePaciente = producao.nomePaciente;
             nomePaciente.ToUpper();
-            this.carteirinhaPaciente = producao.CarteirinhaPaciente;
-            this.sessaoConsulta = producao.Consulta.TipoSessao;
-            this.valorConsulta = producao.Consulta.ValorConvenio;
+            this.carteirinhaPaciente = producao.carteirinhaPaciente;
+            this.sessaoConsulta = producao.sessaoConsulta;
+            this.valorConsulta = producao.valorConvenio;
             this.dataInicial = producao.dataInicial;
             this.dataFinal = producao.dataFinal;
         }
 
-        static public List<ProducaoReport> GerarLista(IEnumerable<Producao> producaoLista, DateTime dataInicial, DateTime dataFinal)
+        static public List<ProducaoReport> GerarLista(IEnumerable<DTOProducao> producaoLista, DateTime dataInicial, DateTime dataFinal)
         {
             List<ProducaoReport> lista = new List<ProducaoReport>();
             
-            foreach (Producao producao in producaoLista)
+            foreach (DTOProducao producao in producaoLista)
             {
                 producao.dataInicial = dataInicial;
                 producao.dataFinal = dataFinal;

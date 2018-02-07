@@ -38,6 +38,7 @@
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Consulta.cs" />
     <Compile Include="Entities\DemonstrativoReport.cs" />
+    <Compile Include="Entities\DTOProducao.cs" />
     <Compile Include="Entities\Folha.cs" />
     <Compile Include="Entities\FolhaDetalhe.cs" />
     <Compile Include="Entities\Liberacao.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Entities\ValorConsulta.cs" />
     <Compile Include="Interfaces\Repositories\IClienteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IConsultaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IDTOProducaoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFolhaDetalheRepository.cs" />
     <Compile Include="Interfaces\Repositories\IFolhaRepository.cs" />
     <Compile Include="Interfaces\Repositories\ILiberacaoRepository.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Interfaces\Services\IFolhaDetalheService.cs" />
     <Compile Include="Interfaces\Services\IFolhaService.cs" />
     <Compile Include="Interfaces\Services\ILiberacaoService.cs" />
+    <Compile Include="Interfaces\Services\IDTOProducao.cs" />
     <Compile Include="Interfaces\Services\ITaxaExtraProfissionalService.cs" />
     <Compile Include="Interfaces\Services\IPacienteService.cs" />
     <Compile Include="Interfaces\Services\IProducaoService.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Interfaces\Services\ITipoProfissionalService.cs" />
     <Compile Include="Interfaces\Services\IValorConsultaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DTOProducaoService.cs" />
     <Compile Include="Services\TaxaExtraProfissionalService.cs" />
     <Compile Include="Services\TipoProfissionalService.cs" />
     <Compile Include="Services\ClienteService.cs" />

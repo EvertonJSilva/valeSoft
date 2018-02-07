@@ -52,11 +52,13 @@
     <Compile Include="ClienteAppService.cs" />
     <Compile Include="ConsultaAppService.cs" />
     <Compile Include="DemonstrativoReportAppService.cs" />
+    <Compile Include="DTOProducaoAppService.cs" />
     <Compile Include="FolhaAppService.cs" />
     <Compile Include="FolhaDetalheAppService.cs" />
     <Compile Include="Interface\IAppServiceBase.cs" />
     <Compile Include="Interface\IClienteAppService.cs" />
     <Compile Include="Interface\IConsultaAppService.cs" />
+    <Compile Include="Interface\IDTOProducaoAppService.cs" />
     <Compile Include="Interface\IFolhaAppService.cs" />
     <Compile Include="Interface\IFolhaDetalheAppService.cs" />
     <Compile Include="Interface\ILiberacaoAppService.cs" />

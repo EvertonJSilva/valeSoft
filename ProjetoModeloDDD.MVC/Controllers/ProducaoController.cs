@@ -15,13 +15,15 @@ namespace ProjetoModeloDDD.MVC.Controllers
     {
         
         private readonly IProducaoAppService _producaoApp;
+        private readonly IDTOProducaoAppService _DTOproducaoApp;
         private readonly ITaxaDoacaoAppService _taxaDoacaoApp;
         private readonly ITaxaExtraProfissionalAppService _taxaExtraApp;
         private readonly IDemonstrativoReportAppService _demonstrativoApp;
 
-        public ProducaoController(IProducaoAppService producaoApp, ITaxaDoacaoAppService taxaDoacaoApp, ITaxaExtraProfissionalAppService taxaExtraApp, IDemonstrativoReportAppService demonstrativoApp)
+        public ProducaoController(IProducaoAppService producaoApp, IDTOProducaoAppService DTOproducaoApp, ITaxaDoacaoAppService taxaDoacaoApp, ITaxaExtraProfissionalAppService taxaExtraApp, IDemonstrativoReportAppService demonstrativoApp)
         {
             _producaoApp = producaoApp;
+            _DTOproducaoApp = DTOproducaoApp;
             _taxaDoacaoApp = taxaDoacaoApp;
             _taxaExtraApp = taxaExtraApp;
             _demonstrativoApp = demonstrativoApp;
@@ -61,17 +63,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var nivelAcesso = (int)Session["nivelAcesso"];
 
+            //default primeira pagina
             if (String.IsNullOrEmpty(grid1page))
             {
                 grid1page = "1";
             }
 
+            //não está logado
             if (Session["Usuario"] == null)
             {
                 return RedirectToAction("index", "login");
             }
 
-            //caso não tenha passado nada traz tudo
+            //caso não tenha passado nada traz tudo, se não for médico
             if (String.IsNullOrEmpty(dataInicial) && (somenteMes == false || nivelAcesso != 2))
             {
                 dataInicial = DateTime.Now.AddDays(-15).ToString();
@@ -81,44 +85,46 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 dataFinal = DateTime.MaxValue.ToString();
             }
 
+            // médicos mostra apenas o mês
             if ((somenteMes == true || !somenteMes.HasValue) && nivelAcesso == 2)
             {
                 DateTime primeiroDia = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                 dataFinal = primeiroDia.AddMonths(1).AddDays(-1).ToString();
                 dataInicial = primeiroDia.ToString();
             }
+
+
             int idLocalizacao = LocalizarPor.GetValueOrDefault();
-            IEnumerable<Producao> listaProducao = Enumerable.Empty<Producao>();
+            IEnumerable<DTOProducao> listaProducao = Enumerable.Empty<DTOProducao>();
 
             //médicos só vê os deles
             int IdProfissional = 0 ;
             if (nivelAcesso == 2)
             {
                 IdProfissional = (int)Session["idProfissional"];
-
-                //producaoViewModel = producaoViewModel.Where(s => s.Consulta.ProfissionalId == IdProfissional);
             }
             
             if (!String.IsNullOrEmpty(palavra))
             {
                 switch (idLocalizacao)
                 {
+                     //por nome
                     case 2:
-                        listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, palavra.ToLower());
-
-                     //   producaoViewModel = producaoViewModel.Where(s => s.Consulta.Liberacao.Paciente.NomePaciente.ToLower().Contains(palavra.ToLower()));
-                        break;
+                        listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, palavra.ToLower());
+                         break;
+                    
+                    //por carteira
                     case 1:
-                        listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");
+                        listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");
 
-                        listaProducao = listaProducao.Where(s => s.CarteirinhaPaciente.ToLower().Contains(palavra.ToLower()));
+                        listaProducao = listaProducao.Where(s => s.carteirinhaPaciente.ToLower().Contains(palavra.ToLower()));
                         break;
 
                 }
             }
             else
             {
-                listaProducao = _producaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");   
+                listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");   
             }
 
             
@@ -133,10 +139,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     listaProducao = listaProducao.Where(s => s.revisado == true);
                     break;
                 case "consolidados":
-                    listaProducao = listaProducao.Where(s => s.Consolidado == true);
+                    listaProducao = listaProducao.Where(s => s.consolidado == true);
                     break;
                 case "nao-consolidados":
-                    listaProducao = listaProducao.Where(s => s.Consolidado == false);
+                    listaProducao = listaProducao.Where(s => s.consolidado == false);
                     break;
 
                 default:
@@ -148,13 +154,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 case "todos":
                     break;
                 case "50000470":
-                    listaProducao = listaProducao.Where(s => s.Consulta.TipoSessao == "50000470");
+                    listaProducao = listaProducao.Where(s => s.sessaoConsulta == "50000470");
                     break;
                 case "80000509":
-                    listaProducao = listaProducao.Where(s => s.Consulta.TipoSessao == "80000509");
+                    listaProducao = listaProducao.Where(s => s.sessaoConsulta == "80000509");
                     break;
                 case "60000678":
-                    listaProducao = listaProducao.Where(s => s.Consulta.TipoSessao == "60000678");
+                    listaProducao = listaProducao.Where(s => s.sessaoConsulta == "60000678");
                     break;
                
                 default:
@@ -166,10 +172,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 case "todos":
                     break;
                 case "com":
-                    listaProducao = listaProducao.Where(s => s.Consulta.Liberacao.Paciente.CopartPaciente == true);
+                    listaProducao = listaProducao.Where(s => s.copartPaciente == true);
                     break;
                 case "sem":
-                    listaProducao = listaProducao.Where(s => s.Consulta.Liberacao.Paciente.CopartPaciente == false);
+                    listaProducao = listaProducao.Where(s => s.copartPaciente == false);
                     break;
 
 
@@ -181,70 +187,73 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (acao == null)
             {
                 listaProducao = Paginar(listaProducao, grid1page, 20);
+                var producaoViewModel = Mapper.Map<IEnumerable<DTOProducao>, IEnumerable<DTOProducaoViewModel>>(listaProducao);
+
+                return View(producaoViewModel);
             }
-
-            var producaoViewModel = Mapper.Map<IEnumerable<Producao>, IEnumerable<ProducaoViewModel>>(listaProducao);
-            TempData["listaProducao"] = producaoViewModel;
-
-            ///salva dados temp para poder passar paras as outras acoes
-            TempData["listaEntidadeProducao"] = listaProducao;
-
-            TempData["dataInicial"] = dataInicial;
-            TempData["dataFinal"] = dataFinal;
-
-            switch (acao)
+            else
             {
-                case null:
-                    
-                    return View(producaoViewModel);
-                    
-                case "REPORT":
-                    return RedirectToAction("Report");
+                var producaoViewModel = Mapper.Map<IEnumerable<DTOProducao>, IEnumerable<DTOProducaoViewModel>>(listaProducao);
 
-                case "PROTOCOLO":
-                    return RedirectToAction("Protocolo");
+                TempData["listaProducao"] = producaoViewModel;
 
-                case "DEMONSTRATIVO":
-                    return RedirectToAction("Demonstrativo");
+                ///salva dados temp para poder passar paras as outras acoes
+                TempData["listaEntidadeProducao"] = listaProducao;
 
-                case "CONSOLIDAR":
+                TempData["dataInicial"] = dataInicial;
+                TempData["dataFinal"] = dataFinal;
 
-                    TimeSpan diferenca = Convert.ToDateTime(dataFinal) - Convert.ToDateTime(dataInicial);
-
-                    if ( diferenca.Days > 18  )
-                    {
+                switch (acao)
+                {
                         
-                        ModelState.AddModelError(string.Empty, @"Impossível consolidar. O período informado superior a 1 dias.");
+                    case "REPORT":
+                        return RedirectToAction("Report");
 
-                        
-                        return View(producaoViewModel);
-                    }
+                    case "PROTOCOLO":
+                        return RedirectToAction("Protocolo");
 
-                    foreach (var producao in listaProducao)
-                    {
-                        if (!producao.revisado)
+                    case "DEMONSTRATIVO":
+                        return RedirectToAction("Demonstrativo");
+
+                    case "CONSOLIDAR":
+
+                        TimeSpan diferenca = Convert.ToDateTime(dataFinal) - Convert.ToDateTime(dataInicial);
+
+                        if (diferenca.Days > 18)
                         {
-                            ModelState.AddModelError(string.Empty, @"Impossível consolidar. Existem itens não revisados.");
 
-                            
+                            ModelState.AddModelError(string.Empty, @"Impossível consolidar. O período informado superior a 1 dias.");
+
+
                             return View(producaoViewModel);
                         }
-                    }
 
-                    return RedirectToAction("Consolidar");
+                        foreach (var producao in listaProducao)
+                        {
+                            if (!producao.revisado)
+                            {
+                                ModelState.AddModelError(string.Empty, @"Impossível consolidar. Existem itens não revisados.");
 
-                default:
-                    
-                    return View(producaoViewModel);
+
+                                return View(producaoViewModel);
+                            }
+                        }
+
+                        return RedirectToAction("Consolidar");
+
+                    default:
+
+                        return View(producaoViewModel);
+
+                }
             }
-
 
         }
 
         public ActionResult Report()
         {
             
-            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            var producaoViewModel = Mapper.Map<IEnumerable<DTOProducaoViewModel>, IEnumerable<DTOProducao>>(TempData["listaProducao"] as IEnumerable<DTOProducaoViewModel>);
             //var producaoViewModel =(TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
             var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
@@ -281,7 +290,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Protocolo()
         {
 
-            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            var producaoViewModel = Mapper.Map<IEnumerable<DTOProducaoViewModel>, IEnumerable<DTOProducao>>(TempData["listaProducao"] as IEnumerable<DTOProducaoViewModel>);
             //var producaoViewModel = (TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
             var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
@@ -316,12 +325,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Consolidar()
         {
-            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            var producaoViewModel = Mapper.Map<IEnumerable<DTOProducaoViewModel>, IEnumerable<DTOProducao>>(TempData["listaProducao"] as IEnumerable<DTOProducaoViewModel>);
             //var producaoViewModel = (TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
 
-            foreach (var producao in producaoViewModel)
+            foreach (var DTOproducao in producaoViewModel)
             {
+                var producao = _producaoApp.GetById(DTOproducao.idProducao);
+
                 producao.Consolidado = true;
                 producao.dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
                 producao.dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
@@ -337,7 +348,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Demonstrativo()
         {
-            var producaoViewModel = Mapper.Map<IEnumerable<ProducaoViewModel>, IEnumerable<Producao>>(TempData["listaProducao"] as IEnumerable<ProducaoViewModel>);
+            var producaoViewModel = Mapper.Map<IEnumerable<DTOProducaoViewModel>, IEnumerable<DTOProducao>>(TempData["listaProducao"] as IEnumerable<DTOProducaoViewModel>);
             //var producaoViewModel = (TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
             var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
@@ -356,24 +367,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel,_taxaDoacaoApp,_taxaExtraApp, dataInicial, dataFinal)));
 
-            //Warning[] warnings;
-            //string[] streamIds;
-            //string mimeType = string.Empty;
-            //string encoding = "Processando";
-            //string extension = string.Empty;
-
-            //byte[] bytes = viewer.LocalReport.Render("PDF", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
-            //// byte[] bytes = viewer.LocalReport.Render("Excel", null, out mimeType, out encoding, out extension, out streamIds, out warnings);
-            //// Now that you have all the bytes representing the PDF report, buffer it and send it to the client.          
-            //// System.Web.HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            //Response.Buffer = true;
-            //Response.Clear();
-            //Response.ContentType = mimeType;
-            //Response.AddHeader("content-disposition", "attachment; filename= filename" + "." + extension);
-            //Response.OutputStream.Write(bytes, 0, bytes.Length); // create the file  
-            //Response.Flush(); // send it to the client to download  
-            //Response.End();
-
+            
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
@@ -427,7 +421,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return View(producaoViewModel);
         }
 
-            public IEnumerable<Producao> Paginar(IEnumerable<Producao> listConsulta, String paginaAtual, int listaPorPagina)
+            public IEnumerable<DTOProducao> Paginar(IEnumerable<DTOProducao> listConsulta, String paginaAtual, int listaPorPagina)
         {
 
             ViewBag.TotalPage = (int) Math.Ceiling( (double) listConsulta.Count() / listaPorPagina) ;
