@@ -22,6 +22,8 @@ namespace ProjetoModeloDDD.Domain.Entities
         public DateTime dataInicial { get; set; }
         public DateTime dataFinal { get; set; }
 
+        public int idProfissional { get; set; }
+
 
     }
 }
