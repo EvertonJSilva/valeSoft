@@ -34,6 +34,8 @@ namespace ProjetoModeloDDD.MVC.ViewModels
         public string autorizacao { get; set; }
         public string numeroLiberacao { get; set; }
         public DateTime dataConsulta { get; set; }
+        public int pacienteId { get; set; }
+        public int consultaId { get; set; }
 
         public string dataConsultaFormatada
         {

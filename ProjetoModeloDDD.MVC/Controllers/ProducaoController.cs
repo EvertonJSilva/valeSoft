@@ -195,7 +195,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 var producaoViewModel = Mapper.Map<IEnumerable<DTOProducao>, IEnumerable<DTOProducaoViewModel>>(listaProducao);
 
-                TempData["listaProducao"] = producaoViewModel;
+                TempData["listaProducao"] = producaoViewModel.OrderBy(s => s.nomePaciente);
 
                 ///salva dados temp para poder passar paras as outras acoes
                 TempData["listaEntidadeProducao"] = listaProducao;

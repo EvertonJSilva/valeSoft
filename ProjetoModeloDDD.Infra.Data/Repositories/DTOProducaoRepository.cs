@@ -63,7 +63,11 @@ namespace ProjetoModeloDDD.Infra.Data.Repositories
                         tipoProfissionalId = i.TipoProfissionalId,
                         numeroLiberacao = l.NumeroLiberacao,
                         autorizacao = e.Autorizacao,
-                        dataConsulta = e.DataHoraConsulta
+                        dataConsulta = e.DataHoraConsulta,
+                        pacienteId = a.PacienteId,
+                        consultaId = e.ConsultaId
+                        
+                    
                     }
              ).ToList();
 
