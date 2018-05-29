@@ -102,3 +102,37 @@ E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoMo
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
 E:\visual Studio\valesoft\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csc.exe
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csc.exe.config
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csc.rsp
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csi.exe
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csi.rsp
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CSharp.Core.targets
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.AppContext.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.Collections.Immutable.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.Diagnostics.StackTrace.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.IO.FileSystem.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.Reflection.Metadata.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\vbc.exe
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\vbc.exe.config
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\vbc.rsp
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\VBCSCompiler.exe
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\VBCSCompiler.exe.config
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.pdb
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb

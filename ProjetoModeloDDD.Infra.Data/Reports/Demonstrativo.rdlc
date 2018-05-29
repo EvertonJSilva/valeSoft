@@ -1042,7 +1042,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(ReportItems!Textbox12.Value * 29.97)+(ReportItems!Textbox343.Value * 14.97)</Value>
+                              <Value>=(ReportItems!Textbox10.Value * 29.97)</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -1844,7 +1844,8 @@
                             <TextRun>
                               <Value>=(ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + 
 ReportItems!Textbox340.Value + ReportItems!Textbox11.Value+
-ReportItems!Textbox352.Value + ReportItems!Textbox348.Value)*0.0715</Value>
+ReportItems!Textbox352.Value + ReportItems!Textbox348.Value- 
+ReportItems!Textbox345.Value)*0.0715</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -2475,7 +2476,8 @@ ReportItems!ValorOutrosAcrecimos.Value</Value>
                             </TextRun>
                             <TextRun>
                               <Value>=ReportItems!Textbox380.Value + ReportItems!Textbox400.Value + 
-ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
+ReportItems!Textbox395.Value + ReportItems!Textbox390.Value +
+ReportItems!Textbox345.Value</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -2633,7 +2635,7 @@ ReportItems!Textbox395.Value + ReportItems!Textbox390.Value</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + ReportItems!Textbox11.Value + ReportItems!ValorOutrosAcrecimos.Value - ReportItems!Textbox380.Value - ReportItems!Textbox400.Value - ReportItems!Textbox395.Value - ReportItems!Textbox390.Value</Value>
+                              <Value>=ReportItems!Textbox369.Value + ReportItems!Textbox313.Value + ReportItems!Textbox340.Value + ReportItems!Textbox352.Value + ReportItems!Textbox348.Value + ReportItems!Textbox11.Value + ReportItems!ValorOutrosAcrecimos.Value - ReportItems!Textbox380.Value - ReportItems!Textbox400.Value - ReportItems!Textbox395.Value - ReportItems!Textbox390.Value - ReportItems!Textbox345.Value</Value>
                               <Style>
                                 <Format>'R$'0.00</Format>
                               </Style>

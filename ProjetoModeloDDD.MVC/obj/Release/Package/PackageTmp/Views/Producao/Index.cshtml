@@ -1,9 +1,9 @@
 ﻿@using GridMvc.Html
 
-@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ProducaoViewModel>
+@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.DTOProducaoViewModel>
 
 @{
-    ViewBag.Title = "Produçao";
+    ViewBag.Title = "Producao";
 }
 
 <h2>Produção</h2>
@@ -95,26 +95,26 @@
     
     @Html.Grid(Model).Columns(columns =>
 {
-    columns.Add(model => model.ProducaoId).Titled("Id");
-    columns.Add(model => model.Consulta.Liberacao.Paciente.NomePaciente).Titled("Paciente");
-    columns.Add(model => model.Consulta.Profissional.NomeProfissional).Titled("Profissional");
-    columns.Add(model => model.CarteirinhaPaciente).Titled("Carteirinha").SetWidth(165);
-    columns.Add(model => model.DataConsulta).Titled("Data");
-    columns.Add(model => model.Consulta.Autorizacao).Titled("Autorização");
-    columns.Add(model => model.Consulta.Liberacao.NumeroLiberacao).Titled("Liberação");
-    columns.Add(model => model.Consulta.TipoSessao)
+    columns.Add(model => model.idProducao).Titled("Id");
+    columns.Add(model => model.nomePaciente).Titled("Paciente");
+    columns.Add(model => model.nomeProfissional).Titled("Profissional");
+    columns.Add(model => model.carteirinhaPaciente).Titled("Carteirinha").SetWidth(165);
+    columns.Add(model => model.dataConsultaFormatada).Titled("Data");
+    columns.Add(model => model.autorizacao).Titled("Autorização");
+    columns.Add(model => model.numeroLiberacao).Titled("Liberação");
+    columns.Add(model => model.sessaoConsulta)
         .Titled("Sessão")
         .Filterable(true);
-    columns.Add(model => model.Consulta.ValorConsulta).Titled("Valor").Filterable(true);
-    columns.Add(model => model.Consulta.ValorCopart).Titled("Coparticipação");
+    columns.Add(model => model.valorConsulta).Titled("Valor").Filterable(true);
+    columns.Add(model => model.valorCopart).Titled("Coparticipação");
     columns.Add().Titled("Revisado")
         .Encoded(false)
         .Sanitized(false)
-        .RenderValueAs(o => revisadoCustomHelper(o.revisado, o.ProducaoId)); ;
+        .RenderValueAs(o => revisadoCustomHelper(o.revisado, o.idProducao)); ;
     columns.Add().Titled("Consolidado")
         .Encoded(false)
         .Sanitized(false)
-        .RenderValueAs(o => ConsolidadoCustonHelper(o.Consolidado));
+        .RenderValueAs(o => ConsolidadoCustonHelper(o.consolidado));
 
 
 }).WithPaging(20,0,"grid1page").Sortable(true).Filterable(true)
