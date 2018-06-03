@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="ProjetoModeloDDD-Web.config Connection String" description="ProjetoModeloDDD Connection String used in web.config by the application to access the database." defaultValue="Data Source=sqlservervsvalesoft.database.windows.net ;Initial Catalog=VSValeSoft;Persist Security Info=True;User ID=suporte;Password=ValeSoft#9090; MultipleActiveResultSets=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Tork\\Documents\\Visual\ Studio\ 2017\\valeSoft\\ProjetoModeloDDD\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProjetoModeloDDD']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="D:\\Documentos\\Documents\\Visual\ Studio\ 2017\\valeSoft\\ProjetoModeloDDD\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProjetoModeloDDD']/@connectionString" />
   </parameter>
 </parameters>

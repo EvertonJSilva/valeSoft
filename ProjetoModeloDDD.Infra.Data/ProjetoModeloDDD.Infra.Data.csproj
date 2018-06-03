@@ -90,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\Demonstrativo.rdlc" />
+    <EmbeddedResource Include="Reports\Protocolo - Copy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Protocolo.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
