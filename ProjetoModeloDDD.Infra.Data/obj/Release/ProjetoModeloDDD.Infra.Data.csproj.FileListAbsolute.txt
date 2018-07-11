@@ -182,3 +182,4 @@ D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.dll
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Release\ProjetoModeloDDD.Infra.Data.pdb
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo - Copy.rdlc
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Release\Reports\Protocolo_old.rdlc

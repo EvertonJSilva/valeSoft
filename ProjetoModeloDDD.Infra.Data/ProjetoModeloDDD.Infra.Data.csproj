@@ -96,6 +96,9 @@
     <EmbeddedResource Include="Reports\Protocolo.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Protocolo_old.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Pacientes.rdlc" />
     <EmbeddedResource Include="Reports\Producao.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

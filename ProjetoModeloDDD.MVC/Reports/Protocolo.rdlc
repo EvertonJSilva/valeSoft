@@ -605,7 +605,7 @@ FM-SUP-12.008</Value>
           <Top>2.71183cm</Top>
           <Left>1.30835cm</Left>
           <Height>0.65291cm</Height>
-          <Width>4.85384cm</Width>
+          <Width>6.93525cm</Width>
           <ZIndex>6</ZIndex>
           <Style>
             <Border>
@@ -632,10 +632,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>3.40002cm</Top>
-          <Left>1.30835cm</Left>
-          <Height>0.85578cm</Height>
-          <Width>4.85384cm</Width>
+          <Top>3.36474cm</Top>
+          <Left>1.30836cm</Left>
+          <Height>0.57356cm</Height>
+          <Width>6.93524cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -677,9 +677,9 @@ FM-SUP-12.008</Value>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
           <Top>2.71183cm</Top>
-          <Left>6.16221cm</Left>
+          <Left>8.27888cm</Left>
           <Height>0.65291cm</Height>
-          <Width>7.48414cm</Width>
+          <Width>5.36299cm</Width>
           <ZIndex>8</ZIndex>
           <Style>
             <Border>
@@ -700,8 +700,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>UNIPSICO VALE DO SINOS</Value>
                   <Style>
-                    <FontSize>16pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -710,9 +709,9 @@ FM-SUP-12.008</Value>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
           <Top>3.36474cm</Top>
-          <Left>6.1622cm</Left>
-          <Height>0.89106cm</Height>
-          <Width>7.48415cm</Width>
+          <Left>8.27888cm</Left>
+          <Height>0.57356cm</Height>
+          <Width>5.36299cm</Width>
           <ZIndex>9</ZIndex>
           <Style>
             <Border>
@@ -739,10 +738,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>4.29107cm</Top>
+          <Top>3.97357cm</Top>
           <Left>1.30835cm</Left>
-          <Height>0.99688cm</Height>
-          <Width>4.85384cm</Width>
+          <Height>0.57355cm</Height>
+          <Width>6.93525cm</Width>
           <ZIndex>10</ZIndex>
           <Style>
             <Border>
@@ -763,8 +762,7 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>1088</Value>
                   <Style>
-                    <FontSize>18pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -772,10 +770,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>4.2558cm</Top>
-          <Left>6.19747cm</Left>
-          <Height>1.03216cm</Height>
-          <Width>7.44887cm</Width>
+          <Top>3.97357cm</Top>
+          <Left>8.27888cm</Left>
+          <Height>0.57355cm</Height>
+          <Width>5.36299cm</Width>
           <ZIndex>11</ZIndex>
           <Style>
             <Border>
@@ -794,9 +792,9 @@ FM-SUP-12.008</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>TOTAL GERAL PREVISTO A RECEBER R$</Value>
+                  <Value>TOTAL GERAL PREVISTO A  RECEBER R$</Value>
                   <Style>
-                    <FontWeight>Bold</FontWeight>
+                    <FontSize>9pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -804,10 +802,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>5.53602cm</Top>
+          <Top>6.53085cm</Top>
           <Left>1.30835cm</Left>
-          <Height>0.97042cm</Height>
-          <Width>4.85385cm</Width>
+          <Height>0.54709cm</Height>
+          <Width>6.93525cm</Width>
           <ZIndex>12</ZIndex>
           <Style>
             <Border>
@@ -828,16 +826,12 @@ FM-SUP-12.008</Value>
                 <TextRun>
                   <Value>R$ </Value>
                   <Style>
-                    <FontSize>16pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
                     <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
                 <TextRun>
                   <Value>=Replace(Replace(Replace(Format(ReportItems!Textbox4.Value, "#,###0.00"),",","@"),".",","),"@",".")</Value>
                   <Style>
-                    <FontSize>16pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
                     <Format>#,0.00</Format>
                   </Style>
                 </TextRun>
@@ -846,10 +840,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>5.53602cm</Top>
-          <Left>6.16221cm</Left>
-          <Height>0.97042cm</Height>
-          <Width>7.48414cm</Width>
+          <Top>6.53085cm</Top>
+          <Left>8.27888cm</Left>
+          <Height>0.54709cm</Height>
+          <Width>5.36747cm</Width>
           <ZIndex>13</ZIndex>
           <Style>
             <Border>
@@ -876,10 +870,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>6.49649cm</Top>
+          <Top>7.06799cm</Top>
           <Left>1.30835cm</Left>
-          <Height>1.07625cm</Height>
-          <Width>4.85385cm</Width>
+          <Height>0.6cm</Height>
+          <Width>6.93525cm</Width>
           <ZIndex>14</ZIndex>
           <Style>
             <Border>
@@ -911,10 +905,10 @@ FM-SUP-12.008</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox37</rd:DefaultName>
-          <Top>6.49649cm</Top>
-          <Left>6.16221cm</Left>
-          <Height>1.07625cm</Height>
-          <Width>7.48414cm</Width>
+          <Top>7.06799cm</Top>
+          <Left>8.27888cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.36747cm</Width>
           <ZIndex>15</ZIndex>
           <Style>
             <Border>
@@ -1548,6 +1542,175 @@ FM-SUP-12.008</Value>
               <Style>Solid</Style>
             </Border>
             <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox71">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Quantidade de Guias (CDR)</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox37</rd:DefaultName>
+          <Top>4.58239cm</Top>
+          <Left>1.28189cm</Left>
+          <Height>0.57355cm</Height>
+          <Width>6.96171cm</Width>
+          <ZIndex>35</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox72">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value> -</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox37</rd:DefaultName>
+          <Top>4.58239cm</Top>
+          <Left>8.27888cm</Left>
+          <Height>0.57355cm</Height>
+          <Width>5.36747cm</Width>
+          <ZIndex>36</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox73">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Quantidade de Guias Apresentadas Fisicamente</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox37</rd:DefaultName>
+          <Top>5.19122cm</Top>
+          <Left>1.30836cm</Left>
+          <Height>1.30435cm</Height>
+          <Width>6.93524cm</Width>
+          <ZIndex>37</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox74">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Iif(Fields!sessaoConsulta.Value = 80000509, 1, 0), "Producao")</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <Format>0;(0)</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> - guias 80000509</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Iif(Fields!sessaoConsulta.Value = 50000470, 1, 0), "Producao")</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <Format>0;(0)</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> - guias 50000470</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <Format>0;(0)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Iif(Fields!sessaoConsulta.Value = 60000678, 1, 0), "Producao")</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <Format>0;(0)</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> - guias 60000678</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <Format>0;(0)</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox37</rd:DefaultName>
+          <Top>5.2265cm</Top>
+          <Left>8.27888cm</Left>
+          <Height>1.27994cm</Height>
+          <Width>5.36299cm</Width>
+          <ZIndex>38</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
