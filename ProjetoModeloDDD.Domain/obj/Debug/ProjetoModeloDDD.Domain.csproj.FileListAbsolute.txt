@@ -200,3 +200,4 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csproj.CopyComplete

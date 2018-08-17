@@ -259,3 +259,7 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\RdlCompile.compiled
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo - Copy.rdlc
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo.rdlc
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo_old.rdlc
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csproj.CopyComplete

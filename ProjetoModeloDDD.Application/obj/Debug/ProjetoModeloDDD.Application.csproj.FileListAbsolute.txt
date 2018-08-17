@@ -216,3 +216,4 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.pdb
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Application\obj\Debug\ProjetoModeloDDD.Application.csproj.CopyComplete

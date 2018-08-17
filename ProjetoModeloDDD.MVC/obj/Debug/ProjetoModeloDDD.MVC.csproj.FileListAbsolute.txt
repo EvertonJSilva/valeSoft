@@ -438,3 +438,6 @@ C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Ant
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Newtonsoft.Json.xml
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.dll
 C:\Users\Tork\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo - Copy.rdlc
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo_old.rdlc
+E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.csproj.CopyComplete

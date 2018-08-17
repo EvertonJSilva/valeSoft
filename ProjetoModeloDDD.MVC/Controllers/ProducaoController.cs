@@ -13,7 +13,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 {
     public class ProducaoController : Controller
     {
-        
+
         private readonly IProducaoAppService _producaoApp;
         private readonly IDTOProducaoAppService _DTOproducaoApp;
         private readonly ITaxaDoacaoAppService _taxaDoacaoApp;
@@ -29,12 +29,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _demonstrativoApp = demonstrativoApp;
 
         }
-       
-            
+
+
         public ActionResult Revisar(int producaoId, int cancelamento)
         {
             var producao = _producaoApp.GetById(producaoId);
-            if(cancelamento == 1)
+            if (cancelamento == 1)
             {
                 producao.revisado = false;
             }
@@ -59,10 +59,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
                                     string criterioSessao,
                                     string criterioCopart,
                                     string grid1page,
-                                    bool? somenteMes)
+                                    bool? somenteMes,
+                                    string cdr)
         {
             var nivelAcesso = (int)Session["nivelAcesso"];
 
+            cdr = cdr;
             //default primeira pagina
             if (String.IsNullOrEmpty(grid1page))
             {
@@ -98,21 +100,21 @@ namespace ProjetoModeloDDD.MVC.Controllers
             IEnumerable<DTOProducao> listaProducao = Enumerable.Empty<DTOProducao>();
 
             //médicos só vê os deles
-            int IdProfissional = 0 ;
+            int IdProfissional = 0;
             if (nivelAcesso == 2)
             {
                 IdProfissional = (int)Session["idProfissional"];
             }
-            
+
             if (!String.IsNullOrEmpty(palavra))
             {
                 switch (idLocalizacao)
                 {
-                     //por nome
+                    //por nome
                     case 2:
                         listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, palavra.ToLower());
-                         break;
-                    
+                        break;
+
                     //por carteira
                     case 1:
                         listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");
@@ -124,10 +126,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
             else
             {
-                listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");   
+                listaProducao = _DTOproducaoApp.GetListaPorData(DateTime.Parse(dataInicial), DateTime.Parse(dataFinal), IdProfissional, "");
             }
 
-            
+
             switch (criterio)
             {
                 case "todos":
@@ -162,7 +164,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 case "60000678":
                     listaProducao = listaProducao.Where(s => s.sessaoConsulta == "60000678");
                     break;
-               
+
                 default:
                     break;
             }
@@ -202,10 +204,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
                 TempData["dataInicial"] = dataInicial;
                 TempData["dataFinal"] = dataFinal;
-
+                TempData["nrCdr"] = cdr;
                 switch (acao)
                 {
-                        
+
                     case "REPORT":
                         return RedirectToAction("Report");
 
@@ -252,7 +254,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Report()
         {
-            
+
             var producaoViewModel = Mapper.Map<IEnumerable<DTOProducaoViewModel>, IEnumerable<DTOProducao>>(TempData["listaProducao"] as IEnumerable<DTOProducaoViewModel>);
             //var producaoViewModel =(TempData["listaEntidadeProducao"] as IEnumerable<Producao>);
 
@@ -261,12 +263,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             //viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-        
-            #if !DEBUG
-                viewer.LocalReport.ReportPath = "bin\\Reports\\Producao.rdlc";
-            #else
+
+#if !DEBUG
+            viewer.LocalReport.ReportPath = "bin\\Reports\\Producao.rdlc";
+#else
                 viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Producao.rdlc";
-            #endif 
+#endif
 
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel, dataInicial, dataFinal)));
 
@@ -276,7 +278,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             viewer.ShowRefreshButton = false;
 
             viewer.PageCountMode = Microsoft.Reporting.WebForms.PageCountMode.Actual;
-            
+
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = 0;//System.Web.UI.WebControls.Unit.Percentage(10);
 
@@ -295,22 +297,23 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             var dataInicial = Convert.ToDateTime(TempData["dataInicial"]);
             var dataFinal = Convert.ToDateTime(TempData["dataFinal"]);
+            var nrCdr = Convert.ToString(TempData["nrCdr"]);
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
-           // viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-            
+            // viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+
             #if !DEBUG
-                viewer.LocalReport.ReportPath = "bin\\Reports\\Protocolo.rdlc";
+                        viewer.LocalReport.ReportPath = "bin\\Reports\\Protocolo.rdlc";
             #else
-                viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Protocolo.rdlc";
-            #endif 
+                       viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"../ProjetoModeloDDD.Infra.Data/Reports/Protocolo.rdlc";
+            #endif
 
-
+            viewer.LocalReport.SetParameters(new ReportParameter("nrCDR", nrCdr));
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Protocolo", producaoViewModel));
             viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Producao", ProducaoReport.GerarLista(producaoViewModel, dataInicial, dataFinal)));
 
-            viewer.SizeToReportContent = true;  
-            viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);    
+            viewer.SizeToReportContent = true;
+            viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.ShowPrintButton = true;
             viewer.ShowExportControls = true;
@@ -356,18 +359,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             var viewer = new Microsoft.Reporting.WebForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
-                        
-            #if !DEBUG
-                viewer.LocalReport.ReportPath = "bin\\Reports\\Demonstrativo.rdlc";
-            #else
+
+#if !DEBUG
+            viewer.LocalReport.ReportPath = "bin\\Reports\\Demonstrativo.rdlc";
+#else
                 viewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"..\ProjetoModeloDDD.Infra.Data\Reports\Demonstrativo.rdlc";
-            #endif 
+#endif
 
 
             //viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", producaoViewModel));
-            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel,_taxaDoacaoApp,_taxaExtraApp, dataInicial, dataFinal)));
+            viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WebForms.ReportDataSource("Demonstrativo", _demonstrativoApp.GerarLista(producaoViewModel, _taxaDoacaoApp, _taxaExtraApp, dataInicial, dataFinal)));
 
-            
+
             viewer.SizeToReportContent = true;
             viewer.Width = System.Web.UI.WebControls.Unit.Percentage(10);
             viewer.Height = System.Web.UI.WebControls.Unit.Percentage(10);
@@ -382,8 +385,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return View(producaoViewModel);
         }
 
-        
-         public ActionResult PDFExport()
+
+        public ActionResult PDFExport()
         {
             var report = TempData["report"] as Microsoft.Reporting.WebForms.ReportViewer;
             string[] streamids;
@@ -421,10 +424,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return View(producaoViewModel);
         }
 
-            public IEnumerable<DTOProducao> Paginar(IEnumerable<DTOProducao> listConsulta, String paginaAtual, int listaPorPagina)
+        public IEnumerable<DTOProducao> Paginar(IEnumerable<DTOProducao> listConsulta, String paginaAtual, int listaPorPagina)
         {
 
-            ViewBag.TotalPage = (int) Math.Ceiling( (double) listConsulta.Count() / listaPorPagina) ;
+            ViewBag.TotalPage = (int)Math.Ceiling((double)listConsulta.Count() / listaPorPagina);
 
             listConsulta = listConsulta.Skip((int.Parse(paginaAtual) - 1) * listaPorPagina);
             listConsulta = listConsulta.Take(listaPorPagina);

@@ -1,19 +1,12 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ProjetoModeloDDD.Application",
     "\\ProjetoModeloDDD.Application\\Interface",
     "\\ProjetoModeloDDD.Application\\obj",
     "\\ProjetoModeloDDD.Application\\Properties",
-    "\\ProjetoModeloDDD.Domain",
     "\\ProjetoModeloDDD.Domain\\Interfaces",
     "\\ProjetoModeloDDD.Domain\\Interfaces\\Repositories",
     "\\ProjetoModeloDDD.Domain\\Interfaces\\Services",
-    "\\ProjetoModeloDDD.Domain\\obj",
-    "\\ProjetoModeloDDD.Domain\\obj\\Release",
-    "\\ProjetoModeloDDD.Domain\\Properties",
-    "\\ProjetoModeloDDD.Domain\\Services"
+    "\\ProjetoModeloDDD.Domain\\obj"
   ],
-  "SelectedNode": "\\packages",
   "PreviewInSolutionExplorer": false
 }

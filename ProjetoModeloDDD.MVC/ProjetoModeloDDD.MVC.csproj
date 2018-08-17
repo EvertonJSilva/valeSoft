@@ -433,6 +433,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Teste.rdlc" />
     <None Include="Properties\PublishProfiles\everton.pubxml" />
     <None Include="Properties\PublishProfiles\evertonsilvateste1.pubxml" />
     <None Include="Properties\PublishProfiles\VSOfficium - FTP %2810%29.pubxml" />
