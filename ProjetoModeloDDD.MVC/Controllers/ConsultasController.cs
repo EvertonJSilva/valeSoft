@@ -464,8 +464,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             if (paciente.PacienteId == 779) // larrisa valor fixo de 10 
                 return valorConsulta.Valor - 10;
 
-            if (paciente.PacienteId == 748) // juliana 
-                return valorConsulta.Valor - 10;
+            //if (paciente.PacienteId == 748) // juliana 
+                //return valorConsulta.Valor - 10;
 
             switch (valorConsulta.TemCopart && paciente.CopartPaciente)
             {
