@@ -1,0 +1,15 @@
+﻿
+@using ReportViewerForMvc;
+
+@{
+    ViewBag.Title = "Protocolo";
+}
+
+<h2>Protocolo</h2>
+
+@Html.ReportViewer(ViewBag.ReportViewer as Microsoft.Reporting.WebForms.ReportViewer)
+
+     
+<div>
+    @Html.ActionLink("Voltar para lista", "Index")
+</div>      

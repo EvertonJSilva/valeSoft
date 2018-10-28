@@ -17,6 +17,9 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
+
+
+
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -42,7 +45,7 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
                     </li>
 
                     <li>
-                       @Html.ActionLink("Clientes", "Index", "Clientes", null, new {@class = "fa fa-group fa-3x" })
+                        @Html.ActionLink("Clientes", "Index", "Clientes", null, new { @class = "fa fa-group fa-3x" })
                     </li>
                     <li>
                         @Html.ActionLink("Produtos", "Index", "Produtos", null, new { @class = "fa fa-desktop fa-3x" })
@@ -129,7 +132,10 @@ font-size: 16px;">Last access : 30 May 2014 &nbsp;<a href="#" class="btn btn-dan
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
     
+    }
+
 </body>
 </html>
 

@@ -587,7 +587,6 @@ D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Rep
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Pacientes.rdlc
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Producao.rdlc
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Views\Login\IndexNovo.cshtml
-D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll.config
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.pdb
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Antlr3.Runtime.dll
@@ -743,3 +742,4 @@ D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Deb
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\obj\Debug\ProjetoModeloDDD.MVC.pdb
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo_bkp.rdlc
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\Reports\Protocolo2.rdlc
+D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.MVC\bin\ProjetoModeloDDD.MVC.dll.config

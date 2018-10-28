@@ -98,7 +98,6 @@ D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.pdb
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb

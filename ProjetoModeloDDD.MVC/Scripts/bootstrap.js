@@ -2012,3 +2012,11 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   })
 
 }(window.jQuery);
+
+
+$(document).ready(function () {
+	$('.selectpicker').selectpicker({
+		liveSearch: true,
+		showSubtext: true
+	});
+});

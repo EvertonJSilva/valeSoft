@@ -83,15 +83,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 default:
                     if(nivelAcesso == 2)
                         listConsulta = listConsulta.Where(s => s.DataHoraConsulta.Month == DateTime.Now.Month );
+                    
                     break;
             }
 
-
+            listConsulta = listConsulta.OrderByDescending(x => x.Status);
             listConsulta = Paginar(listConsulta, grid1page, 20);
 
 
 
             var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(listConsulta);
+
+            
 
             return View(consultaViewModel);
         }
@@ -206,6 +209,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             ViewBag.LiberacaoId = listaLiberacao(consulta);
             ViewBag.ProfissionalId = listaProfissional(consulta);
 
+            
+
             return View(consulta);
         }
 
@@ -299,6 +304,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 try
                 {
                     _producaoApp.GetPorConsultaID(consultaDomain.ConsultaId);
+                  
                 }
                 catch (Exception e)
                 {
@@ -315,12 +321,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 }
 
                 ///redireciona para a liberacao
-                if (idLiberacaoOrigem > 0) {
-                    return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
-                } else
-                {
-                    return RedirectToAction("Index");
-                }
+                //if (idLiberacaoOrigem > 0) {
+                  //  return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
+                //} else
+                //{
+                  //  return RedirectToAction("Edit");
+                //}
             }
 
             return View(consulta);

@@ -1,0 +1,104 @@
+﻿@model Tuple<ProjetoModeloDDD.MVC.ViewModels.LiberacaoViewModel, IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ConsultaViewModel>> 
+
+@using GridMvc.Html
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes da liberação</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Model => Model.Item1.Paciente.NomePaciente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(Model => Model.Item1.NumeroLiberacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Model => Model.Item1.NumeroLiberacao)
+        </dd>
+
+        <dt>
+            Quantidade Solicitada
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Model => Model.Item1.QuantidadeTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(Model => Model.Item1.QuantidadeRealizada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Model => Model.Item1.QuantidadeRealizada)
+        </dd>
+        <dt>
+            Profissional
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => Model.Item1.Profissional.NomeProfissional)
+        </dd>
+
+        <dt>
+            Médico encaminhante
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Model => Model.Item1.MedicoEncaminhante)
+        </dd>
+        <dt>
+            CRM Encaminhante
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Item1.CRM)
+        </dd>
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Item1.LiberacaoId }) |
+    @Html.ActionLink("Voltar para lista", "Index")
+</p>
+
+<hr />
+<h4>Consultas</h4>
+
+<div style="margin-right:50px">
+    @Html.Grid(Model.Item2).Columns(columns =>
+{
+    columns.Add(model => model.Status).Titled("Status");
+    columns.Add(model => model.Autorizacao).Titled("Autorização");
+    columns.Add(model => model.FormaAutorizar).Titled("Forma Autorização");
+    columns.Add(model => model.dataConsulaFormatada).Titled("Data consulta");
+    columns.Add(model => model.valorFormatado).Titled("Valor Consulta");
+    columns.Add(model => model.Profissional.NomeProfissional).Titled("Profissional");
+
+    columns.Add()
+        .Encoded(false)
+        .Sanitized(false)
+        .SetWidth(30)
+        .RenderValueAs(o => EditarCustonHelper(o.ConsultaId));
+
+}).WithPaging(100).Sortable(true)
+</div>
+
+
+@helper EditarCustonHelper(int id)
+{
+    <button class="btn btn-primary btn-xs" onclick="location.href='@Url.Action("Edit", "Consultas", new { id = id, idLiberacao = Model.Item1.LiberacaoId })'"><i class="fa fa-pencil"></i></button>
+}
+
