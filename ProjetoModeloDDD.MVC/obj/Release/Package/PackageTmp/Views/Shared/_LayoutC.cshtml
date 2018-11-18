@@ -5,6 +5,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/toastr")
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
@@ -14,9 +15,13 @@
     <link href="~/Content/SiteC/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
     <link href="~/Content/SiteC/css/style.css" rel="stylesheet" />
     <link href="~/Content/SiteC/css/main-style.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
     <!-- Page-Level CSS -->
     <link href="~/Content/SiteC/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" /></head>
 <body>
+
+   
+
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
@@ -285,15 +290,20 @@
     <script src="~/Content/SiteC/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="~/Content/SiteC/plugins/pace/pace.js"></script>
     <script src="~/Content/SiteC/scripts/siminta.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
     <!-- Page-Level Plugin Scripts-->
     <script src="~/Content/SiteC/plugins/morris/raphael-2.1.0.min.js"></script>
     <script src="~/Content/SiteC/plugins/morris/morris.js"></script>
     <script src="~/Content/SiteC/scripts/dashboard-demo.js"></script>
-   
+
     @RenderSection("scripts", required: false)
 
+    <!-- Inserido por Rodrigo, implementação Toastr: marcdias.com.br/como-utilizar-o-toastr-notifications-com-asp-net-mvc/ -->
 
-
+    <input type="hidden" id="success" value="@TempData["success"]" />
+    <input type="hidden" id="info"    value="@TempData["info"]" />
+    <input type="hidden" id="warning" value="@TempData["warning"]" />
+    <input type="hidden" id="error"   value="@TempData["error"]" />
 
 </body>
 </html>

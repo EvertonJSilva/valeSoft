@@ -74,6 +74,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             //não está logado
             if (Session["Usuario"] == null)
             {
+                TempData["info"] = "Você não está logado no sistema.";
                 return RedirectToAction("index", "login");
             }
 
@@ -224,8 +225,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         if (diferenca.Days > 18)
                         {
 
-                            ModelState.AddModelError(string.Empty, @"Impossível consolidar. O período informado superior a 1 dias.");
-
+                            //ModelState.AddModelError(string.Empty, @"Impossível consolidar. O período informado superior a 1 dias.");
+                            TempData["warning"] = "Não é possível consolidar. O período informado é superior a 18 dias.";
 
                             return View(producaoViewModel);
                         }
@@ -234,17 +235,17 @@ namespace ProjetoModeloDDD.MVC.Controllers
                         {
                             if (!producao.revisado)
                             {
-                                ModelState.AddModelError(string.Empty, @"Impossível consolidar. Existem itens não revisados.");
-
+                                //ModelState.AddModelError(string.Empty, @"Impossível consolidar. Existem itens não revisados.");
+                                TempData["warning"] = "Não é possível consolidar. O período informado é superior a 18 dias.";
 
                                 return View(producaoViewModel);
                             }
                         }
-
+                        
                         return RedirectToAction("Consolidar");
 
                     default:
-
+                        
                         return View(producaoViewModel);
 
                 }
@@ -345,7 +346,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 return View(producaoViewModel);
             }
 
-
+            TempData["success"] = "Consolidação realizada com sucesso.";
             return View(producaoViewModel);
         }
 

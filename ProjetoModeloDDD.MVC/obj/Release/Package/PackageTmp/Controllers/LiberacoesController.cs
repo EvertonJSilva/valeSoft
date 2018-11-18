@@ -18,7 +18,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private readonly IProfissionalAppService _profissionalApp;
 
         public LiberacoesController(ILiberacaoAppService liberacaoApp,
-                                    IPacienteAppService pacienteApp, 
+                                    IPacienteAppService pacienteApp,
                                     IConsultaAppService consultaApp,
                                     IProfissionalAppService profissionalApp)
         {
@@ -26,8 +26,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             _pacienteApp = pacienteApp;
             _consultaApp = consultaApp;
             _profissionalApp = profissionalApp;
-        }
-
+        }        
         // GET: Consulta
         public ActionResult Index(string palavra, int? LocalizarPor, string grid1page, bool? criterio)
         {
@@ -35,6 +34,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             if (Session["Usuario"] == null)
             {
+                TempData["info"] = "Você não está logado no sistema.";
                 return RedirectToAction("index", "login");
             }
 
@@ -45,7 +45,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 IdProfissional = (int)Session["idProfissional"];
             }
-            
+
             if (!String.IsNullOrEmpty(palavra))
             {
 
@@ -100,11 +100,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Consulta/Create
         public ActionResult Create()
         {
-
-            popularviewBag();
-
-          
-            return View();
+                popularviewBag(); 
+                return View();
         }
 
         private void popularviewBag()
@@ -118,69 +115,78 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 IdProfissional = (int)Session["idProfissional"];
             }
-
             ViewBag.ProfissionalId = listaProfissional(IdProfissional);
-
         }
 
         // POST: Consulta/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Create(LiberacaoViewModel liberacao)
         {
-
-            //if (liberacao.PacienteId == 1)
-            //{
-              //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+                //if (liberacao.PacienteId == 1)
+                //{
+                //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
                 //return View(liberacao);
-            //}
+                //}
 
-            if (ModelState.IsValid)
-            {
-                var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
-
-                if (!String.IsNullOrEmpty(liberacaoDomain.MedicoEncaminhante))
-                { 
-                    liberacaoDomain.MedicoEncaminhante = liberacaoDomain.MedicoEncaminhante.ToUpper();
-                }
-
-                liberacaoDomain.QuantidadeRealizadaExterno = liberacaoDomain.QuantidadeRealizada;
-                if (liberacao.PacienteId == 1136) // nao deixa salvar paciente selecione
+                if (ModelState.IsValid)
                 {
-                    ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
-                    popularviewBag();
+                try
+                {
+
+                    var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
+
+                    if (!String.IsNullOrEmpty(liberacaoDomain.MedicoEncaminhante))
+                    {
+                        liberacaoDomain.MedicoEncaminhante = liberacaoDomain.MedicoEncaminhante.ToUpper();
+                    }
+
+                    liberacaoDomain.QuantidadeRealizadaExterno = liberacaoDomain.QuantidadeRealizada;
+                    if (liberacao.PacienteId == 1136) // nao deixa salvar paciente selecione
+                    {
+                        //ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+                        TempData["error"] = "O paciente Selecionado é inválido";
+                        popularviewBag();
+                        return View(liberacao);
+                    }
+
+                    if (liberacao.ProfissionalId == 2) // nao deixa salvar profissional selecione
+                    {
+                        //ModelState.AddModelError(string.Empty, @"Profissional Selecionado Invalido");
+                        TempData["error"] = "O profissional Selecionado é inválido";
+                        popularviewBag();
+                        return View(liberacao);
+                    }
+
+                    _liberacaoApp.Add(liberacaoDomain);
+
+                    for (int i = 0; i < liberacaoDomain.QuantidadeTotal - liberacaoDomain.QuantidadeRealizada; i++)
+                    {
+                        var consultaDomain = new Consulta();
+                        consultaDomain.DataCadastro = DateTime.Now;
+                        consultaDomain.LiberacaoId = liberacaoDomain.LiberacaoId;
+                        consultaDomain.Convenio = "Unimed";
+                        consultaDomain.Status = "Pré-agendado";
+                        consultaDomain.ValorConsulta = 0;
+                        consultaDomain.ValorConvenio = 0;
+                        consultaDomain.ValorCopart = 0;
+
+                        consultaDomain.ProfissionalId = liberacaoDomain.ProfissionalId;
+
+                        _consultaApp.Add(consultaDomain);
+                    }
+
+                    TempData["success"] = "Liberação incluída com sucesso.";
+                    return RedirectToAction("Details", "Liberacoes", new { id = liberacaoDomain.LiberacaoId });
+
+                }
+                catch (Exception)
+                {
+                    TempData["error"] = "Não foi possível incluir a liberação.";
                     return View(liberacao);
                 }
-
-                if (liberacao.ProfissionalId == 2) // nao deixa salvar profissional selecione
-                {
-                    ModelState.AddModelError(string.Empty, @"Profissional Selecionado Invalido");
-                    popularviewBag();
-                    return View(liberacao);
-                }
-
-                _liberacaoApp.Add(liberacaoDomain);
-
-                for (int i = 0; i < liberacaoDomain.QuantidadeTotal-liberacaoDomain.QuantidadeRealizada; i++)
-                {
-                    var consultaDomain = new Consulta();
-                    consultaDomain.DataCadastro = DateTime.Now;
-                    consultaDomain.LiberacaoId = liberacaoDomain.LiberacaoId;
-                    consultaDomain.Convenio = "Unimed";
-                    consultaDomain.Status = "Pré-agendado";
-                    consultaDomain.ValorConsulta = 0;
-                    consultaDomain.ValorConvenio = 0;
-                    consultaDomain.ValorCopart = 0;
-                    
-                    consultaDomain.ProfissionalId = liberacaoDomain.ProfissionalId;
-
-               
-
-                    _consultaApp.Add(consultaDomain);
-                }
-
-                return RedirectToAction("Details", "Liberacoes", new { id = liberacaoDomain.LiberacaoId });
 
                 //liberacaoDomain.Paciente = _pacienteApp.GetById(liberacaoDomain.PacienteId);
 
@@ -193,24 +199,27 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 //var tuple = new Tuple<LiberacaoViewModel, IEnumerable<ConsultaViewModel>>(liberacaoViewModel, consultasViewModel);
 
                 //return View("Details",tuple);
-            }
-
+            }                
             ViewBag.PacienteId = listaPaciente(1);
 
-            var nivelAcesso = (int)Session["nivelAcesso"];
-            int IdProfissional= 2;
-
-            if (nivelAcesso == 2)
+            try
             {
-                IdProfissional = (int)Session["idProfissional"];
+                var nivelAcesso = (int)Session["nivelAcesso"];
+                int IdProfissional = 2;
+
+                if (nivelAcesso == 2)
+                {
+                    IdProfissional = (int)Session["idProfissional"];
+                }
+
+                ViewBag.ProfissionalId = listaProfissional(IdProfissional);
+                return View(liberacao);
             }
-
-            ViewBag.ProfissionalId = listaProfissional(IdProfissional);
-
-            
-
-
-            return View(liberacao);
+            catch (Exception)
+            {
+                TempData["error"] = "Não foi possível incluir a liberação.";
+                return View(liberacao);
+            }            
         }
 
         // GET: Consulta/Edit/5
@@ -230,26 +239,36 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(LiberacaoViewModel liberacao)
         {
-          //  if (liberacao.PacienteId == 3)
-            //{
-              //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+            try
+            {
+                //  if (liberacao.PacienteId == 3)
+                //{
+                //  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
                 //return View(liberacao);
-            //}
+                //}
 
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
+                {
+                    var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
+                    _liberacaoApp.Update(liberacaoDomain);
+
+                    TempData["success"] = "Liberação editada com sucesso.";
+                    return RedirectToAction("Index");
+                }
+
+
+                ViewBag.PacienteId = listaPaciente(liberacao.PacienteId);
+                ViewBag.ProfissionalId = listaProfissional(liberacao.ProfissionalId);
+
+                return View(liberacao);
+            }
+            catch (Exception)
             {
-                var liberacaoDomain = Mapper.Map<LiberacaoViewModel, Liberacao>(liberacao);
-                _liberacaoApp.Update(liberacaoDomain);
-
-                return RedirectToAction("Index");
+                TempData["error"] = "Esta liberação não pode ser editada.";
+                return View(liberacao);
             }
 
-
-            ViewBag.PacienteId = listaPaciente(liberacao.PacienteId);
-            ViewBag.ProfissionalId = listaProfissional(liberacao.ProfissionalId);
-
-            return View(liberacao);
         }
 
         // GET: Consulta/Delete/5
@@ -257,7 +276,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             var liberacao = _liberacaoApp.GetById(id);
             var liberacaoViewModel = Mapper.Map<Liberacao, LiberacaoViewModel>(liberacao);
-
+            
             return View(liberacaoViewModel);
         }
 
@@ -266,22 +285,30 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var liberacao = _liberacaoApp.GetById(id);
-            _liberacaoApp.Remove(liberacao);
+            try
+            {
+                var liberacao = _liberacaoApp.GetById(id);
+                _liberacaoApp.Remove(liberacao);
 
-            return RedirectToAction("Index");
+                TempData["success"] = "Liberação excluída com sucesso.";
+                return RedirectToAction("Index");
         }
-
+            catch (Exception)
+            {
+                TempData["error"] = "Esta liberação não pode ser excluída pois uma ou mais consultas já estão agendadas.";
+                return RedirectToAction("Index");
+    }
+}
         public IEnumerable<SelectListItem> listaProfissional(int idProfissional)
         {
             IEnumerable<SelectListItem> selectListProfissional =
-               from c in _profissionalApp.GetAll().OrderBy(p => p.NomeProfissional)
-               select new SelectListItem
-               {
-                   Selected = (c.ProfissionalId == idProfissional),
-                   Text = c.NomeProfissional,
-                   Value = c.ProfissionalId.ToString()
-               };
+                from c in _profissionalApp.GetAll().OrderBy(p => p.NomeProfissional)
+                select new SelectListItem
+                {
+                    Selected = (c.ProfissionalId == idProfissional),
+                    Text = c.NomeProfissional,
+                    Value = c.ProfissionalId.ToString()
+                };
 
             return selectListProfissional;
         }
@@ -289,13 +316,13 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public IEnumerable<SelectListItem> listaPaciente(int idPaciente)
         {
             IEnumerable<SelectListItem> selectListPaciente =
-               from c in _pacienteApp.GetAll().OrderBy(p => p.NomePaciente)
-               select new SelectListItem
-               {
-                   Selected = (c.PacienteId == idPaciente),
-                   Text = c.NomePaciente,
-                   Value = c.PacienteId.ToString()
-               };
+                from c in _pacienteApp.GetAll().OrderBy(p => p.NomePaciente)
+                select new SelectListItem
+                {
+                    Selected = (c.PacienteId == idPaciente),
+                    Text = c.NomePaciente,
+                    Value = c.PacienteId.ToString()
+                };
 
             return selectListPaciente;
         }

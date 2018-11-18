@@ -135,3 +135,37 @@ E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoMo
 E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CopyComplete
 E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
 E:\visual Studio\valesoft\valesoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csc.exe
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csc.exe.config
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csc.rsp
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csi.exe
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\csi.rsp
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.CSharp.Core.targets
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\Microsoft.VisualBasic.Core.targets
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.AppContext.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.Collections.Immutable.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.Diagnostics.StackTrace.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.IO.FileSystem.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.IO.FileSystem.Primitives.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\System.Reflection.Metadata.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\vbc.exe
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\vbc.exe.config
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\vbc.rsp
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\VBCSCompiler.exe
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\roslyn\VBCSCompiler.exe.config
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\ProjetoModeloDDD.Domain.pdb
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\bin\Release\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csprojResolveAssemblyReference.cache
+D:\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
+D:\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.dll
+D:\valeSoft\ProjetoModeloDDD.Domain\obj\Release\ProjetoModeloDDD.Domain.pdb

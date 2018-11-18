@@ -37,6 +37,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             if (Session["Usuario"] == null)
             {
+                TempData["info"] = "Você não está logado no sistema.";
                 return RedirectToAction("index", "login");
             }
             if (String.IsNullOrEmpty(grid1page))
@@ -47,7 +48,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             IEnumerable<Consulta> listConsulta = Enumerable.Empty<Consulta>();
 
-            // médicos só vem as consultas dele
+            // médicos só vêem as consultas dele
             var nivelAcesso = (int)Session["nivelAcesso"];
             int IdProfissional = 0;
             if (nivelAcesso == 2)
@@ -83,15 +84,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 default:
                     if(nivelAcesso == 2)
                         listConsulta = listConsulta.Where(s => s.DataHoraConsulta.Month == DateTime.Now.Month );
+                    
                     break;
             }
 
-
+            listConsulta = listConsulta.OrderByDescending(x => x.Status);
             listConsulta = Paginar(listConsulta, grid1page, 20);
 
 
 
             var consultaViewModel = Mapper.Map<IEnumerable<Consulta>, IEnumerable<ConsultaViewModel>>(listConsulta);
+
+            
 
             return View(consultaViewModel);
         }
@@ -136,10 +140,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Create()
         {
             var nivelAcesso = (int)Session["nivelAcesso"];
-            
+
             if (nivelAcesso == 2)
             {
-                var IdProfissional = (int)Session["idProfissional"];              
+                var IdProfissional = (int)Session["idProfissional"];
                 ViewBag.ProfissionalId = listaProfissional(IdProfissional);
             }
             else
@@ -148,93 +152,105 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
             ViewBag.LiberacaoId = new SelectList(_liberacaoApp.GetAll(), "LiberacaoId", "NumeroLiberacao");
-            
+
             return View();
         }
+
 
         // POST: Consulta/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ConsultaViewModel consulta)
         {
-            if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
+            try
             {
-                ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+                if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
+                {
+                    //ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+                    TempData["warning"] = "Preencha a autorização.";
+                    return View(consulta);
+                }
 
-                return View(consulta);
-            }
-
-           // if(consulta.Liberacao.PacienteId == 1)
-            //{
-              ///  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
+                // if(consulta.Liberacao.PacienteId == 1)
+                //{
+                ///  ModelState.AddModelError(string.Empty, @"Paciente Selecionado Invalido");
 
                 //return View(consulta);
-            //}
+                //}
 
-            if (consulta.ProfissionalId == 2)
-            {
-                ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
+                if (consulta.ProfissionalId == 2)
+                {
+                    //ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
+                    TempData["warning"] = "Profissional inválido.";
+                    return View(consulta);
+                }
+
+                if (consulta.DataHoraConsulta.Year == 1)
+                {
+                    //ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
+                    TempData["warning"] = "Data inválida.";
+                    return View(consulta);
+                }
+
+                if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+                {
+                    //ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
+                    TempData["warning"] = "Data da consulta inferior a início do mês.";
+                    return View(consulta);
+                }
+
+
+                if (ModelState.IsValid)
+                {
+
+                    var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
+                    consultaDomain.DataCadastro = DateTime.Now;
+                    _consultaApp.Add(consultaDomain);
+
+                    TempData["success"] = "Consulta incluída com sucesso.";
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.LiberacaoId = listaLiberacao(consulta);
+                ViewBag.ProfissionalId = listaProfissional(consulta);
+
+
 
                 return View(consulta);
             }
-
-            if (consulta.DataHoraConsulta.Year == 1)
+            catch (Exception)
             {
-                ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
-
-                return View(consulta);
+                TempData["error"] = "Não foi possível incluir a consulta.";
+                return View();
             }
-
-            if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
-            {
-                ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
-
-                return View(consulta);
-            }
-
-
-            if (ModelState.IsValid)
-            {
-                
-                var consultaDomain = Mapper.Map<ConsultaViewModel, Consulta>(consulta);
-                consultaDomain.DataCadastro = DateTime.Now;
-                _consultaApp.Add(consultaDomain);
-
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.LiberacaoId = listaLiberacao(consulta);
-            ViewBag.ProfissionalId = listaProfissional(consulta);
-
-            return View(consulta);
-        }
+    }
 
         // GET: Consulta/Edit/5
         public ActionResult Edit(int id, int idLiberacao)
         {
-            var consulta = _consultaApp.GetById(id);
-            var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
+                var consulta = _consultaApp.GetById(id);
+                var consultaViewModel = Mapper.Map<Consulta, ConsultaViewModel>(consulta);
 
-            ViewBag.idLiberacaoOrigem = idLiberacao;
+                ViewBag.idLiberacaoOrigem = idLiberacao;
 
-            // médicos já sugere a matricula dele
-            var nivelAcesso = (int)Session["nivelAcesso"];
-            if (consultaViewModel.Status == "Pré-agendado")
-            {
-                consultaViewModel.DataHoraConsulta = DateTime.Now;
-
-                if (nivelAcesso == 2)
+                // médicos já sugere a matricula dele
+                var nivelAcesso = (int)Session["nivelAcesso"];
+                if (consultaViewModel.Status == "Pré-agendado")
                 {
-                    var IdProfissional = (int)Session["idProfissional"];
-                    consultaViewModel.ProfissionalId = IdProfissional;
+                    consultaViewModel.DataHoraConsulta = DateTime.Now;
+
+                    if (nivelAcesso == 2)
+                    {
+                        var IdProfissional = (int)Session["idProfissional"];
+                        consultaViewModel.ProfissionalId = IdProfissional;
+                    }
                 }
-            }
 
 
-            ViewBag.LiberacaoId = listaLiberacao(consultaViewModel);
-            ViewBag.ProfissionalId = listaProfissional(consultaViewModel);
+                ViewBag.LiberacaoId = listaLiberacao(consultaViewModel);
+                ViewBag.ProfissionalId = listaProfissional(consultaViewModel);
 
-            return View(consultaViewModel);
+                return View(consultaViewModel);
         }
 
         // POST: Consulta/Edit/5
@@ -242,15 +258,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ConsultaViewModel consulta, int idLiberacaoOrigem)
         {
+            try { 
             ViewBag.idLiberacaoOrigem = idLiberacaoOrigem;
             ViewBag.LiberacaoId = listaLiberacao(consulta);
             ViewBag.ProfissionalId = listaProfissional(consulta);
 
             if (consulta.TipoSessao != "80000509" && String.IsNullOrEmpty(consulta.Autorizacao))
             {
-                ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
-
-                return View(consulta);
+               //ModelState.AddModelError(string.Empty, @"Autorização deve ser preenchida");
+                    TempData["warning"] = "Preencha a autorização.";
+                    return View(consulta);
             }
 
             //if (consulta.Liberacao.PacienteId == 1)
@@ -262,16 +279,16 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             if (consulta.ProfissionalId == 2)
             {
-                ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
-
-                return View(consulta);
+                //ModelState.AddModelError(string.Empty, @"Profissional não selecionado");
+                    TempData["warning"] = "Profissional inválido.";
+                    return View(consulta);
             }
 
             if (consulta.DataHoraConsulta.Year == 1)
             {
-                ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
-
-                return View(consulta);
+                //ModelState.AddModelError(string.Empty, @"Data selecionada inválida");
+                    TempData["warning"] = "Data inválida.";
+                    return View(consulta);
             }
 
             //médicos valida data
@@ -280,9 +297,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
             {
                 if ( DateTime.Now > (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 10).AddMonths(1)))
                 {
-                   ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
-
-                    return View(consulta);
+                   //ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
+                        TempData["warning"] = "Data da consulta inferior a início do mês.";
+                        return View(consulta);
                 }
             }
 
@@ -299,6 +316,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 try
                 {
                     _producaoApp.GetPorConsultaID(consultaDomain.ConsultaId);
+                  
                 }
                 catch (Exception e)
                 {
@@ -314,16 +332,23 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     _producaoApp.Add(producaoDomain);
                 }
 
-                ///redireciona para a liberacao
-                if (idLiberacaoOrigem > 0) {
-                    return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
-                } else
-                {
-                    return RedirectToAction("Index");
-                }
+                //redireciona para a liberacao
+                //if (idLiberacaoOrigem > 0) {
+                //  return RedirectToAction("Details", "Liberacoes", new { id = idLiberacaoOrigem });
+                //} else
+                //{
+                //  return RedirectToAction("Edit");
+                //}
             }
 
-            return View(consulta);
+                TempData["success"] = "Consulta editada com sucesso.";
+                return View(consulta);
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "Não foi possível editar a consulta.";
+                return View(consulta);
+            }
         }
 
         // GET: Consulta/Delete/5
@@ -340,10 +365,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var consulta = _consultaApp.GetById(id);
-            _consultaApp.Remove(consulta);
+            try
+            {
+                var consulta = _consultaApp.GetById(id);
+                _consultaApp.Remove(consulta);
 
-            return RedirectToAction("Index");
+                TempData["success"] = "Consulta excluída com sucesso.";
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "Não foi possível excluir a consulta.";
+                return View();
+            }
         }
 
         public IEnumerable<SelectListItem> listaProfissional(int idProfissional)
@@ -440,10 +474,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private decimal CalculaCopart(ValorConsulta valorConsulta, Paciente paciente)
         {
 
-            if (paciente.PacienteId == 779) // larrisa valor fixo de 10 
+            if (paciente.PacienteId == 779) // Larisa valor fixo de 10 
                 return 10;
 
-            if (paciente.PacienteId == 748) // juliana
+            if (paciente.PacienteId == 748) // Juliana
                 return 10;
 
             switch (valorConsulta.TemCopart && paciente.CopartPaciente)

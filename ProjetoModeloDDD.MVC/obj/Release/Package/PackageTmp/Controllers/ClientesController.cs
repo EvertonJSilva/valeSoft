@@ -44,8 +44,10 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Clientes/Create
         public ActionResult Create()
         {
-            return View();
+            TempData["success"] = "Paciente cadastrado com sucesso.";
+            return View();            
         }
+        
 
         // POST: Clientes/Create
         [HttpPost]
@@ -57,6 +59,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 var clienteDomain = Mapper.Map<ClienteViewModel, Cliente>(cliente);
                 _clienteApp.Add(clienteDomain);
 
+                TempData["success"] = "Paciente cadastrado com sucesso.";
                 return RedirectToAction("Index");
             }
 
@@ -66,6 +69,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Clientes/Edit/5
         public ActionResult Edit(int id)
         {
+            TempData["success"] = "Dados editados com sucesso.";
             var cliente = _clienteApp.GetById(id);
             var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(cliente);
 
@@ -82,6 +86,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 var clienteDomain = Mapper.Map<ClienteViewModel, Cliente>(cliente);
                 _clienteApp.Update(clienteDomain);
 
+                TempData["success"] = "Dados editados com sucesso.";
                 return RedirectToAction("Index");
             }
 

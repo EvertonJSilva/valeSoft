@@ -29,6 +29,16 @@ namespace ProjetoModeloDDD.MVC
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
             BundleTable.EnableOptimizations = true;
+
+            //Inserido por Rodrigo, implementação Toastr: marcdias.com.br/como-utilizar-o-toastr-notifications-com-asp-net-mvc/
+
+            bundles.Add(new StyleBundle("~/content/toastr",
+                "http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css")
+                .Include("~/Content/toastr.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/toastr",
+                "http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js")
+                .Include("~/Scripts/toastr.js"));
         }
     }
 }

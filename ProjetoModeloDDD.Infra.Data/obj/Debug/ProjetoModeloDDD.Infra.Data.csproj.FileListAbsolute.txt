@@ -309,3 +309,9 @@ D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.dll
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.pdb
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo_bkp.rdlc
+D:\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo - Copy.rdlc
+D:\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo.rdlc
+D:\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo_bkp.rdlc
+D:\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Protocolo_old.rdlc
+D:\valeSoft\ProjetoModeloDDD.Infra.Data\bin\Debug\Reports\Producao.rdlc
+D:\valeSoft\ProjetoModeloDDD.Infra.Data\obj\Debug\ProjetoModeloDDD.Infra.Data.csproj.CoreCompileInputs.cache

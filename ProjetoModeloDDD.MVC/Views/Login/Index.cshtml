@@ -13,17 +13,18 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    
     <title>DASHGUM - Bootstrap Admin Template</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Content/SiteB/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="../Content/SiteB/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="../Content/SiteB/css/style.css" rel="stylesheet">
     <link href="../Content/SiteB/css/style-responsive.css" rel="stylesheet">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -35,82 +36,81 @@
 <body>
 
     <!-- **********************************************************************************************************************************************************
-    MAIN CONTENT
-   *********************************************************************************************************************************************************** -->
-@Html.AntiForgeryToken()
+     MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+    @Html.AntiForgeryToken()
 
 
     <div id="login-page">
         <div class="container">
-            
-                <form class="form-login" action="/login" method="post">
 
-                    <h2 class="form-login-heading">Login</h2>
-                    
-                    <div class="login-wrap" >
+            <form class="form-login" action="/login" method="post">
 
-                        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger", @style= "text-align:left" })
+                <h2 class="form-login-heading">Login</h2>
 
+                <div class="login-wrap">
 
-                        <input type="text" class="form-control" placeholder="Usuário" name="usuario" autofocus>
-
-                        @Html.ValidationMessageFor(model => model.usuario, "", new { @class = "text-danger" })
-                        <br>
-                        <input type="password" class="form-control" placeholder="Senha" name="senha">
-
-                        @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
+                    @Html.ValidationSummary(true, "", new { @class = "alert alert-danger", @style = "text-align:left" })
 
 
-                        <label class="checkbox">
-                            <span  class="pull-right">
-                                <a data-toggle="modal" href="login.html#myModal"> Esqueceu a senha?</a>
+                    <input type="text" class="form-control" placeholder="Usuário" name="usuario" autofocus>
 
-                            </span>
-                        </label>
+                    @Html.ValidationMessageFor(model => model.usuario, "", new { @class = "text-danger" })
+                    <br>
+                    <input type="password" class="form-control" placeholder="Senha" name="senha">
 
-                        <input type="submit" value="Entrar" class="btn btn-default" />
+                    @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
 
-                        <hr>
 
-                        @*<div class="login-social-link centered">
-                        <p>or you can sign in via your social network</p>
-                        <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
-                        <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
-                    </div>
-                    <div class="registration">
-                        Don't have an account yet?<br />
-                        <a class="" href="#">
-                            Create an account
-                        </a>
-                    </div>*@
+                    <label class="checkbox">
+                        <span class="pull-right">
+                            <a data-toggle="modal" href="login.html#myModal"> Esqueceu a senha?</a>
 
-                    </div>
+                        </span>
+                    </label>
 
-                    <!-- Modal -->
-                    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Esqueceu a senha?</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Informe seu email para recuperação de senha.</p>
-                                    <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                    <input type="submit" value="Entrar" class="btn btn-default" />
 
-                                </div>
-                                <div class="modal-footer">
-                                    <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
-                                    <button class="btn btn-theme">@Html.ActionLink("Enviar", "reenvio", "Login", new { @style = "color:white" })</button>
-                                </div>
+                    <hr>
+
+                    @*<div class="login-social-link centered">
+                            <p>or you can sign in via your social network</p>
+                            <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
+                            <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
+                        </div>
+                        <div class="registration">
+                            Don't have an account yet?<br />
+                            <a class="" href="#">
+                                Create an account
+                            </a>
+                        </div>*@
+
+                </div>
+
+                <!-- Modal -->
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">Esqueceu a senha?</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Informe seu email para recuperação de senha.</p>
+                                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
+                                <button class="btn btn-theme">@Html.ActionLink("Enviar", "reenvio", "Login", new { @style = "color:white" })</button>
                             </div>
                         </div>
                     </div>
-                    <!-- modal -->
+                </div>
+                <!-- modal -->
 
-                </form>
-
-            </div>
+            </form>
+        </div>
     </div>
 
     <!-- js placed at the end of the document so the pages load faster -->
@@ -120,9 +120,13 @@
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="../Content/SiteB/js/jquery.backstretch.min.js"></script>
-    <script>
-        $.backstretch("../Content/SiteB/img/fundo-azul.jpg", { speed: 500 });
-    </script>
+    <script> $.backstretch("../Content/SiteB/img/fundo-azul.jpg", { speed: 500 }); </script>
+    <script src="~/Scripts/toastr.js"></script>
+
+    <input type="hidden" id="success" value="@TempData["success"]" />
+    <input type="hidden" id="info"    value="@TempData["info"]" />
+    <input type="hidden" id="warning" value="@TempData["warning"]" />
+    <input type="hidden" id="error"   value="@TempData["error"]" />        
 
 </body>
 </html>

@@ -6,6 +6,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery") 
     @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/toastr")
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -19,6 +20,7 @@
     <!--external css-->
     <link href="~/Content/Gridmvc.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/SiteB/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="~/Content/SiteB/css/style.css" rel="stylesheet">
     <link href="~/Content/SiteB/css/style-responsive.css" rel="stylesheet" />
@@ -40,7 +42,7 @@
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
         <!--header start-->
-        <header class="header black-bg" >
+        <header class="header black-bg">
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
@@ -49,14 +51,14 @@
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li>   
-                           <a @Html.ActionLink("Logout", "index", "Login", null, new { @class = "logout"})</a>
+                    <li>
+                        <a @Html.ActionLink("Logout", "index", "Login", null, new { @class = "logout" })</a>
                     </li>
                 </ul>
             </div>
         </header>
-        
-        
+
+
         <!--header end-->
         <!-- **********************************************************************************************************************************************************
         MAIN SIDEBAR MENU
@@ -68,12 +70,12 @@
                 <ul class="sidebar-menu" id="nav-accordion">
 
                     <li class="centered"><a href="https://vsvalesoft.wixsite.com/vsvalesoft/" target="_blank"><img src="~/Content/SiteB/img/logoValesoft.png" width="60"></a></li>
-                    <li class="centered">VS VALESOFT</li> 
+                    <li class="centered">VS VALESOFT</li>
                     <li>
                         <a href="/Pacientes/Index/">
                             <i class="fa fa-group"></i>
                             <span>Pacientes</span>
-                            </a>
+                        </a>
                     </li>
                     <li>
                         <a href="/Liberacoes/Index/">
@@ -81,21 +83,21 @@
                             <span>Liberações</span>
                         </a>
                     </li>
-                     <li>
+                    <li>
                         <a href="/Consultas/Index/">
                             <i class="fa fa-calendar"></i>
                             <span>Consultas</span>
                         </a>
                     </li>
-                   
+
                     @if (((int)Session["nivelAcesso"]) != 2)
                     {
-                    <li>
-                        <a href="/Profissionais/Index/">
-                            <i class="fa fa-credit-card"></i>
-                            <span>Profissionais</span>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="/Profissionais/Index/">
+                                <i class="fa fa-credit-card"></i>
+                                <span>Profissionais</span>
+                            </a>
+                        </li>
                     }
                     <li>
                         <a href="/Producao/Index/">
@@ -105,17 +107,17 @@
                     </li>
                     @if (((int)Session["nivelAcesso"]) != 2)
                     {
-                     <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-cogs"></i>
-                            <span>Configurações</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="/TiposProfissional/Index/">Tipos de profissional</a></li>
-                            <li><a href="/ValoresConsulta/Index/">Valores da consulta</a></li>
-                            <li><a href="/TaxasDoacao/Index/">Taxas de doação</a></li>
-                        </ul>
-                    </li>
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-cogs"></i>
+                                <span>Configurações</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="/TiposProfissional/Index/">Tipos de profissional</a></li>
+                                <li><a href="/ValoresConsulta/Index/">Valores da consulta</a></li>
+                                <li><a href="/TaxasDoacao/Index/">Taxas de doação</a></li>
+                            </ul>
+                        </li>
                     }
                 </ul>
                 <!-- sidebar menu end-->
@@ -131,7 +133,7 @@
                 <div class="container body-content">
                     @RenderBody()
                     <hr />
-                    
+
                 </div>
 
             </section><! --/wrapper -->
@@ -156,11 +158,11 @@
     <link href="~/Content/Gridmvc.css" rel="stylesheet" />
     <script src="~/Scripts/gridmvc.min.js"></script>
     <script src="~/Content/SiteB/js/bootstrap-toggle.js"></script>
-    <script src="~/Content/SiteB/js/bootstrap2-toggle.js"></script>
-    
+    <script src="~/Content/SiteB/js/bootstrap2-toggle.js"></script> 
 
     <!--common script for all pages-->
     <script src="~/Content/SIteB/js/common-scripts.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
 
     <!--script for this page-->
 
@@ -175,6 +177,12 @@
 
     @RenderSection("scripts", required: false)
 
+    <!-- Inserido por Rodrigo, implementação Toastr: marcdias.com.br/como-utilizar-o-toastr-notifications-com-asp-net-mvc/ -->
+
+    <input type="hidden" id="success" value="@TempData["success"]" />
+    <input type="hidden" id="info"    value="@TempData["info"]" />
+    <input type="hidden" id="warning" value="@TempData["warning"]" />
+    <input type="hidden" id="error"   value="@TempData["error"]" />
 
 </body>
 </html>

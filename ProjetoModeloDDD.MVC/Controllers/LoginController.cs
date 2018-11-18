@@ -21,9 +21,9 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             Session["usuario"] = null;
             Session["nivelAcesso"] = null;
-            Session["idProfissional"] = null;
-            
+            Session["idProfissional"] = null;            
             LoginViewModel _loginViewModel = new LoginViewModel();
+
             return View(_loginViewModel);
         }
 
@@ -34,6 +34,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
             Session["idProfissional"] = null;
 
             LoginViewModel _loginViewModel = new LoginViewModel();
+            TempData["success"] = "Logout efetuado com sucesso.";
             return View(_loginViewModel);
         }
 
@@ -52,15 +53,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [HttpPost]
         public ActionResult Index(LoginViewModel login )
         {
-        
-
             if (login.usuario == "sa" && login.senha == "ValeSoft#9090")
-            {
+            {                
                 Session["usuario"] = new Usuario(login.usuario, login.senha, 0, 0);
                 Session["nivelAcesso"] = 0;
                 Session["idProfissional"] = 0;
 
-                return RedirectToAction("Index", "Home");
+                TempData["success"] = "Login efetuado com sucesso.";
+                return RedirectToAction("Index", "Home");                
             }
             else
             {
@@ -71,19 +71,21 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 //não achou
                 if (profissionais.Count() == 0)
                 {
-                    ModelState.AddModelError(string.Empty, @"Usuário ou senha inválidos");
-                    return View(login);
+                    //ModelState.AddModelError(string.Empty, @"Usuário e//ou senha inválidos");
+                    TempData["error"] = "Usuário ou senha inválidos";
+                    return View("Index");
                 }
                 else
                 {
                     var senhaCriptografada = Util.encryption(login.senha);
                     if (senhaCriptografada != profissionais.First().Senha)
                     {
-                        ModelState.AddModelError(string.Empty, @"Usuário ou senha inválidos");
+                        //ModelState.AddModelError(string.Empty, @"Usuário e/ou senha inválidos");
+                        TempData["error"] = "Usuário ou senha inválidos";
                         return View(login);
                     }
 
-                }
+                } 
 
                 Session["usuario"] = new Usuario(login.usuario, profissionais.First().Senha,
                                                 profissionais.First().TipoProfissional.nivelAcesso,
@@ -92,7 +94,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
                 Session["nivelAcesso"] = profissionais.First().TipoProfissional.nivelAcesso;
                 Session["idProfissional"] = profissionais.First().ProfissionalId;
 
-
+                TempData["success"] = "Login efetuado com sucesso.";
                 return RedirectToAction("Index", "Home");
                 
             }
@@ -100,6 +102,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
         public ActionResult Reenvio(string email)
         {
+            TempData["info"] = "E-mail enviado para o endereço informado.";
             return  RedirectToAction("Index", "Home"); ;
         }
 

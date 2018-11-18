@@ -235,3 +235,4 @@ D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.dll
 D:\Documentos\Documents\Visual Studio 2017\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.pdb
+D:\valeSoft\ProjetoModeloDDD.Domain\obj\Debug\ProjetoModeloDDD.Domain.csproj.CoreCompileInputs.cache

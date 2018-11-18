@@ -6,6 +6,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery") 
     @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/toastr")
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -19,6 +20,7 @@
     <!--external css-->
     <link href="~/Content/Gridmvc.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/SiteB/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="~/Content/SiteB/css/style.css" rel="stylesheet">
     <link href="~/Content/SiteB/css/style-responsive.css" rel="stylesheet" />
@@ -156,11 +158,11 @@
     <link href="~/Content/Gridmvc.css" rel="stylesheet" />
     <script src="~/Scripts/gridmvc.min.js"></script>
     <script src="~/Content/SiteB/js/bootstrap-toggle.js"></script>
-    <script src="~/Content/SiteB/js/bootstrap2-toggle.js"></script>
-
+    <script src="~/Content/SiteB/js/bootstrap2-toggle.js"></script> 
 
     <!--common script for all pages-->
     <script src="~/Content/SIteB/js/common-scripts.js"></script>
+    <script src="~/Scripts/toastr.js"></script>
 
     <!--script for this page-->
 
@@ -175,6 +177,12 @@
 
     @RenderSection("scripts", required: false)
 
+    <!-- Inserido por Rodrigo, implementação Toastr: marcdias.com.br/como-utilizar-o-toastr-notifications-com-asp-net-mvc/ -->
+
+    <input type="hidden" id="success" value="@TempData["success"]" />
+    <input type="hidden" id="info"    value="@TempData["info"]" />
+    <input type="hidden" id="warning" value="@TempData["warning"]" />
+    <input type="hidden" id="error"   value="@TempData["error"]" />
 
 </body>
 </html>
