@@ -707,7 +707,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 25.22, 1,nothing))</Value>
+                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 26.50, 1,nothing))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -736,7 +736,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 25.22,25.22,0))</Value>
+                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 26.50,26.50,0))</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -831,7 +831,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nº DE ATENDIMENTOS (28,37)</Value>
+                              <Value>Nº DE ATENDIMENTOS (29,81)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -860,7 +860,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 28.37, 1,nothing))</Value>
+                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 29.81, 1,nothing))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -889,7 +889,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 28.37,28.37,0))</Value>
+                              <Value>=Sum(IIf(Fields!ValorConvenio.Value = 29.81,29.81,0))</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -984,7 +984,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nº DE ATENDIMENTOS (30,48)</Value>
+                              <Value>Nº DE ATENDIMENTOS (32,03)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1042,7 +1042,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=(ReportItems!Textbox10.Value * 30.48)</Value>
+                              <Value>=(ReportItems!Textbox10.Value * 32.03)</Value>
                               <Style>
                                 <Format>'R$'0.00;('R$'0.00)</Format>
                               </Style>
@@ -1074,7 +1074,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 30.48, 1,nothing))</Value>
+                              <Value>=Count(IIf(Fields!ValorConvenio.Value = 32.03, 1,nothing))</Value>
                               <Style>
                                 <Color>White</Color>
                               </Style>
