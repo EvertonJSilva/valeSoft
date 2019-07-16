@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="ProjetoModeloDDD-Web.config Connection String" description="ProjetoModeloDDD A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="Data Source=sqlservervsvalesoft.database.windows.net;Initial Catalog=VSValeSoft;Persist Security Info=True;User ID=suporte;Password=ValeSoft#9090" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\valeSoft\\ProjetoModeloDDD\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProjetoModeloDDD']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="E:\\Documentos\\Documents\\Visual\ Studio\ 2017\\valeSoft\\ProjetoModeloDDD\.MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProjetoModeloDDD']/@connectionString" />
   </parameter>
 </parameters>

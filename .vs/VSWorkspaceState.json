@@ -1,12 +1,6 @@
 {
   "ExpandedNodes": [
-    "\\ProjetoModeloDDD.Application\\Interface",
-    "\\ProjetoModeloDDD.Application\\obj",
-    "\\ProjetoModeloDDD.Application\\Properties",
-    "\\ProjetoModeloDDD.Domain\\Interfaces",
-    "\\ProjetoModeloDDD.Domain\\Interfaces\\Repositories",
-    "\\ProjetoModeloDDD.Domain\\Interfaces\\Services",
-    "\\ProjetoModeloDDD.Domain\\obj"
+    ""
   ],
   "PreviewInSolutionExplorer": false
 }

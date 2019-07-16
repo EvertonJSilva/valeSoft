@@ -192,10 +192,11 @@ namespace ProjetoModeloDDD.MVC.Controllers
                     return View(consulta);
                 }
 
-                if (consulta.DataHoraConsulta < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+                if (new DateTime(consulta.DataHoraConsulta.Year,consulta.DataHoraConsulta.Month,1) != (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+                //if (consulta.DataHoraConsulta != (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
                 {
                     //ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
-                    TempData["warning"] = "Data da consulta inferior a início do mês.";
+                    TempData["warning"] = "Mês da consulta diferente do mês atual.";
                     return View(consulta);
                 }
 
@@ -295,11 +296,12 @@ namespace ProjetoModeloDDD.MVC.Controllers
             var nivelAcesso = (int)Session["nivelAcesso"];
             if (nivelAcesso == 2)
             {
-                if ( DateTime.Now > (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 10).AddMonths(1)))
+                if (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 1) != (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)))
+                //if ( DateTime.Now != (new DateTime(consulta.DataHoraConsulta.Year, consulta.DataHoraConsulta.Month, 10).AddMonths(1)))
                 {
-                   //ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
-                        TempData["warning"] = "Data da consulta inferior a início do mês.";
-                        return View(consulta);
+                //ModelState.AddModelError(string.Empty, @"Data da consulta inferior a início do mês");
+                    TempData["warning"] = "Mês da consulta diferente do mês atual.";
+                    return View(consulta);
                 }
             }
 

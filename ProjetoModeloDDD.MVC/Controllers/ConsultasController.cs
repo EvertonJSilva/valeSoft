@@ -344,7 +344,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
             }
 
                 TempData["success"] = "Consulta editada com sucesso.";
-                return View(consulta);
+                return RedirectToAction("Index");
+                //return View(consulta);
             }
             catch (Exception)
             {
